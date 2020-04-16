@@ -32,7 +32,7 @@ const Header = () => {
   return (
     <div className={classes.root}>
       <Button
-        onClick={() => { handleRouteSwitch("about") }}
+        onClick={() => { handleRouteSwitch("") }}
         className={classes.avatar}
         style={{ backgroundColor: 'white' }}
       >

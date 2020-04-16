@@ -7,6 +7,10 @@ import {
 import {
   Volunteer, Request_help, Supply_stores, Covid19_data, How_it_works, About
 } from './components/content/index';
+import {
+  VolunteerSignUp
+} from './components/content/index';
+import HomePage from './components/homepage';
 
 const App = () => {
   return (
@@ -14,17 +18,20 @@ const App = () => {
       <Header />
 
       <Switch>
-        <Route exact path="/" component={About}/>
-        <Route path="/about" component={About}/>
-        <Route path="/volunteer" component={Volunteer}/>
-        <Route path="/request_help" component={Request_help}/>
-        <Route path="/supply_stores" component={Supply_stores}/>
-        <Route path="/covid19_data" component={Covid19_data}/>
-        <Route path="/how_it_works" component={How_it_works}/>
+        <Route exact path="/" component={HomePage}/>
+        <Route exact path="/about" component={About}/>
+
+        <Route exact path="/volunteer" component={Volunteer}/>
+        <Route exact path="/volunteer/signup" component={VolunteerSignUp}/>
+
+        <Route exact path="/request_help" component={Request_help}/>
+        <Route exact path="/supply_stores" component={Supply_stores}/>
+        <Route exact path="/covid19_data" component={Covid19_data}/>
+        <Route exact path="/how_it_works" component={How_it_works}/>
         
-        <Route path="/contact_us" component={Contact_us}/>
-        <Route path="/privacy_policy" component={Privacy_policy}/>
-        <Route path="/terms_of_use" component={Terms_of_use}/>
+        <Route exact path="/contact_us" component={Contact_us}/>
+        <Route exact path="/privacy_policy" component={Privacy_policy}/>
+        <Route exact path="/terms_of_use" component={Terms_of_use}/>
 
       </Switch>
 
