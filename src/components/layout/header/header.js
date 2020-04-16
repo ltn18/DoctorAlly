@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useHistory } from 'react-router-dom';
 
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+
+import { Link, animateScroll as scroll } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,15 +26,23 @@ const useStyles = makeStyles((theme) => ({
 const Header = () => {
   const classes = useStyles();
   const history = useHistory();
+  const [show, setShow] = useState(true);
 
   const handleRouteSwitch = (path) => {
     history.push("/" + path)
   }
 
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+    console.log("scrolled")
+  }
+
+  
+
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="navbar">
       <Button
-        onClick={() => { handleRouteSwitch("about") }}
+        onClick={() => { handleRouteSwitch(""); scrollToTop() }}
         className={classes.avatar}
         style={{ backgroundColor: 'white' }}
       >
@@ -41,14 +51,85 @@ const Header = () => {
       </Button>
 
       <div className={classes.buttonGroup}>
-        <Button onClick={() => { handleRouteSwitch("about") }} >About</Button>
-        <Button onClick={() => { handleRouteSwitch("volunteer") }} color="primary" >Volunteer</Button>
-        <Button onClick={() => { handleRouteSwitch("request_help") }} color="secondary" >Request help</Button>
-        <Button onClick={() => { handleRouteSwitch("supply_stores") }} style={{ color: 'green' }} >Supply stores</Button>
-        <Button onClick={() => { handleRouteSwitch("covid19_data") }} style={{ color: '#8134AF' }} >Covid-19 Data</Button>
-        <Button onClick={() => { handleRouteSwitch("how_it_works") }} >How it works</Button>
+        <Link
+          activeClass="active"
+          to="about"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+        >
+          <Button>
+            About
+          </Button>
+        </Link>
+
+        <Link
+          activeClass="active"
+          to="volunteer"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+        >
+          <Button color="primary">
+            Volunteer
+          </Button>
+        </Link>
+
+        <Link
+          activeClass="active"
+          to="request_help"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+        >
+          <Button color="secondary">
+            Request help
+          </Button>
+        </Link>
+
+        <Link
+          activeClass="active"
+          to="supply_stores"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+        >
+          <Button style={{ color: 'green' }}>
+            Supply stores
+          </Button>
+        </Link>
+
+        <Link
+          activeClass="active"
+          to="covid19_data"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+        >
+          <Button style={{ color: '#8134AF' }}>
+            Covid-19 Data
+          </Button>
+        </Link>
+
+        <Link
+          activeClass="active"
+          to="how_it_works"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={500}
+        >
+          <Button>
+            How it works
+          </Button>
+        </Link>
       </div>
-      
+
     </div>
   )
 }
