@@ -5,8 +5,6 @@ const HomePage = () => {
   return (
     <div>
       <About />
-      <Volunteer />
-      <Request_help />
     </div>
   )
 }

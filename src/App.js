@@ -24,7 +24,7 @@ const App = () => {
         <Route exact path="/volunteer" component={Volunteer}/>
         <Route exact path="/volunteer/signup" component={VolunteerSignUp}/>
 
-        <Route path="/request_help/:id" component={Request_help}/>
+        <Route exact path="/request_help/:id" component={Request_help}/>
 
         <Route exact path="/supply_stores" component={Supply_stores}/>
         <Route exact path="/covid19_data" component={Covid19_data}/>
@@ -37,6 +37,7 @@ const App = () => {
       </Switch>
 
       <Footer />
+
     </div>
   )
 }

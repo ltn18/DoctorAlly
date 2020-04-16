@@ -4,8 +4,7 @@ import { useParams } from 'react-router-dom';
 import { PersonalInformation, Requests } from './requestComponents';
 
 import { makeStyles } from '@material-ui/core/styles';
-import { Container } from '@material-ui/core';
-
+import { Container } from '@material-ui/core';  
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -38,6 +37,7 @@ const RequestForm = () => {
   const classes = useStyles();
   const { id } = useParams();
   console.log(id);
+
   return (
     <Container maxWidth="md">
       <form className={classes.root} noValidate autoComplete="off">
@@ -46,11 +46,11 @@ const RequestForm = () => {
           <p style={{ fontStyle: 'italic' }}>Let us help you get what you need!</p>
         </div>
         {id === "1"
-        ?<Requests FormControl={classes.formControl} />
-        : <PersonalInformation
-          personalInfo={classes.personalInfo}
-        />}
-        
+          ? <Requests FormControl={classes.formControl} />
+          : <PersonalInformation
+            personalInfo={classes.personalInfo}
+          />}
+
       </form>
     </Container>
   )

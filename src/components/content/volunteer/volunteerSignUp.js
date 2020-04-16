@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
 const VolunteerSignUp = () => {
   const classes = useStyles();
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="md">
       <form className={classes.root} noValidate autoComplete="off">
         <div style={{ marginBottom: 20 }}>
           <strong>VOLUNTEER CARD</strong>
