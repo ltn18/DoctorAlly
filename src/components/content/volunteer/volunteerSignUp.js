@@ -80,7 +80,7 @@ const VolunteerSignUp = () => {
             />
             <FormControlLabel
               control={<Checkbox />}
-              label="Money"
+              label="Pet care"
             />
             <FormControlLabel
               control={<Checkbox />}

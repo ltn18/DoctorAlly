@@ -43,7 +43,7 @@ const Header = () => {
       <div className={classes.buttonGroup}>
         <Button onClick={() => { handleRouteSwitch("about") }} >About</Button>
         <Button onClick={() => { handleRouteSwitch("volunteer") }} color="primary" >Volunteer</Button>
-        <Button onClick={() => { handleRouteSwitch("request_help") }} color="secondary" >Request help</Button>
+        <Button onClick={() => { handleRouteSwitch("request_help/1") }} color="secondary" >Request help</Button>
         <Button onClick={() => { handleRouteSwitch("supply_stores") }} style={{ color: 'green' }} >Supply stores</Button>
         <Button onClick={() => { handleRouteSwitch("covid19_data") }} style={{ color: '#8134AF' }} >Covid-19 Data</Button>
         <Button onClick={() => { handleRouteSwitch("how_it_works") }} >How it works</Button>

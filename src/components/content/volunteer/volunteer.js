@@ -10,7 +10,7 @@ const Volunteer = () => {
 
   return (
     <div>
-      <Button onClick={ moveToSignUp }>Volunteer</Button>
+      <Button onClick={ moveToSignUp } color="primary" variant="outlined">Volunteer Now</Button>
     </div>
   )
 }

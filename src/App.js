@@ -24,7 +24,8 @@ const App = () => {
         <Route exact path="/volunteer" component={Volunteer}/>
         <Route exact path="/volunteer/signup" component={VolunteerSignUp}/>
 
-        <Route exact path="/request_help" component={Request_help}/>
+        <Route path="/request_help/:id" component={Request_help}/>
+
         <Route exact path="/supply_stores" component={Supply_stores}/>
         <Route exact path="/covid19_data" component={Covid19_data}/>
         <Route exact path="/how_it_works" component={How_it_works}/>
