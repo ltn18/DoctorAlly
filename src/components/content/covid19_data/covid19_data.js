@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import CovidMap from './covid19_data/map';
-import CovidList from './covid19_data/list';
+import CovidMap from './map';
+import CovidList from './list';
 
 import axios from 'axios';
 
