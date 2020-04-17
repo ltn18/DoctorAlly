@@ -1,6 +1,7 @@
 # How to run
 ## Step 1: clone or download the project
 ## Step 2: run in terminal: 
+* npm i
 * npm i react-router-dom
 * npm i @material-ui/core 
 * npm i @material-ui/icons 
