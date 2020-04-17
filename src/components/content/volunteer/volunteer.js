@@ -84,14 +84,14 @@ const RequestBox = (props) => {
   const classes = useStyles()
   const { color, id, work, offers } = props
   return (
-    <Box className={classes.box} style={{backgroundColor: props.color}}>
-      <Grid container spacing= {2} className={classes.grid}>
+    <Box className={classes.box} style={{ backgroundColor: props.color }}>
+      <Grid container spacing={2} className={classes.grid}>
         <Grid item xs={6}>
           <div>Request {props.id}</div>
           <div>{props.work.join(", ")}</div>
         </Grid>
         <Grid item xs={6}>{props.offers} offers</Grid>
-      </Grid> 
+      </Grid>
     </Box>
   )
 }
@@ -102,20 +102,20 @@ const Volunteer = () => {
   const moveToSignUp = () => {
     history.push("/volunteer/signup");
   }
- 
+
   return (
     <>
       <div className={classes.root}>
         <h2 className={classes.h2}> BE A VOLUNTEER </h2>
         <Container className={classes.container}>
           <p className={classes.p}>Sign up as a volunteer and you will get notifications when new help requests are posted!</p>
-          <Button onClick={ moveToSignUp } color="primary" variant="outlined" className={classes.button}>Volunteer Now</Button>
+          <Button onClick={moveToSignUp} color="primary" variant="outlined" className={classes.button}>Volunteer Now</Button>
         </Container>
       </div>
 
       <div className={classes.root}>
         <h2 className={classes.h2}> REQUEST LISTS</h2>
-        <div style={{display: 'flex'}}>
+        <div style={{ display: 'flex' }}>
           <IconButton type="submit" className={classes.iconButton} aria-label="search">
             <SearchIcon />
           </IconButton>
@@ -126,16 +126,16 @@ const Volunteer = () => {
           />
         </div>
         <div className='requests-container'>
-        {
-          data.map((box, id) => {
-            if (id % 2 === 0) {
-              return <RequestBox color='#f2f2f2' id={data[id].id} work={data[id].work} offers={data[id].offers}/>
-            } else {
-              return <RequestBox color='#ffffff' id={data[id].id} work={data[id].work} offers={data[id].offers}/>
-            }
-          }) 
-        }
-          
+          {
+            data.map((box, id) => {
+              if (id % 2 === 0) {
+                return <RequestBox color='#f2f2f2' id={data[id].id} work={data[id].work} offers={data[id].offers} />
+              } else {
+                return <RequestBox color='#ffffff' id={data[id].id} work={data[id].work} offers={data[id].offers} />
+              }
+            })
+          }
+
         </div>
       </div>
     </>

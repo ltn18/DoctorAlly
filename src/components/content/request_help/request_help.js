@@ -1,10 +1,11 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+
+import { useParams, Redirect } from 'react-router-dom';
 
 import { PersonalInformation, Requests } from './requestComponents';
 
 import { makeStyles } from '@material-ui/core/styles';
-import { Container } from '@material-ui/core';  
+import { Container } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const RequestForm = () => {
+const RequestForm = (props) => {
   const classes = useStyles();
   const { id } = useParams();
   console.log(id);
@@ -47,9 +48,12 @@ const RequestForm = () => {
         </div>
         {id === "1"
           ? <Requests FormControl={classes.formControl} />
-          : <PersonalInformation
-            personalInfo={classes.personalInfo}
-          />}
+          : id === "2"
+            ? <PersonalInformation
+              personalInfo={classes.personalInfo}
+            />
+            : <Redirect to="/request_help/1" />
+        }
 
       </form>
     </Container>
