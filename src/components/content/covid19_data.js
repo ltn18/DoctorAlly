@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import CovidMap from './covid19_data/index';
+import CovidMap from './covid19_data/map';
+import CovidList from './covid19_data/list';
 
 import axios from 'axios';
 
@@ -16,13 +17,16 @@ const Covid19_data = () => {
     }
     fetchData()
   }, [])
-  
+
   return (
     <div>
-      { 
+      {
         loading
-        ? <div>...Loading</div>
-        : <CovidMap data={covidData}/>
+          ? <div><strong>...Loading</strong></div>
+          : <div>
+            <CovidMap data={covidData} />
+            <CovidList data={covidData} />
+          </div>
       }
     </div>
   )

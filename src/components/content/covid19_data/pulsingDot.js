@@ -1,4 +1,4 @@
-var pulsingDot = (size, map) => {
+const pulsingDot = (size, map) => {
     return {
         width: size,
         height: size,

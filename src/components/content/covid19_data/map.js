@@ -27,9 +27,9 @@ class CovidMap extends Component {
                 'features': []
             }
         }
-        console.log(this.props.data)
+        // console.log(this.props.data)
         if (this.data) {
-            this.data.map((item) => {
+            this.data.map(item => {
                 GeoJson.data.features.push({
                     'type': 'Feature',
                     'geometry': {
@@ -134,8 +134,8 @@ class CovidMap extends Component {
 
         return (
             <div>
-                <div className='sidebarStyle'>
-                    <div>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}</div>
+                <div className='sidebarStyle' style={{margin: '10px'}}>
+                    <div><strong>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}</strong></div>
                 </div>
                 <div ref={el => this.mapContainer = el} className='mapContainer' style={{ height: '75vh' }} />
             </div>
@@ -143,4 +143,4 @@ class CovidMap extends Component {
     }
 }
 
-export default CovidMap
+export default CovidMap;

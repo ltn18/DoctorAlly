@@ -5,10 +5,11 @@
 * npm i react-router-dom
 * npm i @material-ui/core 
 * npm i @material-ui/icons 
-* npm i google-map-react 
+* npm i mapbox-gl --save
+* npm i axios
 
 ## FAIL ATTEMPTS
-* npm i mapbox-gl --save
+* npm i google-map-react 
 * npm i --save @react-google-maps/api 
 * npm i --save google-maps-react 
 * Include the GL JS CSS file in the <head> of your HTML file.
