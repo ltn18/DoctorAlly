@@ -8,7 +8,7 @@ const Privacy_policy = () => {
     <div>
       <>
         <h1>PRIVACY POLICY</h1>
-        <p style={{ fontStyle: 'italic' }}>Revised date: {WEBSITE_UPDATE_DATE}</p>
+        <p style={{ fontStyle: 'italic' }}>Revised on {WEBSITE_UPDATE_DATE}</p>
 
         <p>At {WEBSITE_NAME}, accessible from <a href={WEBSITE_URL}>{WEBSITE_URL}</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by {WEBSITE_NAME} and how we use it.</p>
 

@@ -10,7 +10,7 @@ const Terms_of_use = () => {
     <>
       <h2>TERMS OF USE</h2>
 
-      <p style={{ fontStyle: 'italic' }}>Revised date: {WEBSITE_UPDATE_DATE}</p>
+      <p style={{ fontStyle: 'italic' }}>Revised on {WEBSITE_UPDATE_DATE}</p>
 
       <p>The {WEBSITE_NAME} website located at <a href={WEBSITE_URL}>{WEBSITE_URL}</a> is a copyrighted work belonging to {WEBSITE_NAME}. Certain features of the Site may be subject to additional guidelines, terms, or rules, which will be posted on the Site in connection with such features.</p>
 
