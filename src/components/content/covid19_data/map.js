@@ -19,41 +19,50 @@ class CovidMap extends Component {
       lat: 34,
       zoom: 2
     };
+    this.sizeList = [100, 200, 300, 400, 500]
+    this.caseRangeList = [0, 100, 1000, 10000, 100000, 100000000000]
     this.data = props.data
   }
 
   convertData() {
-    const GeoJson = {
-      'type': 'geojson',
-      'data': {
-        'type': 'FeatureCollection',
-        'features': []
-      }
-    }
-    // console.log(this.props.data)
+    const GeoJsonList = []
     if (this.data) {
-      this.data.map(item => {
-        GeoJson.data.features.push({
-          'type': 'Feature',
-          'geometry': {
-            'type': 'Point',
-            'coordinates': [item.countryInfo.long, item.countryInfo.lat]
-          },
-          'properties': {
-            'name': item.country,
-            'cases': item.cases,
-            'deaths': item.deaths,
-            'recovered': item.recovered,
+      for (let i = 0; i < 5; i++) {
+        var GeoJson = {
+          'type': 'geojson',
+          'data': {
+            'type': 'FeatureCollection',
+            'features': []
+          }
+        }
+        this.data.map(item => {
+          if (this.caseRangeList[i] <= item.cases && this.caseRangeList[i + 1] > item.cases) {
+            GeoJson.data.features.push({
+              'type': 'Feature',
+              'geometry': {
+                'type': 'Point',
+                'coordinates': [item.countryInfo.long, item.countryInfo.lat]
+              },
+              'properties': {
+                'name': item.country,
+                'cases': item.cases,
+                'deaths': item.deaths,
+                'recovered': item.recovered,
+                'flag': item.countryInfo.flag,
+              }
+            })
           }
         })
-      })
+        GeoJsonList.push(GeoJson)
+      }
     }
-    return GeoJson
+    return GeoJsonList
   }
 
   componentDidMount() {
-    const geoJson = this.convertData()
-    console.log(geoJson)
+    const geoJsonList = this.convertData()
+    const dotNameArr = []
+    const sourceNameArr = []
 
     const map = new mapboxgl.Map({
       container: this.mapContainer,
@@ -62,7 +71,7 @@ class CovidMap extends Component {
       zoom: this.state.zoom
     });
 
-    var Dot = pulsingDot(200, map)
+    const Dot = [pulsingDot(100, map), pulsingDot(200, map), pulsingDot(300, map), pulsingDot(400, map), pulsingDot(500, map)]
 
     map.on('move', () => {
       this.setState({
@@ -74,62 +83,73 @@ class CovidMap extends Component {
 
     map.on('load', function () {
       map.resize();
-      map.addImage('pulsing-dot', Dot, { pixelRatio: 2 });
-      if (geoJson) {
-        map.addSource('points', geoJson);
-      }
+      for (let i = 0; i < 5; i++) {
+        if (!map.getSource(sourceNameArr[i])) {
+          dotNameArr.push('pulsing-dot' + (i + 1).toString())
+          sourceNameArr.push('pointsType' + (i + 1).toString())
+          map.addImage(dotNameArr[i], Dot[i], { pixelRatio: 2 })
+          if (geoJsonList && !map.getSource(sourceNameArr[i])) {
+            try {
+              map.addSource(sourceNameArr[i], geoJsonList[i]);
+            }
+            catch (err) {
+            }
+            if (map.getSource(sourceNameArr[i])) {
+              map.addLayer({
+                'id': sourceNameArr[i],
+                'type': 'symbol',
+                'source': sourceNameArr[i],
+                'layout': {
+                  'icon-image': dotNameArr[i]
+                }
+              });
+            }
+            var popup = new mapboxgl.Popup({
+              closeOnClick: false,
+              closeButton: false,
+            });
 
-      map.addLayer({
-        'id': 'points',
-        'type': 'symbol',
-        'source': 'points',
-        'layout': {
-          'icon-image': 'pulsing-dot'
+            for (let i = 0; i < 5; i++) {
+              map.on('mouseenter', sourceNameArr[i], function (e) {
+                // Change the cursor style as a UI indicator.
+                map.getCanvas().style.cursor = 'pointer';
+                var coordinates = e.features[0].geometry.coordinates.slice();
+                var name = e.features[0].properties.name;
+                var cases = e.features[0].properties.cases;
+                var deaths = e.features[0].properties.deaths;
+                var recovered = e.features[0].properties.recovered;
+                var flag = e.features[0].properties.flag;
+
+                // Ensure that if the map is zoomed out such that multiple
+                // copies of the feature are visible, the popup appears
+                // over the copy being pointed to.
+                while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                  coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                }
+
+                // Populate the popup and set its coordinates
+                // based on the feature found.
+
+                popup
+                  .setLngLat(coordinates)
+                  .setHTML('')
+                  .addTo(map)
+                if (popup.isOpen()) {
+                  ReactDOM.render(
+                    <CountryCard name={name} cases={cases} deaths={deaths} recovered={recovered} flag={flag} />,
+                    document.querySelector('.mapboxgl-popup-content')
+                  );
+                }
+              });
+
+              map.on('mouseleave', sourceNameArr[i], function () {
+                map.getCanvas().style.cursor = '';
+                popup.remove();
+              });
+            }
+          }
         }
-      });
-    });
-
-    var popup = new mapboxgl.Popup({
-      closeOnClick: false,
-      closeButton: false,
-    });
-
-    map.on('mouseenter', 'points', function (e) {
-      // Change the cursor style as a UI indicator.
-      map.getCanvas().style.cursor = 'pointer';
-
-      var coordinates = e.features[0].geometry.coordinates.slice();
-      var name = e.features[0].properties.name;
-      var cases = e.features[0].properties.cases;
-      var deaths = e.features[0].properties.deaths;
-      var recovered = e.features[0].properties.recovered;
-
-      // Ensure that if the map is zoomed out such that multiple
-      // copies of the feature are visible, the popup appears
-      // over the copy being pointed to.
-      while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
       }
-
-      // Populate the popup and set its coordinates
-      // based on the feature found.
-
-      popup
-        .setLngLat(coordinates)
-        .setHTML('12')
-        .addTo(map)
-      if (popup.isOpen()) {
-        ReactDOM.render(
-          <CountryCard name={name} cases={cases} deaths={deaths} recovered={recovered} />,
-          document.querySelector('.mapboxgl-popup-content')
-        );
-      }
-
-    });
-
-    map.on('mouseleave', 'points', function () {
-      map.getCanvas().style.cursor = '';
-      popup.remove();
     });
   }
 
