@@ -6,8 +6,10 @@
 * npm install axios
 * npm install mapbox-gl --save
 * npm install @material-ui/core 
-* npm install @material-ui/icons 
+* npm install @material-ui/icons
 * npm install @material-ui/lab
+
+## Update từ bản lần trước
 * npm i react-player
 
 ## FAIL ATTEMPTS

@@ -71,7 +71,7 @@ class CovidMap extends Component {
       zoom: this.state.zoom
     });
 
-    const Dot = [pulsingDot(100, map), pulsingDot(200, map), pulsingDot(300, map), pulsingDot(400, map), pulsingDot(500, map)]
+    const Dot = [pulsingDot(75, map), pulsingDot(100, map), pulsingDot(125, map), pulsingDot(150, map), pulsingDot(175, map)]
 
     map.on('move', () => {
       this.setState({
