@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Button, Container, Box, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
-import AddCircleIcon from '@material-ui/icons/AddCircle';
-import RemoveCircleIcon from '@material-ui/icons/RemoveCircle';
-
-import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -37,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
   p: {
     fontSize: 20,
-    marginBottom: 30, 
+    marginBottom: 30,
     alignSelf: 'center',
     fontStyle: 'italic',
   },
@@ -60,6 +57,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     backgroundColor: '#f2f2f2',
     width: '100ch',
+    "&:hover": {
+      cursor: 'pointer'
+    }
   },
   grid: {
     display: 'flex',
@@ -87,13 +87,15 @@ const data = [
 ]
 
 const RequestBox = (props) => {
-  const { color, id, work, offers, addedReq } = props;
+  const { color, id, work, offers } = props;
+  const history = useHistory();
   const classes = useStyles();
-  const [added, setAdded] = useState(false);
-  const handleAdd = () => { setAdded(!added); };
-  const handleRemove = () => { setAdded(!added); };
+  const handleBoxClick = () => {
+    history.push(`requests/${id}`);
+  }
+
   return (
-    <Box className={classes.box} style={{ backgroundColor: props.color }}>
+    <Box onClick={handleBoxClick} className={classes.box} style={{ backgroundColor: props.color }}>
       <Grid container spacing={2} className={classes.grid}>
         <Grid item xs={6}>
           <div>Request {props.id}</div>
@@ -101,10 +103,6 @@ const RequestBox = (props) => {
         </Grid>
         <Grid item xs={6}>{props.offers} offers</Grid>
       </Grid>
-      {added
-        ? <Button onClick={handleRemove} style={{ color: 'red' }}><RemoveCircleIcon /></Button>
-        : <Button onClick={handleAdd} style={{ color: 'green' }}><AddCircleIcon /></Button>
-      }
     </Box>
   )
 }
@@ -115,8 +113,6 @@ const Volunteer = () => {
   const moveToSignUp = () => {
     history.push("/volunteer/signup");
   }
-
-  const [numReq, setNumReq] = useState(0);
 
   return (
     <>
@@ -133,7 +129,6 @@ const Volunteer = () => {
       </div>
       <div className={classes.root}>
         <h2 className={classes.h2}>REQUEST LISTS</h2>
-        <span style={{ fontStyle: 'italic' }}>Added Requests: {numReq}</span>
         <div style={{ display: 'flex' }}>
           <IconButton type="submit" className={classes.iconButton} aria-label="search">
             <SearchIcon />

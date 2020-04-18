@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect, useParams } from 'react-router-dom';
 
 import {
   Header, Footer, Contact_us, Feedbacks, Privacy_policy, Terms_of_use
@@ -9,12 +9,14 @@ import {
   Volunteer, Request_help, Supply_stores, Covid19_data, How_it_works, About
 } from './components/content/index';
 import {
-  VolunteerSignUp
+  VolunteerSignUp, RequestRespond
 } from './components/content/index';
 
 import HomePage from './components/homepage';
 
+
 const App = () => {
+  
   return (
     <div>
       <Header />
@@ -25,6 +27,8 @@ const App = () => {
 
         <Route exact path="/volunteer" component={Volunteer} />
         <Route exact path="/volunteer/signup" component={VolunteerSignUp} />
+
+        <Route exact path="/requests/:id" component={RequestRespond}/>
 
         <Route exact path="/request_help">
           <Redirect push to="/request_help/1" />
