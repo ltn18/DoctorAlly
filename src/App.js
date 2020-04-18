@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import {
-  Header, Footer, Contact_us, Privacy_policy, Terms_of_use
+  Header, Footer, Contact_us, Feedbacks, Privacy_policy, Terms_of_use
 } from './components/layout/index';
 
 import {
@@ -36,6 +36,7 @@ const App = () => {
         <Route exact path="/how_it_works" component={How_it_works} />
 
         <Route exact path="/contact_us" component={Contact_us} />
+        <Route exact path="/feedbacks" component={Feedbacks} />
         <Route exact path="/privacy_policy" component={Privacy_policy} />
         <Route exact path="/terms_of_use" component={Terms_of_use} />
 

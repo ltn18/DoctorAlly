@@ -38,6 +38,13 @@ const Footer = () => {
       </Link>
       <Link
         className={classes.hover}
+        onClick={() => { handleRouteSwitch("feedbacks") }}
+        style={{ marginRight: 20 }}
+      >
+        Feedbacks
+      </Link>
+      <Link
+        className={classes.hover}
         onClick={() => { handleRouteSwitch("privacy_policy") }}
         style={{ marginRight: 20 }}
       >
