@@ -30,14 +30,16 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: '#f2f2f2',
-    height: '50vh',
+    height: '30vh',
     width: '100%',
     marginTop: '10px',
     padding: 10,
   },
   p: {
     fontSize: 20,
-    marginBottom: 30
+    marginBottom: 30, 
+    alignSelf: 'center',
+    fontStyle: 'italic',
   },
   button: {
     width: '25ch',
@@ -121,8 +123,12 @@ const Volunteer = () => {
       <div className={classes.root}>
         <h2 className={classes.h2}> BE A VOLUNTEER </h2>
         <Container className={classes.container}>
-          <p className={classes.p}>Sign up as a volunteer and you will get notifications when new help requests are posted!</p>
-          <Button onClick={moveToSignUp} color="primary" variant="outlined" className={classes.button}>Volunteer Now</Button>
+          <p className={classes.p}>
+            We’re currently setting up networks of doctors and volunteers with an aim to fight against Covid-19.
+            Your help will greatly contribute to this fight and our community as a whole.
+            Sign up as a volunteer now and receive notifications when new requests are posted!
+          </p>
+          <Button onClick={moveToSignUp} color="primary" variant="contained" className={classes.button}>Volunteer Now</Button>
         </Container>
       </div>
       <div className={classes.root}>

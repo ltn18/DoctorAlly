@@ -95,7 +95,8 @@ const Requests = (props) => {
         <ButtonGroup
           style={{ marginTop: 20 }}
           color="secondary"
-          aria-label="outlined secondary button group">
+          variant="contained"
+          aria-label="contained secondary button group">
           <Button onClick={() => { moveToPage1(); handleSave() }}>Back</Button>
           <Button onClick={() => { handleSave(); console.log(Data); }}>Submit</Button>
         </ButtonGroup>
@@ -147,7 +148,8 @@ const PersonalInformation = (props) => {
         <ButtonGroup
           style={{ marginTop: 20, }}
           color="secondary"
-          aria-label="outlined secondary button group">
+          variant="contained"
+          aria-label="contained secondary button group">
           <Button onClick={() => { moveToPage2(); handleSave() }}>Next</Button>
         </ButtonGroup>
         <strong style={{ fontStyle: 'italic' }}>

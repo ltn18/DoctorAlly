@@ -8,8 +8,10 @@
 * npm install @material-ui/core 
 * npm install @material-ui/icons 
 * npm install @material-ui/lab
+* npm i react-player
 
 ## FAIL ATTEMPTS
+* npm i video-react
 * npm i google-map-react 
 * npm i --save @react-google-maps/api 
 * npm i --save google-maps-react 

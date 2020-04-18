@@ -108,7 +108,7 @@ const VolunteerSignUp = () => {
 
         <FormControl className={classes.footer}>
           <TextField label="Your signature" style={{marginRight: '10px'}}/>
-          <Button variant="outlined" color="primary" size="large">Submit</Button>
+          <Button variant="contained" color="primary" size="large">Submit</Button>
         </FormControl>
 
         <div className={classes.quote}>
