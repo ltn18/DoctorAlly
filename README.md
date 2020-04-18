@@ -3,10 +3,11 @@
 ## Step 2: run in terminal: 
 * npm i
 * npm i react-router-dom
-* npm i @material-ui/core 
-* npm i @material-ui/icons 
-* npm i mapbox-gl --save
-* npm i axios
+* npm install axios
+* npm install mapbox-gl --save
+* npm install @material-ui/core 
+* npm install @material-ui/icons 
+* npm install @material-ui/lab
 
 ## FAIL ATTEMPTS
 * npm i google-map-react 

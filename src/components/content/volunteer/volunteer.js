@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     backgroundColor: '#f2f2f2',
     height: '50vh',
-    width: '100ch',
+    width: '100%',
     marginTop: '10px',
     padding: 10,
   },
