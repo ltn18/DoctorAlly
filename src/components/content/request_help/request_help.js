@@ -47,11 +47,11 @@ const RequestForm = (props) => {
           <p style={{ fontStyle: 'italic' }}>Let us help you get what you need!</p>
         </div>
         {id === "1"
-          ? <Requests FormControl={classes.formControl} />
+          ? <PersonalInformation
+            personalInfo={classes.personalInfo}
+          />
           : id === "2"
-            ? <PersonalInformation
-              personalInfo={classes.personalInfo}
-            />
+            ? <Requests FormControl={classes.formControl} />
             : <Redirect to="/request_help/1" />
         }
 

@@ -33,8 +33,8 @@ const Requests = (props) => {
 
   // console.log(state);
 
-  const moveToPage2 = () => {
-    history.push("/request_help/2");
+  const moveToPage1 = () => {
+    history.push("/request_help/1");
   }
 
   return (
@@ -93,13 +93,14 @@ const Requests = (props) => {
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <ButtonGroup
-          style={{ marginTop: 20, }}
+          style={{ marginTop: 20 }}
           color="secondary"
           aria-label="outlined secondary button group">
-          <Button onClick={() => { moveToPage2(); handleSave() }}>Next</Button>
+          <Button onClick={() => { moveToPage1(); handleSave() }}>Back</Button>
+          <Button onClick={() => { handleSave(); console.log(Data); }}>Submit</Button>
         </ButtonGroup>
         <strong style={{ fontStyle: 'italic' }}>
-          Page {<span style={{ color: '#ED4337' }}>1/2</span>}
+          Page {<span style={{ color: '#00ff00' }}>2/2</span>}
         </strong>
       </div>
     </FormControl>
@@ -109,6 +110,10 @@ const Requests = (props) => {
 const PersonalInformation = (props) => {
   const { personalInfo } = props;
   const history = useHistory();
+
+  const moveToPage2 = () => {
+    history.push("/request_help/2");
+  }
 
   const handleSave = () => {
     Data[1] = state;
@@ -140,14 +145,13 @@ const PersonalInformation = (props) => {
 
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <ButtonGroup
-          style={{ marginTop: 20 }}
+          style={{ marginTop: 20, }}
           color="secondary"
           aria-label="outlined secondary button group">
-          <Button onClick={() => { moveToPage1(); handleSave() }}>Back</Button>
-          <Button onClick={() => { handleSave(); console.log(Data); }}>Submit</Button>
+          <Button onClick={() => { moveToPage2(); handleSave() }}>Next</Button>
         </ButtonGroup>
         <strong style={{ fontStyle: 'italic' }}>
-          Page {<span style={{ color: '#00ff00' }}>2/2</span>}
+          Page {<span style={{ color: '#ED4337' }}>1/2</span>}
         </strong>
       </div>
     </>
