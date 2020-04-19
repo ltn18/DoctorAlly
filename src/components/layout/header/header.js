@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useHistory } from 'react-router-dom';
 
@@ -29,6 +29,9 @@ const Header = () => {
     history.push("/" + path)
   }
 
+  const [lang, setLang] = useState("ENG");
+  console.log(lang);
+
   return (
     <div className={classes.root}>
       <Button
@@ -49,11 +52,11 @@ const Header = () => {
         <Button onClick={() => { handleRouteSwitch("how_it_works") }} >How it works</Button>
         <FormControl className={classes.formControl}>
           <Select
-            labelId="demo-simple-select-placeholder-label-label"
-            id="demo-simple-select-placeholder-label"
+            value={lang}
+            onChange={(e) => { setLang(e.target.value) }}
           >
-            <MenuItem value={10}>ENG</MenuItem>
-            <MenuItem value={20}>VIE</MenuItem>
+            <MenuItem value={"ENG"}>ENG</MenuItem>
+            <MenuItem value={"VIE"}>VIE</MenuItem>
           </Select>
         </FormControl>
       </div>
