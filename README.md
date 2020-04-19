@@ -31,7 +31,7 @@
 * Update DevCard link color
 
 ## TODO
-**For UI/Backend Developers**
+### For UI/Backend Developers
 * useContext to set language
 * useContext to set lat, long of map? - Let's try if it rerenders.
 * Find store API - if not found, build by hand -> time consuming
@@ -39,7 +39,8 @@
 * Build backend for Request Help, Feedbacks, Volunteer
 * Send thankyou email to volunteer
 * Send volunteer's information to doctors 
-**For Other Developers**
+
+### For Other Developers
 * Translate documents on page
 * Business model for page
 
