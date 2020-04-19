@@ -9,7 +9,7 @@
 * npm install @material-ui/core 
 * npm install @material-ui/icons
 * npm install @material-ui/lab
-* npm i react-player
+* npm install react-player
 ### Step 3: start development server
 * npm start or yarn start
 
