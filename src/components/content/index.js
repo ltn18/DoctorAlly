@@ -1,6 +1,6 @@
 export {default as Volunteer} from './volunteer/volunteer';
 export {default as VolunteerSignUp} from './volunteer/volunteerSignUp';
-export {default as RequestRespond} from './volunteer/requestRespond';
+export {default as RequestResponse} from './volunteer/requestResponse';
 export {default as Request_help} from './request_help/request_help';
 export {default as Supply_stores} from './supply_stores/supply_stores';
 export {default as Covid19_data} from './covid19_data/covid19_data';

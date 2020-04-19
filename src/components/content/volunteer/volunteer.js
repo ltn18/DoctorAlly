@@ -90,6 +90,7 @@ const RequestBox = (props) => {
   const { color, id, work, offers } = props;
   const history = useHistory();
   const classes = useStyles();
+  
   const handleBoxClick = () => {
     history.push(`requests/${id}`);
   }

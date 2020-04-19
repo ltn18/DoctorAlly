@@ -28,10 +28,9 @@ const How_it_works = () => {
         <ReactPlayer
           width={1200}
           height={500}
-          url='https://www.youtube.com/watch?v=ysz5S6PUM-U'
+          url='https://youtu.be/VaKzNtwPQxE'
           playing
           controls
-          muted
         />
       </div>
 

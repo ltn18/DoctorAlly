@@ -9,7 +9,7 @@ import {
   Volunteer, Request_help, Supply_stores, Covid19_data, How_it_works, About
 } from './components/content/index';
 import {
-  VolunteerSignUp, RequestRespond
+  VolunteerSignUp, RequestResponse
 } from './components/content/index';
 
 import HomePage from './components/homepage';
@@ -28,7 +28,7 @@ const App = () => {
         <Route exact path="/volunteer" component={Volunteer} />
         <Route exact path="/volunteer/signup" component={VolunteerSignUp} />
 
-        <Route exact path="/requests/:id" component={RequestRespond}/>
+        <Route exact path="/requests/:id" component={RequestResponse}/>
 
         <Route exact path="/request_help">
           <Redirect push to="/request_help/1" />
