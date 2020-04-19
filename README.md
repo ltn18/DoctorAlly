@@ -2,16 +2,16 @@
 ## How to run
 ### Step 1: clone or download the project
 * open terminal in Visual Studio Code or Windows Command Prompt
-* git clone git@github.com:LamNguyenAtCWRU/HackCoVy.git
+* ```git clone git@github.com:LamNguyenAtCWRU/HackCoVy.git```
 ### Step 2: install packages/hooks in terminal: 
-* npm install
-* npm install react-router-dom
-* npm install axios
-* npm install mapbox-gl --save
-* npm install @material-ui/core 
-* npm install @material-ui/icons
-* npm install @material-ui/lab
-* npm install react-player
+* ```npm install```
+* ```npm install react-router-dom```
+* ```npm install axios```
+* ```npm install mapbox-gl --save```
+* ```npm install @material-ui/core``` 
+* ```npm install @material-ui/icons```
+* ```npm install @material-ui/lab```
+* ```npm install react-player```
 ### Step 3: start development server
 * npm start or yarn start
 
@@ -52,9 +52,9 @@
 * YouTube
 
 ## npm not in use
-* npm install video-react
-* npm install google-map-react 
-* npm install --save @react-google-maps/api 
-* npm install --save google-maps-react 
+* ```npm install video-react```
+* ```npm install google-map-react``` 
+* ```npm install --save @react-google-maps/api``` 
+* ```npm install --save google-maps-react``` 
 
 
