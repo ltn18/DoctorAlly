@@ -2,8 +2,8 @@
 ## How to run
 ### Step 1: clone or download the project
 ### Step 2: install packages/hooks in terminal: 
-* npm i
-* npm i react-router-dom
+* npm install
+* npm install react-router-dom
 * npm install axios
 * npm install mapbox-gl --save
 * npm install @material-ui/core 
