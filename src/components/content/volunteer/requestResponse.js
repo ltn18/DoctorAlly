@@ -79,7 +79,7 @@ const RequestResponse = () => {
         <p><strong>DETAILS</strong></p>
         <p>{DATA[id - 1].details}</p>
       </CardContent>
-      <Button style={{ backgroundColor: '#F65058FF', color: 'white' }}>Offer Help</Button>
+      <Button style={{ backgroundColor: '#F65058FF', color: 'white', fontWeight: 'bold' }}>Offer Help</Button>
     </Paper>
   )
 }
