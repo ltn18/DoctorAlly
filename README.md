@@ -1,5 +1,5 @@
 # HackCoVy
-## How to run
+## How to run 
 ### Step 1: clone or download the project
 * open terminal in Visual Studio Code or Windows Command Prompt
 * ```git clone git@github.com:LamNguyenAtCWRU/HackCoVy.git```
@@ -13,7 +13,7 @@
 * ```npm install @material-ui/lab```
 * ```npm install react-player```
 ### Step 3: start development server
-* npm start or yarn start
+* ```npm start``` or ```yarn start```
 
 ## Documentation
 * [Covid 19 API](https://corona.lmao.ninja/v2/countries)
