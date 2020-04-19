@@ -8,14 +8,22 @@
 * npm install @material-ui/core 
 * npm install @material-ui/icons
 * npm install @material-ui/lab
-
-## Update từ bản lần trước
 * npm i react-player
 
-## FAIL ATTEMPTS
+## Documentation
+* [Covid 19 API](https://corona.lmao.ninja/v2/countries)
+* [MAPBOX](https://www.mapbox.com/)
+* [MATERIAL UI](https://material-ui.com/)
+* [PRIVACY POLICY GENERATOR](https://www.privacypolicygenerator.info/)
+* [TERMS OF USE GENERATOR](https://www.termsofusegenerator.net/)
+* [BACKEND FLOW](https://www.lucidchart.com/invitations/accept/266989db-b767-4300-afff-91cdef6bbff7)
+
+## Update from previous push
+* Display Map in src\components\content\supply_stores\supply_stores.js
+* Add DevCard to src\components\content\about.js
+
+## npm not in use
 * npm i video-react
 * npm i google-map-react 
 * npm i --save @react-google-maps/api 
 * npm i --save google-maps-react 
-* Include the GL JS CSS file in the <head> of your HTML file.
-``` <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' /> ```

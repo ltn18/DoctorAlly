@@ -51,7 +51,7 @@ const DATA = [
     linkedinLink: ""
   },
   {
-    id: 2,
+    id: 3,
     name: "Hoàng Minh",
     role: "Developer",
     imgURL: "hoangminh.jpg",
@@ -60,7 +60,7 @@ const DATA = [
     linkedinLink: ""
   },
   {
-    id: 3,
+    id: 2,
     name: "Hoàng Lâm",
     role: "Developer",
     imgURL: "hoanglam.jpg",

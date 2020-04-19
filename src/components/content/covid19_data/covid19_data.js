@@ -11,11 +11,11 @@ const Covid19_data = () => {
   useEffect(() => {
     const fetchData = async function () {
       setLoading(true)
-      const result = await axios.get('https://corona.lmao.ninja/v2/countries')
+      const result = await axios.get('https://corona.lmao.ninja/v2/countries');
       setCovidData(result.data)
       setLoading(false)
     }
-    fetchData()
+    fetchData();
   }, [])
 
   return (
