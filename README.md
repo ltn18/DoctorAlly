@@ -24,6 +24,8 @@
 ## Update from previous push
 * Display Map in src\components\content\supply_stores\supply_stores.js
 * Add DevCard to src\components\content\about.js
+* Add Language to src\components\layout\header\header.js
+* Update DevCard link color
 
 ## npm not in use
 * npm i video-react
