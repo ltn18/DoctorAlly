@@ -1,6 +1,6 @@
 # How to run
 ## Step 1: clone or download the project
-## Step 2: run in terminal: 
+## Step 2: install packages/hooks in terminal: 
 * npm i
 * npm i react-router-dom
 * npm install axios
@@ -9,6 +9,9 @@
 * npm install @material-ui/icons
 * npm install @material-ui/lab
 * npm i react-player
+### Step 3: start development server
+* npm start
+or yarn start
 
 ## Documentation
 * [Covid 19 API](https://corona.lmao.ninja/v2/countries)
