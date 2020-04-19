@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useHistory } from 'react-router-dom';
 
-import { Button } from '@material-ui/core';
+import { Button, MenuItem, FormControl, Select } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -47,8 +47,17 @@ const Header = () => {
         <Button onClick={() => { handleRouteSwitch("supply_stores") }} style={{ color: 'green' }} >Supply stores</Button>
         <Button onClick={() => { handleRouteSwitch("covid19_data") }} style={{ color: '#8134AF' }} >Covid-19 Data</Button>
         <Button onClick={() => { handleRouteSwitch("how_it_works") }} >How it works</Button>
+        <FormControl className={classes.formControl}>
+          <Select
+            labelId="demo-simple-select-placeholder-label-label"
+            id="demo-simple-select-placeholder-label"
+          >
+            <MenuItem value={10}>ENG</MenuItem>
+            <MenuItem value={20}>VIE</MenuItem>
+          </Select>
+        </FormControl>
       </div>
-      
+
     </div>
   )
 }
