@@ -1,7 +1,7 @@
 # HackCoVy
 ## How to run
 ### Step 1: clone or download the project
-* Open Visual Studio Code
+* open terminal in Visual Studio Code or Windows Command Prompt
 * git clone git@github.com:LamNguyenAtCWRU/HackCoVy.git
 ### Step 2: install packages/hooks in terminal: 
 * npm install
