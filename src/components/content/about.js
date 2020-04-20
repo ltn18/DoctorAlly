@@ -108,13 +108,13 @@ const DevCard = (props) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Link href={facebookLink} color={linkColor}>
+        <Link href={facebookLink} color={linkColor} target="_blank">
           Facebook
         </Link>
-        <Link href={instagramLink} color={linkColor}>
+        <Link href={instagramLink} color={linkColor} target="_blank">
           Instagram
         </Link>
-        <Link href={linkedinLink} color={linkColor}>
+        <Link href={linkedinLink} color={linkColor} target="_blank">
           LinkedIn
         </Link>
       </CardActions>
@@ -133,27 +133,17 @@ export default function About() {
         Volunteer your time or request support for meals, pet care, errands, and more during the COVID-19 pandemic.
       </Box>
       <Container max-width="sm" className={classes.container}>
-        {DATA.map((item) => {
-          return item.id % 2 == 0
-            ? (<DevCard
-              name={item.name}
-              role={item.role}
-              imgURL={item.imgURL}
-              facebookLink={item.facebookLink}
-              instagramLink={item.instagramLink}
-              linkedinLink={item.linkedinLink}
-              linkColor="secondary"
-            />)
-            : (<DevCard
-              name={item.name}
-              role={item.role}
-              imgURL={item.imgURL}
-              facebookLink={item.facebookLink}
-              instagramLink={item.instagramLink}
-              linkedinLink={item.linkedinLink}
-              linkColor="primary"
-            />)
-        })}
+        {DATA.map((item) => (
+          <DevCard
+            name={item.name}
+            role={item.role}
+            imgURL={item.imgURL}
+            facebookLink={item.facebookLink}
+            instagramLink={item.instagramLink}
+            linkedinLink={item.linkedinLink}
+            linkColor="primary"
+          />
+        ))}
       </Container>
     </div>
 

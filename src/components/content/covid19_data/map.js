@@ -6,8 +6,8 @@ import mapboxgl from 'mapbox-gl';
 import pulsingDot from './pulsingDot';
 import CountryCard from './countryCard';
 
-const [__lng, __lat, __zoom] = [5, 34, 2] // World
-const TOKEN = 'pk.eyJ1IjoiaG9hbmdtaW5obmciLCJhIjoiY2s5M25xYTMwMDRhZDNpcDNhOHN1cDRnciJ9.NvYOhaROmMb04qeJyIbG-A'
+const [__lng, __lat, __zoom] = [5, 34, 2]; // World
+const TOKEN = "pk.eyJ1IjoiaG9hbmdtaW5obmciLCJhIjoiY2s5M25xYTMwMDRhZDNpcDNhOHN1cDRnciJ9.NvYOhaROmMb04qeJyIbG-A";
 mapboxgl.accessToken = TOKEN;
 
 class CovidMap extends Component {
@@ -24,7 +24,7 @@ class CovidMap extends Component {
   }
 
   convertData() {
-    const GeoJsonList = []
+    const GeoJsonList = [];
     if (this.data) {
       for (let i = 0; i < 5; i++) {
         var GeoJson = {
@@ -59,9 +59,9 @@ class CovidMap extends Component {
   }
 
   componentDidMount() {
-    const geoJsonList = this.convertData()
-    const dotNameArr = []
-    const sourceNameArr = []
+    const geoJsonList = this.convertData();
+    const dotNameArr = [];
+    const sourceNameArr = [];
 
     const map = new mapboxgl.Map({
       container: this.mapContainer,
@@ -158,7 +158,7 @@ class CovidMap extends Component {
     return (
       <div>
         <div className='sidebarStyle' style={{ margin: '10px' }}>
-          <div><strong>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom}</strong></div>
+          <div><strong>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom} | World Map</strong></div>
         </div>
         <div ref={el => this.mapContainer = el} className='mapContainer' style={{ height: '75vh' }} />
       </div>

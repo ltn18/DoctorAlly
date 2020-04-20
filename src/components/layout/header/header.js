@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { useHistory } from 'react-router-dom';
 
-import { Button } from '@material-ui/core';
+import { Button, MenuItem, FormControl, Select } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -29,6 +29,9 @@ const Header = () => {
     history.push("/" + path)
   }
 
+  const [lang, setLang] = useState("ENG");
+  console.log(lang);
+
   return (
     <div className={classes.root}>
       <Button
@@ -47,8 +50,17 @@ const Header = () => {
         <Button onClick={() => { handleRouteSwitch("supply_stores") }} style={{ color: 'green' }} >Supply stores</Button>
         <Button onClick={() => { handleRouteSwitch("covid19_data") }} style={{ color: '#8134AF' }} >Covid-19 Data</Button>
         <Button onClick={() => { handleRouteSwitch("how_it_works") }} >How it works</Button>
+        <FormControl className={classes.formControl}>
+          <Select
+            value={lang}
+            onChange={(e) => { setLang(e.target.value) }}
+          >
+            <MenuItem value={"ENG"}>ENG</MenuItem>
+            <MenuItem value={"VIE"}>VIE</MenuItem>
+          </Select>
+        </FormControl>
       </div>
-      
+
     </div>
   )
 }

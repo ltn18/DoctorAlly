@@ -1,9 +1,9 @@
 import React from 'react';
-import Maps from './map';
+import Map from './map';
 
 const Supply_stores = () => {
   return (
-    <Maps />
+    <Map />
   );
 }
 

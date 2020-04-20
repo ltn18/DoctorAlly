@@ -1,21 +1,61 @@
-# How to run
-## Step 1: clone or download the project
-## Step 2: run in terminal: 
-* npm i
-* npm i react-router-dom
-* npm install axios
-* npm install mapbox-gl --save
-* npm install @material-ui/core 
-* npm install @material-ui/icons
-* npm install @material-ui/lab
+# HackCoVy
+## How to run 
+### Step 1: clone or download the project
+* open terminal in Visual Studio Code or Windows Command Prompt
+* ```git clone git@github.com:LamNguyenAtCWRU/HackCoVy.git```
+### Step 2: install packages/hooks in terminal: 
+* ```npm install```
+* ```npm install react-router-dom```
+* ```npm install axios```
+* ```npm install mapbox-gl --save```
+* ```npm install @material-ui/core``` 
+* ```npm install @material-ui/icons```
+* ```npm install @material-ui/lab```
+* ```npm install react-player```
+### Step 3: start development server
+* ```npm start``` or ```yarn start```
 
-## Update từ bản lần trước
-* npm i react-player
+## Documentation
+* [Covid 19 API](https://corona.lmao.ninja/v2/countries)
+* [MAPBOX](https://www.mapbox.com/)
+* [MATERIAL UI](https://material-ui.com/)
+* [NPM](https://www.npmjs.com/)
+* [PRIVACY POLICY GENERATOR](https://www.privacypolicygenerator.info/)
+* [TERMS OF USE GENERATOR](https://www.termsofusegenerator.net/)
+* [BACKEND FLOW](https://www.lucidchart.com/invitations/accept/266989db-b767-4300-afff-91cdef6bbff7)
 
-## FAIL ATTEMPTS
-* npm i video-react
-* npm i google-map-react 
-* npm i --save @react-google-maps/api 
-* npm i --save google-maps-react 
-* Include the GL JS CSS file in the <head> of your HTML file.
-``` <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' /> ```
+## Updated from previous push
+* Display Map in src\components\content\supply_stores\supply_stores.js
+* Add DevCard to src\components\content\about.js
+* Add Language to src\components\layout\header\header.js
+* Update DevCard link color
+
+## TODO
+### For UI/Backend Developers
+* useContext to set language
+* useContext to set lat, long of map? - Let's try if it rerenders.
+* Find store API - if not found, build by hand -> time consuming
+* Build StoreCard & SearchStore by address for Supply Stores
+* Build backend for Request Help, Feedbacks, Volunteer
+* Send thankyou email to volunteer
+* Send volunteer's information to doctors 
+
+### For Other Developers
+* Translate documents on page
+* Business model for page
+* Revise content of page (especially How it works)
+
+## Marketing Media
+* Facebook
+* Instagram
+* Gmail
+* LinkedIn
+* YouTube
+
+## npm not in use
+* ```npm install video-react```
+* ```npm install google-map-react``` 
+* ```npm install --save @react-google-maps/api``` 
+* ```npm install --save google-maps-react``` 
+
+
