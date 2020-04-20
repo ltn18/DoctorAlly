@@ -6,18 +6,17 @@ import mapboxgl from 'mapbox-gl';
 import pulsingDot from './pulsingDot';
 import CountryCard from './countryCard';
 
-const [lng, lat, zoom] = [105.8380, 21.0269, 14.52]; // Hanoi
-const [clng, clat, czoom] = [5, 34, 2]; // World
-
-mapboxgl.accessToken = 'pk.eyJ1IjoiaG9hbmdtaW5obmciLCJhIjoiY2s5M25xYTMwMDRhZDNpcDNhOHN1cDRnciJ9.NvYOhaROmMb04qeJyIbG-A';
+const [__lng, __lat, __zoom] = [5, 34, 2] // World
+const TOKEN = 'pk.eyJ1IjoiaG9hbmdtaW5obmciLCJhIjoiY2s5M25xYTMwMDRhZDNpcDNhOHN1cDRnciJ9.NvYOhaROmMb04qeJyIbG-A'
+mapboxgl.accessToken = TOKEN;
 
 class CovidMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      lng: 5,
-      lat: 34,
-      zoom: 2
+      lng: __lng,
+      lat: __lat,
+      zoom: __zoom
     };
     this.sizeList = [100, 200, 300, 400, 500]
     this.caseRangeList = [0, 100, 1000, 10000, 100000, 100000000000]
@@ -66,7 +65,8 @@ class CovidMap extends Component {
 
     const map = new mapboxgl.Map({
       container: this.mapContainer,
-      style: 'mapbox://styles/mapbox/streets-v11',
+      // style: 'mapbox://styles/mapbox/streets-v11',
+      style: 'mapbox://styles/hoangminhng/ck95k7dew0z8k1ilan9x1ll74',
       center: [this.state.lng, this.state.lat],
       zoom: this.state.zoom
     });
