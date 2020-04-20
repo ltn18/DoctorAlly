@@ -12,6 +12,7 @@
 * ```npm install @material-ui/icons```
 * ```npm install @material-ui/lab```
 * ```npm install react-player```
+* ```npm install @mapbox/mapbox-gl-geocoder```
 ### Step 3: start development server
 * ```npm start``` or ```yarn start```
 
