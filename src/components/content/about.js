@@ -44,7 +44,7 @@ const DATA = [
   {
     id: 1,
     name: "Nhật Quang",
-    role: "Developer",
+    role: "Backend Developer",
     imgURL: "nhatquang.jpg",
     facebookLink: "https://www.facebook.com/quang.sot.1412",
     instagramLink: "https://www.instagram.com/quang.sot.1412/",
@@ -53,7 +53,7 @@ const DATA = [
   {
     id: 2,
     name: "Hoàng Minh",
-    role: "Developer",
+    role: "Frontend Developer",
     imgURL: "hoangminh.jpg",
     facebookLink: "https://www.facebook.com/nhminh.mgf",
     instagramLink: "https://www.instagram.com/h0___og.minhng/",
@@ -62,7 +62,7 @@ const DATA = [
   {
     id: 3,
     name: "Hoàng Lâm",
-    role: "Developer",
+    role: "UX/UI Engineer",
     imgURL: "hoanglam.jpg",
     facebookLink: "https://www.facebook.com/hoanglam.295/",
     instagramLink: "https://www.instagram.com/lam.nguyen.cc/",
@@ -71,7 +71,7 @@ const DATA = [
   {
     id: 4,
     name: "Hồng Minh",
-    role: "Developer",
+    role: "Product Designer",
     imgURL: "hongminh.jpg",
     facebookLink: "https://www.facebook.com/hongminh4402",
     instagramLink: "https://www.instagram.com/hongminh4402/",
@@ -80,7 +80,7 @@ const DATA = [
   {
     id: 5,
     name: "Tuấn Hoàng",
-    role: "Developer",
+    role: "Business Expert",
     imgURL: "tuanhoang.jpg",
     facebookLink: "https://www.facebook.com/nthoang84",
     instagramLink: "https://www.instagram.com/tuaanhoang84/",
