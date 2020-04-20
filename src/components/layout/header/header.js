@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import localeContext, { getText } from "../../context/localeCtx";
 
 import { useHistory } from 'react-router-dom';
 
@@ -24,13 +25,11 @@ const useStyles = makeStyles((theme) => ({
 const Header = () => {
   const classes = useStyles();
   const history = useHistory();
+  const locale = useContext(localeContext);
 
   const handleRouteSwitch = (path) => {
     history.push("/" + path)
   }
-
-  const [lang, setLang] = useState("ENG");
-  console.log(lang);
 
   return (
     <div className={classes.root}>
@@ -44,16 +43,37 @@ const Header = () => {
       </Button>
 
       <div className={classes.buttonGroup}>
-        <Button onClick={() => { handleRouteSwitch("about") }} >About</Button>
-        <Button onClick={() => { handleRouteSwitch("volunteer") }} color="primary" >Volunteer</Button>
-        <Button onClick={() => { handleRouteSwitch("request_help") }} color="secondary" >Request help</Button>
-        <Button onClick={() => { handleRouteSwitch("supply_stores") }} style={{ color: 'green' }} >Supply stores</Button>
-        <Button onClick={() => { handleRouteSwitch("covid19_data") }} style={{ color: '#8134AF' }} >Covid-19 Data</Button>
-        <Button onClick={() => { handleRouteSwitch("how_it_works") }} >How it works</Button>
+        <Button
+          onClick={() => { handleRouteSwitch("about") }}
+        >{getText("header", "about", locale.lang)}</Button>
+
+        <Button
+          onClick={() => { handleRouteSwitch("volunteer") }}
+          color="primary"
+        >{getText("header", "volunteer", locale.lang)}</Button>
+
+        <Button
+          onClick={() => { handleRouteSwitch("request_help") }}
+          color="secondary"
+        >{getText("header", "request_help", locale.lang)}</Button>
+
+        <Button
+          onClick={() => { handleRouteSwitch("supply_stores") }} style={{ color: 'green' }}
+        >{getText("header", "supply_stores", locale.lang)}</Button>
+
+        <Button
+          onClick={() => { handleRouteSwitch("covid19_data") }}
+          style={{ color: '#8134AF' }}
+        >{getText("header", "covid19_data", locale.lang)}</Button>
+
+        <Button
+          onClick={() => { handleRouteSwitch("how_it_works") }}
+        >{getText("header", "how_it_works", locale.lang)}</Button>
+
         <FormControl className={classes.formControl}>
           <Select
-            value={lang}
-            onChange={(e) => { setLang(e.target.value) }}
+            value={locale.lang}
+            onChange={(e) => { locale.setLang(e.target.value) }}
           >
             <MenuItem value={"ENG"}>ENG</MenuItem>
             <MenuItem value={"VIE"}>VIE</MenuItem>

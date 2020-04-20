@@ -8,7 +8,6 @@ import axios from 'axios';
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiaG9hbmdtaW5obmciLCJhIjoiY2s5M25xYTMwMDRhZDNpcDNhOHN1cDRnciJ9.NvYOhaROmMb04qeJyIbG-A';
 const [lng, lat, zoom] = [105.8380, 21.0269, 14.52]; // Hanoi
-const [clng, clat, czoom] = [5, 34, 2]; // World
 
 class StoreMap extends Component {
   constructor(props) {
@@ -156,7 +155,7 @@ class StoreMap extends Component {
           <div id="geocoder2" class="geocoder"></div>
         </div>
 
-        <div id='map' style={{ height: '75vh', width: '100%' }} />
+        <div id='map' style={{ height: '75vh', width: '100%', marginBottom: '20px' }} />
       </>
     )
   }
