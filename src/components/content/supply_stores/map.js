@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
@@ -130,8 +129,6 @@ class StoreMap extends Component {
         var obj = JSON.parse(e.features[0].properties.tilequery);
         var distance = '<p>' + (obj.distance).toFixed(0) + 'm from location' + '</p>';
 
-        // var lon = e.features[0].properties.longitude;
-        // var lat = e.features[0].properties.latitude;
         var coordinates = new mapboxgl.LngLat(e.features[0].geometry.coordinates[0], e.features[0].geometry.coordinates[1]);
         var content = title + storeType + distance;
 
