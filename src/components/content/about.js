@@ -37,6 +37,18 @@ const useStyles = makeStyles({
   box: {
     justifyContent: "center",
     display: "flex"
+  },
+  font: {
+    fontFamily: 'Lexend Giga',
+  },
+  facebookLink: {
+    color: "#1778F2"
+  },
+  instagramLink: {
+    color: "#c32aa3"
+  },
+  linkedinLink: {
+    color: "#007bb5"
   }
 });
 
@@ -90,7 +102,7 @@ const DATA = [
 
 const DevCard = (props) => {
   const classes = useStyles();
-  const { name, role, imgURL, facebookLink, instagramLink, linkedinLink, linkColor } = props;
+  const { name, role, imgURL, facebookLink, instagramLink, linkedinLink } = props;
   return (
     <Card className={classes.root}>
       <CardActionArea>
@@ -99,22 +111,22 @@ const DevCard = (props) => {
           image={imgURL}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography className={classes.font} gutterBottom variant="h5" component="h2">
             {name}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography className={classes.font} variant="body2" color="textSecondary" component="p">
             {role}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Link href={facebookLink} color={linkColor} target="_blank">
+        <Link href={facebookLink} className={classes.facebookLink} target="_blank">
           Facebook
         </Link>
-        <Link href={instagramLink} color={linkColor} target="_blank">
+        <Link href={instagramLink} className={classes.instagramLink} target="_blank">
           Instagram
         </Link>
-        <Link href={linkedinLink} color={linkColor} target="_blank">
+        <Link href={linkedinLink} className={classes.linkedinLink} target="_blank">
           LinkedIn
         </Link>
       </CardActions>
@@ -141,7 +153,6 @@ export default function About() {
             facebookLink={item.facebookLink}
             instagramLink={item.instagramLink}
             linkedinLink={item.linkedinLink}
-            linkColor="primary"
           />
         ))}
       </Container>

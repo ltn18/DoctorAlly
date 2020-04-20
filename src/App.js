@@ -21,7 +21,7 @@ const App = () => {
   const [lang, setLang] = useState("ENG");
   return (
     <LocaleContext.Provider value={{ lang: lang, setLang: setLang }}>
-      <div>
+      <div style={{ fontFamily: 'Lexend Giga' }}>
         <Header />
 
         <Switch>

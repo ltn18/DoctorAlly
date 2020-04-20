@@ -20,6 +20,13 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
     },
   },
+  font: {
+    fontFamily: 'Lexend Giga',
+    fontSize: 11
+  },
+  fontLogo: {
+    fontFamily: 'Yeseva One',
+  }
 }));
 
 const Header = () => {
@@ -38,45 +45,53 @@ const Header = () => {
         className={classes.avatar}
         style={{ backgroundColor: 'white' }}
       >
-        <img src="logo192.png" alt="LOGO" style={{ width: 50, height: 50 }} />
-        <span style={{ marginLeft: 20 }}>HACKCOVY</span>
+        {/* <img src="logo192.png" alt="LOGO" style={{ width: 50, height: 50 }} /> */}
+        <span style={{ marginLeft: 5, fontSize: 25 }} className={classes.fontLogo}>HACKCOVY</span>
       </Button>
 
       <div className={classes.buttonGroup}>
         <Button
           onClick={() => { handleRouteSwitch("about") }}
+          className={classes.font}
         >{getText("header", "about", locale.lang)}</Button>
 
         <Button
           onClick={() => { handleRouteSwitch("volunteer") }}
           color="primary"
+          className={classes.font}
         >{getText("header", "volunteer", locale.lang)}</Button>
 
         <Button
           onClick={() => { handleRouteSwitch("request_help") }}
           color="secondary"
+          className={classes.font}
         >{getText("header", "request_help", locale.lang)}</Button>
 
         <Button
-          onClick={() => { handleRouteSwitch("supply_stores") }} style={{ color: 'green' }}
+          onClick={() => { handleRouteSwitch("supply_stores") }} 
+          style={{ color: 'green' }}
+          className={classes.font}
         >{getText("header", "supply_stores", locale.lang)}</Button>
 
         <Button
           onClick={() => { handleRouteSwitch("covid19_data") }}
           style={{ color: '#8134AF' }}
+          className={classes.font}
         >{getText("header", "covid19_data", locale.lang)}</Button>
 
         <Button
           onClick={() => { handleRouteSwitch("how_it_works") }}
+          className={classes.font}
         >{getText("header", "how_it_works", locale.lang)}</Button>
 
         <FormControl className={classes.formControl}>
           <Select
             value={locale.lang}
             onChange={(e) => { locale.setLang(e.target.value) }}
+            className={classes.font}
           >
-            <MenuItem value={"ENG"}>ENG</MenuItem>
-            <MenuItem value={"VIE"}>VIE</MenuItem>
+            <MenuItem value={"ENG"} className={classes.font}>ENG</MenuItem>
+            <MenuItem value={"VIE"} className={classes.font}>VIE</MenuItem>
           </Select>
         </FormControl>
       </div>

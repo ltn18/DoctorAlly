@@ -16,7 +16,11 @@ const useStyles = makeStyles((theme) => ({
   hover: {
     "&:hover": {
       cursor: 'pointer'
-    }
+    },
+    fontFamily: 'Lexend Giga',
+  },
+  font: {
+    fontFamily: 'Lexend Giga',
   }
 }));
 
@@ -59,7 +63,7 @@ const Footer = () => {
       >
         {getText("footer", "terms_of_use", locale.lang)}
       </Link>
-      © 2020 HackCoVy
+      <div className={classes.font}>© 2020 HackCoVy</div>
     </Typography>
   )
 }

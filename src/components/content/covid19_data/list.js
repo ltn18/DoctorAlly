@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     marginBottom: '30px',
-    marginTop: '30px'
+    marginTop: '30px',
   },
   container: {
     maxHeight: 800,
@@ -31,7 +31,8 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       cursor: 'pointer',
       textDecoration: 'underline'
-    }
+    },
+    fontFamily: 'Lexend Giga'
   },
   alert: {
     width: '100%',
@@ -39,6 +40,9 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(2),
     },
     marginBottom: '30px',
+  },
+  font: {
+    fontFamily: 'Lexend Giga',
   },
 }));
 
@@ -122,7 +126,7 @@ const CovidList = (props) => {
     return (
       <div style={{ backgroundColor: "#F58529" }}>
         <InputBase
-          style={{ alignSelf: 'center' }}
+          style={{ alignSelf: 'center', fontFamily: 'Lexend Giga' }}
           className={classes.input}
           placeholder="Search Country"
           inputProps={{ 'aria-label': 'search requests' }}
@@ -162,7 +166,7 @@ const CovidList = (props) => {
     return (
       <div className={classes.alert}>
         {searchRes
-          ? 
+          ?
           <Alert severity="info">
             <AlertTitle>
               <strong>Country: {searchRes.country}</strong>
