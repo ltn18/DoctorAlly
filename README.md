@@ -12,6 +12,7 @@
 * ```npm install @material-ui/icons```
 * ```npm install @material-ui/lab```
 * ```npm install react-player```
+* ```npm install @mapbox/mapbox-gl-geocoder```
 ### Step 3: start development server
 * ```npm start``` or ```yarn start```
 
@@ -25,6 +26,7 @@
 * [BACKEND FLOW](https://www.lucidchart.com/invitations/accept/266989db-b767-4300-afff-91cdef6bbff7)
 
 ## Updated from previous push
+* ```npm install @mapbox/mapbox-gl-geocoder```
 * Display Map in src\components\content\supply_stores\supply_stores.js
 * Add DevCard to src\components\content\about.js
 * Add Language to src\components\layout\header\header.js
