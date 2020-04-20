@@ -27,11 +27,13 @@ class StoreMap extends Component {
       accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl,
       marker: false,
-      placeholder: 'Search for stores near you',
+      placeholder: 'Search for stores nearby',
+      bbox: [105.73333,20.88333,106.03333,21.38333],
       proximity: {
         longitude: lng,
         lattitude: lat,
-      }
+      },
+      limit: false,
     })
     map.addControl(geocoder, 'top-left')
 
@@ -100,7 +102,7 @@ class StoreMap extends Component {
             'Convenience Store With Gas', '#FF8C00',
             'Convenience', '#FF8C00',
             'Pharmacy', '#FF8C00',
-            'Specialty Food Store', '#9ACD32',
+            'Specialty Food Store', '#00FFFF',
             'Fast Food', '#9ACD32',
             'Cafe', '#9ACD32',
             'Bakery', '#9ACD32',
@@ -108,7 +110,6 @@ class StoreMap extends Component {
             'Supercenter', '#008000',
             'Superette', '#008000',
             'Supermarket', '#008000',
-            'Warehouse Club Store', '#008000',
             'Restaurant', '#00FFFF',
             '#FF0000' // any other store type
           ]
