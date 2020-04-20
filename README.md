@@ -43,6 +43,7 @@
 ### For Other Developers
 * Translate documents on page
 * Business model for page
+* Revise content of page (especially How it works)
 
 ## Marketing Media
 * Facebook
