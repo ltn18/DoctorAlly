@@ -23,7 +23,7 @@ const Supply_stores = () => {
     <>
       <div>
         <h2 className={classes.h2}>Hanoi Supply Map</h2>
-        <p style={{textAlign: 'center'}}>In order to support medical workers, especially those in need of regular supplies such as food and household appliances, we have created an easy-approaching map for supply stores. The only thing you have to do is to enter your location and the nearest shops will appear for you to choose!!</p>
+        <p style={{textAlign: 'center'}}>In order to support medical workers, especially those are in need of regular supplies such as food and household appliances, we have created an easy-approaching map for supply stores. The only thing you have to do is to enter your location and the nearest shops will appear for you to choose!!</p>
         <StoreMap />
       </div>
     </>
