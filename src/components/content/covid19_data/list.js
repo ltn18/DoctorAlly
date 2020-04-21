@@ -172,17 +172,18 @@ const CovidList = (props) => {
               <strong>Country: {searchRes.country}</strong>
             </AlertTitle>
             <div className={classes.font}>
-              <p>Cases: {searchRes.cases}</p>
+              <p>Continent: {searchRes.continent}</p>
               <p>Today Cases: {searchRes.todayCases}</p>
-              <p>Deaths: {searchRes.todayDeaths}</p>
+              <p>Today Deaths: {searchRes.todayDeaths}</p>
+              <p>Cases: {searchRes.cases}</p>
+              <p>Deaths: {searchRes.deaths}</p>
+              <p>Tests: {searchRes.tests}</p>
               <p>Recovered: {searchRes.recovered}</p>
               <p>Active: {searchRes.active}</p>
               <p>Critical: {searchRes.critical}</p>
               <p>Cases Per Million: {searchRes.casesPerOneMillion}</p>
               <p>Deaths Per Million: {searchRes.deathsPerOneMillion}</p>
-              <p>Tests: {searchRes.tests}</p>
               <p>Tests Per Million: {searchRes.testsPerOneMillion}</p>
-              <p>Continent: {searchRes.continent}</p>
             </div>
           </Alert>
           : <></>

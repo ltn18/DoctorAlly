@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { Container, Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -7,6 +7,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+
+import localeContext, { getText } from '../../../context/localeCtx';
 
 const [facebookLink, instagramLink, gmailLink, linkedinLink] = [
   "https://www.facebook.com/",
@@ -29,7 +31,10 @@ const useStyles = makeStyles({
     "&:hover": {
       cursor: 'pointer'
     }
-  }
+  },
+  font: {
+    fontFamily: 'Lexend Giga',
+  },
 });
 
 const contactData = [
@@ -73,6 +78,7 @@ const contactData = [
 
 const Contact_us = () => {
   const classes = useStyles();
+  const locale = useContext(localeContext);
 
   const ContactCard = (props) => {
     const { title, description, imgURL, backgroundColor, color, link } = props;
@@ -86,7 +92,7 @@ const Contact_us = () => {
         />
         <CardContent >
           <Typography className={classes.title} gutterBottom variant="h5" component="h2">
-            <Link href={link} style={{ color }}>{title}</Link>
+            <Link className={classes.font} href={link} style={{ color }}>{title}</Link>
           </Typography>
           <Typography style={{ color }} variant="body2" color="textSecondary" component="p">
             {description}
@@ -101,9 +107,9 @@ const Contact_us = () => {
     <>
       <Container style={{ display: 'flex', flexDirection: 'column' }}>
         <div style={{ marginTop: '30px', alignSelf: 'center', display: 'flex', flexDirection: 'column' }}>
-          <span style={{ fontSize: 25, fontWeight: 'bold' }}>CONTACT US</span>
+          <span style={{ fontSize: 25, fontWeight: 'bold' }}>{getText("contact_us", "title", locale.lang)}</span>
           <span style={{ fontSize: 20, fontStyle: 'italic' }}>
-            &nbsp; &nbsp; via the following links
+            &nbsp; &nbsp; {getText("contact_us", "description", locale.lang)}
           </span>
         </div>
         <div style={{ display: 'flex', flexDirection: 'row' }}>

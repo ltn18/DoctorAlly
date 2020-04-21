@@ -18,7 +18,7 @@ import HomePage from './components/homepage';
 
 
 const App = () => {
-  const [lang, setLang] = useState("ENG");
+  const [lang, setLang] = useState("VIE");
   return (
     <LocaleContext.Provider value={{ lang: lang, setLang: setLang }}>
       <div style={{ fontFamily: 'Lexend Giga' }}>

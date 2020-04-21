@@ -8,8 +8,15 @@ import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import { makeStyles } from '@material-ui/core/styles';
 
 import Data from './requestData';
+
+const useStyles = makeStyles((theme) => ({
+  font: {
+    fontFamily: 'Lexend Giga',
+  },
+}));
 
 const Requests = (props) => {
   const { formControl } = props;
@@ -111,6 +118,7 @@ const Requests = (props) => {
 const PersonalInformation = (props) => {
   const { personalInfo } = props;
   const history = useHistory();
+  const classes = useStyles();
 
   const moveToPage2 = () => {
     history.push("/request_help/2");
@@ -136,7 +144,7 @@ const PersonalInformation = (props) => {
     <>
       <FormControl className={personalInfo}>
         <FormLabel style={{ fontFamily: 'Lexend Giga' }}>Personal information</FormLabel>
-        <TextField label="Your full name" name="fullName" variant="outlined" value={fullName} onChange={handleChange} />
+        <TextField className={classes.font} label="Your full name" name="fullName" variant="outlined" value={fullName} onChange={handleChange} />
         <TextField label="Your location" name="location" variant="outlined" value={location} onChange={handleChange} />
         <TextField label="Your medical facility" name="medicalFacility" variant="outlined" value={medicalFacility} onChange={handleChange} />
         <TextField label="Your job title/ role" name="jobTitle" variant="outlined" value={jobTitle} onChange={handleChange} />

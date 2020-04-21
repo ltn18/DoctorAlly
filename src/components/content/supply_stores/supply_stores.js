@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import StoreMap from './map';
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Divider, List, ListItem, ListItemText } from '@material-ui/core';
+
+import localeContext, {getText} from '../../context/localeCtx';
 
 const useStyles = makeStyles((theme) => ({
   h1: {
@@ -37,19 +39,21 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Supply_stores = () => {
-  const classes = useStyles()
+  const classes = useStyles();
+  const locale = useContext(localeContext);
+
   return (
     <>
       <div>
-        <h1 className={classes.h1}>Hanoi Supply Map</h1>
-        <p style={{ textAlign: 'center' }}>In order to support medical workers, especially those are in need of regular supplies such as food and household appliances, we have created an easy-approaching map for supply stores. The only thing you have to do is to enter your location and the nearest shops will appear for you to choose!!</p>
+        <h1 className={classes.h1}>{getText("supply_stores", "hanoimap", locale.lang)}</h1>
+        <p style={{ textAlign: 'center' }}>{getText("supply_stores", "description", locale.lang)}</p>
         <StoreMap />
       </div>
-      <h1 className={classes.h1}>How to use</h1>
+      <h1 className={classes.h1}>{getText("supply_stores", "howtouse", locale.lang)}</h1>
       <Container className={classes.container}>
         <div className={classes.w50}>
-          <p className={classes.header}>First, search your location on the map</p>
-          <p><i>It can be an address, a place, a neighborhood, a region, a postcode or even the coordinate of the place.</i></p>
+          <p className={classes.header}>{getText("supply_stores", "firstTitle", locale.lang)}</p>
+          <p><i>{getText("supply_stores", "firstDescription", locale.lang)}</i></p>
         </div>
         <div>
           <img src='store1.png' alt='1' ></img>
@@ -61,35 +65,35 @@ const Supply_stores = () => {
           <img src='store2.png' alt='2' ></img>
         </div>
         <div className={classes.w50, classes.ml} >
-          <p className={classes.header}>Choose a place</p>
-          <p><i>You will find your location with various points nearby. Those are stores around 2km near you.</i></p>
+          <p className={classes.header}>{getText("supply_stores", "secondTitle", locale.lang)}</p>
+          <p><i>{getText("supply_stores", "secondDescription", locale.lang)}</i></p>
         </div>
       </Container>
       <Divider light />
       <Container className={classes.container}>
         <div className={classes.w50}>
-          <p className={classes.header}>Discover the stores</p>
-          <p><i>Hover the stores for details. These stores are categorized by color as below.</i></p>
+          <p className={classes.header}>{getText("supply_stores", "thirdTitle", locale.lang)}</p>
+          <p><i>{getText("supply_stores", "thirdDescription", locale.lang)}</i></p>
           <List>
             <ListItem>
               <div className={classes.circle} style={{ backgroundColor: '#FF8C00' }}></div>
-              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convenience Store and Pharmacy</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{getText("supply_stores", "thirdItem1", locale.lang)}</div>
             </ListItem>
             <ListItem>
               <div className={classes.circle} style={{ backgroundColor: '#9ACD32' }}></div>
-              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fast Food, Cafe and Bakery</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{getText("supply_stores", "thirdItem2", locale.lang)}</div>
             </ListItem>
             <ListItem>
               <div className={classes.circle} style={{ backgroundColor: '#008000' }}></div>
-              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Supercenter, Superette and Supermarket</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{getText("supply_stores", "thirdItem3", locale.lang)}</div>
             </ListItem>
             <ListItem>
               <div className={classes.circle} style={{ backgroundColor: '#00FFFF' }}></div>
-              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Restaurant and Specialty Food Store</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{getText("supply_stores", "thirdItem4", locale.lang)}</div>
             </ListItem>
             <ListItem>
               <div className={classes.circle} style={{ backgroundColor: '#FF0000' }}></div>
-              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other stores</div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{getText("supply_stores", "thirdItem5", locale.lang)}</div>
             </ListItem>
           </List>
         </div>

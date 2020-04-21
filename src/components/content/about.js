@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -7,6 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { Container, Box, Link } from '@material-ui/core';
+
+import localeContext, { getText } from '../context/localeCtx';
 
 const useStyles = makeStyles({
   root: {
@@ -136,14 +138,13 @@ const DevCard = (props) => {
 
 export default function About() {
   const classes = useStyles();
+  const locale = useContext(localeContext);
 
   return (
     <div>
-      <h2 className={classes.h2}> Our Team </h2>
-      <h3 className={classes.h3}>Healthcare workers need our help to fight COVID-19</h3>
-      <Box color="text.primary" className={classes.box}>
-        Volunteer your time or request support for meals, pet care, errands, and more during the COVID-19 pandemic.
-      </Box>
+      <h2 className={classes.h2}>{getText("about", "h2", locale.lang)}</h2>
+      <h3 className={classes.h3}>{getText("about", "h3", locale.lang)}</h3>
+      <Box color="text.primary" className={classes.box}>{getText("about", "box", locale.lang)}</Box>
       <Container max-width="sm" className={classes.container}>
         {DATA.map((item) => (
           <DevCard
