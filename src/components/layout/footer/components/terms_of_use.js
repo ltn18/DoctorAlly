@@ -1,7 +1,7 @@
 import React from 'react';
 const WEBSITE_URL = "http://localhost:3000";
-const WEBSITE_NAME = "HackCoVy";
-const WEBSITE_EMAIL = "abc@gmail.com";
+const WEBSITE_NAME = "DoctorAlly";
+const WEBSITE_EMAIL = "doctorally.project@gmail.com";
 const WEBSITE_ADDRESS = "No 1 Hoang Minh Giam St";
 const WEBSITE_UPDATE_DATE = "Friday, April 17, 2020";
 
@@ -124,7 +124,7 @@ Dispute Resolution. Please read this Arbitration Agreement carefully. It is part
       <h2>Contact Information</h2>
 
       <p>Address: {WEBSITE_ADDRESS}</p>
-      <p>Email: {WEBSITE_EMAIL}</p>
+      <p>Email: <a href={`mailto:${WEBSITE_EMAIL}`}>{WEBSITE_EMAIL}</a></p>
     </>
   )
 }

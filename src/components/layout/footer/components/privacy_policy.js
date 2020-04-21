@@ -1,6 +1,6 @@
 import React from 'react';
 const WEBSITE_URL = "http://localhost:3000";
-const WEBSITE_NAME = "HackCoVy";
+const WEBSITE_NAME = "DoctorAlly";
 const WEBSITE_UPDATE_DATE = "Friday, April 17, 2020";
 
 const Privacy_policy = () => {

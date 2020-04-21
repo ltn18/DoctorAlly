@@ -76,11 +76,11 @@ const DATA = [
   {
     id: 3,
     name: "Hoàng Lâm",
-    role: "UX/UI Engineer",
+    role: "UI/UX Engineer",
     imgURL: "hoanglam.jpg",
     facebookLink: "https://www.facebook.com/hoanglam.295/",
     instagramLink: "https://www.instagram.com/lam.nguyen.cc/",
-    linkedinLink: ""
+    linkedinLink: "https://www.linkedin.com/in/nguyentamhoanglam/"
   },
   {
     id: 4,
@@ -94,11 +94,11 @@ const DATA = [
   {
     id: 5,
     name: "Tuấn Hoàng",
-    role: "Business Expert",
+    role: "Business Strategy",
     imgURL: "tuanhoang.jpg",
     facebookLink: "https://www.facebook.com/nthoang84",
     instagramLink: "https://www.instagram.com/tuaanhoang84/",
-    linkedinLink: ""
+    linkedinLink: "https://www.linkedin.com/in/nthoang84/"
   }
 ]
 
@@ -122,13 +122,13 @@ const DevCard = (props) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Link href={facebookLink} className={classes.facebookLink} target="_blank">
+        <Link target="_blank" href={facebookLink} className={classes.facebookLink} target="_blank">
           Facebook
         </Link>
-        <Link href={instagramLink} className={classes.instagramLink} target="_blank">
+        <Link target="_blank" href={instagramLink} className={classes.instagramLink} target="_blank">
           Instagram
         </Link>
-        <Link href={linkedinLink} className={classes.linkedinLink} target="_blank">
+        <Link target="_blank" href={linkedinLink} className={classes.linkedinLink} target="_blank">
           LinkedIn
         </Link>
       </CardActions>

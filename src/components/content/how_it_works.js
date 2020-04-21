@@ -68,7 +68,7 @@ const How_it_works = () => {
       <p>It's important for both parties to take responsibiliity for evaluating which requests and offers to accept. Hospital Hero is run by volunteers, and we're not able to evaluate or verify the accuracy of any request/offer.</p>
 
       <p>If you face any problems or would love to inquire more information,
-        email us through <a href="mailto:123@gmail.com">123@gmail.com</a>.
+        email us through <a href="mailto:doctorally.project@gmail.com">doctorally.project@gmail.com</a>.
       </p>
     </Container>
 

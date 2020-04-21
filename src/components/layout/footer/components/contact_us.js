@@ -11,10 +11,10 @@ import Typography from '@material-ui/core/Typography';
 import localeContext, { getText } from '../../../context/localeCtx';
 
 const [facebookLink, instagramLink, gmailLink, linkedinLink] = [
-  "https://www.facebook.com/",
-  "https://instagram.com/",
-  "mailto:123@gmail.com",
-  "https://www.linkedin.com/"
+  "https://www.facebook.com/doctorally.project/",
+  "https://www.instagram.com/doctorally.project/",
+  "mailto:doctorally.project@gmail.com",
+  "https://www.linkedin.com/company/doctorally/"
 ]
 
 const useStyles = makeStyles({
@@ -92,7 +92,7 @@ const Contact_us = () => {
         />
         <CardContent >
           <Typography className={classes.title} gutterBottom variant="h5" component="h2">
-            <Link className={classes.font} href={link} style={{ color }}>{title}</Link>
+            <Link target="_blank" className={classes.font} href={link} style={{ color }}>{title}</Link>
           </Typography>
           <Typography style={{ color }} variant="body2" color="textSecondary" component="p">
             {description}
