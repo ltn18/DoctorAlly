@@ -97,8 +97,8 @@ const Requests = (props) => {
           color="secondary"
           variant="contained"
           aria-label="contained secondary button group">
-          <Button onClick={() => { moveToPage1(); handleSave() }}>Back</Button>
-          <Button onClick={() => { handleSave(); console.log(Data); }}>Submit</Button>
+          <Button style={{ fontFamily: 'Lexend Giga' }} onClick={() => { moveToPage1(); handleSave() }}>Back</Button>
+          <Button style={{ fontFamily: 'Lexend Giga' }} onClick={() => { handleSave(); console.log(Data); }}>Submit</Button>
         </ButtonGroup>
         <strong style={{ fontStyle: 'italic' }}>
           Page {<span style={{ color: '#00ff00' }}>2/2</span>}
@@ -135,7 +135,7 @@ const PersonalInformation = (props) => {
   return (
     <>
       <FormControl className={personalInfo}>
-        <FormLabel>Personal information</FormLabel>
+        <FormLabel style={{ fontFamily: 'Lexend Giga' }}>Personal information</FormLabel>
         <TextField label="Your full name" name="fullName" variant="outlined" value={fullName} onChange={handleChange} />
         <TextField label="Your location" name="location" variant="outlined" value={location} onChange={handleChange} />
         <TextField label="Your medical facility" name="medicalFacility" variant="outlined" value={medicalFacility} onChange={handleChange} />
@@ -146,11 +146,11 @@ const PersonalInformation = (props) => {
 
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <ButtonGroup
-          style={{ marginTop: 20, }}
+          style={{ marginTop: 20 }}
           color="secondary"
           variant="contained"
           aria-label="contained secondary button group">
-          <Button onClick={() => { moveToPage2(); handleSave() }}>Next</Button>
+          <Button style={{ fontFamily: 'Lexend Giga' }} onClick={() => { moveToPage2(); handleSave() }}>Next</Button>
         </ButtonGroup>
         <strong style={{ fontStyle: 'italic' }}>
           Page {<span style={{ color: '#ED4337' }}>1/2</span>}

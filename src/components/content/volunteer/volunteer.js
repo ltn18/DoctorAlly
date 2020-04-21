@@ -41,12 +41,14 @@ const useStyles = makeStyles((theme) => ({
   button: {
     width: '25ch',
     height: '100px',
-    fontSize: 20
+    fontSize: 20,
+    fontFamily: 'Lexend Giga',
   },
   input: {
     marginLeft: theme.spacing(1),
     flex: 1,
     width: '100ch',
+    fontFamily: 'Lexend Giga',
   },
   iconButton: {
     marginLeft: 80,
@@ -65,7 +67,10 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifiedContent: 'center',
     margin: 10
-  }
+  },
+  font: {
+    fontFamily: 'Lexend Giga',
+  },
 }));
 
 const data = [

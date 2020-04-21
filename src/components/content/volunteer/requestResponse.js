@@ -14,10 +14,12 @@ const useStyles = makeStyles(() => ({
   subheader: {
     color: 'white',
     fontWeight: 'bold',
+    fontFamily: 'Lexend Giga',
   },
   title: {
     color: 'white',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    fontFamily: 'Lexend Giga',
   },
 }));
 
@@ -58,7 +60,6 @@ const RequestResponse = () => {
   return (
     <Paper elevation={3} rounded style={{ marginBottom: '30px' }}>
       <CardHeader
-        style={{}}
         title={DATA[id - 1].fullName}
         subheader={DATA[id - 1].role + " | " + DATA[id - 1].medicalFacility}
         className={classes.reqres}
@@ -79,7 +80,14 @@ const RequestResponse = () => {
         <p><strong>DETAILS</strong></p>
         <p>{DATA[id - 1].details}</p>
       </CardContent>
-      <Button style={{ backgroundColor: '#F65058FF', color: 'white', fontWeight: 'bold' }}>Offer Help</Button>
+      <Button
+        style={{
+          backgroundColor: '#F65058FF',
+          color: 'white',
+          fontWeight: 'bold',
+          fontFamily: 'Lexend Giga'
+        }}
+      >Offer Help</Button>
     </Paper>
   )
 }

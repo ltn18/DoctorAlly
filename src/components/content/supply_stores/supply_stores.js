@@ -31,6 +31,9 @@ const useStyles = makeStyles((theme) => ({
     height: 15,
     borderRadius: '50%',
   },
+  font: {
+    fontFamily: 'Lexend Giga',
+  },
 }));
 
 const Supply_stores = () => {
@@ -69,29 +72,29 @@ const Supply_stores = () => {
           <p><i>Hover the stores for details. These stores are categorized by color as below.</i></p>
           <List>
             <ListItem>
-                <div className={classes.circle} style={{ backgroundColor: '#FF8C00' }}></div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convenience Store and Pharmacy</div>
+              <div className={classes.circle} style={{ backgroundColor: '#FF8C00' }}></div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Convenience Store and Pharmacy</div>
             </ListItem>
             <ListItem>
-                <div className={classes.circle} style={{ backgroundColor: '#9ACD32' }}></div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fast Food, Cafe and Bakery</div>
+              <div className={classes.circle} style={{ backgroundColor: '#9ACD32' }}></div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fast Food, Cafe and Bakery</div>
             </ListItem>
             <ListItem>
-                <div className={classes.circle} style={{ backgroundColor: '#008000' }}></div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Small Grocery Store, Supercenter, Superette and Supermarket</div>
+              <div className={classes.circle} style={{ backgroundColor: '#008000' }}></div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Supercenter, Superette and Supermarket</div>
             </ListItem>
             <ListItem>
-                <div className={classes.circle} style={{ backgroundColor: '#00FFFF' }}></div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Restaurant and Specialty Food Store</div>
+              <div className={classes.circle} style={{ backgroundColor: '#00FFFF' }}></div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Restaurant and Specialty Food Store</div>
             </ListItem>
             <ListItem>
-                <div className={classes.circle} style={{ backgroundColor: '#FF0000' }}></div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other stores</div>
+              <div className={classes.circle} style={{ backgroundColor: '#FF0000' }}></div>
+              <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other stores</div>
             </ListItem>
           </List>
         </div>
         <div>
-          <img src='store3.png' alt='3' style={{marginTop: 10}}></img>
+          <img src='store3.png' alt='3' style={{ marginTop: 10 }}></img>
         </div>
       </Container>
     </>

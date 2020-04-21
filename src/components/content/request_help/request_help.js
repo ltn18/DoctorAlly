@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 20,
     fontStyle: 'italic'
   },
+  font: {
+    fontFamily: 'Lexend Giga',
+  },
 }));
 
 const RequestForm = (props) => {
@@ -42,7 +45,7 @@ const RequestForm = (props) => {
   return (
     <Container maxWidth="md">
       <form className={classes.root} noValidate autoComplete="off">
-        <div style={{ marginBottom: 20 }}>
+        <div className={classes.font} style={{ marginBottom: 20 }}>
           <strong>REQUEST CARD</strong>
           <p style={{ fontStyle: 'italic' }}>Let us help you get what you need!</p>
         </div>

@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '30px',
   },
   container: {
-    maxHeight: 800,
+    maxHeight: 900,
   },
   input: {
     marginLeft: theme.spacing(1),
@@ -55,10 +55,7 @@ const heads = [
   "Recovered",
   "Active",
   "Critical",
-  "Cases Per Million",
-  "Deaths Per Million",
   "Tests",
-  "Tests Per Million",
   "Continent"
 ]
 
@@ -77,6 +74,9 @@ const StyledTableRow = withStyles((theme) => ({
     '&:nth-of-type(odd)': {
       backgroundColor: theme.palette.background.default,
     },
+  },
+  font: {
+    fontFamily: 'Lexend Giga',
   },
 }))(TableRow);
 
@@ -100,19 +100,19 @@ const CovidList = (props) => {
           page > 1 && page < 212
             ? <>
               <ButtonGroup variant="text" color="secondary" aria-label="text primary button group">
-                <Button onClick={handleBackButtonClick}>BACK</Button>
-                <Button onClick={handleNextButtonClick}>NEXT</Button>
+                <Button className={classes.font} onClick={handleBackButtonClick}>BACK</Button>
+                <Button className={classes.font} onClick={handleNextButtonClick}>NEXT</Button>
               </ButtonGroup>
             </>
             : page === 1
               ? <>
                 <ButtonGroup variant="text" color="secondary" aria-label="text primary button group">
-                  <Button onClick={handleNextButtonClick}>NEXT</Button>
+                  <Button className={classes.font} onClick={handleNextButtonClick}>NEXT</Button>
                 </ButtonGroup>
               </>
               : <>
                 <ButtonGroup variant="text" color="secondary" aria-label="text primary button group">
-                  <Button onClick={handleBackButtonClick}>BACK</Button>
+                  <Button className={classes.font} onClick={handleBackButtonClick}>BACK</Button>
                 </ButtonGroup>
               </>
         }
@@ -168,20 +168,22 @@ const CovidList = (props) => {
         {searchRes
           ?
           <Alert severity="info">
-            <AlertTitle>
+            <AlertTitle className={classes.font}>
               <strong>Country: {searchRes.country}</strong>
             </AlertTitle>
-            <p>Cases: {searchRes.cases}</p>
-            <p>Today Cases: {searchRes.todayCases}</p>
-            <p>Deaths: {searchRes.todayDeaths}</p>
-            <p>Recovered: {searchRes.recovered}</p>
-            <p>Active: {searchRes.active}</p>
-            <p>Critical: {searchRes.critical}</p>
-            <p>Cases Per Million: {searchRes.casesPerOneMillion}</p>
-            <p>Deaths Per Million: {searchRes.deathsPerOneMillion}</p>
-            <p>Tests: {searchRes.tests}</p>
-            <p>Tests Per Million: {searchRes.testsPerOneMillion}</p>
-            <p>Continent: {searchRes.continent}</p>
+            <div className={classes.font}>
+              <p>Cases: {searchRes.cases}</p>
+              <p>Today Cases: {searchRes.todayCases}</p>
+              <p>Deaths: {searchRes.todayDeaths}</p>
+              <p>Recovered: {searchRes.recovered}</p>
+              <p>Active: {searchRes.active}</p>
+              <p>Critical: {searchRes.critical}</p>
+              <p>Cases Per Million: {searchRes.casesPerOneMillion}</p>
+              <p>Deaths Per Million: {searchRes.deathsPerOneMillion}</p>
+              <p>Tests: {searchRes.tests}</p>
+              <p>Tests Per Million: {searchRes.testsPerOneMillion}</p>
+              <p>Continent: {searchRes.continent}</p>
+            </div>
           </Alert>
           : <></>
         }
@@ -202,7 +204,7 @@ const CovidList = (props) => {
               <TableRow>
                 {heads.map(head => (
                   <StyledTableCell align='center'>
-                    <div style={{ fontWeight: 'bold' }}>{head}</div>
+                    <div style={{ fontWeight: 'bold', fontFamily: 'Lexend Giga' }}>{head}</div>
                   </StyledTableCell>
                 ))}
               </TableRow>
@@ -210,21 +212,18 @@ const CovidList = (props) => {
             <TableBody>
               {DATA.slice(page * rows, page * rows + rows).map(item => (
                 <StyledTableRow >
-                  <StyledTableCell component="th" scope="row">
+                  <StyledTableCell className={classes.font} component="th" scope="row">
                     {item.country}
                   </StyledTableCell>
-                  <StyledTableCell align="center">{item.cases}</StyledTableCell>
-                  <StyledTableCell align="center">{item.todayCases}</StyledTableCell>
-                  <StyledTableCell align="center">{item.deaths}</StyledTableCell>
-                  <StyledTableCell align="center">{item.todayDeaths}</StyledTableCell>
-                  <StyledTableCell align="center">{item.recovered}</StyledTableCell>
-                  <StyledTableCell align="center">{item.active}</StyledTableCell>
-                  <StyledTableCell align="center">{item.critical}</StyledTableCell>
-                  <StyledTableCell align="center">{item.casesPerOneMillion}</StyledTableCell>
-                  <StyledTableCell align="center">{item.deathsPerOneMillion}</StyledTableCell>
-                  <StyledTableCell align="center">{item.tests}</StyledTableCell>
-                  <StyledTableCell align="center">{item.testsPerOneMillion}</StyledTableCell>
-                  <StyledTableCell align="center">{item.continent}</StyledTableCell>
+                  <StyledTableCell className={classes.font} align="center">{item.cases}</StyledTableCell>
+                  <StyledTableCell className={classes.font} align="center">{item.todayCases}</StyledTableCell>
+                  <StyledTableCell className={classes.font} align="center">{item.deaths}</StyledTableCell>
+                  <StyledTableCell className={classes.font} align="center">{item.todayDeaths}</StyledTableCell>
+                  <StyledTableCell className={classes.font} align="center">{item.recovered}</StyledTableCell>
+                  <StyledTableCell className={classes.font} align="center">{item.active}</StyledTableCell>
+                  <StyledTableCell className={classes.font} align="center">{item.critical}</StyledTableCell>
+                  <StyledTableCell className={classes.font} align="center">{item.tests}</StyledTableCell>
+                  <StyledTableCell className={classes.font} align="left">{item.continent}</StyledTableCell>
                 </StyledTableRow>
               ))}
             </TableBody>

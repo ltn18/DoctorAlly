@@ -42,7 +42,10 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       width: '30ch',
     },
-  }
+  },
+  font: {
+    fontFamily: 'Lexend Giga',
+  },
 }));
 
 const VolunteerSignUp = () => {
@@ -56,7 +59,9 @@ const VolunteerSignUp = () => {
           Your personal information is safe with us!</p>
         </div>
         <FormControl className={classes.formControl}>
-          <FormLabel>What can you provide?</FormLabel>
+          <FormLabel classes={{
+            root: classes.font
+          }} >What can you provide?</FormLabel>
           <FormGroup>
             <FormControlLabel
               control={<Checkbox />}
@@ -97,8 +102,8 @@ const VolunteerSignUp = () => {
         </FormControl>
 
         <FormControl className={classes.personalInfo}>
-          <FormLabel>Personal information</FormLabel>
-          <TextField label="Your full name" variant="outlined" />
+          <FormLabel className={classes.font}>Personal information</FormLabel>
+          <TextField classes={classes.font} label="Your full name" variant="outlined" />
           <TextField label="Your home district" variant="outlined" />
           <TextField label="Your home ward" variant="outlined" />
           <TextField label="Your home city" variant="outlined" />
@@ -107,8 +112,8 @@ const VolunteerSignUp = () => {
         </FormControl>
 
         <FormControl className={classes.footer}>
-          <TextField label="Your signature" style={{marginRight: '10px'}}/>
-          <Button variant="contained" color="primary" size="large">Submit</Button>
+          <TextField label="Your signature" style={{ marginRight: '10px' }} />
+          <Button className={classes.font} variant="contained" color="primary" size="large">Submit</Button>
         </FormControl>
 
         <div className={classes.quote}>

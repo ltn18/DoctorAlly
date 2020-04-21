@@ -26,6 +26,8 @@
 * [BACKEND FLOW](https://www.lucidchart.com/invitations/accept/266989db-b767-4300-afff-91cdef6bbff7)
 
 ## Updated from previous push
+* Hardcode font 
+
 * Update role
 * ```npm install @mapbox/mapbox-gl-geocoder```
 * Display Map in src\components\content\supply_stores\supply_stores.js
@@ -42,6 +44,7 @@
 * Build backend for Request Help, Feedbacks, Volunteer
 * Send thankyou email to volunteer
 * Send volunteer's information to doctors 
+* Update font placeholder
 
 ### For Other Developers
 * Translate documents on page
