@@ -244,7 +244,7 @@ const VIE = {
     },
     h2_contact: {
       title: "Contact Information",
-      p1: `Address: ${WEBSITE_ADDRESS_VIE}`,
+      p1: `Address: ${WEBSITE_ADDRESS_ENG}`,
       p2: `Email: ${<a href={`mailto:${WEBSITE_EMAIL}`}>{WEBSITE_EMAIL}</a>}`,
     },
   },
