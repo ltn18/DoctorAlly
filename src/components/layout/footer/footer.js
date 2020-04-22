@@ -63,7 +63,7 @@ const Footer = () => {
       >
         {getText("footer", "terms_of_use", locale.lang)}
       </Link>
-      <div className={classes.font}>© 2020 HackCoVy</div>
+      <div className={classes.font}>© 2020 DoctorAlly</div>
     </Typography>
   )
 }
