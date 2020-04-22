@@ -16,7 +16,6 @@ const Terms_of_use = () => {
         {getLongLineText(locale.lang, "terms_of_use", "h1", "p2_main1")}
         <a href={WEBSITE_URL}>{WEBSITE_URL}</a>
         {getLongLineText(locale.lang, "terms_of_use", "h1", "p2_main2")}
-
       </p>
       <p>{getLongLineText(locale.lang, "terms_of_use", "h1", "p3")}</p>
       <p>{getLongLineText(locale.lang, "terms_of_use", "h1", "p4")}</p>
@@ -163,4 +162,4 @@ const Terms_of_use = () => {
   )
 }
 
-export default Terms_of_use
+export default Terms_of_use;
