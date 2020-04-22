@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import localeContext, { getLongLineText } from '../../../context/localeCtx';
 const WEBSITE_URL = "http://localhost:3000";
 const WEBSITE_NAME = "DoctorAlly";
 const WEBSITE_EMAIL = "doctorally.project@gmail.com";
@@ -6,22 +7,23 @@ const WEBSITE_ADDRESS = "No 1 Hoang Minh Giam St";
 const WEBSITE_UPDATE_DATE = "Friday, April 17, 2020";
 
 const Terms_of_use = () => {
+  const locale = useContext(localeContext);
   return (
     <>
-      <h2>TERMS OF USE</h2>
+      <h1>{getLongLineText("terms_of_use", "h1", "title", locale.lang)}</h1>
+      <p style={{ fontStyle: 'italic' }}>{getLongLineText("terms_of_use", "h1", "p1", locale.lang)}</p>
+      <p>{getLongLineText("terms_of_use", "h1", "p2", locale.lang)}</p>
+      <p>{getLongLineText("terms_of_use", "h1", "p3", locale.lang)}</p>
+      <p>{getLongLineText("terms_of_use", "h1", "p4", locale.lang)}</p>
+      <p>{getLongLineText("terms_of_use", "h1", "p5", locale.lang)}</p>
 
-      <p style={{ fontStyle: 'italic' }}>Revised on {WEBSITE_UPDATE_DATE}</p>
+      <h2>{getLongLineText("terms_of_use", "h2_access", "title", locale.lang)}</h2>
+      <p>{getLongLineText("terms_of_use", "h2_access", "p1", locale.lang)}</p>
+      <p>{getLongLineText("terms_of_use", "h2_access", "p2", locale.lang)}</p>
+      <p>{getLongLineText("terms_of_use", "h2_access", "p3", locale.lang)}</p>
+      <p>{getLongLineText("terms_of_use", "h2_access", "p4", locale.lang)}</p>
+      <p>{getLongLineText("terms_of_use", "h2_access", "p5", locale.lang)}</p>
 
-      <p>The {WEBSITE_NAME} website located at <a href={WEBSITE_URL}>{WEBSITE_URL}</a> is a copyrighted work belonging to {WEBSITE_NAME}. Certain features of the Site may be subject to additional guidelines, terms, or rules, which will be posted on the Site in connection with such features.</p>
-
-      <p>All such additional terms, guidelines, and rules are incorporated by reference into these Terms.</p>
-
-      <p>These Terms of Use described the legally binding terms and conditions that oversee your use of the Site. BY LOGGING INTO THE SITE, YOU ARE BEING COMPLIANT THAT THESE TERMS and you represent that you have the authority and capacity to enter into these Terms. YOU SHOULD BE AT LEAST 18 YEARS OF AGE TO ACCESS THE SITE. IF YOU DISAGREE WITH ALL OF THE PROVISION OF THESE TERMS, DO NOT LOG INTO AND/OR USE THE SITE.</p>
-
-      <p>These terms require the use of arbitration Section 10.2 on an individual basis to resolve disputes and also limit the remedies available to you in the event of a dispute.</p>
-
-
-      <h2>Access to the Site</h2>
 
       <p><strong>Subject to these Terms.</strong> Company grants you a non-transferable, non-exclusive, revocable, limited license to access the Site solely for your own personal, noncommercial use.</p>
 
