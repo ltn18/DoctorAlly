@@ -8,7 +8,7 @@ import Devs from './devCard';
 
 const useStyles = makeStyles({
   h2: {
-    marginTop: 50,
+    marginTop: 30,
     display: "flex",
     justifyContent: "center",
     alignItems: "center"
