@@ -36,6 +36,7 @@
 * Addition
   - add thêm vào trang HomePage (làm trong Hackathon)
 * Deploy
+* Scroll to (0,0)
 
 ### For Other Developers
 * Viết how to use
