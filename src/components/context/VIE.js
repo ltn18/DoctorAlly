@@ -9,7 +9,7 @@ const VIE = {
     request_help: "Yêu cầu giúp đỡ",
     supply_stores: "Cửa hàng gần đây",
     covid19_data: "Dữ liệu Covid-19",
-    how_it_works: "Cách hoạt động",
+    how_it_works: "Tìm hiểu thêm",
   },
 
   about: {

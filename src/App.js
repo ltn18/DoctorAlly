@@ -30,9 +30,9 @@ const App = () => {
 
           <Route exact path="/requests/:id" component={RequestResponse} />
 
-          <Route exact path="/request_help">
+          {/* <Route exact path="/request_help">
             <Redirect push to="/request_help/1" />
-          </Route>
+          </Route> */}
           <Route exact path="/request_help/:id" component={Request_help} />
 
           <Route exact path="/supply_stores" component={Supply_stores} />

@@ -62,7 +62,7 @@ const Header = () => {
         >{getText("header", "volunteer", locale.lang)}</Button>
 
         <Button
-          onClick={() => { handleRouteSwitch("request_help") }}
+          onClick={() => { handleRouteSwitch("request_help/1") }}
           color="secondary"
           className={classes.font}
         >{getText("header", "request_help", locale.lang)}</Button>

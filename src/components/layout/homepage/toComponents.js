@@ -35,7 +35,7 @@ const ToRequestHelp = (props) => {
       <strong
         className={classes.title}
         style={{ fontSize: '25px', color: '#F50057' }}
-        onClick={() => history.push("/request_help")}
+        onClick={() => history.push("/request_help/1")}
       >
         Request Help
       </strong>

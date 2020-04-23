@@ -76,16 +76,25 @@ const useStyles = makeStyles((theme) => ({
 const data = [
   {
     id: 1,
+    name: "An Nguyen",
+    role: "Doctor",
+    facility: "Benh vien Hong Ngoc",
     work: ['Shopping', 'Cooking'],
-    offers: 0,
+    offers: 1,
   },
   {
     id: 2,
+    name: "Binh Nguyen",
+    role: "Surgeon",
+    facility: "Bach Mai",
     work: ['Shopping'],
-    offers: 3,
+    offers: 2,
   },
   {
     id: 3,
+    name: "Chris Dev",
+    role: "Nurse",
+    facility: "Vin Mec",
     work: ['Special chores'],
     offers: 3,
   }
@@ -95,7 +104,7 @@ const RequestBox = (props) => {
   const { color, id, work, offers } = props;
   const history = useHistory();
   const classes = useStyles();
-  
+
   const handleBoxClick = () => {
     history.push(`requests/${id}`);
   }
@@ -104,7 +113,7 @@ const RequestBox = (props) => {
     <Box onClick={handleBoxClick} className={classes.box} style={{ backgroundColor: props.color }}>
       <Grid container spacing={2} className={classes.grid}>
         <Grid item xs={6}>
-          <div>Request {props.id}</div>
+          <div>{props.name} | {props.role} | {props.facility}</div>
           <div>{props.work.join(", ")}</div>
         </Grid>
         <Grid item xs={6}>{props.offers} offers</Grid>
@@ -150,9 +159,29 @@ const Volunteer = () => {
           {
             data.map((box, id) => {
               if (id % 2 === 0) {
-                return <RequestBox color='#f2f2f2' id={data[id].id} work={data[id].work} offers={data[id].offers} />
+                return (
+                  <RequestBox
+                    color='#f2f2f2'
+                    id={data[id].id}
+                    name={data[id].name}
+                    role={data[id].role}
+                    facility={data[id].facility}
+                    work={data[id].work}
+                    offers={data[id].offers}
+                  />
+                )
               } else {
-                return <RequestBox color='#ffffff' id={data[id].id} work={data[id].work} offers={data[id].offers} />
+                return (
+                  <RequestBox
+                    color='#ffffff'
+                    id={data[id].id}
+                    name={data[id].name}
+                    role={data[id].role}
+                    facility={data[id].facility}
+                    work={data[id].work}
+                    offers={data[id].offers}
+                  />
+                )
               }
             })
           }

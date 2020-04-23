@@ -9,7 +9,7 @@ const ENG = {
     request_help: "Request Help",
     supply_stores: "Nearby Stores",
     covid19_data: "Covid-19 Data",
-    how_it_works: "How It Works",
+    how_it_works: "Learn More",
   },
 
   about: {
