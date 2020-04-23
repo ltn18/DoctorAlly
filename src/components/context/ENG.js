@@ -25,7 +25,7 @@ const ENG = {
     Sign up as a volunteer now and receive notifications when new requests are posted!`,
     button: "Volunteer Now",
     h2_request: "REQUEST LISTS",
-    search_bar: "Search Requests"  
+    search_bar: "Search Requests"
   },
   volunteerSignUp: {
     title: 'VOLUNTEER CARD',
@@ -92,7 +92,7 @@ const ENG = {
     page: "Page",
   },
 
-  // NEARBY STORES
+  // SUPPLY STORES
   supply_stores: {
     hanoimap: "Hanoi Supply Map",
     description: "In order to support medical workers, especially those are in need of regular supplies such as food and household appliances, we have created an easy-approaching map for supply stores. The only thing you have to do is to enter your location and the nearest shops will appear for you to choose!",
@@ -109,6 +109,50 @@ const ENG = {
     thirdItem3: "Supercenter, Superette and Supermarket",
     thirdItem4: "Restaurant and Specialty Food Store",
     thirdItem5: "Grocery stores and Others ...",
+  },
+
+  covid19_data: {
+    loading: "Loading",
+
+    longitude: "Longitude",
+    latitude: "Latitude",
+    zoom: "Zoom",
+    mapType: "World Map",
+
+    search_placeholder: "Search Country",
+
+    country: "Country",
+    continent: "Continent",
+    today_cases: "Today cases",
+    today_deaths: "Today deaths",
+    cases: "Cases",
+    deaths: "Deaths",
+    tests: "Tests",
+    recovered: "Recovered",
+    active: "Active",
+    critical: "Critical",
+
+    cases_per_million: "Cases per Million",
+    deaths_per_million: "Deaths per Million",
+    tests_per_million: "Tests per Million",
+
+    heads: {
+      country: "Country",
+      cases: "Cases",
+      deaths: "Deaths",
+      recovered: "Recovered",
+      active: "Active",
+      critical: "Critical",
+      tests: "Tests",
+      continent: "Continent"
+    },
+
+    footer: {
+      next_button: "Next",
+      back_button: "Back"
+    }
+
+    // Xử lý tên châu lục
   },
 
   footer: {

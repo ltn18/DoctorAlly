@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import ReactDOM from 'react-dom';
 
 import mapboxgl from 'mapbox-gl';
@@ -157,10 +158,10 @@ class CovidMap extends Component {
 
     return (
       <div>
+        <div ref={el => this.mapContainer = el} className='mapContainer' style={{ height: '80vh', marginTop: '15px' }} />
         <div className='sidebarStyle' style={{ margin: '10px' }}>
           <div><strong>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom} | World Map</strong></div>
         </div>
-        <div ref={el => this.mapContainer = el} className='mapContainer' style={{ height: '75vh' }} />
       </div>
     )
   }

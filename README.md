@@ -31,6 +31,10 @@
   - covid19 
   - volunteer
   - how it works (chưa có nội dung)
+  - Chỉnh ngôn ngữ lục địa
+  - Truyền context vào longitude,  latitude, ...
+  - Truyền context vào country card
+  - Xây DB của request
 * Font Lexend Giga
   - các thanh input
 * Addition

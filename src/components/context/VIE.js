@@ -23,15 +23,15 @@ const VIE = {
     h2_volunteer: "HÃY TRỞ THÀNH MỘT TÌNH NGUYỆN VIÊN",
     p: `Chúng tôi hiện đang phát triển một mạng lưới các bác sĩ và tình nguyện viên với mục tiêu chung tay
     chống lại dịch Covid-19. Do đó, sự giúp đỡ của bạn sẽ góp phần rất lớn cho cuộc chiến này và cho toàn thể cộng đồng.
-    Hãy đăng kí làm một tình nguyên viên và bạn sẽ nhận được thông báo khi xuất hiện yêu cầu mới từ các y bác sĩ.`,   
+    Hãy đăng kí làm một tình nguyên viên và bạn sẽ nhận được thông báo khi xuất hiện yêu cầu mới từ các y bác sĩ.`,
     button: "Tình nguyện ngay",
     h2_request: "DANH SÁCH YÊU CẦU",
-    search_bar: "Tìm yêu cầu"  
+    search_bar: "Tìm yêu cầu"
   },
   volunteerSignUp: {
     title: 'THẺ TÌNH NGUYỆN',
-    description: 
-    `Chúng tôi sẽ liên lạc với bạn khi có yêu cầu ở gần bạn.
+    description:
+      `Chúng tôi sẽ liên lạc với bạn khi có yêu cầu ở gần bạn.
     Thông tin cá nhân của bạn sẽ được chúng tôi bảo vệ an toàn.`,
     support_kinds: {
       title: "Bạn có thể giúp cung cấp những gì?",
@@ -114,8 +114,49 @@ const VIE = {
   },
 
   covid19_data: {
+    loading: "Đang tải",
 
+    longitude: "Kinh độ",
+    latitude: "Vĩ độ",
+    zoom: "Độ phóng đại",
+    mapType: "Bản đồ thế giới", 
+
+    search_placeholder: "Tìm kiếm quốc gia",
+
+    country: "Quốc gia",
+    continent: "Lục địa",
+    today_cases: "Số ca nhiễm hôm nay",
+    today_deaths: "Số ca tử vong hôm nay",
+    cases: "Ca nhiễm",
+    deaths: "Tử vong",
+    tests: "Xét nghiệm",
+    recovered: "Bình phục",
+    active: "Đang nhiễm",
+    critical: "Nguy kịch",
+
+    cases_per_million: "Số ca trên một triệu người",
+    deaths_per_million: "Số ca tử vong trên một triệu người",
+    tests_per_million: "Số ca xét nghiệm trên một triệu người",
+
+    heads: {
+      country: "Quốc gia",
+      cases: "Ca nhiễm",
+      deaths: "Tử vong",
+      recovered: "Bình phục",
+      active: "Đang nhiễm",
+      critical: "Nguy kịch",
+      tests: "Xét nghiệm",
+      continent: "Lục địa"
+    },
+
+    footer: {
+      next_button: "Tiếp theo",
+      back_button: "Trở lại"
+    }
+
+    // Xử lý tên châu lục
   },
+
   how_it_works: {
 
   },
