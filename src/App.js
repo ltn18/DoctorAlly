@@ -4,7 +4,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import LocaleContext from './components/context/localeCtx';
 
 import {
-  Header, Footer, Contact_us, Feedbacks, Privacy_policy, Terms_of_use
+  Header, HomePage, Footer, Contact_us, Feedbacks, Privacy_policy, Terms_of_use
 } from './components/layout/index';
 
 import {
@@ -13,9 +13,6 @@ import {
 import {
   VolunteerSignUp, RequestResponse
 } from './components/content/index';
-
-import HomePage from './components/homepage';
-
 
 const App = () => {
   const [lang, setLang] = useState("VIE");
