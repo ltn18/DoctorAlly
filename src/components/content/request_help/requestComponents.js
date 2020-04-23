@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import localeContext, { getLongLineText } from '../../context/localeCtx';
+
 import { useHistory } from 'react-router-dom';
 
 import TextField from '@material-ui/core/TextField';
@@ -21,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
 const Requests = (props) => {
   const { formControl } = props;
   const history = useHistory();
+  const locale = useContext(localeContext);
 
   const handleSave = () => {
     Data[0] = state;
@@ -46,46 +49,46 @@ const Requests = (props) => {
 
   return (
     <FormControl className={formControl}>
-      <FormLabel>What kinds of support do you need?</FormLabel>
+      <FormLabel>{getLongLineText(locale.lang, "request_help", "support_kinds", "title")}</FormLabel>
       <FormGroup>
         <FormControlLabel
           control={<Checkbox checked={medicalSupplies} onChange={handleTickChange} name="medicalSupplies" />}
-          label="Medical supplies"
+          label={getLongLineText(locale.lang, "request_help", "support_kinds", "item1")}
         />
         <FormControlLabel
           control={<Checkbox checked={masks} onChange={handleTickChange} name="masks" />}
-          label="Masks"
+          label={getLongLineText(locale.lang, "request_help", "support_kinds", "item2")}
         />
         <FormControlLabel
           control={<Checkbox checked={sanitizer} onChange={handleTickChange} name="sanitizer" />}
-          label="Sanitizer hand wash"
+          label={getLongLineText(locale.lang, "request_help", "support_kinds", "item3")}
         />
         <FormControlLabel
           control={<Checkbox checked={meals} onChange={handleTickChange} name="meals" />}
-          label="Meals"
+          label={getLongLineText(locale.lang, "request_help", "support_kinds", "item4")}
         />
         <FormControlLabel
           control={<Checkbox checked={drinks} onChange={handleTickChange} name="drinks" />}
-          label="Drinks"
+          label={getLongLineText(locale.lang, "request_help", "support_kinds", "item5")}
         />
         <FormControlLabel
           control={<Checkbox checked={laundry} onChange={handleTickChange} name="laundry" />}
-          label="Laundry"
+          label={getLongLineText(locale.lang, "request_help", "support_kinds", "item6")}
         />
         <FormControlLabel
           control={<Checkbox checked={petCare} onChange={handleTickChange} name="petCare" />}
-          label="Pet care"
+          label={getLongLineText(locale.lang, "request_help", "support_kinds", "item7")}
         />
         <div>
           <FormControlLabel
             control={<Checkbox />}
-            label="Other "
+            label={getLongLineText(locale.lang, "request_help", "support_kinds", "item8")}
           />
           <TextField multiline name="other" value={other} onChange={handleTextChange} />
         </div>
       </FormGroup>
       <TextField
-        label="Describe your request"
+        label={getLongLineText(locale.lang, "request_help", "support_kinds", "request_placeholder")}
         variant="outlined"
         multiline
         rows={6}
@@ -94,9 +97,7 @@ const Requests = (props) => {
         onChange={handleTextChange}
       />
       <div style={{ fontStyle: 'italic' }}>
-        * If possible, please include details such as
-        days or times of week you anticipate needing help, dietary restrictions,
-        and anything else a helper might need to know.
+        {getLongLineText(locale.lang, "request_help", "support_kinds", "notice")}
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <ButtonGroup
@@ -104,11 +105,20 @@ const Requests = (props) => {
           color="secondary"
           variant="contained"
           aria-label="contained secondary button group">
-          <Button style={{ fontFamily: 'Lexend Giga' }} onClick={() => { moveToPage1(); handleSave() }}>Back</Button>
-          <Button style={{ fontFamily: 'Lexend Giga' }} onClick={() => { handleSave(); console.log(Data); }}>Submit</Button>
+          <Button
+            style={{ fontFamily: 'Lexend Giga' }}
+            onClick={() => { moveToPage1(); handleSave() }}>
+            {getLongLineText(locale.lang, "request_help", "footer", "back_button")}
+          </Button>
+          <Button
+            style={{ fontFamily: 'Lexend Giga' }}
+            onClick={() => { handleSave(); console.log(Data); }}>
+            {getLongLineText(locale.lang, "request_help", "footer", "submit_button")}
+          </Button>
         </ButtonGroup>
         <strong style={{ fontStyle: 'italic' }}>
-          Page {<span style={{ color: '#00ff00' }}>2/2</span>}
+          {getLongLineText(locale.lang, "request_help", "page", null)}
+          {<span style={{ color: '#00ff00' }}>2/2</span>}
         </strong>
       </div>
     </FormControl>
@@ -119,6 +129,7 @@ const PersonalInformation = (props) => {
   const { personalInfo } = props;
   const history = useHistory();
   const classes = useStyles();
+  const locale = useContext(localeContext);
 
   const moveToPage2 = () => {
     history.push("/request_help/2");
@@ -143,13 +154,52 @@ const PersonalInformation = (props) => {
   return (
     <>
       <FormControl className={personalInfo}>
-        <FormLabel style={{ fontFamily: 'Lexend Giga' }}>Personal information</FormLabel>
-        <TextField className={classes.font} label="Your full name" name="fullName" variant="outlined" value={fullName} onChange={handleChange} />
-        <TextField label="Your location" name="location" variant="outlined" value={location} onChange={handleChange} />
-        <TextField label="Your medical facility" name="medicalFacility" variant="outlined" value={medicalFacility} onChange={handleChange} />
-        <TextField label="Your job title/ role" name="jobTitle" variant="outlined" value={jobTitle} onChange={handleChange} />
-        <TextField label="Your email" name="email" variant="outlined" value={email} onChange={handleChange} />
-        <TextField label="Your phone number" name="phone" variant="outlined" value={phone} onChange={handleChange} />
+        <FormLabel style={{ fontFamily: 'Lexend Giga' }}>
+          {getLongLineText(locale.lang, "request_help", "personal_info", "title")}
+        </FormLabel>
+        <TextField
+          className={classes.font}
+          label={getLongLineText(locale.lang, "request_help", "personal_info", "name_placeholder")}
+          name="fullName"
+          variant="outlined"
+          value={fullName}
+          onChange={handleChange}
+        />
+        <TextField
+          label={getLongLineText(locale.lang, "request_help", "personal_info", "location_placeholder")}
+          name="location"
+          variant="outlined"
+          value={location}
+          onChange={handleChange}
+        />
+        <TextField
+          label={getLongLineText(locale.lang, "request_help", "personal_info", "facility_placeholder")}
+          name="medicalFacility"
+          variant="outlined"
+          value={medicalFacility}
+          onChange={handleChange}
+        />
+        <TextField
+          label={getLongLineText(locale.lang, "request_help", "personal_info", "role_placeholder")}
+          name="jobTitle"
+          variant="outlined"
+          value={jobTitle}
+          onChange={handleChange}
+        />
+        <TextField
+          label={getLongLineText(locale.lang, "request_help", "personal_info", "email_placeholder")}
+          name="email"
+          variant="outlined"
+          value={email}
+          onChange={handleChange}
+        />
+        <TextField
+          label={getLongLineText(locale.lang, "request_help", "personal_info", "phone_placeholder")}
+          name="phone"
+          variant="outlined"
+          value={phone}
+          onChange={handleChange}
+        />
       </FormControl>
 
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -158,10 +208,15 @@ const PersonalInformation = (props) => {
           color="secondary"
           variant="contained"
           aria-label="contained secondary button group">
-          <Button style={{ fontFamily: 'Lexend Giga' }} onClick={() => { moveToPage2(); handleSave() }}>Next</Button>
+          <Button
+            style={{ fontFamily: 'Lexend Giga' }}
+            onClick={() => { moveToPage2(); handleSave() }}>
+            {getLongLineText(locale.lang, "request_help", "footer", "next_button")}
+          </Button>
         </ButtonGroup>
         <strong style={{ fontStyle: 'italic' }}>
-          Page {<span style={{ color: '#ED4337' }}>1/2</span>}
+          {getLongLineText(locale.lang, "request_help", "page", null)}
+          {<span style={{ color: '#ED4337' }}>1/2</span>}
         </strong>
       </div>
     </>

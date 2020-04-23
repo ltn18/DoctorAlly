@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
+import localeContext, { getText } from '../../context/localeCtx';
 
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
@@ -8,7 +9,7 @@ import axios from 'axios';
 mapboxgl.accessToken = 'pk.eyJ1IjoiaG9hbmdtaW5obmciLCJhIjoiY2s5M25xYTMwMDRhZDNpcDNhOHN1cDRnciJ9.NvYOhaROmMb04qeJyIbG-A';
 const [lng, lat, zoom] = [105.8380, 21.0269, 14.52]; // Hanoi
 
-class StoreMap extends Component {
+class Map extends Component {
   constructor(props) {
     super(props);
   }
@@ -27,8 +28,8 @@ class StoreMap extends Component {
       accessToken: mapboxgl.accessToken,
       mapboxgl: mapboxgl,
       marker: false,
-      placeholder: 'Search for stores nearby',
-      bbox: [105.73333,20.88333,106.03333,21.38333],
+      placeholder: getText("supply_stores", "search_placeholder", this.props.locale.lang),
+      bbox: [105.73333, 20.88333, 106.03333, 21.38333],
       proximity: {
         longitude: lng,
         lattitude: lat,
@@ -148,7 +149,7 @@ class StoreMap extends Component {
   render() {
     return (
       <>
-        <div style={{display: 'flex'}}>
+        <div style={{ display: 'flex' }}>
           <div id="geocoder1" class="geocoder"></div>
           <div id="geocoder2" class="geocoder"></div>
         </div>
@@ -158,6 +159,11 @@ class StoreMap extends Component {
     )
   }
 }
+
+const StoreMap = () => {
+  const locale = useContext(localeContext);
+  return <Map locale={locale} />
+};
 
 export default StoreMap;
 
