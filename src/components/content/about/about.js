@@ -8,7 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { Container, Box, Link } from '@material-ui/core';
 
-import localeContext, { getText } from '../context/localeCtx';
+import localeContext, { getText } from '../../context/localeCtx';
 
 const useStyles = makeStyles({
   root: {

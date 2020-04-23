@@ -6,17 +6,40 @@ import { Container, makeStyles, Button } from '@material-ui/core';
 import { About } from './content/index';
 
 const useStyles = makeStyles(() => ({
+  root: {
+    maxWidth: 345,
+    margin: 20,
+    marginTop: '0px',
+    marginBottom: '0px',
+    width: 345,
+  },
+  container: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    flexWrap: "wrap"
+  },
+  h2: {
+    marginTop: '30px',
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  p: {
+    marginBottom: '15px'
+  },
+
   direct: {
     display: 'flex',
     flexDirection: 'row',
-    marginTop: 30,
+    marginTop: '40px',
   },
   directItem: {
     padding: '20px',
-    backgroundColor: '#f2f2f2',
     width: '600px',
-    height: '48vh',
-  }
+    height: '51vh',
+  },
+
 }));
 
 
@@ -25,9 +48,9 @@ const ToReqHelp = (props) => {
   const history = useHistory();
 
   return (
-    <div className={classes.directItem} style={{ borderLeft: '6px solid #F50057' }}>
+    <div className={classes.directItem}>
       <strong style={{ fontSize: '25px', color: '#F50057' }}>REQUEST HELP</strong>
-      <p style={{ wordWrap: 'break-word', marginTop: '20px' }}>
+      <p style={{ wordWrap: 'break-word', marginTop: '15px' }}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Donec cursus erat at est tristique viverra.
         Nunc tincidunt mauris odio, id finibus nisi bibendum eget.
@@ -41,7 +64,7 @@ const ToReqHelp = (props) => {
         Fusce nec fermentum ipsum.
       </p>
       <Button
-        style={{ marginTop: '20px', fontWeight: 'bold', color: 'white' }}
+        style={{ marginTop: '5px', fontWeight: 'bold', color: 'white' }}
         color="secondary"
         variant="contained"
         size="large"
@@ -58,9 +81,9 @@ const ToVolunteer = () => {
   const history = useHistory();
 
   return (
-    <div className={classes.directItem} style={{ borderLeft: '6px solid #3F51B5' }}>
+    <div className={classes.directItem}>
       <strong style={{ fontSize: '25px', color: '#3F51B5' }}>VOLUNTEER</strong>
-      <p style={{ wordWrap: 'break-word', marginTop: '20px' }}>
+      <p style={{ wordWrap: 'break-word', marginTop: '15px' }}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Donec cursus erat at est tristique viverra.
         Nunc tincidunt mauris odio, id finibus nisi bibendum eget.
@@ -74,7 +97,7 @@ const ToVolunteer = () => {
         Fusce nec fermentum ipsum.
       </p>
       <Button
-        style={{ marginTop: '20px', fontWeight: 'bold', color: 'white' }}
+        style={{ marginTop: '5px', fontWeight: 'bold', color: 'white' }}
         color="primary"
         variant="contained"
         size="large"
@@ -83,6 +106,51 @@ const ToVolunteer = () => {
         VOLUNTEER NOW
       </Button>
     </div>
+  )
+}
+
+const ToHeaders = () => {
+  const classes = useStyles();
+  const history = useHistory();
+
+  return (
+    <Container>
+      <div style={{ display: 'flex', flexDirection: 'row' }}>
+        <div className={classes.root}>
+          <h2 className={classes.h2} style={{ borderTop: '1px solid #008000', borderBottom: '1px solid #008000', padding: '15px', color: '#008000' }}> Nearby Stores </h2>
+          <Container className={classes.container}>
+            <p className={classes.p}>
+              We’re currently setting up networks of doctors and volunteers with an aim to fight against Covid-19.
+              Your help will greatly contribute to this fight and our community as a whole.
+              Sign up as a volunteer now and receive notifications when new requests are posted!
+          </p>
+            <Button onClick={() => history.push("/supply_stores")} size="large" style={{ backgroundColor: '#008000', color: 'white', fontWeight: 'bold' }} variant="contained" className={classes.button}>Nearby Stores</Button>
+          </Container>
+        </div>
+        <div className={classes.root}>
+          <h2 className={classes.h2} style={{ borderTop: '1px solid #8134AF', borderBottom: '1px solid #8134AF', padding: '15px', color: '#8134AF' }}> Covid-19 Data </h2>
+          <Container className={classes.container}>
+            <p className={classes.p}>
+              We’re currently setting up networks of doctors and volunteers with an aim to fight against Covid-19.
+              Your help will greatly contribute to this fight and our community as a whole.
+              Sign up as a volunteer now and receive notifications when new requests are posted!
+          </p>
+            <Button onClick={() => history.push("/covid19_data")} size="large" style={{ backgroundColor: '#8134AF', color: 'white', fontWeight: 'bold' }} variant="contained" className={classes.button}>Covid-19 Data</Button>
+          </Container>
+        </div>
+        <div className={classes.root}>
+          <h2 className={classes.h2} style={{ borderTop: '1px solid #F77737', borderBottom: '1px solid #F77737', padding: '15px', color: '#F77737' }}> Learn More </h2>
+          <Container className={classes.container}>
+            <p className={classes.p}>
+              We’re currently setting up networks of doctors and volunteers with an aim to fight against Covid-19.
+              Your help will greatly contribute to this fight and our community as a whole.
+              Sign up as a volunteer now and receive notifications when new requests are posted!
+          </p>
+            <Button onClick={() => history.push("/how_it_works")} size="large" style={{ backgroundColor: '#F77737', color: 'white', fontWeight: 'bold' }} variant="contained" className={classes.button}>Learn More</Button>
+          </Container>
+        </div>
+      </div>
+    </Container>
   )
 }
 
@@ -106,6 +174,7 @@ const HomePage = () => {
           <ToReqHelp />
         </div>
       </Container>
+      <ToHeaders />
       <About />
     </div>
   )

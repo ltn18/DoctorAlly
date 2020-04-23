@@ -68,7 +68,7 @@ const Header = () => {
         >{getText("header", "request_help", locale.lang)}</Button>
 
         <Button
-          onClick={() => { handleRouteSwitch("supply_stores") }} 
+          onClick={() => { handleRouteSwitch("supply_stores") }}
           style={{ color: 'green' }}
           className={classes.font}
         >{getText("header", "supply_stores", locale.lang)}</Button>
@@ -81,6 +81,7 @@ const Header = () => {
 
         <Button
           onClick={() => { handleRouteSwitch("how_it_works") }}
+          style={{ color: '#F77737' }}
           className={classes.font}
         >{getText("header", "how_it_works", locale.lang)}</Button>
 
