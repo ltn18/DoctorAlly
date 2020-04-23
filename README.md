@@ -25,24 +25,16 @@
 * [TERMS OF USE GENERATOR](https://www.termsofusegenerator.net/)
 * [BACKEND FLOW](https://www.lucidchart.com/invitations/accept/266989db-b767-4300-afff-91cdef6bbff7)
 
-## Updated from previous push
-* Hardcode font 
-
-* Update role
-* ```npm install @mapbox/mapbox-gl-geocoder```
-* Display Map in src\components\content\supply_stores\supply_stores.js
-* Add DevCard to src\components\content\about.js
-* Add Language to src\components\layout\header\header.js
-* Update DevCard link color
-
 ## TODO
 ### For UI/Backend Developers
-* Fix locale in terms & policy
-* useContext to set lat, long of map? - Let's try if it rerenders.
-* Build backend for Request Help, Feedbacks, Volunteer
-* Send thankyou email to volunteer
-* Send volunteer's information to doctors 
-* Update font placeholder
+* Locale: 
+ - covid19 
+ - volunteer
+ - how it works (chưa có nội dung)
+* Font Lexend Giga
+ - các thanh input
+* Addition
+  - add thêm vào trang HomePage (làm trong Hackathon)
 
 ### For Other Developers
 * Translate documents on page
