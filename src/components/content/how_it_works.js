@@ -26,7 +26,7 @@ const How_it_works = () => {
       <div className={classes.player}>
         <h1>HOW IT WORKS</h1>
         <ReactPlayer
-          width={1200}
+          width={1170}
           height={500}
           url='https://youtu.be/VaKzNtwPQxE'
           playing
