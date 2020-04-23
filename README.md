@@ -28,11 +28,11 @@
 ## TODO
 ### For UI/Backend Developers
 * Locale: 
- - covid19 
- - volunteer
- - how it works (chưa có nội dung)
+  - covid19 
+  - volunteer
+  - how it works (chưa có nội dung)
 * Font Lexend Giga
- - các thanh input
+  - các thanh input
 * Addition
   - add thêm vào trang HomePage (làm trong Hackathon)
 
