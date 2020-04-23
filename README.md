@@ -35,11 +35,14 @@
   - các thanh input
 * Addition
   - add thêm vào trang HomePage (làm trong Hackathon)
+* Deploy
 
 ### For Other Developers
-* Translate documents on page
-* Business model for page
-* Revise content of page (especially How it works)
+* Viết how to use
+* Dịch how to use
+* Hoàn thành Business Plan
+* Làm video & chỉnh sửa video
+* Xem lại content page
 
 ## Marketing Media
 * Facebook
