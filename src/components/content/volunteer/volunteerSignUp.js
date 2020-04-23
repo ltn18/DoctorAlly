@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, { useContext } from 'react';
+import localeContext, { getLongLineText } from '../../context/localeCtx';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { Container, Button } from '@material-ui/core';
@@ -50,51 +50,52 @@ const useStyles = makeStyles((theme) => ({
 
 const VolunteerSignUp = () => {
   const classes = useStyles();
+  const locale = useContext(localeContext)
+
   return (
     <Container maxWidth="md">
       <form className={classes.root} noValidate autoComplete="off">
         <div style={{ marginBottom: 20 }}>
-          <strong>VOLUNTEER CARD</strong>
-          <p style={{ fontStyle: 'italic' }}>We will contact you when there are requests near you.
-          Your personal information is safe with us!</p>
+          <strong>{getLongLineText(locale.lang, 'volunteerSignUp', 'title', null)}</strong>
+          <p style={{ fontStyle: 'italic' }}>{getLongLineText(locale.lang, 'volunteerSignUp', 'description', null)}</p>
         </div>
         <FormControl className={classes.formControl}>
           <FormLabel classes={{
             root: classes.font
-          }} >What can you provide?</FormLabel>
+          }} >{getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'title')}</FormLabel>
           <FormGroup>
             <FormControlLabel
               control={<Checkbox />}
-              label="Meals"
+              label={getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'item1')}
             />
             <FormControlLabel
               control={<Checkbox />}
-              label="Drinks"
+              label={getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'item2')}
             />
             <FormControlLabel
               control={<Checkbox />}
-              label="Masks"
+              label={getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'item3')}
             />
             <FormControlLabel
               control={<Checkbox />}
-              label="Sanitizer hand wash"
+              label={getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'item4')}
             />
             <FormControlLabel
               control={<Checkbox />}
-              label="Medical supplies"
+              label={getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'item5')}
             />
             <FormControlLabel
               control={<Checkbox />}
-              label="Pet care"
+              label={getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'item6')}
             />
             <FormControlLabel
               control={<Checkbox />}
-              label="Laundry"
+              label={getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'item7')}
             />
             <div>
               <FormControlLabel
                 control={<Checkbox />}
-                label="Other "
+                label={getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'item8')}
               />
               <TextField multiline />
             </div>
@@ -102,26 +103,26 @@ const VolunteerSignUp = () => {
         </FormControl>
 
         <FormControl className={classes.personalInfo}>
-          <FormLabel className={classes.font}>Personal information</FormLabel>
-          <TextField classes={classes.font} label="Your full name" variant="outlined" />
-          <TextField label="Your home district" variant="outlined" />
-          <TextField label="Your home ward" variant="outlined" />
-          <TextField label="Your home city" variant="outlined" />
-          <TextField label="Your email" variant="outlined" />
-          <TextField label="Your phone number" variant="outlined" />
+          <FormLabel className={classes.font}>{getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'title')}</FormLabel>
+          <TextField classes={classes.font} label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'name_placeholder')} variant="outlined" />
+          <TextField label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'district_placeholder')} variant="outlined" />
+          <TextField label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'ward_placeholder')} variant="outlined" />
+          <TextField label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'city_placeholder')} variant="outlined" />
+          <TextField label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'email_placeholder')} variant="outlined" />
+          <TextField label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'phone_placeholder')} variant="outlined" />
         </FormControl>
 
         <FormControl className={classes.footer}>
-          <TextField label="Your signature" style={{ marginRight: '10px' }} />
-          <Button className={classes.font} variant="contained" color="primary" size="large">Submit</Button>
+          <TextField label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'signature_placeholder')} style={{ marginRight: '10px' }} />
+          <Button className={classes.font} variant="contained" color="primary" size="large">{getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'submit_button')}</Button>
         </FormControl>
 
         <div className={classes.quote}>
           <strong>
-            “No one has ever become poor by giving.”
+          {getLongLineText(locale.lang, 'volunteerSignUp', 'footer', 'quote')}
           </strong>
           <strong style={{ alignSelf: 'flex-end' }}>
-            Anne Frank, diary of Anne Frank: the play
+          {getLongLineText(locale.lang, 'volunteerSignUp', 'footer', 'author')}
           </strong>
         </div>
       </form>

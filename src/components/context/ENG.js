@@ -17,7 +17,47 @@ const ENG = {
     h3: "Healthcare workers need your help to fight COVID-19",
     box: "Volunteer your time or request support for meals, pet care, errands, and more during the COVID-19 pandemic."
   },
-
+  // VOLUNTEER
+  volunteer: {
+    h2_volunteer: "BE A VOLUNTEER",
+    p: `We’re currently setting up networks of doctors and volunteers with an aim to fight against Covid-19.
+    Your help will greatly contribute to this fight and our community as a whole.
+    Sign up as a volunteer now and receive notifications when new requests are posted!`,
+    button: "Volunteer Now",
+    h2_request: "REQUEST LISTS",
+    search_bar: "Search Requests"  
+  },
+  volunteerSignUp: {
+    title: 'VOLUNTEER CARD',
+    description: `We will contact you when there are requests near you.
+    Your personal information is safe with us!`,
+    support_kinds: {
+      title: "What can you provide?",
+      item1: "Meals",
+      item2: "Drinks",
+      item3: "Masks",
+      item4: "Sanitizer hand wash",
+      item5: "Medical supplies",
+      item6: "Pet care",
+      item7: "Laundry",
+      item8: "Other ",
+    },
+    personal_info: {
+      title: "Personal information",
+      name_placeholder: "Your full name",
+      district_placeholder: "Your home district",
+      ward_placeholder: "Your home ward",
+      city_placeholder: "Your home city",
+      email_placeholder: "Your email",
+      phone_placeholder: "Your phone number",
+      signature_placeholder: "Your signature",
+      submit_button: "Submit",
+    },
+    footer: {
+      quote: "“No one has ever become poor by giving.”",
+      author: "Anne Frank, diary of Anne Frank: the play",
+    }
+  },
   // REQUEST HELP
   request_help: {
     title: "REQUEST CARD",

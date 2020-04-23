@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import localeContext, { getText } from '../../context/localeCtx';
 import { useHistory } from 'react-router-dom';
 import { Button, Container, Box, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import IconButton from '@material-ui/core/IconButton';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -125,6 +127,7 @@ const RequestBox = (props) => {
 const Volunteer = () => {
   const history = useHistory();
   const classes = useStyles();
+  const locale = useContext(localeContext);
   const moveToSignUp = () => {
     history.push("/volunteer/signup");
   }
@@ -132,18 +135,16 @@ const Volunteer = () => {
   return (
     <>
       <div className={classes.root}>
-        <h2 className={classes.h2}> BE A VOLUNTEER </h2>
+        <h2 className={classes.h2}> {getText("volunteer", "h2_volunteer", locale.lang)} </h2>
         <Container className={classes.container}>
           <p className={classes.p}>
-            We’re currently setting up networks of doctors and volunteers with an aim to fight against Covid-19.
-            Your help will greatly contribute to this fight and our community as a whole.
-            Sign up as a volunteer now and receive notifications when new requests are posted!
+            {getText("volunteer", "p", locale.lang)}
           </p>
-          <Button onClick={moveToSignUp} color="primary" variant="contained" className={classes.button}>Volunteer Now</Button>
+          <Button onClick={moveToSignUp} color="primary" variant="contained" className={classes.button}> {getText("volunteer", "button", locale.lang)}</Button>
         </Container>
       </div>
       <div className={classes.root}>
-        <h2 className={classes.h2}>REQUEST LISTS</h2>
+        <h2 className={classes.h2}>{getText("volunteer", "h2_request", locale.lang)}</h2>
         <div style={{ display: 'flex' }}>
           <IconButton type="submit" className={classes.iconButton} aria-label="search">
             <SearchIcon />
@@ -151,7 +152,7 @@ const Volunteer = () => {
           <InputBase
             style={{ alignSelf: 'center' }}
             className={classes.input}
-            placeholder="Search Requests"
+            placeholder={getText("volunteer", "search_bar", locale.lang)}
             inputProps={{ 'aria-label': 'search requests' }}
           />
         </div>

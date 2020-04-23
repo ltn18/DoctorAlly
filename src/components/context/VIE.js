@@ -20,12 +20,46 @@ const VIE = {
 
   // VOLUNTEER
   volunteer: {
-
+    h2_volunteer: "HÃY TRỞ THÀNH MỘT TÌNH NGUYỆN VIÊN",
+    p: `Chúng tôi hiện đang phát triển một mạng lưới các bác sĩ và tình nguyện viên với mục tiêu chung tay
+    chống lại dịch Covid-19. Do đó, sự giúp đỡ của bạn sẽ góp phần rất lớn cho cuộc chiến này và cho toàn thể cộng đồng.
+    Hãy đăng kí làm một tình nguyên viên và bạn sẽ nhận được thông báo khi xuất hiện yêu cầu mới từ các y bác sĩ.`,   
+    button: "Tình nguyện ngay",
+    h2_request: "DANH SÁCH YÊU CẦU",
+    search_bar: "Tìm yêu cầu"  
   },
   volunteerSignUp: {
-
+    title: 'THẺ TÌNH NGUYỆN',
+    description: 
+    `Chúng tôi sẽ liên lạc với bạn khi có yêu cầu ở gần bạn.
+    Thông tin cá nhân của bạn sẽ được chúng tôi bảo vệ an toàn.`,
+    support_kinds: {
+      title: "Bạn có thể giúp cung cấp những gì?",
+      item1: "Bữa ăn",
+      item2: "Thức uống",
+      item3: "Khẩu trang",
+      item4: "Nước rửa tay",
+      item5: "Vật tư y tế",
+      item6: "Chăm sóc thú cưng",
+      item7: "Giặt ủi",
+      item8: "Khác ",
+    },
+    personal_info: {
+      title: "Thông tin cá nhân",
+      name_placeholder: "Tên đầy đủ của bạn",
+      district_placeholder: "Quận nơi bạn sinh sống",
+      ward_placeholder: "Phường nơi bạn sinh sống",
+      city_placeholder: "Thành phố nơi bạn sinh sống",
+      email_placeholder: "Email của bạn",
+      phone_placeholder: "Số điện thoại của bạn",
+      signature_placeholder: "Chữ ký của bạn",
+      submit_button: "Gửi",
+    },
+    footer: {
+      quote: "“Thước đo của sự giàu có là tình yêu thương”",
+      author: "Anne Frank, Vở kịch: Nhật kí của Anne Frank",
+    }
   },
-
   // REQUEST HELP
   request_help: {
     title: "THẺ YÊU CẦU",
