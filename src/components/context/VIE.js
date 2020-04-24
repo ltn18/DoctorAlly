@@ -155,7 +155,7 @@ const VIE = {
 
   // NEARBY STORES
   supply_stores: {
-    hanoimap: "Bản đồ cung cấp Hà Nội",
+    hanoimap: "Bản đồ cung ứng Hà Nội",
     description: "Để hỗ trợ nhân viên y tế, đặc biệt là những người cần nguồn cung cấp thường xuyên như thực phẩm và đồ gia dụng, chúng tôi đã tạo ra một bản đồ dễ tiếp cận cho các cửa hàng cung ứng. Điều duy nhất bạn phải làm là nhập địa điểm của bạn và các cửa hàng gần nhất sẽ xuất hiện để bạn chọn!",
     search_placeholder: "Tìm kiếm cửa hàng",
     howtouse: "Hướng dẫn sử dụng",
@@ -217,17 +217,34 @@ const VIE = {
   },
 
   how_it_works: {
-    title: "CÁCH THỨC HOẠT ĐỘNG",
+    h2_general: {
+      title: "Tổng quát",
+      p1: "Thông tin cá nhân mà bạn được yêu cầu cung cấp và lý do tại sao bạn được yêu cầu cung cấp thông tin đó sẽ được làm rõ cho bạn tại thời điểm chúng tôi yêu cầu bạn cung cấp thông tin cá nhân của bạn.",
+      p2: "Khi bạn đăng ký Tài khoản, chúng tôi có thể yêu cầu thông tin liên lạc của bạn, bao gồm các mục như tên, tên công ty, địa chỉ, địa chỉ email và số điện thoại.",
+      p3: "Nếu bạn liên hệ trực tiếp với chúng tôi, chúng tôi có thể nhận được thông tin bổ sung về bạn như tên, địa chỉ email, số điện thoại, nội dung của tin nhắn và / hoặc tệp đính kèm bạn có thể gửi cho chúng tôi và bất kỳ thông tin nào khác bạn có thể chọn cung cấp.",
+      li_1: "Cung cấp, vận hành và duy trì website",
+      li_2: "Cải thiện, cá nhân hóa và mở rộng website",
+      li_3: "Hiểu và phân tích cách bạn sử dụng website",
+      li_4: "Phát triển sản phẩm, dịch vụ, tính năng và chức năng mới",
+      li_5: "Trao đổi với bạn, trực tiếp hoặc thông qua một trong các đối tác của chúng mình, bao gồm cả dịch vụ khách hàng, để cung cấp cho bạn các cập nhật và thông tin khác liên quan đến trang web và cho các mục đích tiếp thị và quảng cáo",
+      li_6: "Gửi email cho bạn",
+      li_7: "Tìm và ngăn chặn lừa đảo",
+    },
     for_doctors: {
-      title: "Dành cho bác sĩ",
-
+      title: "Dành riêng cho bác sĩ",
+      li_1: "Hãy chọn lựa ai sẽ là người giúp bạn",
+      li_2: "Bạn có quyền từ chối sự giúp đỡ nếu bạn cảm thấy bị làm phiền",
+      li_3: "Hãy mở lòng, tin vào điều tử tế hiện hữu trong cộng đồng",
     },
     for_volunteers: {
-      title: "Dành cho tình nguyện viên",
+      title: "Dành riêng cho tình nguyện viên",
+      li_1: "Hãy đăng ký tham gia dự án bằng tấm lòng chân thành và mong muốn giúp đỡ các bác sĩ",
+      li_2: "Luôn nhớ rằng, các y tá, bác sĩ đang ngày đêm túc trực trong bệnh viện giành giật từng sự sống",
+      li_3: "Vì vậy, tránh làm phiền họ và hãy có trách nhiệm với sự giúp đỡ của mình",
     },
     notice: {
       title: "Lưu ý",
-      description: `Việc đánh giá và đồng ý yêu cầu hoặc đề nghị giúp đỡ trên ${WEBSITE_NAME} rất quan trọng cho sự an toàn của bạn.`,
+      description: `Việc đánh giá để đồng ý yêu cầu hoặc đề nghị giúp đỡ trên ${WEBSITE_NAME} rất quan trọng cho sự an toàn của bạn.`,
     },
     footer: `Nếu bạn gặp phải bất kỳ vấn đề nào hoặc muốn hỏi thêm thông tin, hãy gửi email cho chúng mình qua `,
   },
