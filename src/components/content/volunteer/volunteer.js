@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import localeContext, { getText } from '../../context/localeCtx';
 import { useHistory } from 'react-router-dom';
-import { Button, Container, Box, Grid } from '@material-ui/core';
+import { Button, ButtonGroup, Container, Box, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
@@ -75,13 +75,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const data = [
+const DATA = [
   {
     id: 1,
     name: "An Nguyen",
     role: "Doctor",
     facility: "Benh vien Hong Ngoc",
-    work: ['Shopping', 'Cooking'],
+    needs: ['Shopping', 'Cooking'],
     offers: 1,
   },
   {
@@ -89,7 +89,7 @@ const data = [
     name: "Binh Nguyen",
     role: "Surgeon",
     facility: "Bach Mai",
-    work: ['Shopping'],
+    needs: ['Shopping'],
     offers: 2,
   },
   {
@@ -97,13 +97,77 @@ const data = [
     name: "Chris Dev",
     role: "Nurse",
     facility: "Vin Mec",
-    work: ['Special chores'],
+    needs: ['Special chores'],
     offers: 3,
+  },
+  {
+    id: 4,
+    name: "Chris Dev",
+    role: "Nurse",
+    facility: "Vin Mec",
+    needs: ['Special chores'],
+    offers: 4,
+  },
+  {
+    id: 5,
+    name: "Chris Dev",
+    role: "Nurse",
+    facility: "Vin Mec",
+    needs: ['Special chores'],
+    offers: 5,
+  },
+  {
+    id: 6,
+    name: "Chris Dev",
+    role: "Nurse",
+    facility: "Vin Mec",
+    needs: ['Special chores'],
+    offers: 6,
+  },
+  {
+    id: 7,
+    name: "Chris Dev",
+    role: "Nurse",
+    facility: "Vin Mec",
+    needs: ['Special chores'],
+    offers: 7,
+  },
+  {
+    id: 8,
+    name: "Chris Dev",
+    role: "Nurse",
+    facility: "Vin Mec",
+    needs: ['Special chores'],
+    offers: 4,
+  },
+  {
+    id: 9,
+    name: "Chris Dev",
+    role: "Nurse",
+    facility: "Vin Mec",
+    needs: ['Special chores'],
+    offers: 5,
+  },
+  {
+    id: 10,
+    name: "Chris Dev",
+    role: "Nurse",
+    facility: "Vin Mec",
+    needs: ['Special chores'],
+    offers: 6,
+  },
+  {
+    id: 11,
+    name: "Chris Dev",
+    role: "Nurse",
+    facility: "Vin Mec",
+    needs: ['Special chores'],
+    offers: 7,
   }
 ]
 
 const RequestBox = (props) => {
-  const { color, id, work, offers } = props;
+  const { color, id, needs, offers } = props;
   const history = useHistory();
   const classes = useStyles();
 
@@ -116,7 +180,7 @@ const RequestBox = (props) => {
       <Grid container spacing={2} className={classes.grid}>
         <Grid item xs={6}>
           <strong>{props.name} | {props.role}, {props.facility}</strong>
-          <div>{props.work.join(", ")}</div>
+          <div>{props.needs.join(", ")}</div>
         </Grid>
         <Grid item xs={6}>{props.offers} offers</Grid>
       </Grid>
@@ -128,9 +192,82 @@ const Volunteer = () => {
   const history = useHistory();
   const classes = useStyles();
   const locale = useContext(localeContext);
+  const [page, setPage] = useState(0);
+  const rows = 5;
   const moveToSignUp = () => {
     history.push("/volunteer/signup");
   }
+
+  const handleNextButtonClick = () => {
+    if (page * rows < DATA.length) {
+      setPage(page + 1);
+    }
+    console.log(page);
+  };
+  const handleBackButtonClick = () => {
+    if (page > 0) {
+      setPage(page - 1);
+    }
+    console.log(page);
+  };
+
+  const RenderButton = (props) => {
+    const locale = useContext(localeContext);
+    const { page, rows } = props;
+    return (
+      <div style={{ marginTop: '15px' }}>
+        {
+          page > 0 && page * rows + rows <= DATA.length
+            ?
+            <>
+              <ButtonGroup variant="contained" aria-label="text primary button group">
+                <Button
+                  style={{ backgroundColor: '#E1306C', color: 'white' }}
+                  onClick={handleBackButtonClick}
+                >
+                  {getText("volunteer", "back_button", locale.lang)}
+                </Button>
+                <Button
+                  style={{ backgroundColor: '#53A653', color: 'white' }}
+                  onClick={handleNextButtonClick}
+                >
+                  {getText("volunteer", "next_button", locale.lang)}
+                </Button>
+              </ButtonGroup>
+            </>
+            : page === 0
+              ?
+              <>
+                <Button
+                  style={{ backgroundColor: '#53A653', color: 'white' }}
+                  variant="contained"
+                  color="primary"
+                  onClick={handleNextButtonClick}
+                >
+                  {getText("volunteer", "next_button", locale.lang)}
+                </Button>
+              </>
+              : <Button
+                style={{ backgroundColor: '#E1306C', color: 'white' }}
+                variant="contained"
+                color="primary"
+                onClick={handleBackButtonClick}
+              >
+                {getText("volunteer", "back_button", locale.lang)}
+              </Button>
+        }
+      </div>
+    )
+  }
+
+  console.log(DATA.slice(page * rows, page * rows + rows));
+
+  const [searchValue, setSearchValue] = useState("");
+  const handleSearchChange = (e) => {
+    setSearchValue(e.target.value);
+  }
+
+  console.log(DATA.filter(item => item.needs.filter(need => need.toLowerCase().includes(searchValue.toLowerCase()))));
 
   return (
     <>
@@ -154,39 +291,44 @@ const Volunteer = () => {
             className={classes.input}
             placeholder={getText("volunteer", "search_bar", locale.lang)}
             inputProps={{ 'aria-label': 'search requests' }}
+            value={searchValue}
+            onChange={handleSearchChange}
           />
         </div>
         <div className='requests-container'>
           {
-            data.map((box, id) => {
-              if (id % 2 === 0) {
-                return (
-                  <RequestBox
-                    color='#f2f2f2'
-                    id={data[id].id}
-                    name={data[id].name}
-                    role={data[id].role}
-                    facility={data[id].facility}
-                    work={data[id].work}
-                    offers={data[id].offers}
-                  />
-                )
-              } else {
-                return (
-                  <RequestBox
-                    color='#ffffff'
-                    id={data[id].id}
-                    name={data[id].name}
-                    role={data[id].role}
-                    facility={data[id].facility}
-                    work={data[id].work}
-                    offers={data[id].offers}
-                  />
-                )
-              }
-            })
+            DATA
+              .filter(item => item.needs.filter(need => need.toLowerCase().includes(searchValue.toLowerCase())))
+              .slice(page * rows, page * rows + rows)
+              .map((box) => {
+                if (box.id % 2 === 0) {
+                  return (
+                    <RequestBox
+                      color='#f2f2f2'
+                      id={box.id}
+                      name={box.name}
+                      role={box.role}
+                      facility={box.facility}
+                      needs={box.needs}
+                      offers={box.offers}
+                    />
+                  )
+                } else {
+                  return (
+                    <RequestBox
+                      color='#ffffff'
+                      id={box.id}
+                      name={box.name}
+                      role={box.role}
+                      facility={box.facility}
+                      needs={box.needs}
+                      offers={box.offers}
+                    />
+                  )
+                }
+              })
           }
-
+          <RenderButton page={page} rows={rows} />
         </div>
       </div>
     </>

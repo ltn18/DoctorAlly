@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
 import { CardContent, Paper, CardHeader, Button } from '@material-ui/core';
 
@@ -26,27 +26,99 @@ const useStyles = makeStyles(() => ({
 const DATA = [
   {
     id: 1,
-    fullName: "An Nguyen",
+    name: "An Nguyen",
     location: "Cau Giay",
-    medicalFacility: "Benh vien Hong Ngoc",
+    facility: "Benh vien Hong Ngoc",
     role: "Doctor",
     needs: ["Meals", "Drinks"],
     details: "White masks"
   },
   {
     id: 2,
-    fullName: "Binh Nguyen",
+    name: "Binh Nguyen",
     location: "Thanh Xuan",
-    medicalFacility: "Bach Mai",
+    facility: "Bach Mai",
     role: "Surgeon",
     needs: ["Coffee", "Tea"],
     details: "Sugar free"
   },
   {
     id: 3,
-    fullName: "Chris Dev",
+    name: "Chris Dev",
     location: "Hoan Kiem",
-    medicalFacility: "Vin Mec",
+    facility: "Vin Mec",
+    role: "Nurse",
+    needs: ["Cookies", "Ice cream"],
+    details: "Non-fat"
+  },
+  {
+    id: 4,
+    name: "Chris Dev",
+    location: "Hoan Kiem",
+    facility: "Vin Mec",
+    role: "Nurse",
+    needs: ["Cookies", "Ice cream"],
+    details: "Non-fat"
+  },
+  {
+    id: 5,
+    name: "Chris Dev",
+    location: "Hoan Kiem",
+    facility: "Vin Mec",
+    role: "Nurse",
+    needs: ["Cookies", "Ice cream"],
+    details: "Non-fat"
+  },
+  {
+    id: 6,
+    name: "Chris Dev",
+    location: "Hoan Kiem",
+    facility: "Vin Mec",
+    role: "Nurse",
+    needs: ["Cookies", "Ice cream"],
+    details: "Non-fat"
+  },
+  {
+    id: 7,
+    name: "Chris Dev",
+    location: "Hoan Kiem",
+    facility: "Vin Mec",
+    role: "Nurse",
+    needs: ["Cookies", "Ice cream"],
+    details: "Non-fat"
+  },
+  {
+    id: 8,
+    name: "Chris Dev",
+    location: "Hoan Kiem",
+    facility: "Vin Mec",
+    role: "Nurse",
+    needs: ["Cookies", "Ice cream"],
+    details: "Non-fat"
+  },
+  {
+    id: 9,
+    name: "Chris Dev",
+    location: "Hoan Kiem",
+    facility: "Vin Mec",
+    role: "Nurse",
+    needs: ["Cookies", "Ice cream"],
+    details: "Non-fat"
+  },
+  {
+    id: 10,
+    name: "Chris Dev",
+    location: "Hoan Kiem",
+    facility: "Vin Mec",
+    role: "Nurse",
+    needs: ["Cookies", "Ice cream"],
+    details: "Non-fat"
+  },
+  {
+    id: 11,
+    name: "Chris Dev",
+    location: "Hoan Kiem",
+    facility: "Vin Mec",
     role: "Nurse",
     needs: ["Cookies", "Ice cream"],
     details: "Non-fat"
@@ -56,12 +128,13 @@ const DATA = [
 const RequestResponse = () => {
   const classes = useStyles();
   const { id } = useParams();
+  const history = useHistory();
 
   return (
     <Paper elevation={3} rounded style={{ marginBottom: '30px' }}>
       <CardHeader
-        title={DATA[id - 1].fullName}
-        subheader={DATA[id - 1].role + " | " + DATA[id - 1].medicalFacility}
+        title={DATA[id - 1].name}
+        subheader={DATA[id - 1].role + " | " + DATA[id - 1].facility}
         className={classes.reqres}
         classes={{
           title: classes.title,
@@ -87,7 +160,10 @@ const RequestResponse = () => {
           fontWeight: 'bold',
           fontFamily: 'Lexend Giga'
         }}
-      >Offer Help</Button>
+        onClick={() => history.push("/offer_help")}
+      >
+        Offer Help
+      </Button>
     </Paper>
   )
 }

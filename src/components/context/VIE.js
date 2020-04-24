@@ -62,10 +62,12 @@ const VIE = {
     Hãy đăng kí làm một tình nguyên viên và bạn sẽ nhận được thông báo khi xuất hiện yêu cầu mới từ các y bác sĩ.`,
     button: "Tình nguyện ngay",
     h2_request: "DANH SÁCH YÊU CẦU",
-    search_bar: "Tìm yêu cầu"
+    search_bar: "Tìm yêu cầu",
+    next_button: "Tiếp theo",
+    back_button: "Trở lại",
   },
   volunteerSignUp: {
-    title: 'THẺ TÌNH NGUYỆN',
+    title: 'ĐƠN TÌNH NGUYỆN',
     description:
       `Chúng tôi sẽ liên lạc với bạn khi có yêu cầu ở gần bạn.
     Thông tin cá nhân của bạn sẽ được chúng tôi bảo vệ an toàn.`,
@@ -98,7 +100,7 @@ const VIE = {
   },
   // REQUEST HELP
   request_help: {
-    title: "THẺ YÊU CẦU",
+    title: "ĐƠN YÊU CẦU",
     description: "Hãy để chúng tôi giúp mình có được những gì bạn cần!",
     personal_info: {
       title: "Thông tin cá nhân",
@@ -109,6 +111,7 @@ const VIE = {
       email_placeholder: "Email của bạn",
       phone_placeholder: "Số điện thoại của bạn"
     },
+
     support_kinds: {
       title: "Bạn cần hỗ trợ như thế nào?",
       item1: "Vật tư y tế",
@@ -128,6 +131,26 @@ const VIE = {
       submit_button: "GỬI",
     },
     page: "Trang",
+  },
+
+  offer_help: {
+    title: 'ĐƠN CHẤP NHẬN GIÚP ĐỠ',
+    description: `Thay mặt các bác sĩ, cảm ơn bạn vì sự chân thành và ảnh hưởng tích cực của bạn đối với cộng đồng.`,
+    personal_info: {
+      title: "Thông tin cá nhân",
+      name_placeholder: "Tên đầy đủ của bạn",
+      district_placeholder: "Quận nơi bạn sinh sống",
+      ward_placeholder: "Phường nơi bạn sinh sống",
+      city_placeholder: "Thành phố nơi bạn sinh sống",
+      email_placeholder: "Email của bạn",
+      phone_placeholder: "Số điện thoại của bạn",
+      signature_placeholder: "Chữ ký của bạn",
+      submit_button: "Gửi",
+    },
+    footer: {
+      quote: "“Cánh cửa cho một sự khởi đầu mới mở ra khi chúng tôi chia sẻ.”",
+      author: "― Paul Bradley Smith",
+    }
   },
 
   // NEARBY STORES

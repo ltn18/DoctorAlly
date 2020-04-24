@@ -61,7 +61,9 @@ const ENG = {
     Sign up as a volunteer now and receive notifications when new requests are posted!`,
     button: "Volunteer Now",
     h2_request: "REQUEST LISTS",
-    search_bar: "Search Requests"
+    search_bar: "Search Requests",
+    next_button: "NEXT",
+    back_button: "BACK",
   },
   volunteerSignUp: {
     title: 'VOLUNTEER CARD',
@@ -126,6 +128,26 @@ const ENG = {
       submit_button: "SUBMIT",
     },
     page: "Page",
+  },
+
+  offer_help: {
+    title: 'OFFER HELP CARD',
+    description: `On behalf of doctors, thank you for your sincere kindness and positive impact you made in the community.`,
+    personal_info: {
+      title: "Personal information",
+      name_placeholder: "Your full name",
+      district_placeholder: "Your home district",
+      ward_placeholder: "Your home ward",
+      city_placeholder: "Your home city",
+      email_placeholder: "Your email",
+      phone_placeholder: "Your phone number",
+      signature_placeholder: "Your signature",
+      submit_button: "Submit",
+    },
+    footer: {
+      quote: "“When we share, we open doors to a new beginning.”",
+      author: "― Paul Bradley Smith",
+    }
   },
 
   // SUPPLY STORES

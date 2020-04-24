@@ -47,17 +47,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const heads = [
-  "Country",
-  "Cases",
-  "Deaths",
-  "Recovered",
-  "Active",
-  "Critical",
-  "Tests",
-  "Continent"
-]
-
 const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: theme.palette.common.black,
@@ -82,7 +71,7 @@ const StyledTableRow = withStyles((theme) => ({
 const CovidList = (props) => {
   const { data } = props;
   const [DATA, setDATA] = useState([]);
-  const [page, setPage] = React.useState(1);
+  const [page, setPage] = React.useState(0);
   const rows = 10;
 
   useEffect(() => {
@@ -97,7 +86,7 @@ const CovidList = (props) => {
     return (
       <>
         {
-          page > 1 && page < 212
+          page > 0 && page < 212
             ? <>
               <ButtonGroup variant="text" color="secondary" aria-label="text primary button group">
                 <Button
@@ -112,7 +101,7 @@ const CovidList = (props) => {
                 </Button>
               </ButtonGroup>
             </>
-            : page === 1
+            : page === 0
               ? <>
                 <ButtonGroup variant="text" color="secondary" aria-label="text primary button group">
                   <Button
@@ -170,7 +159,7 @@ const CovidList = (props) => {
     }
   };
   const handleBackButtonClick = () => {
-    if (page > 1) {
+    if (page > 0) {
       setPage(page - 1);
     }
   };
