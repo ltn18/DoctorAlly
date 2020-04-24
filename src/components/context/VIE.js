@@ -460,7 +460,26 @@ const VIE = {
 
   requests: {
 
-  }
+  },
+  //SUCCESS
+  success_volunteer: {
+    title: "Tuyệt vời",
+    p1: 'Phản hồi của bạn đã được lưu lại',
+    p2: 'Bạn sẽ sớm nhận được những yêu cầu mới',
+    btn: 'Quay lại'
+  },
+  success_offer: {
+    title: "Tuyệt vời",
+    p1: 'Phản hồi của bạn đã được lưu lại',
+    p2: 'Bạn sẽ sớm được kết nối với bác sĩ',
+    btn: 'Quay lại'
+  },
+  success_request: {
+    title: "Tuyệt vời",
+    p1: 'Yêu cầu của bạn đã được gửi',
+    p2: 'Bạn sẽ sớm nhận được giúp đỡ từ các tình nguyện viên',
+    btn: 'Quay lại'
+  },
 };
 
 export default VIE;

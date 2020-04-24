@@ -452,7 +452,27 @@ const ENG = {
       p1: `Address: ${WEBSITE_ADDRESS_ENG}`,
       p2: `Email: `,
     },
-  }
+  },
+
+  //SUCCESS
+  success_volunteer: {
+    title: "Awesome",
+    p1: 'Your reply has been confirmed.',
+    p2: 'You will get some requests soon from us.',
+    btn: 'Return Home'
+  },
+  success_offer: {
+    title: "Awesome",
+    p1: 'Your offer has been confirmed.',
+    p2: 'You will get in touch with the doctor soon.',
+    btn: 'Return Home'
+  },
+  success_request: {
+    title: "Awesome",
+    p1: 'Your request has been sent.',
+    p2: 'You will get help soon from our volunteers.',
+    btn: 'Return Home'
+  },
 };
 
 export default ENG;

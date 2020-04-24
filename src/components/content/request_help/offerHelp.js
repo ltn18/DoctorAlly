@@ -70,7 +70,7 @@ const OfferHelp = () => {
 
         <FormControl className={classes.footer}>
           <TextField label={getLongLineText(locale.lang, 'offer_help', 'personal_info', 'signature_placeholder')} style={{ marginRight: '10px' }} />
-          <Button className={classes.font} variant="contained" color="secondary" size="large" onClick={history.push("/offer_help/success")}>{getLongLineText(locale.lang, 'offer_help', 'personal_info', 'submit_button')}</Button>
+          <Button className={classes.font} variant="contained" color="secondary" size="large" onClick={() => {history.push("/offer_help/success")}}>{getLongLineText(locale.lang, 'offer_help', 'personal_info', 'submit_button')}</Button>
         </FormControl>
 
         <div className={classes.quote}>

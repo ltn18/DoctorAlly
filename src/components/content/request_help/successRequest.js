@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import localeContext, { getText } from '../../context/localeCtx';
 import { makeStyles } from '@material-ui/core';
 import { CardContent, Paper, Button } from '@material-ui/core';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
@@ -42,14 +43,16 @@ const SuccessVolunteer = () => {
     const moveBack = () => {
         history.push("/")
     }
+    const locale = useContext(localeContext)
+
     return (
         <div className={classes.root}>
             <Paper elevation={3} variant="outlined" rounded className={classes.paper} >
-                <CardContent style={{fontSize: 20}}>Awesome!</CardContent>
-                <CheckCircleIcon className={classes.icon}/>
-                <div>Your request has been sent.</div>
-                <div>You will get help soon from our volunteers.</div>
-                <Button onClick={moveBack} className={classes.btn} variant="contained" color='primary'>Return Home</Button>
+                <CardContent style={{ fontSize: 20 }}>{getText("success_request", "title", locale.lang)}</CardContent>
+                <CheckCircleIcon className={classes.icon} />
+                <div>{getText("success_request", "p1", locale.lang)}</div>
+                <div>{getText("success_request", "p2", locale.lang)}</div>
+                <Button onClick={moveBack} className={classes.btn} variant="contained" color='primary'>{getText("success_request", "btn", locale.lang)}</Button>
             </Paper>
         </div>
     )
