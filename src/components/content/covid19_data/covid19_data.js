@@ -21,12 +21,12 @@ const Covid19_data = () => {
     }
     fetchData();
   }, [])
-
+  // <strong>...{getLongLineText(locale.lang, "covid19_data", "loading", null)}</strong>
   return (
     <div>
       {
         loading
-          ? <div><strong>...{getLongLineText(locale.lang, "covid19_data", "loading", null)}</strong></div>
+          ? <div><img style={{ width: '100%', height: '85vh', marginTop: "15px", marginBottom: "20px" }} src="loading.gif" alt="Loading" /></div>
           : <div>
             <CovidMap data={covidData} />
             <CovidList data={covidData} />

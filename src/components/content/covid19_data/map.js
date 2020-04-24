@@ -158,7 +158,7 @@ class CovidMap extends Component {
   render() {
     return (
       <div>
-        <div ref={el => this.mapContainer = el} className='mapContainer' style={{ height: '80vh', marginTop: '15px' }} />
+        <div ref={el => this.mapContainer = el} className='mapContainer' style={{ height: '85vh', marginTop: '15px' }} />
       </div>
     )
   }
