@@ -214,13 +214,30 @@ const ENG = {
   },
 
   how_it_works: {
-    title: "How it works",
+    h2_general: {
+      title: "General",
+      p1: "The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.",
+      p2: "When you register for an Account, we may ask for your contact information, including items such as name, company name, address, email address, and telephone number.",
+      p3: "If you contact us directly, we may receive additional information about you such as your name, email address, phone number, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.",
+      li_1: "Provide, operate, and maintain our website",
+      li_2: "Improve, personalize, and expand our website",
+      li_3: "Understand and analyze how you use our website",
+      li_4: "Develop new products, services, features, and functionality",
+      li_5: "Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes",
+      li_6: "Send you emails",
+      li_7: "Find and prevent fraud",
+    },
     for_doctors: {
-      title: "For Doctors",
-
+      title: "For doctors only",
+      li_1: "Choose who will help you",
+      li_2: "You have the right to refuse help if you feel bothered",
+      li_3: "Open your heart and believe in the kindness that exists in the community",
     },
     for_volunteers: {
-      title: "For Volunteers",
+      title: "For volunteers only",
+      li_1: "Please register to participate in the project with a sincere heart and desire to help the doctors",
+      li_2: "Always remember that the nurses, the doctors are on standby in the hospital day and night scrambling for life",
+      li_3: "So avoid bothering them and be responsible for your help",
     },
     notice: {
       title: "Notice",
