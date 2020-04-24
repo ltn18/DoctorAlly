@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import ReactPlayer from 'react-player';
 
 import localeContext, { getLongLineText } from '../context/localeCtx';
 
@@ -23,23 +22,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const How_it_works = () => {
-  const classes = useStyles();
   const locale = useContext(localeContext);
 
   return (
     <Container>
-      <div className={classes.player}>
-        <h1>{getLongLineText(locale.lang, "how_it_works", "title", null)}</h1>
-        <ReactPlayer
-          width={1170}
-          height={500}
-          url='https://youtu.be/VaKzNtwPQxE'
-          muted
-          playing
-          controls
-        />
-      </div>
-
       <h2>{getLongLineText(locale.lang, "how_it_works", "for_doctors", "title")}</h2>
 
       <p>The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.</p>
