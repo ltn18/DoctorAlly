@@ -215,59 +215,60 @@ const Volunteer = () => {
     const locale = useContext(localeContext);
     const { page, rows } = props;
     return (
-      <div style={{ marginTop: '15px' }}>
-        {
-          page > 0 && page * rows + rows <= DATA.length
-            ?
-            <>
-              <ButtonGroup variant="contained" aria-label="text primary button group">
-                <Button
+      <div style={{ marginTop: '15px', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+        <div>
+          {
+            page > 0 && page * rows + rows <= DATA.length
+              ?
+              <>
+                <ButtonGroup variant="contained" aria-label="text primary button group">
+                  <Button
+                    style={{ backgroundColor: '#E1306C', color: 'white' }}
+                    onClick={handleBackButtonClick}
+                  >
+                    {getText("volunteer", "back_button", locale.lang)}
+                  </Button>
+                  <Button
+                    style={{ backgroundColor: '#53A653', color: 'white' }}
+                    onClick={handleNextButtonClick}
+                  >
+                    {getText("volunteer", "next_button", locale.lang)}
+                  </Button>
+                </ButtonGroup>
+              </>
+              : page === 0
+                ?
+                <>
+                  <Button
+                    style={{ backgroundColor: '#53A653', color: 'white' }}
+                    variant="contained"
+                    color="primary"
+                    onClick={handleNextButtonClick}
+                  >
+                    {getText("volunteer", "next_button", locale.lang)}
+                  </Button>
+                </>
+                : <Button
                   style={{ backgroundColor: '#E1306C', color: 'white' }}
+                  variant="contained"
+                  color="primary"
                   onClick={handleBackButtonClick}
                 >
                   {getText("volunteer", "back_button", locale.lang)}
                 </Button>
-                <Button
-                  style={{ backgroundColor: '#53A653', color: 'white' }}
-                  onClick={handleNextButtonClick}
-                >
-                  {getText("volunteer", "next_button", locale.lang)}
-                </Button>
-              </ButtonGroup>
-            </>
-            : page === 0
-              ?
-              <>
-                <Button
-                  style={{ backgroundColor: '#53A653', color: 'white' }}
-                  variant="contained"
-                  color="primary"
-                  onClick={handleNextButtonClick}
-                >
-                  {getText("volunteer", "next_button", locale.lang)}
-                </Button>
-              </>
-              : <Button
-                style={{ backgroundColor: '#E1306C', color: 'white' }}
-                variant="contained"
-                color="primary"
-                onClick={handleBackButtonClick}
-              >
-                {getText("volunteer", "back_button", locale.lang)}
-              </Button>
-        }
+          }
+        </div>
+        <strong style={{ marginLeft: '50px', alignSelf: 'center' }}>Page: {page + 1}/{Math.ceil(DATA.length / rows)}</strong>
       </div>
     )
   }
 
   console.log(DATA.slice(page * rows, page * rows + rows));
 
-  const [searchValue, setSearchValue] = useState("");
-  const handleSearchChange = (e) => {
-    setSearchValue(e.target.value);
-  }
-
-  console.log(DATA.filter(item => item.needs.filter(need => need.toLowerCase().includes(searchValue.toLowerCase()))));
+  // const [searchValue, setSearchValue] = useState("");
+  // const handleSearchChange = (e) => {
+  //   setSearchValue(e.target.value);
+  // }
 
   return (
     <>
@@ -282,7 +283,7 @@ const Volunteer = () => {
       </div>
       <div className={classes.root}>
         <h2 className={classes.h2}>{getText("volunteer", "h2_request", locale.lang)}</h2>
-        <div style={{ display: 'flex' }}>
+        {/* <div style={{ display: 'flex' }}>
           <IconButton type="submit" className={classes.iconButton} aria-label="search">
             <SearchIcon />
           </IconButton>
@@ -294,11 +295,10 @@ const Volunteer = () => {
             value={searchValue}
             onChange={handleSearchChange}
           />
-        </div>
+        </div> */}
         <div className='requests-container'>
           {
             DATA
-              .filter(item => item.needs.filter(need => need.toLowerCase().includes(searchValue.toLowerCase())))
               .slice(page * rows, page * rows + rows)
               .map((box) => {
                 if (box.id % 2 === 0) {
