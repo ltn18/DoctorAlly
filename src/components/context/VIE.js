@@ -157,7 +157,7 @@ const VIE = {
   supply_stores: {
     hanoimap: "Bản đồ cung cấp Hà Nội",
     description: "Để hỗ trợ nhân viên y tế, đặc biệt là những người cần nguồn cung cấp thường xuyên như thực phẩm và đồ gia dụng, chúng tôi đã tạo ra một bản đồ dễ tiếp cận cho các cửa hàng cung ứng. Điều duy nhất bạn phải làm là nhập địa điểm của bạn và các cửa hàng gần nhất sẽ xuất hiện để bạn chọn!",
-    search_placeholder: "Tìm kiếm cửa hàng",
+    search_placeholder: "Tìm kiếm cửa hàng gần bạn",
     howtouse: "Hướng dẫn sử dụng",
     firstTitle: "Đầu tiên, tìm kiếm vị trí của bạn trên bản đồ",
     firstDescription: "Nó có thể là một địa chỉ, một địa điểm, một khu phố, một khu vực, một mã bưu điện hoặc thậm chí là tọa độ của địa điểm.",

@@ -12,7 +12,7 @@ import {
 } from './components/content/index';
 
 import {
-  VolunteerSignUp, RequestResponse, OfferHelp
+  VolunteerSignUp, RequestResponse, OfferHelp, SuccessVolunteer, SuccessRequest, SuccessOffer
 } from './components/content/index';
 
 const App = () => {
@@ -28,6 +28,7 @@ const App = () => {
 
           <Route exact path="/volunteer" component={Volunteer} />
           <Route exact path="/volunteer/signup" component={VolunteerSignUp} />
+          <Route exact path="/volunteer/signup/success" component={SuccessVolunteer} />
 
           <Route exact path="/requests/:id" component={RequestResponse} />
 
@@ -35,7 +36,10 @@ const App = () => {
             <Redirect push to="/request_help/1" />
           </Route> */}
           <Route exact path="/request_help/:id" component={Request_help} />
+          <Route exact path="/request_help/2/success" component={SuccessRequest} />
+          
           <Route exact path="/offer_help" component={OfferHelp} />
+          <Route exact path="/offer_help/success" component={SuccessOffer} />
 
           <Route exact path="/supply_stores" component={Supply_stores} />
           <Route exact path="/covid19_data" component={Covid19_data} />

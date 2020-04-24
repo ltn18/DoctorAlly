@@ -11,7 +11,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'row',
-    marginBottom: 10
+    marginBottom: 10,
+
   },
   hover: {
     "&:hover": {

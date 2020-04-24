@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import { Container, Button } from '@material-ui/core';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
+import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -48,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
 const OfferHelp = () => {
   const classes = useStyles();
   const locale = useContext(localeContext)
+  const history = useHistory();
 
   return (
     <Container maxWidth="md">
@@ -68,7 +70,7 @@ const OfferHelp = () => {
 
         <FormControl className={classes.footer}>
           <TextField label={getLongLineText(locale.lang, 'offer_help', 'personal_info', 'signature_placeholder')} style={{ marginRight: '10px' }} />
-          <Button className={classes.font} variant="contained" color="secondary" size="large">{getLongLineText(locale.lang, 'offer_help', 'personal_info', 'submit_button')}</Button>
+          <Button className={classes.font} variant="contained" color="secondary" size="large" onClick={history.push("/offer_help/success")}>{getLongLineText(locale.lang, 'offer_help', 'personal_info', 'submit_button')}</Button>
         </FormControl>
 
         <div className={classes.quote}>

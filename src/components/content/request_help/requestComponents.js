@@ -113,7 +113,11 @@ const Requests = (props) => {
           </Button>
           <Button
             style={{ fontFamily: 'Lexend Giga' }}
-            onClick={() => { handleSave(); console.log(Data); }}>
+            onClick={() => { 
+              handleSave(); 
+              console.log(Data);
+              history.push("/request_help/2/success")
+              }}>
             {getLongLineText(locale.lang, "request_help", "footer", "submit_button")}
           </Button>
         </ButtonGroup>

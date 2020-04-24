@@ -1,4 +1,4 @@
-import React, { Component, useContext } from 'react';
+import React, { Component, useContext, useEffect, useState } from 'react';
 import localeContext, { getText } from '../../context/localeCtx';
 
 import mapboxgl from 'mapbox-gl';
@@ -9,12 +9,21 @@ import axios from 'axios';
 mapboxgl.accessToken = 'pk.eyJ1IjoiaG9hbmdtaW5obmciLCJhIjoiY2s5M25xYTMwMDRhZDNpcDNhOHN1cDRnciJ9.NvYOhaROmMb04qeJyIbG-A';
 const [lng, lat, zoom] = [105.8380, 21.0269, 14.52]; // Hanoi
 
-class Map extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  componentDidMount() {
+function Map() {
+  const locale = useContext(localeContext)
+  const geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl,
+    marker: false,
+    placeholder: getText("supply_stores", "search_placeholder", locale.lang),
+    bbox: [105.73333, 20.88333, 106.03333, 21.38333],
+    proximity: {
+      longitude: lng,
+      lattitude: lat,
+    },
+    limit: false,
+  })
+  useEffect(() => {
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v11',
@@ -23,20 +32,6 @@ class Map extends Component {
     });
 
     var marker = new mapboxgl.Marker({ 'color': '#008000' })
-
-    const geocoder = new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl,
-      marker: false,
-      placeholder: getText("supply_stores", "search_placeholder", this.props.locale.lang),
-      bbox: [105.73333, 20.88333, 106.03333, 21.38333],
-      proximity: {
-        longitude: lng,
-        lattitude: lat,
-      },
-      limit: false,
-    })
-    
     map.addControl(geocoder, 'top-left')
 
     map.on('load', function () {
@@ -122,13 +117,13 @@ class Map extends Component {
 
       map.on('mouseenter', 'tilequery-points', function (e) {
         map.getCanvas().style.cursor = 'pointer';
-        console.log(e)
         if (e.features[0].properties.name) {
           var title = '<h3>' + e.features[0].properties.name + '</h3>';
         } else {
           var title = '<h3>No Name</h3>';
         }
         var storeType = '<h4>' + e.features[0].properties.type + '</h4>';
+
         var obj = JSON.parse(e.features[0].properties.tilequery);
         var distance = '<p>' + (obj.distance).toFixed(0) + 'm from location' + '</p>';
 
@@ -145,28 +140,27 @@ class Map extends Component {
         popup.remove();
       });
     })
-  }
+  }, [locale])
 
-  render() {
-    return (
-      <>
-        <div style={{ display: 'flex' }}>
-          <div id="geocoder1" class="geocoder"></div>
-          <div id="geocoder2" class="geocoder"></div>
-        </div>
+  return (
+    <>
+      <div style={{ display: 'flex' }}>
+        <div id="geocoder1" class="geocoder"></div>
+        <div id="geocoder2" class="geocoder"></div>
+      </div>
 
-        <div id='map' style={{ height: '75vh', width: '100%', marginBottom: '20px' }} />
-      </>
-    )
-  }
+      <div id='map' style={{ height: '75vh', width: '100%', marginBottom: '20px' }} />
+    </>
+  )
 }
 
-const StoreMap = () => {
-  const locale = useContext(localeContext);
-  return <Map locale={locale} />
-};
 
-export default StoreMap;
+// const StoreMap = () => {
+//   const locale = useContext(localeContext);
+//   return <Map locale={locale} />
+// };
+
+export default Map;
 
 
 

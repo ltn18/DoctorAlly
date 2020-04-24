@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import localeContext, { getLongLineText } from '../../context/localeCtx';
+import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { Container, Button } from '@material-ui/core';
@@ -48,10 +49,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 const VolunteerSignUp = () => {
   const classes = useStyles();
   const locale = useContext(localeContext)
+  const history = useHistory()
 
+  const moveToSuccess = () => {
+    history.push("/volunteer/signUp/success")
+  }
   return (
     <Container maxWidth="md">
       <form className={classes.root} noValidate autoComplete="off">
@@ -114,15 +120,15 @@ const VolunteerSignUp = () => {
 
         <FormControl className={classes.footer}>
           <TextField label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'signature_placeholder')} style={{ marginRight: '10px' }} />
-          <Button className={classes.font} variant="contained" color="primary" size="large">{getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'submit_button')}</Button>
+          <Button className={classes.font} variant="contained" color="primary" size="large" onClick={moveToSuccess}>{getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'submit_button')}</Button>
         </FormControl>
 
         <div className={classes.quote}>
           <strong>
-          {getLongLineText(locale.lang, 'volunteerSignUp', 'footer', 'quote')}
+            {getLongLineText(locale.lang, 'volunteerSignUp', 'footer', 'quote')}
           </strong>
           <strong style={{ alignSelf: 'flex-end' }}>
-          {getLongLineText(locale.lang, 'volunteerSignUp', 'footer', 'author')}
+            {getLongLineText(locale.lang, 'volunteerSignUp', 'footer', 'author')}
           </strong>
         </div>
       </form>
