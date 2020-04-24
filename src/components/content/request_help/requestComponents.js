@@ -4,7 +4,7 @@ import localeContext, { getLongLineText } from '../../context/localeCtx';
 import { useHistory } from 'react-router-dom';
 
 import TextField from '@material-ui/core/TextField';
-import { Button, ButtonGroup } from '@material-ui/core';
+import { Button, ButtonGroup, MenuItem, Select, InputLabel } from '@material-ui/core';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
 const Requests = (props) => {
   const { formControl } = props;
   const history = useHistory();
+  const classes = useStyles();
   const locale = useContext(localeContext);
 
   const handleSave = () => {
@@ -49,7 +50,7 @@ const Requests = (props) => {
 
   return (
     <FormControl className={formControl}>
-      <FormLabel>{getLongLineText(locale.lang, "request_help", "support_kinds", "title")}</FormLabel>
+      <FormLabel className={classes.font}>{getLongLineText(locale.lang, "request_help", "support_kinds", "title")}</FormLabel>
       <FormGroup>
         <FormControlLabel
           control={<Checkbox checked={medicalSupplies} onChange={handleTickChange} name="medicalSupplies" />}

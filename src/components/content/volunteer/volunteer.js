@@ -115,7 +115,7 @@ const RequestBox = (props) => {
     <Box onClick={handleBoxClick} className={classes.box} style={{ backgroundColor: props.color }}>
       <Grid container spacing={2} className={classes.grid}>
         <Grid item xs={6}>
-          <strong>{props.name}, {props.role} | {props.facility}</strong>
+          <strong>{props.name} | {props.role}, {props.facility}</strong>
           <div>{props.work.join(", ")}</div>
         </Grid>
         <Grid item xs={6}>{props.offers} offers</Grid>

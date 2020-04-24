@@ -189,7 +189,7 @@ const CovidList = (props) => {
               <strong>{getLongLineText(locale.lang, "covid19_data", "country", null)}: {searchRes.country}</strong>
             </AlertTitle>
             <div className={classes.font}>
-              <p>{getLongLineText(locale.lang, "covid19_data", "continent", null)}: {searchRes.continent}</p>
+              <p>{getLongLineText(locale.lang, "covid19_data", "continent", null)}: {convertContinent(locale.lang, searchRes.continent)}</p>
               <p>{getLongLineText(locale.lang, "covid19_data", "today_cases", null)}: {searchRes.todayCases}</p>
               <p>{getLongLineText(locale.lang, "covid19_data", "today_deaths", null)}: {searchRes.todayDeaths}</p>
               <p>{getLongLineText(locale.lang, "covid19_data", "cases", null)}: {searchRes.cases}</p>
@@ -212,6 +212,20 @@ const CovidList = (props) => {
   const [searchRes, setSearchRes] = useState({});
 
   const locale = useContext(localeContext);
+
+  const convertContinent = (lang, continent) => {
+    if (lang === "VIE") {
+      if (continent === "Asia") return "Châu Á";
+      if (continent === "Europe") return "Châu Âu";
+      if (continent === "Africa") return "Châu Phi";
+      if (continent === "Australia/Oceania") return "Châu Đại Dương";
+      if (continent === "North America") return "Bắc Mỹ";
+      if (continent === "South America") return "Nam Mỹ";
+    } else {
+      return continent;
+    }
+  }
+
   return (
     <div>
       <Paper className={classes.root}>
@@ -299,7 +313,9 @@ const CovidList = (props) => {
                   <StyledTableCell className={classes.font} align="center">{item.active}</StyledTableCell>
                   <StyledTableCell className={classes.font} align="center">{item.critical}</StyledTableCell>
                   <StyledTableCell className={classes.font} align="center">{item.tests}</StyledTableCell>
-                  <StyledTableCell className={classes.font} align="left">{item.continent}</StyledTableCell>
+                  <StyledTableCell className={classes.font} align="left">
+                    {convertContinent(locale.lang, item.continent)}
+                  </StyledTableCell>
                 </StyledTableRow>
               ))}
             </TableBody>

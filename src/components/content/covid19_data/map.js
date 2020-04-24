@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
+import localeContext, { getLongLineText } from '../../context/localeCtx';
 
 import ReactDOM from 'react-dom';
 
@@ -17,7 +18,7 @@ class CovidMap extends Component {
     this.state = {
       lng: __lng,
       lat: __lat,
-      zoom: __zoom
+      zoom: __zoom,
     };
     this.sizeList = [100, 200, 300, 400, 500]
     this.caseRangeList = [0, 100, 1000, 10000, 100000, 100000000000]
@@ -155,13 +156,9 @@ class CovidMap extends Component {
   }
 
   render() {
-
     return (
       <div>
         <div ref={el => this.mapContainer = el} className='mapContainer' style={{ height: '80vh', marginTop: '15px' }} />
-        <div className='sidebarStyle' style={{ margin: '10px' }}>
-          <div><strong>Longitude: {this.state.lng} | Latitude: {this.state.lat} | Zoom: {this.state.zoom} | World Map</strong></div>
-        </div>
       </div>
     )
   }

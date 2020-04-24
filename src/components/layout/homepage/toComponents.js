@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-
 import { makeStyles } from '@material-ui/core';
+
+import localeContext, { getLongLineText } from '../../context/localeCtx';
 
 const useStyles = makeStyles(() => ({
   direct: {
@@ -29,6 +30,7 @@ const useStyles = makeStyles(() => ({
 const ToRequestHelp = (props) => {
   const classes = useStyles();
   const history = useHistory();
+  const locale = useContext(localeContext);
 
   return (
     <div className={classes.directItem}>
@@ -37,7 +39,7 @@ const ToRequestHelp = (props) => {
         style={{ fontSize: '25px', color: '#F50057' }}
         onClick={() => history.push("/request_help/1")}
       >
-        Request Help
+        {getLongLineText(locale.lang, "homepage", "request_help", "title")}
       </strong>
       <p style={{ wordWrap: 'break-word', marginTop: '15px' }}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -59,6 +61,7 @@ const ToRequestHelp = (props) => {
 const ToVolunteer = () => {
   const classes = useStyles();
   const history = useHistory();
+  const locale = useContext(localeContext);
 
   return (
     <div className={classes.directItem} >
@@ -67,7 +70,7 @@ const ToVolunteer = () => {
         style={{ color: '#3F51B5' }}
         onClick={() => history.push("/volunteer")}
       >
-        Volunteer
+        {getLongLineText(locale.lang, "homepage", "volunteer", "title")}
       </strong>
       <p style={{ wordWrap: 'break-word', marginTop: '15px' }}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -89,6 +92,7 @@ const ToVolunteer = () => {
 const ToSupplyStores = () => {
   const classes = useStyles();
   const history = useHistory();
+  const locale = useContext(localeContext);
 
   return (
     <div className={classes.directItem}>
@@ -97,7 +101,7 @@ const ToSupplyStores = () => {
         style={{ color: '#008000' }}
         onClick={() => history.push("/supply_stores")}
       >
-        Nearby Stores
+        {getLongLineText(locale.lang, "homepage", "supply_stores", "title")}
       </strong>
       <p style={{ wordWrap: 'break-word', marginTop: '15px' }}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -119,6 +123,7 @@ const ToSupplyStores = () => {
 const ToCovid19Data = () => {
   const classes = useStyles();
   const history = useHistory();
+  const locale = useContext(localeContext);
 
   return (
     <div className={classes.directItem}>
@@ -127,7 +132,7 @@ const ToCovid19Data = () => {
         style={{ fontSize: '25px', color: '#8134AF' }}
         onClick={() => history.push("/covid19_data")}
       >
-        Covid-19 Data
+        {getLongLineText(locale.lang, "homepage", "covid19_data", "title")}
       </strong>
       <p style={{ wordWrap: 'break-word', marginTop: '15px' }}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -149,6 +154,7 @@ const ToCovid19Data = () => {
 const ToLearnMore = () => {
   const classes = useStyles();
   const history = useHistory();
+  const locale = useContext(localeContext);
 
   return (
     <div className={classes.directItem}>
@@ -157,7 +163,7 @@ const ToLearnMore = () => {
         style={{ fontSize: '25px', color: '#F77737' }}
         onClick={() => history.push("/how_it_works")}
       >
-        Learn More
+        {getLongLineText(locale.lang, "homepage", "how_it_works", "title")}
       </strong>
       <p style={{ wordWrap: 'break-word', marginTop: '15px' }}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -179,15 +185,16 @@ const ToLearnMore = () => {
 const ToContactUs = () => {
   const classes = useStyles();
   const history = useHistory();
+  const locale = useContext(localeContext);
 
   return (
     <div className={classes.directItem}>
       <strong
         className={classes.title}
         style={{ fontSize: '25px', color: '#EEDC31' }}
-        onClick={() => history.push("/supply_stores")}
+        onClick={() => history.push("/contact_us")}
       >
-        Contact Us
+        {getLongLineText(locale.lang, "homepage", "contact_us", "title")}
       </strong>
       <p style={{ wordWrap: 'break-word', marginTop: '15px' }}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.

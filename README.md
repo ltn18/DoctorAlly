@@ -25,6 +25,15 @@
 * [TERMS OF USE GENERATOR](https://www.termsofusegenerator.net/)
 * [BACKEND FLOW](https://www.lucidchart.com/invitations/accept/266989db-b767-4300-afff-91cdef6bbff7)
 
+## Page done styling & context
+* Covid19 Data
+* Nearby Stores
+* Request Help
+* Contact Us
+* Feedbacks
+* Privacy Policy
+* Terms of Use
+
 ## TODO
 ### For UI/Backend Developers
 * Locale: 
@@ -41,6 +50,7 @@
   - add thêm vào trang HomePage (làm trong Hackathon)
 * Deploy
 * Scroll to (0,0)
+* HOC to call hooks inside class 
 
 ### For Other Developers
 * Viết how to use

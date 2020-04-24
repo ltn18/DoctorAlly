@@ -12,6 +12,33 @@ const ENG = {
     how_it_works: "Learn More",
   },
 
+  homepage: {
+    volunteer: {
+      title: "Volunteer",
+      description: "",
+    },
+    request_help: {
+      title: "Request Help",
+      description: "",
+    },
+    supply_stores: {
+      title: "Nearby Stores",
+      description: "",
+    },
+    covid19_data: {
+      title: "Covid-19 Data",
+      description: "",
+    },
+    how_it_works: {
+      title: "Learn More",
+      description: "",
+    },
+    contact_us: {
+      title: "Contact Us",
+      description: "",
+    },
+  },
+
   about: {
     h2: "Our Team",
     h3: "Healthcare workers need your help to fight COVID-19",
@@ -153,6 +180,21 @@ const ENG = {
     }
 
     // Xử lý tên châu lục
+  },
+
+  how_it_works: {
+    title: "How it works",
+    for_doctors: {
+      title: "For Doctors",
+      
+    },
+    for_volunteers: {
+      title: "For Volunteers",
+    },
+    notice: {
+      title: "Notice",
+      description: `It's important to evaluate which requests and offers on ${WEBSITE_NAME} to accept for safety purposes.`,
+    }
   },
 
   footer: {

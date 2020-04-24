@@ -12,6 +12,33 @@ const VIE = {
     how_it_works: "Tìm hiểu thêm",
   },
 
+  homepage: {
+    volunteer: {
+      title: "Tình nguyên",
+      description: "",
+    },
+    request_help: {
+      title: "Yêu cầu giúp đỡ",
+      description: "",
+    },
+    supply_stores: {
+      title: "Cửa hàng gần đây",
+      description: "",
+    },
+    covid19_data: {
+      title: "Dữ liệu Covid-19",
+      description: "",
+    },
+    how_it_works: {
+      title: "Tìm hiểu thêm",
+      description: "",
+    },
+    contact_us: {
+      title: "Liên hệ chúng tôi",
+      description: "",
+    },
+  },
+
   about: {
     h2: "Đội ngũ chúng tôi",
     h3: "Nhân viên y tế cần sự giúp đỡ của các bạn để chống lại COVID-19",
@@ -119,7 +146,7 @@ const VIE = {
     longitude: "Kinh độ",
     latitude: "Vĩ độ",
     zoom: "Độ phóng đại",
-    mapType: "Bản đồ thế giới", 
+    mapType: "Bản đồ thế giới",
 
     search_placeholder: "Tìm kiếm quốc gia",
 
@@ -158,7 +185,19 @@ const VIE = {
   },
 
   how_it_works: {
+    title: "CÁCH THỨC HOẠT ĐỘNG",
+    for_doctors: {
+      title: "Dành cho bác sĩ",
 
+    },
+    for_volunteers: {
+      title: "Dành cho tình nguyện viên",
+    },
+    notice: {
+      title: "Lưu ý",
+      description: `Việc đánh giá và đồng ý yêu cầu hoặc đề nghị giúp đỡ trên ${WEBSITE_NAME} rất quan trọng cho sự an toàn của bạn.`,
+    },
+    footer: `Nếu bạn gặp phải bất kỳ vấn đề nào hoặc muốn hỏi thêm thông tin, hãy gửi email cho chúng mình qua `,
   },
 
 

@@ -36,6 +36,7 @@ class Map extends Component {
       },
       limit: false,
     })
+    
     map.addControl(geocoder, 'top-left')
 
     map.on('load', function () {
