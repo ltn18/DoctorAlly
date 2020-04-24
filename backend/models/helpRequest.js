@@ -11,6 +11,8 @@ const HelpRequestSchema = new Schema({
   petCare:Boolean,
   other: String,
   describeRequest:String,
+  work: [String],
+  offerNumb: Number,
 
   fullName: {
     type:String,

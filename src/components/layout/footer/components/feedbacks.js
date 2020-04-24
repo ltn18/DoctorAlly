@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import localeContext, { getLongLineText } from '../../../context/localeCtx';
 
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -39,21 +40,28 @@ const useStyles = makeStyles((theme) => ({
 
 const Feedbacks = () => {
   const classes = useStyles();
+  const locale = useContext(localeContext);
+
   return (
     <Container maxWidth="md">
       <form className={classes.root} noValidate autoComplete="off">
         <div style={{ marginBottom: 20 }}>
-          <strong>DROP US A LINE</strong>
-          <p style={{ fontStyle: 'italic' }}>We appreciate your feedbacks to us.
-          Hope to work closely with you in the future</p>
+          <strong>{getLongLineText(locale.lang, "feedbacks", "title", null)}</strong>
+          <p style={{ fontStyle: 'italic' }}>{getLongLineText(locale.lang, "feedbacks", "description", null)}</p>
         </div>
         <FormControl className={classes.personalInfo}>
-          <FormLabel>Personal information</FormLabel>
-          <TextField label="Your full name" variant="outlined" />
-          <TextField label="Your email" variant="outlined" />
-          <FormLabel>Feedback Section</FormLabel>
+          <FormLabel>{getLongLineText(locale.lang, "feedbacks", "personal_info", "title")}</FormLabel>
           <TextField
-            label="Feedback Card"
+            label={getLongLineText(locale.lang, "feedbacks", "personal_info", "name_placeholder")}
+            variant="outlined"
+          />
+          <TextField
+            label={getLongLineText(locale.lang, "feedbacks", "personal_info", "email_placeholder")}
+            variant="outlined"
+          />
+          <FormLabel>{getLongLineText(locale.lang, "feedbacks", "feedback_section", "title")}</FormLabel>
+          <TextField
+            label={getLongLineText(locale.lang, "feedbacks", "feedback_section", "placeholder")}
             variant="outlined"
             multiline
             rows={6}
@@ -62,9 +70,12 @@ const Feedbacks = () => {
         </FormControl>
 
         <FormControl className={classes.footer}>
-          <TextField label="Your signature" style={{ marginRight: '10px' }} />
+          <TextField
+            label={getLongLineText(locale.lang, "feedbacks", "footer", "signature_placeholder")}
+            style={{ marginRight: '10px' }}
+          />
           <Button color="secondary" size="large" variant="contained" endIcon={<SendIcon />}>
-            <strong>SEND</strong> 
+            <strong>{getLongLineText(locale.lang, "feedbacks", "footer", "button")}</strong>
           </Button>
         </FormControl>
       </form>

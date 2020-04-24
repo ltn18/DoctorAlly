@@ -17,6 +17,7 @@ const Requests = (props) => {
 
   const handleSave = () => {
     Data[0] = state;
+    history.push("/request_help/2/success")
     axios.post("http://localhost:5000/helpRequest",Data)
     .then((res)=> res.data)
     .catch((err)=>{
@@ -102,7 +103,7 @@ const Requests = (props) => {
           color="secondary"
           aria-label="outlined secondary button group">
           <Button onClick={() => { moveToPage1(); handleSave() }}>Back</Button>
-          <Button onClick={() => { handleSave(); console.log(Data); }}>Submit</Button>
+          <Button onClick={() => { handleSave(); }}>Submit</Button>
         </ButtonGroup>
         <strong style={{ fontStyle: 'italic' }}>
           Page {<span style={{ color: '#00ff00' }}>2/2</span>}

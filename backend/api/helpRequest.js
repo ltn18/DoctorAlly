@@ -14,6 +14,9 @@ router.get("/",(req,res)=>{
 
 router.post("/",(req,res)=>{
   const data = req.body 
+
+  const newData = Object.keys(data[0]).filter((key)=> data[0][key] == true)
+
   const helpRequest = new HelpRequest({
     medicalSupplies: data[0].medicalSupplies,
     masks: data[0].masks,
@@ -23,7 +26,7 @@ router.post("/",(req,res)=>{
     laundry: data[0].laundry,
     petCare: data[0].petCare,
     other: data[0].other,
-    describeRequest: data[0].describeRequest,
+    work: newData,
 
     fullName: data[1].fullName,
     location: data[1].location,
