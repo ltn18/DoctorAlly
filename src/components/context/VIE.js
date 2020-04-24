@@ -4,7 +4,7 @@ const WEBSITE_ADDRESS_VIE = "Số 1 Đường Hoàng Minh Giám";
 
 const VIE = {
   header: {
-    about: "Về chúng tôi",
+    about: "Về chúng mình",
     volunteer: "Tình nguyện",
     request_help: "Yêu cầu giúp đỡ",
     supply_stores: "Cửa hàng gần đây",
@@ -14,33 +14,42 @@ const VIE = {
 
   homepage: {
     volunteer: {
-      title: "Tình nguyên",
-      description: "",
+      title: "Tình nguyện",
+      description_strong: "Hành động nhỏ loan tỏa yêu thương. ",
+      description: "Covid-19 đã khiến cho các y bác sĩ kiệt quệ cả về thể chất lẫn tinh thần. Các bạn có thể góp sức lực của mình vào công cuộc chống đại dịch bằng cách tình nguyện giúp đỡ các y bác sĩ.",
     },
     request_help: {
       title: "Yêu cầu giúp đỡ",
-      description: "",
+      description_strong: "Tin vào điều tử tế. ",
+      description: "Chúng mình hiểu và thông cảm rằng các bạn đang chiến đấu từng ngày cho cộng đồng. Vì thế, chúng mình muốn giúp các bạn. Mỗi khi các bạn cần gì, hãy điền đơn và chúng mình sẽ chuyển đến các tình nguyện viên.",
     },
     supply_stores: {
       title: "Cửa hàng gần đây",
-      description: "",
+      description_strong: "Tra cứu thuận tiên. ",
+      description: "Để phục vụ cho việc tìm kiếm các cửa hàng xung quanh khu vực định sẵn, chúng mình đã tích hợp bản đồ vào dự án. Bản đồ sẽ giúp các bạn tình nguyện viên hình dung được lộ trình di chuyển phù hợp cho bản thân.",
     },
     covid19_data: {
       title: "Dữ liệu Covid-19",
-      description: "",
+      description_strong: "Cập nhật nhanh chóng. ",
+      description: "Việc cập nhật tin tức trong đại dịch đang ngày một trở nên quan trọng. Vì lẽ đó, chúng mình đã tích hợp bản đồ và thống kê để đưa đến những thông tin mới nhất và đầy đủ nhất về Covid-19 của các nước.",
     },
     how_it_works: {
       title: "Tìm hiểu thêm",
-      description: "",
+      description_strong: "Hướng dẫn sử dụng. ",
+      span_b4: "Khi nào các bạn gặp khó khăn trong việc sử dụng trang web của chúng minh, hãy truy cập vào trang",
+      span_link: " Tìm hiểu thêm ",
+      span_af: "để tìm kiếm những thông tin cần thiết nhé! Chúng mình đã chuẩn bị video hướng đãn và bài viết chi tiết rồi đó!",
     },
     contact_us: {
-      title: "Liên hệ chúng tôi",
-      description: "",
+      title: "Liên hệ chúng mình",
+      description_strong: "Đừng ngần ngại. ",
+      span_b4: "Chúng mình luôn ở đây để giải đáp thắc mắc của các bạn. Hãy kết nối mỗi khi có câu hỏi vụt sáng trong bạn, và để chúng mình giúp bạn tìm câu trả lời cho điều ấy nhé! Các bạn có thể tìm thấy chúng mình ở trang ",
+      span_link: "Liên hệ với chúng mình.",
     },
   },
 
   about: {
-    h2: "Đội ngũ chúng tôi",
+    h2: "Đội ngũ chúng mình",
     h3: "Nhân viên y tế cần sự giúp đỡ của các bạn để chống lại COVID-19",
     box: "Tình nguyện hoặc yêu cầu hỗ trợ các bữa ăn, chăm sóc thú cưng, việc vặt, ... trong đại dịch COVID-19."
   },
@@ -202,14 +211,14 @@ const VIE = {
 
 
   footer: {
-    contact_us: "Liên hệ chúng tôi",
+    contact_us: "Liên hệ chúng mình",
     feedbacks: "Phản hồi",
     privacy_policy: "Chính sách bảo mật",
     terms_of_use: "Điều khoản sử dụng"
   },
 
   contact_us: {
-    title: "LIÊN HỆ VỚI CHÚNG TÔI",
+    title: "LIÊN HỆ VỚI CHÚNG MÌNH",
     description: "thông qua các liên kết sau"
   },
 

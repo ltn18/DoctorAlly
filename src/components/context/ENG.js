@@ -15,27 +15,36 @@ const ENG = {
   homepage: {
     volunteer: {
       title: "Volunteer",
-      description: "",
+      description_strong: "Small actions spread love. ",
+      description: "Covid-19 made physicians exhausted both physically and mentally. You can contribute your strength to the fight against pandemics by volunteering to help the doctors.",
     },
     request_help: {
       title: "Request Help",
-      description: "",
+      description_strong: "Believe in kindness. ",
+      description: "We understand that you are fighting every day for the community. So we want to help you. Whenever you need something, fill out the form and we will forward it to the volunteers.",
     },
     supply_stores: {
       title: "Nearby Stores",
-      description: "",
+      description_strong: "Convenient lookup. ",
+      description: "In order to search for stores around the designated area, we have integrated the map into the project. The map will help volunteers visualize the most appropriate travel routes for themselves.",
     },
     covid19_data: {
       title: "Covid-19 Data",
-      description: "",
+      description_strong: "Quick update. ",
+      description: "Updating the news during a pandemic is becoming increasingly important. Therefore, we have integrated maps and statistics to bring the latest and most complete information about Covid-19 of other countries.",
     },
     how_it_works: {
       title: "Learn More",
-      description: "",
+      description_strong: "Instruction booklet. ",
+      span_b4: "Whenever you have troubles using our site, visit ",
+      span_link: " Learn More ",
+      span_af: "to search for the necessary information! We have prepared a tutorial video and detailed article already!",
     },
     contact_us: {
       title: "Contact Us",
-      description: "",
+      description_strong: "Feel free. ",
+      span_b4: "We are always here to answer your questions. Stay connected every time a question comes to you, and let us help you find the answer to that! You can find us at ",
+      span_link: "Contact Us.",
     },
   },
 
@@ -186,7 +195,7 @@ const ENG = {
     title: "How it works",
     for_doctors: {
       title: "For Doctors",
-      
+
     },
     for_volunteers: {
       title: "For Volunteers",

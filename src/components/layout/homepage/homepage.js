@@ -2,7 +2,7 @@ import React from 'react';
 import ReactPlayer from 'react-player';
 import { Container } from '@material-ui/core';
 
-import { About } from '../../content/index';
+// import { About } from '../../content/index';
 import ToHeaders from './toComponents';
 
 const HomePage = () => {
@@ -21,7 +21,7 @@ const HomePage = () => {
         />
       </Container>
       <ToHeaders />
-      <About />
+      {/* <About /> */}
     </div>
   )
 }

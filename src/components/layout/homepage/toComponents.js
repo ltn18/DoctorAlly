@@ -24,6 +24,20 @@ const useStyles = makeStyles(() => ({
       cursor: 'pointer',
       textDecoration: 'underline',
     }
+  },
+  learn_more: {
+    "&:hover": {
+      cursor: 'pointer',
+      textDecoration: 'underline',
+    },
+    color: '#F77737'
+  },
+  contact_us: {
+    "&:hover": {
+      cursor: 'pointer',
+      textDecoration: 'underline',
+    },
+    color: '#EEDC31'
   }
 }));
 
@@ -42,17 +56,8 @@ const ToRequestHelp = (props) => {
         {getLongLineText(locale.lang, "homepage", "request_help", "title")}
       </strong>
       <p style={{ wordWrap: 'break-word', marginTop: '15px' }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Donec cursus erat at est tristique viverra.
-        Nunc tincidunt mauris odio, id finibus nisi bibendum eget.
-        Ut vulputate semper molestie.
-        Fusce semper egestas urna at ultrices.
-        Nam quam mi, hendrerit posuere neque id, dictum euismod dui.
-        Integer pellentesque leo ac lectus dictum finibus.
-        Aenean vehicula faucibus accumsan.
-        Integer pulvinar faucibus enim in scelerisque.
-        Praesent sed leo id arcu malesuada rhoncus.
-        Fusce nec fermentum ipsum.
+        <strong>{getLongLineText(locale.lang, "homepage", "request_help", "description_strong")}</strong>
+        {getLongLineText(locale.lang, "homepage", "request_help", "description")}
       </p>
     </div>
   )
@@ -73,17 +78,8 @@ const ToVolunteer = () => {
         {getLongLineText(locale.lang, "homepage", "volunteer", "title")}
       </strong>
       <p style={{ wordWrap: 'break-word', marginTop: '15px' }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Donec cursus erat at est tristique viverra.
-        Nunc tincidunt mauris odio, id finibus nisi bibendum eget.
-        Ut vulputate semper molestie.
-        Fusce semper egestas urna at ultrices.
-        Nam quam mi, hendrerit posuere neque id, dictum euismod dui.
-        Integer pellentesque leo ac lectus dictum finibus.
-        Aenean vehicula faucibus accumsan.
-        Integer pulvinar faucibus enim in scelerisque.
-        Praesent sed leo id arcu malesuada rhoncus.
-        Fusce nec fermentum ipsum.
+        <strong>{getLongLineText(locale.lang, "homepage", "volunteer", "description_strong")}</strong>
+        {getLongLineText(locale.lang, "homepage", "volunteer", "description")}
       </p>
     </div>
   )
@@ -104,17 +100,8 @@ const ToSupplyStores = () => {
         {getLongLineText(locale.lang, "homepage", "supply_stores", "title")}
       </strong>
       <p style={{ wordWrap: 'break-word', marginTop: '15px' }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Donec cursus erat at est tristique viverra.
-        Nunc tincidunt mauris odio, id finibus nisi bibendum eget.
-        Ut vulputate semper molestie.
-        Fusce semper egestas urna at ultrices.
-        Nam quam mi, hendrerit posuere neque id, dictum euismod dui.
-        Integer pellentesque leo ac lectus dictum finibus.
-        Aenean vehicula faucibus accumsan.
-        Integer pulvinar faucibus enim in scelerisque.
-        Praesent sed leo id arcu malesuada rhoncus.
-        Fusce nec fermentum ipsum.
+        <strong>{getLongLineText(locale.lang, "homepage", "supply_stores", "description_strong")}</strong>
+        {getLongLineText(locale.lang, "homepage", "supply_stores", "description")}
       </p>
     </div>
   )
@@ -135,17 +122,8 @@ const ToCovid19Data = () => {
         {getLongLineText(locale.lang, "homepage", "covid19_data", "title")}
       </strong>
       <p style={{ wordWrap: 'break-word', marginTop: '15px' }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Donec cursus erat at est tristique viverra.
-        Nunc tincidunt mauris odio, id finibus nisi bibendum eget.
-        Ut vulputate semper molestie.
-        Fusce semper egestas urna at ultrices.
-        Nam quam mi, hendrerit posuere neque id, dictum euismod dui.
-        Integer pellentesque leo ac lectus dictum finibus.
-        Aenean vehicula faucibus accumsan.
-        Integer pulvinar faucibus enim in scelerisque.
-        Praesent sed leo id arcu malesuada rhoncus.
-        Fusce nec fermentum ipsum.
+        <strong>{getLongLineText(locale.lang, "homepage", "covid19_data", "description_strong")}</strong>
+        {getLongLineText(locale.lang, "homepage", "covid19_data", "description")}
       </p>
     </div>
   )
@@ -166,17 +144,12 @@ const ToLearnMore = () => {
         {getLongLineText(locale.lang, "homepage", "how_it_works", "title")}
       </strong>
       <p style={{ wordWrap: 'break-word', marginTop: '15px' }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Donec cursus erat at est tristique viverra.
-        Nunc tincidunt mauris odio, id finibus nisi bibendum eget.
-        Ut vulputate semper molestie.
-        Fusce semper egestas urna at ultrices.
-        Nam quam mi, hendrerit posuere neque id, dictum euismod dui.
-        Integer pellentesque leo ac lectus dictum finibus.
-        Aenean vehicula faucibus accumsan.
-        Integer pulvinar faucibus enim in scelerisque.
-        Praesent sed leo id arcu malesuada rhoncus.
-        Fusce nec fermentum ipsum.
+        <strong>{getLongLineText(locale.lang, "homepage", "how_it_works", "description_strong")}</strong>
+        {getLongLineText(locale.lang, "homepage", "how_it_works", "span_b4")}
+        {<span className={classes.learn_more} onClick={() => history.push("/how_it_works")}>
+          {getLongLineText(locale.lang, "homepage", "how_it_works", "span_link")}
+        </span>}
+        {getLongLineText(locale.lang, "homepage", "how_it_works", "span_af")}
       </p>
     </div>
   )
@@ -197,17 +170,11 @@ const ToContactUs = () => {
         {getLongLineText(locale.lang, "homepage", "contact_us", "title")}
       </strong>
       <p style={{ wordWrap: 'break-word', marginTop: '15px' }}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Donec cursus erat at est tristique viverra.
-        Nunc tincidunt mauris odio, id finibus nisi bibendum eget.
-        Ut vulputate semper molestie.
-        Fusce semper egestas urna at ultrices.
-        Nam quam mi, hendrerit posuere neque id, dictum euismod dui.
-        Integer pellentesque leo ac lectus dictum finibus.
-        Aenean vehicula faucibus accumsan.
-        Integer pulvinar faucibus enim in scelerisque.
-        Praesent sed leo id arcu malesuada rhoncus.
-        Fusce nec fermentum ipsum.
+        <strong>{getLongLineText(locale.lang, "homepage", "contact_us", "description_strong")}</strong>
+        {getLongLineText(locale.lang, "homepage", "contact_us", "span_b4")}
+        {<span className={classes.contact_us} onClick={() => history.push("/contact_us")}>
+          {getLongLineText(locale.lang, "homepage", "contact_us", "span_link")}
+        </span>}
       </p>
     </div>
   )
