@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import localeContext, { getLongLineText } from '../../context/localeCtx';
 
 import { useParams, Redirect } from 'react-router-dom';
 
@@ -37,14 +38,14 @@ const useStyles = makeStyles((theme) => ({
 const RequestForm = (props) => {
   const classes = useStyles();
   const { id } = useParams();
-  console.log(id);
+  const locale = useContext(localeContext);
 
   return (
     <Container maxWidth="md">
       <form className={classes.root} noValidate autoComplete="off">
-        <div style={{ marginBottom: 20 }}>
-          <strong>REQUEST CARD</strong>
-          <p style={{ fontStyle: 'italic' }}>Let us help you get what you need!</p>
+        <div className={classes.font} style={{ marginBottom: 20 }}>
+          <strong>{getLongLineText(locale.lang, "request_help", "title", null)}</strong>
+          <p style={{ fontStyle: 'italic' }}>{getLongLineText(locale.lang, "request_help", "description", null)}</p>
         </div>
         {id === "1"
           ? <PersonalInformation

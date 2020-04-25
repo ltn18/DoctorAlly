@@ -152,7 +152,6 @@ const Volunteer = () => {
     console.log(page);
   };
 
-
   const RenderButton = (props) => {
     const locale = useContext(localeContext);
     const { page, rows } = props;
@@ -204,6 +203,11 @@ const Volunteer = () => {
       </div>
     )
   }
+
+  // const [searchValue, setSearchValue] = useState("");
+  // const handleSearchChange = (e) => {
+  //   setSearchValue(e.target.value);
+  // }
 
   return (
     <>

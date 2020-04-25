@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import { Button, ButtonGroup, InputBase } from '@material-ui/core';
 import { Alert, AlertTitle } from '@material-ui/lab';
@@ -10,16 +10,17 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-import { useEffect } from 'react';
+
+import localeContext, { getLongLineText } from '../../context/localeCtx';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
     marginBottom: '30px',
-    marginTop: '30px'
+    marginTop: '30px',
   },
   container: {
-    maxHeight: 800,
+    maxHeight: 900,
   },
   input: {
     marginLeft: theme.spacing(1),
@@ -31,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       cursor: 'pointer',
       textDecoration: 'underline'
-    }
+    },
+    fontFamily: 'Lexend Giga'
   },
   alert: {
     width: '100%',
@@ -40,23 +42,10 @@ const useStyles = makeStyles((theme) => ({
     },
     marginBottom: '30px',
   },
+  font: {
+    fontFamily: 'Lexend Giga',
+  },
 }));
-
-const heads = [
-  "Country",
-  "Cases",
-  "Today Cases",
-  "Deaths",
-  "Today Deaths",
-  "Recovered",
-  "Active",
-  "Critical",
-  "Cases Per Million",
-  "Deaths Per Million",
-  "Tests",
-  "Tests Per Million",
-  "Continent"
-]
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -74,12 +63,15 @@ const StyledTableRow = withStyles((theme) => ({
       backgroundColor: theme.palette.background.default,
     },
   },
+  font: {
+    fontFamily: 'Lexend Giga',
+  },
 }))(TableRow);
 
 const CovidList = (props) => {
   const { data } = props;
   const [DATA, setDATA] = useState([]);
-  const [page, setPage] = React.useState(1);
+  const [page, setPage] = React.useState(0);
   const rows = 10;
 
   useEffect(() => {
@@ -90,25 +82,42 @@ const CovidList = (props) => {
 
   const SwitchPage = (props) => {
     const { page, handleBackButtonClick, handleNextButtonClick } = props;
+    const locale = useContext(localeContext);
     return (
       <>
         {
-          page > 1 && page < 212
+          page > 0 && page < 212
             ? <>
               <ButtonGroup variant="text" color="secondary" aria-label="text primary button group">
-                <Button onClick={handleBackButtonClick}>BACK</Button>
-                <Button onClick={handleNextButtonClick}>NEXT</Button>
+                <Button
+                  className={classes.font}
+                  onClick={handleBackButtonClick}>
+                  {getLongLineText(locale.lang, "covid19_data", "footer", "back_button")}
+                </Button>
+                <Button
+                  className={classes.font}
+                  onClick={handleNextButtonClick}>
+                  {getLongLineText(locale.lang, "covid19_data", "footer", "next_button")}
+                </Button>
               </ButtonGroup>
             </>
-            : page === 1
+            : page === 0
               ? <>
                 <ButtonGroup variant="text" color="secondary" aria-label="text primary button group">
-                  <Button onClick={handleNextButtonClick}>NEXT</Button>
+                  <Button
+                    className={classes.font}
+                    onClick={handleNextButtonClick}>
+                    {getLongLineText(locale.lang, "covid19_data", "footer", "next_button")}
+                  </Button>
                 </ButtonGroup>
               </>
               : <>
                 <ButtonGroup variant="text" color="secondary" aria-label="text primary button group">
-                  <Button onClick={handleBackButtonClick}>BACK</Button>
+                  <Button
+                    className={classes.font}
+                    onClick={handleBackButtonClick}>
+                    {getLongLineText(locale.lang, "covid19_data", "footer", "back_button")}
+                  </Button>
                 </ButtonGroup>
               </>
         }
@@ -118,13 +127,13 @@ const CovidList = (props) => {
 
   const Search = () => {
     const [value, setValue] = useState("");
-
+    const locale = useContext(localeContext);
     return (
       <div style={{ backgroundColor: "#F58529" }}>
         <InputBase
-          style={{ alignSelf: 'center' }}
+          style={{ alignSelf: 'center', fontFamily: 'Lexend Giga' }}
           className={classes.input}
-          placeholder="Search Country"
+          placeholder={getLongLineText(locale.lang, "covid19_data", "search_placeholder", null)}
           inputProps={{ 'aria-label': 'search requests' }}
           value={value}
           onChange={(e) => setValue(e.target.value)}
@@ -150,7 +159,7 @@ const CovidList = (props) => {
     }
   };
   const handleBackButtonClick = () => {
-    if (page > 1) {
+    if (page > 0) {
       setPage(page - 1);
     }
   };
@@ -159,25 +168,29 @@ const CovidList = (props) => {
 
   const AlertCountry = (props) => {
     const { searchRes } = props;
+    const locale = useContext(localeContext);
     return (
       <div className={classes.alert}>
         {searchRes
-          ? 
+          ?
           <Alert severity="info">
-            <AlertTitle>
-              <strong>Country: {searchRes.country}</strong>
+            <AlertTitle className={classes.font}>
+              <strong>{getLongLineText(locale.lang, "covid19_data", "country", null)}: {searchRes.country}</strong>
             </AlertTitle>
-            <p>Cases: {searchRes.cases}</p>
-            <p>Today Cases: {searchRes.todayCases}</p>
-            <p>Deaths: {searchRes.todayDeaths}</p>
-            <p>Recovered: {searchRes.recovered}</p>
-            <p>Active: {searchRes.active}</p>
-            <p>Critical: {searchRes.critical}</p>
-            <p>Cases Per Million: {searchRes.casesPerOneMillion}</p>
-            <p>Deaths Per Million: {searchRes.deathsPerOneMillion}</p>
-            <p>Tests: {searchRes.tests}</p>
-            <p>Tests Per Million: {searchRes.testsPerOneMillion}</p>
-            <p>Continent: {searchRes.continent}</p>
+            <div className={classes.font}>
+              <p>{getLongLineText(locale.lang, "covid19_data", "continent", null)}: {convertContinent(locale.lang, searchRes.continent)}</p>
+              <p>{getLongLineText(locale.lang, "covid19_data", "today_cases", null)}: {searchRes.todayCases}</p>
+              <p>{getLongLineText(locale.lang, "covid19_data", "today_deaths", null)}: {searchRes.todayDeaths}</p>
+              <p>{getLongLineText(locale.lang, "covid19_data", "cases", null)}: {searchRes.cases}</p>
+              <p>{getLongLineText(locale.lang, "covid19_data", "deaths", null)}: {searchRes.deaths}</p>
+              <p>{getLongLineText(locale.lang, "covid19_data", "tests", null)}: {searchRes.tests}</p>
+              <p>{getLongLineText(locale.lang, "covid19_data", "recovered", null)}: {searchRes.recovered}</p>
+              <p>{getLongLineText(locale.lang, "covid19_data", "active", null)}: {searchRes.active}</p>
+              <p>{getLongLineText(locale.lang, "covid19_data", "critical", null)}: {searchRes.critical}</p>
+              <p>{getLongLineText(locale.lang, "covid19_data", "cases_per_million", null)}: {searchRes.casesPerOneMillion}</p>
+              <p>{getLongLineText(locale.lang, "covid19_data", "deaths_per_million", null)}: {searchRes.deathsPerOneMillion}</p>
+              <p>{getLongLineText(locale.lang, "covid19_data", "tests_per_million", null)}: {searchRes.testsPerOneMillion}</p>
+            </div>
           </Alert>
           : <></>
         }
@@ -186,6 +199,21 @@ const CovidList = (props) => {
     )
   }
   const [searchRes, setSearchRes] = useState({});
+
+  const locale = useContext(localeContext);
+
+  const convertContinent = (lang, continent) => {
+    if (lang === "VIE") {
+      if (continent === "Asia") return "Châu Á";
+      if (continent === "Europe") return "Châu Âu";
+      if (continent === "Africa") return "Châu Phi";
+      if (continent === "Australia/Oceania") return "Châu Đại Dương";
+      if (continent === "North America") return "Bắc Mỹ";
+      if (continent === "South America") return "Nam Mỹ";
+    } else {
+      return continent;
+    }
+  }
 
   return (
     <div>
@@ -196,31 +224,87 @@ const CovidList = (props) => {
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
               <TableRow>
-                {heads.map(head => (
-                  <StyledTableCell align='center'>
-                    <div style={{ fontWeight: 'bold' }}>{head}</div>
-                  </StyledTableCell>
-                ))}
+                <StyledTableCell align='center'>
+                  <div
+                    style={{
+                      fontWeight: 'bold',
+                      fontFamily: 'Lexend Giga'
+                    }}>{getLongLineText(locale.lang, "covid19_data", "heads", "country")}
+                  </div>
+                </StyledTableCell>
+                <StyledTableCell align='center'>
+                  <div
+                    style={{
+                      fontWeight: 'bold',
+                      fontFamily: 'Lexend Giga'
+                    }}>{getLongLineText(locale.lang, "covid19_data", "heads", "cases")}
+                  </div>
+                </StyledTableCell>
+                <StyledTableCell align='center'>
+                  <div
+                    style={{
+                      fontWeight: 'bold',
+                      fontFamily: 'Lexend Giga'
+                    }}>{getLongLineText(locale.lang, "covid19_data", "heads", "deaths")}
+                  </div>
+                </StyledTableCell>
+                <StyledTableCell align='center'>
+                  <div
+                    style={{
+                      fontWeight: 'bold',
+                      fontFamily: 'Lexend Giga'
+                    }}>{getLongLineText(locale.lang, "covid19_data", "heads", "recovered")}
+                  </div>
+                </StyledTableCell>
+                <StyledTableCell align='center'>
+                  <div
+                    style={{
+                      fontWeight: 'bold',
+                      fontFamily: 'Lexend Giga'
+                    }}>{getLongLineText(locale.lang, "covid19_data", "heads", "active")}
+                  </div>
+                </StyledTableCell>
+                <StyledTableCell align='center'>
+                  <div
+                    style={{
+                      fontWeight: 'bold',
+                      fontFamily: 'Lexend Giga'
+                    }}>{getLongLineText(locale.lang, "covid19_data", "heads", "critical")}
+                  </div>
+                </StyledTableCell>
+                <StyledTableCell align='center'>
+                  <div
+                    style={{
+                      fontWeight: 'bold',
+                      fontFamily: 'Lexend Giga'
+                    }}>{getLongLineText(locale.lang, "covid19_data", "heads", "tests")}
+                  </div>
+                </StyledTableCell>
+                <StyledTableCell align='center'>
+                  <div
+                    style={{
+                      fontWeight: 'bold',
+                      fontFamily: 'Lexend Giga'
+                    }}>{getLongLineText(locale.lang, "covid19_data", "heads", "continent")}
+                  </div>
+                </StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {DATA.slice(page * rows, page * rows + rows).map(item => (
                 <StyledTableRow >
-                  <StyledTableCell component="th" scope="row">
+                  <StyledTableCell className={classes.font} component="th" scope="row">
                     {item.country}
                   </StyledTableCell>
-                  <StyledTableCell align="center">{item.cases}</StyledTableCell>
-                  <StyledTableCell align="center">{item.todayCases}</StyledTableCell>
-                  <StyledTableCell align="center">{item.deaths}</StyledTableCell>
-                  <StyledTableCell align="center">{item.todayDeaths}</StyledTableCell>
-                  <StyledTableCell align="center">{item.recovered}</StyledTableCell>
-                  <StyledTableCell align="center">{item.active}</StyledTableCell>
-                  <StyledTableCell align="center">{item.critical}</StyledTableCell>
-                  <StyledTableCell align="center">{item.casesPerOneMillion}</StyledTableCell>
-                  <StyledTableCell align="center">{item.deathsPerOneMillion}</StyledTableCell>
-                  <StyledTableCell align="center">{item.tests}</StyledTableCell>
-                  <StyledTableCell align="center">{item.testsPerOneMillion}</StyledTableCell>
-                  <StyledTableCell align="center">{item.continent}</StyledTableCell>
+                  <StyledTableCell className={classes.font} align="center">{item.cases}</StyledTableCell>
+                  <StyledTableCell className={classes.font} align="center">{item.deaths}</StyledTableCell>
+                  <StyledTableCell className={classes.font} align="center">{item.recovered}</StyledTableCell>
+                  <StyledTableCell className={classes.font} align="center">{item.active}</StyledTableCell>
+                  <StyledTableCell className={classes.font} align="center">{item.critical}</StyledTableCell>
+                  <StyledTableCell className={classes.font} align="center">{item.tests}</StyledTableCell>
+                  <StyledTableCell className={classes.font} align="left">
+                    {convertContinent(locale.lang, item.continent)}
+                  </StyledTableCell>
                 </StyledTableRow>
               ))}
             </TableBody>
