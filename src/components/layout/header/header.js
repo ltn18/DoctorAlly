@@ -73,18 +73,6 @@ const Header = () => {
           className={classes.font}
         >{getText("header", "supply_stores", locale.lang)}</Button>
 
-        <Button
-          onClick={() => { handleRouteSwitch("covid19_data") }}
-          style={{ color: '#8134AF' }}
-          className={classes.font}
-        >{getText("header", "covid19_data", locale.lang)}</Button>
-
-        <Button
-          onClick={() => { handleRouteSwitch("how_it_works") }}
-          style={{ color: '#F77737' }}
-          className={classes.font}
-        >{getText("header", "how_it_works", locale.lang)}</Button>
-
         <FormControl className={classes.formControl}>
           <Select
             value={locale.lang}
