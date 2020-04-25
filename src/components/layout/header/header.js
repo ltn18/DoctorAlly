@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import localeContext, { getText } from "../../context/localeCtx";
 
 import { useHistory } from 'react-router-dom';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 import { Button, MenuItem, FormControl, Select } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -26,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
   },
   fontLogo: {
     fontFamily: 'Yeseva One',
+  },
+  formControl: {
+    marginTop: "15px",
   }
 }));
 
@@ -45,10 +49,10 @@ const Header = () => {
         className={classes.avatar}
         style={{ backgroundColor: 'white' }}
       >
-        {/* <img src="logo192.png" alt="LOGO" style={{ width: 50, height: 50 }} /> */}
+        {/* <img src="logo.jpg" alt="LOGO" style={{ width: "50px", height: "50px" }} /> */}
+        <FavoriteIcon style={{color: 'red'}}/>
         <span style={{ marginLeft: 5, fontSize: "30px" }} className={classes.fontLogo}>DoctorAlly</span>
       </Button>
-
       <div className={classes.buttonGroup}>
         <Button
           onClick={() => { handleRouteSwitch("volunteer") }}
@@ -68,17 +72,17 @@ const Header = () => {
           className={classes.font}
         >{getText("header", "supply_stores", locale.lang)}</Button>
 
-        <FormControl className={classes.formControl}>
-          <Select
-            value={locale.lang}
-            onChange={(e) => { locale.setLang(e.target.value) }}
-            className={classes.font}
-          >
-            <MenuItem value={"ENG"} className={classes.font}>ENG</MenuItem>
-            <MenuItem value={"VIE"} className={classes.font}>VIE</MenuItem>
-          </Select>
-        </FormControl>
       </div>
+      <FormControl className={classes.formControl}>
+        <Select
+          value={locale.lang}
+          onChange={(e) => { locale.setLang(e.target.value) }}
+          className={classes.font}
+        >
+          <MenuItem value={"ENG"} className={classes.font}>ENG</MenuItem>
+          <MenuItem value={"VIE"} className={classes.font}>VIE</MenuItem>
+        </Select>
+      </FormControl>
 
     </div>
   )
