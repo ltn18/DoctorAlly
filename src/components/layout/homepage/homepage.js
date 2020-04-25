@@ -14,7 +14,7 @@ const HomePage = () => {
         <ReactPlayer
           width={1170}
           height={550}
-          url='https://youtu.be/VaKzNtwPQxE'
+          url='https://www.youtube.com/watch?v=mrRgBTOIPgA'
           playing
           controls
           style={{ alignSelf: 'center', marginTop: '20px' }}

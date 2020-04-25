@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   font: {
-    fontFamily: 'Poppins',
+    fontFamily: 'Baloo Tamma 2, cursive',
     fontSize: "15px",
   },
   fontLogo: {
@@ -30,6 +30,10 @@ const useStyles = makeStyles((theme) => ({
   },
   formControl: {
     marginTop: "15px",
+  },
+  btn: {
+    borderRadius: '100px',
+    padding: 10,
   }
 }));
 
@@ -58,21 +62,22 @@ const Header = () => {
           variant = "contained"
           onClick={() => { handleRouteSwitch("volunteer") }}
           color="primary"
-          className={classes.font}
+          className={classes.font, classes.btn}
         >{getText("header", "volunteer", locale.lang)}</Button>
 
         <Button
           variant = "contained"
           onClick={() => { handleRouteSwitch("request_help/1") }}
           color="secondary"
-          className={classes.font}
+          className={classes.font, classes.btn}
         >{getText("header", "request_help", locale.lang)}</Button>
 
         <Button
           variant = "contained"
           onClick={() => { handleRouteSwitch("supply_stores") }}
           style={{ color: 'green' }}
-          className={classes.font}
+          className={classes.font, classes.btn}
+          style={{backgroundColor: 'green', color: 'white'}}
         >{getText("header", "supply_stores", locale.lang)}</Button>
 
       </div>
