@@ -217,7 +217,7 @@ const Volunteer = () => {
           <p className={classes.p}>
             {getText("volunteer", "p", locale.lang)}
           </p>
-          <Button onClick={moveToSignUp} color="primary" variant="contained" className={classes.button}> {getText("volunteer", "button", locale.lang)}</Button>
+          <Button onClick={moveToSignUp} style={{backgroundColor: "#ff8040", color: 'white'}} variant="contained" className={classes.button}> {getText("volunteer", "button", locale.lang)}</Button>
         </Container>
       </div>
       <div className={classes.root}>
