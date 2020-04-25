@@ -5,7 +5,7 @@ const WEBSITE_ADDRESS_ENG = "No 1 Hoang Minh Giam St";
 const ENG = {
   header: {
     about: "About",
-    volunteer: "Volunteer",
+    volunteer: "Help Us",
     request_help: "Request Help",
     supply_stores: "Nearby Stores",
     covid19_data: "Covid-19 Data",
@@ -14,7 +14,7 @@ const ENG = {
 
   homepage: {
     volunteer: {
-      title: "Volunteer",
+      title: "Help Us",
       description_strong: "Small actions spread love. ",
       description: "Covid-19 made physicians exhausted both physically and mentally. You can contribute your strength to the fight against pandemics by volunteering to help the doctors.",
     },
@@ -55,18 +55,18 @@ const ENG = {
   },
   // VOLUNTEER
   volunteer: {
-    h2_volunteer: "BE A VOLUNTEER",
+    h2_volunteer: "Help us with donations",
     p: `We’re currently setting up networks of doctors and volunteers with an aim to fight against Covid-19.
     Your help will greatly contribute to this fight and our community as a whole.
     Sign up as a volunteer now and receive notifications when new requests are posted!`,
-    button: "Volunteer Now",
+    button: "Help Us Now",
     h2_request: "REQUEST LISTS",
     search_bar: "Search Requests",
     next_button: "NEXT",
     back_button: "BACK",
   },
   volunteerSignUp: {
-    title: 'VOLUNTEER CARD',
+    title: 'Help Us CARD',
     description: `We will contact you when there are requests near you.
     Your personal information is safe with us!`,
     support_kinds: {

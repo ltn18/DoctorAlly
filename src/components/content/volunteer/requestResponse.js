@@ -22,6 +22,12 @@ const useStyles = makeStyles(() => ({
     fontFamily: 'Lexend Giga',
   },
 }));
+const fetchNearbyStoreDataLocation = async () =>{
+  // const response = await fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=21.025417,105.835258&radius=1500&type=restaurant&key=AIzaSyA8yp4aWovCABcBT6o6H21ZcBAwQqz3XdI`)
+  const response = await fetch("https://nominatim.openstreetmap.org/search?q=33 Hoang Cau Dong Da Ha Noi&format=json&polygon_geojson=1&addressdetails=1")
+  const resJson = await response.json()
+  return resJson
+}
 
 
 const fetchData = async () =>{
@@ -30,11 +36,6 @@ const fetchData = async () =>{
   return resJson
 }
 
-const fetchDataVolunteer = async () =>{
-  const response = await fetch("http://localhost:5000/volunteer")
-  const resJson = await response.json()
-  return resJson
-}
 
 const RequestResponse = () => {
   const classes = useStyles();
@@ -44,16 +45,29 @@ const RequestResponse = () => {
   const [invalidate,setInvalidate] = useState(true)
   const [thisRequest, setThisRequest] = useState({})
 
+  const [invalidate2,setInvalidate2] = useState(true)
+  const [location, setLocation] = useState({
+    lat: 0,
+    lon: 0
+  })
+
+  console.log(location)
+
+  const handlerOfferHelp = () =>{
+    history.push(`/offer_help/${thisRequest._id}?lat=${location.lat}&lon=${location.lon}`)
+    // console.log(location)
+
+  }
 
   useEffect(() => {
     if(invalidate){
       fetchData()
         .then((res)=>{  
-          console.log(res)
+          // console.log(res)
           setRequestData(res)
           const currentRequest = res.find((req) => req._id === id)
           setThisRequest(currentRequest)
-          console.log(currentRequest)
+          // console.log(currentRequest)
           setInvalidate(false) 
         })
         .catch((err)=>{
@@ -61,6 +75,24 @@ const RequestResponse = () => {
         })
     }
   }, [invalidate]);
+
+  
+  useEffect(() => {
+    if(invalidate2){
+      fetchNearbyStoreDataLocation()
+        .then((res)=>{
+          // console.log(res[0])
+          setLocation({
+            lat:res[0].lat,
+            lon:res[0].lon
+          })
+          setInvalidate2(false)
+        })
+        .catch((err)=>{
+          console.log(err)
+        })
+    }
+  }, [invalidate2]);
 
   // const offerHelpHandler = (_id) =>{
     
@@ -96,7 +128,7 @@ const RequestResponse = () => {
           fontWeight: 'bold',
           fontFamily: 'Lexend Giga'
         }}
-        onClick={() => history.push(`/offer_help/${thisRequest._id}`)}      
+        onClick={handlerOfferHelp}      
       >Offer Help</Button>
     </Paper>
   )
