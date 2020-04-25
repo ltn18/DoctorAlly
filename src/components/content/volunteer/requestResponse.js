@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
 import { CardContent, Paper, CardHeader, Button } from '@material-ui/core';
-
+import axios from "axios"
 
 const useStyles = makeStyles(() => ({
   reqres: {
@@ -23,118 +23,54 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const DATA = [
-  {
-    id: 1,
-    name: "An Nguyen",
-    location: "Cau Giay",
-    facility: "Benh vien Hong Ngoc",
-    role: "Doctor",
-    needs: ["Meals", "Drinks"],
-    details: "White masks"
-  },
-  {
-    id: 2,
-    name: "Binh Nguyen",
-    location: "Thanh Xuan",
-    facility: "Bach Mai",
-    role: "Surgeon",
-    needs: ["Coffee", "Tea"],
-    details: "Sugar free"
-  },
-  {
-    id: 3,
-    name: "Chris Dev",
-    location: "Hoan Kiem",
-    facility: "Vin Mec",
-    role: "Nurse",
-    needs: ["Cookies", "Ice cream"],
-    details: "Non-fat"
-  },
-  {
-    id: 4,
-    name: "Chris Dev",
-    location: "Hoan Kiem",
-    facility: "Vin Mec",
-    role: "Nurse",
-    needs: ["Cookies", "Ice cream"],
-    details: "Non-fat"
-  },
-  {
-    id: 5,
-    name: "Chris Dev",
-    location: "Hoan Kiem",
-    facility: "Vin Mec",
-    role: "Nurse",
-    needs: ["Cookies", "Ice cream"],
-    details: "Non-fat"
-  },
-  {
-    id: 6,
-    name: "Chris Dev",
-    location: "Hoan Kiem",
-    facility: "Vin Mec",
-    role: "Nurse",
-    needs: ["Cookies", "Ice cream"],
-    details: "Non-fat"
-  },
-  {
-    id: 7,
-    name: "Chris Dev",
-    location: "Hoan Kiem",
-    facility: "Vin Mec",
-    role: "Nurse",
-    needs: ["Cookies", "Ice cream"],
-    details: "Non-fat"
-  },
-  {
-    id: 8,
-    name: "Chris Dev",
-    location: "Hoan Kiem",
-    facility: "Vin Mec",
-    role: "Nurse",
-    needs: ["Cookies", "Ice cream"],
-    details: "Non-fat"
-  },
-  {
-    id: 9,
-    name: "Chris Dev",
-    location: "Hoan Kiem",
-    facility: "Vin Mec",
-    role: "Nurse",
-    needs: ["Cookies", "Ice cream"],
-    details: "Non-fat"
-  },
-  {
-    id: 10,
-    name: "Chris Dev",
-    location: "Hoan Kiem",
-    facility: "Vin Mec",
-    role: "Nurse",
-    needs: ["Cookies", "Ice cream"],
-    details: "Non-fat"
-  },
-  {
-    id: 11,
-    name: "Chris Dev",
-    location: "Hoan Kiem",
-    facility: "Vin Mec",
-    role: "Nurse",
-    needs: ["Cookies", "Ice cream"],
-    details: "Non-fat"
-  }
-]
+
+const fetchData = async () =>{
+  const response = await fetch("http://localhost:5000/helpRequest")
+  const resJson = await response.json()
+  return resJson
+}
+
+const fetchDataVolunteer = async () =>{
+  const response = await fetch("http://localhost:5000/volunteer")
+  const resJson = await response.json()
+  return resJson
+}
 
 const RequestResponse = () => {
   const classes = useStyles();
   const { id } = useParams();
   const history = useHistory();
+  const [requestData, setRequestData] = useState([])
+  const [invalidate,setInvalidate] = useState(true)
+  const [thisRequest, setThisRequest] = useState({})
+
+
+  useEffect(() => {
+    if(invalidate){
+      fetchData()
+        .then((res)=>{  
+          console.log(res)
+          setRequestData(res)
+          const currentRequest = res.find((req) => req._id === id)
+          setThisRequest(currentRequest)
+          console.log(currentRequest)
+          setInvalidate(false) 
+        })
+        .catch((err)=>{
+          console.log(err)
+        })
+    }
+  }, [invalidate]);
+
+  // const offerHelpHandler = (_id) =>{
+    
+  // }
 
   return (
     <Paper elevation={3} rounded style={{ marginBottom: '30px' }}>
       <CardHeader
-        title={DATA[id - 1].name}
-        subheader={DATA[id - 1].role + " | " + DATA[id - 1].facility}
+        title={thisRequest.fullName}
+        subheader={thisRequest.jobTitle + " | " + thisRequest.medicalFacility}
         className={classes.reqres}
         classes={{
           title: classes.title,
@@ -143,15 +79,15 @@ const RequestResponse = () => {
       />
       <CardContent>
         <p><strong>LOCATION</strong></p>
-        <p>{DATA[id - 1].location}</p>
+        <p>{thisRequest.location}</p>
+        <p><strong>EMAIL</strong></p> 
+        <p>{thisRequest.email}</p>
         <p><strong>NEEDS</strong></p>
-        <ul>
-          {DATA[id - 1].needs.map(item => (
-            <li>{item}</li>
-          ))}
-        </ul>
+          {thisRequest.work && thisRequest.work.map((wor)=>{
+            return wor + ", "
+          })}
         <p><strong>DETAILS</strong></p>
-        <p>{DATA[id - 1].details}</p>
+        <p>{thisRequest.describeRequest}</p>
       </CardContent>
       <Button
         style={{
@@ -160,10 +96,8 @@ const RequestResponse = () => {
           fontWeight: 'bold',
           fontFamily: 'Lexend Giga'
         }}
-        onClick={() => history.push("/offer_help")}
-      >
-        Offer Help
-      </Button>
+        onClick={() => history.push(`/offer_help/${thisRequest._id}`)}      
+      >Offer Help</Button>
     </Paper>
   )
 }

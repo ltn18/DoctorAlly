@@ -16,7 +16,7 @@ import {
 } from './components/content/index';
 
 const App = () => {
-  const [lang, setLang] = useState("VIE");
+  const [lang, setLang] = useState("ENG");
   return (
     <LocaleContext.Provider value={{ lang: lang, setLang: setLang }}>
       <div style={{ fontFamily: 'Lexend Giga' }}>
@@ -38,8 +38,8 @@ const App = () => {
           <Route exact path="/request_help/:id" component={Request_help} />
           <Route exact path="/request_help/2/success" component={SuccessRequest} />
           
-          <Route exact path="/offer_help" component={OfferHelp} />
-          <Route exact path="/offer_help/success" component={SuccessOffer} />
+          <Route exact path="/offer_help/:id" component={OfferHelp} />
+          <Route exact path="/offer_help/:id/success" component={SuccessOffer} />
 
           <Route exact path="/supply_stores" component={Supply_stores} />
           <Route exact path="/covid19_data" component={Covid19_data} />

@@ -13,6 +13,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Data from './requestData';
+import axios from "../../../config/axios"
 
 const useStyles = makeStyles((theme) => ({
   font: {
@@ -23,11 +24,17 @@ const useStyles = makeStyles((theme) => ({
 const Requests = (props) => {
   const { formControl } = props;
   const history = useHistory();
-  const classes = useStyles();
   const locale = useContext(localeContext);
+  const classes = useStyles();
 
   const handleSave = () => {
     Data[0] = state;
+    history.push("/request_help/2/success")
+    axios.post("http://localhost:5000/helpRequest",Data)
+    .then((res)=> res.data)
+    .catch((err)=>{
+      console.log(err)
+    })
   }
 
   const [state, setState] = useState(Data[0]);

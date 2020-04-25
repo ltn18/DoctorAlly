@@ -1,12 +1,24 @@
-import React, { useState, useContext } from 'react';
-import localeContext, { getText } from '../../context/localeCtx';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button, ButtonGroup, Container, Box, Grid } from '@material-ui/core';
+import localeContext, { getText } from '../../context/localeCtx';
+import { Button,ButtonGroup, Container, Box, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import InputBase from '@material-ui/core/InputBase';
-import SearchIcon from '@material-ui/icons/Search';
-import IconButton from '@material-ui/core/IconButton';
+// import InputBase from '@material-ui/core/InputBase';
+// import SearchIcon from '@material-ui/icons/Search';
+// import IconButton from '@material-ui/core/IconButton';
 
+
+const fetchDataReq = async () =>{
+  const response = await fetch("http://localhost:5000/helpRequest")
+  const resJson = await response.json()
+  return resJson
+}
+
+const fetchDataVolunteer = async () =>{
+  const response = await fetch("http://localhost:5000/volunteer")
+  const resJson = await response.json()
+  return resJson
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -75,99 +87,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const DATA = [
-  {
-    id: 1,
-    name: "An Nguyen",
-    role: "Doctor",
-    facility: "Benh vien Hong Ngoc",
-    needs: ['Shopping', 'Cooking'],
-    offers: 1,
-  },
-  {
-    id: 2,
-    name: "Binh Nguyen",
-    role: "Surgeon",
-    facility: "Bach Mai",
-    needs: ['Shopping'],
-    offers: 2,
-  },
-  {
-    id: 3,
-    name: "Chris Dev",
-    role: "Nurse",
-    facility: "Vin Mec",
-    needs: ['Special chores'],
-    offers: 3,
-  },
-  {
-    id: 4,
-    name: "Chris Dev",
-    role: "Nurse",
-    facility: "Vin Mec",
-    needs: ['Special chores'],
-    offers: 4,
-  },
-  {
-    id: 5,
-    name: "Chris Dev",
-    role: "Nurse",
-    facility: "Vin Mec",
-    needs: ['Special chores'],
-    offers: 5,
-  },
-  {
-    id: 6,
-    name: "Chris Dev",
-    role: "Nurse",
-    facility: "Vin Mec",
-    needs: ['Special chores'],
-    offers: 6,
-  },
-  {
-    id: 7,
-    name: "Chris Dev",
-    role: "Nurse",
-    facility: "Vin Mec",
-    needs: ['Special chores'],
-    offers: 7,
-  },
-  {
-    id: 8,
-    name: "Chris Dev",
-    role: "Nurse",
-    facility: "Vin Mec",
-    needs: ['Special chores'],
-    offers: 4,
-  },
-  {
-    id: 9,
-    name: "Chris Dev",
-    role: "Nurse",
-    facility: "Vin Mec",
-    needs: ['Special chores'],
-    offers: 5,
-  },
-  {
-    id: 10,
-    name: "Chris Dev",
-    role: "Nurse",
-    facility: "Vin Mec",
-    needs: ['Special chores'],
-    offers: 6,
-  },
-  {
-    id: 11,
-    name: "Chris Dev",
-    role: "Nurse",
-    facility: "Vin Mec",
-    needs: ['Special chores'],
-    offers: 7,
-  }
-]
 
 const RequestBox = (props) => {
-  const { color, id, needs, offers } = props;
+  const { color, id, work, offers } = props;
   const history = useHistory();
   const classes = useStyles();
 
@@ -180,9 +102,13 @@ const RequestBox = (props) => {
       <Grid container spacing={2} className={classes.grid}>
         <Grid item xs={6}>
           <strong>{props.name} | {props.role}, {props.facility}</strong>
-          <div>{props.needs.join(", ")}</div>
+          <div>{
+          work.map((wor)=> {
+            return wor + ", "
+          })  
+            }</div>
         </Grid>
-        <Grid item xs={6}>{props.offers} offers</Grid>
+        {/* <Grid item xs={6}>{props.offers} offers</Grid> */}
       </Grid>
     </Box>
   )
@@ -197,9 +123,24 @@ const Volunteer = () => {
   const moveToSignUp = () => {
     history.push("/volunteer/signup");
   }
+  const [requestData, setRequestData] = useState([])
+  const [invalidate,setInvalidate] = useState(true)
 
+  useEffect(() => {
+    if(invalidate){
+      fetchDataReq()
+        .then((res)=>{
+          setRequestData(res)
+          setInvalidate(false) 
+        })
+        .catch((err)=>{
+          console.log(err)
+        })
+    }
+  }, [invalidate]);
+  
   const handleNextButtonClick = () => {
-    if (page * rows < DATA.length) {
+    if (page * rows < requestData.length) {
       setPage(page + 1);
     }
     console.log(page);
@@ -218,7 +159,7 @@ const Volunteer = () => {
       <div style={{ marginTop: '15px', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
         <div>
           {
-            page > 0 && page * rows + rows <= DATA.length
+            page > 0 && page * rows + rows <= requestData.length
               ?
               <>
                 <ButtonGroup variant="contained" aria-label="text primary button group">
@@ -258,12 +199,10 @@ const Volunteer = () => {
                 </Button>
           }
         </div>
-        <strong style={{ marginLeft: '50px', alignSelf: 'center' }}>Page: {page + 1}/{Math.ceil(DATA.length / rows)}</strong>
+        <strong style={{ marginLeft: '50px', alignSelf: 'center' }}>Page: {page + 1}/{Math.ceil(requestData.length / rows)}</strong>
       </div>
     )
   }
-
-  console.log(DATA.slice(page * rows, page * rows + rows));
 
   // const [searchValue, setSearchValue] = useState("");
   // const handleSearchChange = (e) => {
@@ -283,50 +222,33 @@ const Volunteer = () => {
       </div>
       <div className={classes.root}>
         <h2 className={classes.h2}>{getText("volunteer", "h2_request", locale.lang)}</h2>
-        {/* <div style={{ display: 'flex' }}>
-          <IconButton type="submit" className={classes.iconButton} aria-label="search">
-            <SearchIcon />
-          </IconButton>
-          <InputBase
-            style={{ alignSelf: 'center' }}
-            className={classes.input}
-            placeholder={getText("volunteer", "search_bar", locale.lang)}
-            inputProps={{ 'aria-label': 'search requests' }}
-            value={searchValue}
-            onChange={handleSearchChange}
-          />
-        </div> */}
         <div className='requests-container'>
           {
-            DATA
-              .slice(page * rows, page * rows + rows)
-              .map((box) => {
-                if (box.id % 2 === 0) {
-                  return (
-                    <RequestBox
-                      color='#f2f2f2'
-                      id={box.id}
-                      name={box.name}
-                      role={box.role}
-                      facility={box.facility}
-                      needs={box.needs}
-                      offers={box.offers}
-                    />
-                  )
-                } else {
-                  return (
-                    <RequestBox
-                      color='#ffffff'
-                      id={box.id}
-                      name={box.name}
-                      role={box.role}
-                      facility={box.facility}
-                      needs={box.needs}
-                      offers={box.offers}
-                    />
-                  )
-                }
-              })
+            requestData.map((req, index) => {
+              if (index % 2 === 0) {
+                return (
+                  <RequestBox
+                    color='#f2f2f2'
+                    id={req._id}
+                    name={req.fullName}
+                    role={req.jobTitle}
+                    facility={req.medicalFacility}
+                    work={req.work}
+                  />
+                )
+              } else {
+                return (
+                  <RequestBox
+                    color='#ffffff'
+                    id={req._id}
+                    name={req.fullName}
+                    role={req.jobTitle}
+                    facility={req.medicalFacility}
+                    work={req.work}
+                  />
+                )
+              }
+            })
           }
           <RenderButton page={page} rows={rows} />
         </div>

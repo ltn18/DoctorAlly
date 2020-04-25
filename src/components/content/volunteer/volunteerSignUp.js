@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import localeContext, { getLongLineText } from '../../context/localeCtx';
 import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
@@ -9,6 +9,8 @@ import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import axios from "axios"
+import Data from "./volunteerData"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,15 +51,36 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
 const VolunteerSignUp = () => {
   const classes = useStyles();
   const locale = useContext(localeContext)
+  const [state0, setState0] = useState(Data[0]);
+  const [state1, setState1] = useState(Data[1]);
   const history = useHistory()
 
-  const moveToSuccess = () => {
+  const submitHandler = () =>{
     history.push("/volunteer/signUp/success")
+    Data[0] = state0
+    Data[1] = state1
+
+    axios.post("http://localhost:5000/volunteer",Data)
+    .then((res)=> res.data)
+    .catch((err)=>{
+      console.log(err)
+    })
   }
+
+  const { meals, drinks, masks, sanitizer, medicalSupplies, petCare, laundry, other} = state0
+  const { fullName, homeDistrict,homeWard, homeCity, email, phone, signature} = state1
+
+  const handleTickChange = (event) => {
+    setState0({ ...state0, [event.target.name]: event.target.checked });
+  };
+  
+  const handleTextChange = (event) => {
+    setState1({ ...state1, [event.target.name]: event.target.value });
+  };
+
   return (
     <Container maxWidth="md">
       <form className={classes.root} noValidate autoComplete="off">
@@ -71,36 +94,36 @@ const VolunteerSignUp = () => {
           }} >{getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'title')}</FormLabel>
           <FormGroup>
             <FormControlLabel
-              control={<Checkbox />}
+              control={<Checkbox checked={meals} onChange={handleTickChange} name="meals" />}
               label={getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'item1')}
             />
             <FormControlLabel
-              control={<Checkbox />}
+              control={<Checkbox checked={drinks} onChange={handleTickChange} name="drinks" />}
               label={getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'item2')}
             />
             <FormControlLabel
-              control={<Checkbox />}
+              control={<Checkbox checked={masks} onChange={handleTickChange} name="masks" />}
               label={getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'item3')}
             />
             <FormControlLabel
-              control={<Checkbox />}
+              control={<Checkbox checked={sanitizer} onChange={handleTickChange} name="sanitizer" />}
               label={getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'item4')}
             />
             <FormControlLabel
-              control={<Checkbox />}
+              control={<Checkbox checked={medicalSupplies} onChange={handleTickChange} name="medicalSupplies" />}
               label={getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'item5')}
             />
             <FormControlLabel
-              control={<Checkbox />}
+              control={<Checkbox checked={petCare} onChange={handleTickChange} name="petCare" />}
               label={getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'item6')}
             />
             <FormControlLabel
-              control={<Checkbox />}
+              control={<Checkbox checked={laundry} onChange={handleTickChange} name="laundry" />}
               label={getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'item7')}
             />
             <div>
               <FormControlLabel
-                control={<Checkbox />}
+                control={<Checkbox checked={other} onChange={handleTickChange} name="other" />}
                 label={getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'item8')}
               />
               <TextField multiline />
@@ -110,25 +133,25 @@ const VolunteerSignUp = () => {
 
         <FormControl className={classes.personalInfo}>
           <FormLabel className={classes.font}>{getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'title')}</FormLabel>
-          <TextField classes={classes.font} label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'name_placeholder')} variant="outlined" />
-          <TextField label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'district_placeholder')} variant="outlined" />
-          <TextField label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'ward_placeholder')} variant="outlined" />
-          <TextField label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'city_placeholder')} variant="outlined" />
-          <TextField label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'email_placeholder')} variant="outlined" />
-          <TextField label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'phone_placeholder')} variant="outlined" />
+          <TextField name="fullName" value={fullName} onChange={handleTextChange} classes={classes.font} label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'name_placeholder')} variant="outlined" />
+          <TextField name="homeDistrict" value={homeDistrict} onChange={handleTextChange} label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'district_placeholder')} variant="outlined" />
+          <TextField name="homeWard" value={homeWard} onChange={handleTextChange} label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'ward_placeholder')} variant="outlined" />
+          <TextField name="homeCity" value={homeCity} onChange={handleTextChange} label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'city_placeholder')} variant="outlined" />
+          <TextField name="email" value={email} onChange={handleTextChange} label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'email_placeholder')} variant="outlined" />
+          <TextField name="phone" value={phone} onChange={handleTextChange} label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'phone_placeholder')} variant="outlined" />
         </FormControl>
-
+        
         <FormControl className={classes.footer}>
-          <TextField label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'signature_placeholder')} style={{ marginRight: '10px' }} />
-          <Button className={classes.font} variant="contained" color="primary" size="large" onClick={moveToSuccess}>{getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'submit_button')}</Button>
+          <TextField name="signature" value={signature} onChange={handleTextChange} label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'signature_placeholder')} style={{ marginRight: '10px' }} />
+          <Button onClick={submitHandler} className={classes.font} variant="contained" color="primary" size="large">{getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'submit_button')}</Button>
         </FormControl>
 
         <div className={classes.quote}>
           <strong>
-            {getLongLineText(locale.lang, 'volunteerSignUp', 'footer', 'quote')}
+          {getLongLineText(locale.lang, 'volunteerSignUp', 'footer', 'quote')}
           </strong>
           <strong style={{ alignSelf: 'flex-end' }}>
-            {getLongLineText(locale.lang, 'volunteerSignUp', 'footer', 'author')}
+          {getLongLineText(locale.lang, 'volunteerSignUp', 'footer', 'author')}
           </strong>
         </div>
       </form>

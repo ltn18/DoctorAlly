@@ -33,9 +33,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 20,
     fontStyle: 'italic'
   },
-  font: {
-    fontFamily: 'Lexend Giga',
-  },
 }));
 
 const RequestForm = (props) => {
