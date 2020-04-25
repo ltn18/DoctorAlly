@@ -9,7 +9,7 @@ const HomePage = () => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column' }}>
-      <h2 style={{ alignSelf: 'center' }}>LET'S WALKTHROUGH DOCTORALLY</h2>
+      {/* <div style={{ alignSelf: 'center', fontSize: '20px', fontWeight: 'bold', marginTop: "20px", }}>LET'S WALKTHROUGH DOCTORALLY</div> */}
       <Container maxWidth="lg">
         <ReactPlayer
           width={1170}

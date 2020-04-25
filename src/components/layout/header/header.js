@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   font: {
     fontFamily: 'Lexend Giga',
-    fontSize: 18
+    fontSize: "15px",
   },
   fontLogo: {
     fontFamily: 'Yeseva One',
@@ -46,7 +46,7 @@ const Header = () => {
         style={{ backgroundColor: 'white' }}
       >
         {/* <img src="logo192.png" alt="LOGO" style={{ width: 50, height: 50 }} /> */}
-        <span style={{ marginLeft: 5, fontSize: 25 }} className={classes.fontLogo}>DoctorAlly</span>
+        <span style={{ marginLeft: 5, fontSize: "30px" }} className={classes.fontLogo}>DoctorAlly</span>
       </Button>
 
       <div className={classes.buttonGroup}>
