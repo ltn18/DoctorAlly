@@ -36,15 +36,15 @@ const VIE = {
     how_it_works: {
       title: "Tìm hiểu thêm",
       description_strong: "Hướng dẫn sử dụng. ",
-      span_b4: "Khi nào các bạn gặp khó khăn trong việc sử dụng trang web của chúng minh, hãy truy cập vào trang",
-      span_link: " Tìm hiểu thêm ",
+      span_b4: "Khi nào các bạn gặp khó khăn trong việc sử dụng trang web của chúng minh, hãy truy cập tại ",
+      span_link: " đây ",
       span_af: "để tìm kiếm những thông tin cần thiết nhé! Chúng mình đã chuẩn bị video hướng đãn và bài viết chi tiết rồi đó!",
     },
-    contact_us: {
-      title: "Liên hệ chúng mình",
-      description_strong: "Đừng ngần ngại. ",
-      span_b4: "Chúng mình luôn ở đây để giải đáp thắc mắc của các bạn. Hãy kết nối mỗi khi có câu hỏi vụt sáng trong bạn, và để chúng mình giúp bạn tìm câu trả lời cho điều ấy nhé! Các bạn có thể tìm thấy chúng mình ở trang ",
-      span_link: "Liên hệ với chúng mình.",
+    about_us: {
+      title: "Về chúng mình",
+      description_strong: "Đừng ngần ngại kết nối. ",
+      span_b4: "Xin chào, rất vui khi có bạn trên trang web của chúng mình. Hãy kết nối mỗi khi bạn có câu hỏi và để chúng mình giúp bạn tìm câu trả lời! Tìm chúng mình tại ",
+      span_link: "đây.",
     },
   },
 
@@ -57,10 +57,9 @@ const VIE = {
   // VOLUNTEER
   volunteer: {
     h2_volunteer: "HÃY TRỞ THÀNH MỘT TÌNH NGUYỆN VIÊN",
-    p: `Chúng tôi hiện đang phát triển một mạng lưới các bác sĩ và tình nguyện viên với mục tiêu chung tay
-    chống lại dịch Covid-19. Do đó, sự giúp đỡ của bạn sẽ góp phần rất lớn cho cuộc chiến này và cho toàn thể cộng đồng.
-    Hãy đăng kí làm một tình nguyên viên và bạn sẽ nhận được thông báo khi xuất hiện yêu cầu mới từ các y bác sĩ.`,
-    button: "Tình nguyện ngay",
+    p: `Chúng mình đang phát triển mạng lưới cho bác sĩ và tình nguyện viên với mục tiêu đẩy lùi dịch Covid-19. Do đó, sự giúp đỡ của bạn sẽ góp phần rất lớn cho cuộc chiến này và cho toàn thể cộng đồng.
+    Hãy là một tình nguyên viên và bạn sẽ nhận được thông báo khi xuất hiện yêu cầu mới.`,
+    button: "Ủng hộ nào",
     h2_request: "DANH SÁCH YÊU CẦU",
     search_bar: "Tìm yêu cầu",
     next_button: "Tiếp theo",
@@ -69,8 +68,8 @@ const VIE = {
   volunteerSignUp: {
     title: 'ĐƠN TÌNH NGUYỆN',
     description:
-      `Chúng tôi sẽ liên lạc với bạn khi có yêu cầu ở gần bạn.
-    Thông tin cá nhân của bạn sẽ được chúng tôi bảo vệ an toàn.`,
+      `Chúng mình sẽ liên lạc với bạn khi có yêu cầu ở gần bạn.
+    Thông tin cá nhân của bạn sẽ được chúng mình bảo vệ an toàn.`,
     support_kinds: {
       title: "Bạn có thể giúp cung cấp những gì?",
       item1: "Bữa ăn",
@@ -101,7 +100,7 @@ const VIE = {
   // REQUEST HELP
   request_help: {
     title: "ĐƠN YÊU CẦU",
-    description: "Hãy để chúng tôi giúp mình có được những gì bạn cần!",
+    description: "Hãy để chúng mình giúp mình có được những gì bạn cần!",
     personal_info: {
       title: "Thông tin cá nhân",
       name_placeholder: "Tên đầy đủ của bạn",
@@ -148,7 +147,7 @@ const VIE = {
       submit_button: "Gửi",
     },
     footer: {
-      quote: "“Cánh cửa cho một sự khởi đầu mới mở ra khi chúng tôi chia sẻ.”",
+      quote: "“Cánh cửa cho một sự khởi đầu mới mở ra khi chúng mình chia sẻ.”",
       author: "― Paul Bradley Smith",
     }
   },
@@ -156,7 +155,7 @@ const VIE = {
   // NEARBY STORES
   supply_stores: {
     hanoimap: "Bản đồ cung ứng Hà Nội",
-    description: "Để hỗ trợ nhân viên y tế, đặc biệt là những người cần nguồn cung cấp thường xuyên như thực phẩm và đồ gia dụng, chúng tôi đã tạo ra một bản đồ dễ tiếp cận cho các cửa hàng cung ứng. Điều duy nhất bạn phải làm là nhập địa điểm của bạn và các cửa hàng gần nhất sẽ xuất hiện để bạn chọn!",
+    description: "Để hỗ trợ nhân viên y tế, đặc biệt là những người cần nguồn cung cấp thường xuyên như thực phẩm và đồ gia dụng, chúng mình đã tạo ra một bản đồ dễ tiếp cận cho các cửa hàng cung ứng. Điều duy nhất bạn phải làm là nhập địa điểm của bạn và các cửa hàng gần nhất sẽ xuất hiện để bạn chọn!",
     search_placeholder: "Tìm kiếm cửa hàng gần bạn",
     howtouse: "Hướng dẫn sử dụng",
     firstTitle: "Đầu tiên, tìm kiếm vị trí của bạn trên bản đồ",
@@ -219,9 +218,9 @@ const VIE = {
   how_it_works: {
     h2_general: {
       title: "Tổng quát",
-      p1: "Thông tin cá nhân mà bạn được yêu cầu cung cấp và lý do tại sao bạn được yêu cầu cung cấp thông tin đó sẽ được làm rõ cho bạn tại thời điểm chúng tôi yêu cầu bạn cung cấp thông tin cá nhân của bạn.",
-      p2: "Khi bạn đăng ký Tài khoản, chúng tôi có thể yêu cầu thông tin liên lạc của bạn, bao gồm các mục như tên, tên công ty, địa chỉ, địa chỉ email và số điện thoại.",
-      p3: "Nếu bạn liên hệ trực tiếp với chúng tôi, chúng tôi có thể nhận được thông tin bổ sung về bạn như tên, địa chỉ email, số điện thoại, nội dung của tin nhắn và / hoặc tệp đính kèm bạn có thể gửi cho chúng tôi và bất kỳ thông tin nào khác bạn có thể chọn cung cấp.",
+      p1: "Thông tin cá nhân mà bạn được yêu cầu cung cấp và lý do tại sao bạn được yêu cầu cung cấp thông tin đó sẽ được làm rõ cho bạn tại thời điểm chúng mình yêu cầu bạn cung cấp thông tin cá nhân của bạn.",
+      p2: "Khi bạn đăng ký Tài khoản, chúng mình có thể yêu cầu thông tin liên lạc của bạn, bao gồm các mục như tên, tên công ty, địa chỉ, địa chỉ email và số điện thoại.",
+      p3: "Nếu bạn liên hệ trực tiếp với chúng mình, chúng mình có thể nhận được thông tin bổ sung về bạn như tên, địa chỉ email, số điện thoại, nội dung của tin nhắn và / hoặc tệp đính kèm bạn có thể gửi cho chúng mình và bất kỳ thông tin nào khác bạn có thể chọn cung cấp.",
       li_1: "Cung cấp, vận hành và duy trì website",
       li_2: "Cải thiện, cá nhân hóa và mở rộng website",
       li_3: "Hiểu và phân tích cách bạn sử dụng website",
@@ -251,7 +250,7 @@ const VIE = {
 
 
   footer: {
-    contact_us: "Liên hệ chúng mình",
+    contact_us: "Về chúng mình",
     feedbacks: "Phản hồi",
     privacy_policy: "Chính sách bảo mật",
     terms_of_use: "Điều khoản sử dụng"
@@ -287,28 +286,28 @@ const VIE = {
       title: "CHÍNH SÁCH BẢO MẬT",
       p1: `Sửa đổi vào ${WEBSITE_UPDATE_DATE_VIE}`,
       p2_main1: `Tại ${WEBSITE_NAME}, có thể truy cập từ `,
-      p2_main2: `, một trong những ưu tiên chính của chúng tôi là quyền riêng tư của khách truy cập. Tài liệu Chính sách Bảo mật này chứa các loại thông tin được ${WEBSITE_NAME} thu thập và ghi lại và cách chúng tôi sử dụng thông tin đó.`,
-      p3: "Nếu bạn có thêm câu hỏi hoặc yêu cầu thêm thông tin về Chính sách Bảo mật của chúng tôi, đừng ngần ngại liên hệ với chúng tôi.",
-      p4: `Chính sách bảo mật này chỉ áp dụng cho các hoạt động trực tuyến của chúng tôi và có giá trị đối với khách truy cập vào trang web của chúng tôi liên quan đến thông tin mà họ đã chia sẻ và/hoặc thu thập trong ${WEBSITE_NAME} Chính sách này không áp dụng cho bất kỳ thông tin nào được thu thập ngoại tuyến hoặc qua các kênh khác ngoài trang web này.`,
+      p2_main2: `, một trong những ưu tiên chính của chúng mình là quyền riêng tư của khách truy cập. Tài liệu Chính sách Bảo mật này chứa các loại thông tin được ${WEBSITE_NAME} thu thập và ghi lại và cách chúng mình sử dụng thông tin đó.`,
+      p3: "Nếu bạn có thêm câu hỏi hoặc yêu cầu thêm thông tin về Chính sách Bảo mật của chúng mình, đừng ngần ngại liên hệ với chúng mình.",
+      p4: `Chính sách bảo mật này chỉ áp dụng cho các hoạt động trực tuyến của chúng mình và có giá trị đối với khách truy cập vào trang web của chúng mình liên quan đến thông tin mà họ đã chia sẻ và/hoặc thu thập trong ${WEBSITE_NAME} Chính sách này không áp dụng cho bất kỳ thông tin nào được thu thập ngoại tuyến hoặc qua các kênh khác ngoài trang web này.`,
     },
     h2_consent: {
       title: "Sự tán thành",
-      p1: "Bằng cách sử dụng trang web của chúng tôi, bạn tán thành với Chính sách quyền riêng tư của chúng tôi và đồng ý với các điều khoản của nó."
+      p1: "Bằng cách sử dụng trang web của chúng mình, bạn tán thành với Chính sách quyền riêng tư của chúng mình và đồng ý với các điều khoản của nó."
     },
     h2_infoColl: {
-      title: "Thông tin chúng tôi thu thập",
-      p1: "Thông tin cá nhân mà bạn được yêu cầu cung cấp, và lý do tại sao bạn được yêu cầu cung cấp thông tin đó, sẽ được làm rõ cho bạn tại thời điểm chúng tôi yêu cầu bạn cung cấp thông tin cá nhân của bạn.",
-      p2: "Nếu bạn liên hệ trực tiếp với chúng tôi, chúng tôi có thể nhận được thông tin bổ sung về bạn như tên, địa chỉ email, số điện thoại, nội dung của tin nhắn và/hoặc tệp đính kèm bạn có thể gửi cho chúng tôi và bất kỳ thông tin nào khác bạn có thể chọn cung cấp.",
-      p3: "Khi bạn đăng ký Tài khoản, chúng tôi có thể yêu cầu thông tin liên lạc của bạn, bao gồm các mục như tên, tên công ty, địa chỉ, địa chỉ email và số điện thoại.",
+      title: "Thông tin chúng mình thu thập",
+      p1: "Thông tin cá nhân mà bạn được yêu cầu cung cấp, và lý do tại sao bạn được yêu cầu cung cấp thông tin đó, sẽ được làm rõ cho bạn tại thời điểm chúng mình yêu cầu bạn cung cấp thông tin cá nhân của bạn.",
+      p2: "Nếu bạn liên hệ trực tiếp với chúng mình, chúng mình có thể nhận được thông tin bổ sung về bạn như tên, địa chỉ email, số điện thoại, nội dung của tin nhắn và/hoặc tệp đính kèm bạn có thể gửi cho chúng mình và bất kỳ thông tin nào khác bạn có thể chọn cung cấp.",
+      p3: "Khi bạn đăng ký Tài khoản, chúng mình có thể yêu cầu thông tin liên lạc của bạn, bao gồm các mục như tên, tên công ty, địa chỉ, địa chỉ email và số điện thoại.",
     },
     h2_infoUse: {
-      title: "Cách chúng tôi sử dụng thông tin của bạn",
-      p1: "Chúng tôi sử dụng thông tin chúng tôi thu thập theo nhiều cách khác nhau, bao gồm:",
-      li_1: "Cung cấp, vận hành và duy trì website của chúng tôi",
-      li_2: "Cải thiện, cá nhân hóa và mở rộng website của chúng tôi",
-      li_3: "Hiểu và phân tích cách bạn sử dụng website của chúng tôi",
+      title: "Cách chúng mình sử dụng thông tin của bạn",
+      p1: "Chúng mình sử dụng thông tin chúng mình thu thập theo nhiều cách khác nhau, bao gồm:",
+      li_1: "Cung cấp, vận hành và duy trì website của chúng mình",
+      li_2: "Cải thiện, cá nhân hóa và mở rộng website của chúng mình",
+      li_3: "Hiểu và phân tích cách bạn sử dụng website của chúng mình",
       li_4: "Phát triển sản phẩm, dịch vụ, tính năng và chức năng mới",
-      li_5: "Giao tiếp với bạn, trực tiếp hoặc thông qua một trong các đối tác của chúng tôi, bao gồm cả dịch vụ khách hàng, để cung cấp cho bạn các cập nhật và thông tin khác liên quan đến website và cho các mục đích tiếp thị và quảng cáo",
+      li_5: "Giao tiếp với bạn, trực tiếp hoặc thông qua một trong các đối tác của chúng mình, bao gồm cả dịch vụ khách hàng, để cung cấp cho bạn các cập nhật và thông tin khác liên quan đến website và cho các mục đích tiếp thị và quảng cáo",
       li_6: "Gửi email cho bạn",
       li_7: "Tìm và ngăn chặn gian lận",
     },
@@ -324,31 +323,31 @@ const VIE = {
     },
     h2_third_party: {
       title: "Chính sách bảo mật của Bên thứ ba",
-      p1: `Chính sách bảo mật của ${WEBSITE_NAME} không áp dụng cho các nhà quảng cáo hoặc trang web khác. Do đó, chúng tôi khuyên bạn nên tham khảo Chính sách bảo mật tương ứng của các máy chủ quảng cáo bên thứ ba này để biết thêm thông tin chi tiết. Nó có thể bao gồm các giao thiệp và hướng dẫn của họ về cách từ chối các tùy chọn nhất định. Bạn có thể tìm thấy một danh sách đầy đủ các Chính sách quyền riêng tư này và các liên kết của chúng ở đây: Liên kết chính sách bảo mật.`,
+      p1: `Chính sách bảo mật của ${WEBSITE_NAME} không áp dụng cho các nhà quảng cáo hoặc trang web khác. Do đó, chúng mình khuyên bạn nên tham khảo Chính sách bảo mật tương ứng của các máy chủ quảng cáo bên thứ ba này để biết thêm thông tin chi tiết. Nó có thể bao gồm các giao thiệp và hướng dẫn của họ về cách từ chối các tùy chọn nhất định. Bạn có thể tìm thấy một danh sách đầy đủ các Chính sách quyền riêng tư này và các liên kết của chúng ở đây: Liên kết chính sách bảo mật.`,
       p2: "Bạn có thể chọn tắt cookie thông qua các tùy chọn trình duyệt cá nhân. Để biết thông tin chi tiết hơn về quản lý cookie với các trình duyệt web cụ thể, có thể tìm thấy nó tại các trang web tương ứng của trình duyệt.",
     },
     h2_ccpa: {
-      title: "Quyền riêng tư CCPA (Không bán thông tin cá nhân của tôi)",
+      title: "Quyền riêng tư CCPA (Không bán thông tin cá nhân của mình)",
       p1: "Theo CCPA, trong số các quyền khác, người tiêu dùng California có quyền:",
       p2: "Yêu cầu doanh nghiệp thu thập dữ liệu cá nhân của người tiêu dùng tiết lộ các danh mục và mẫu dữ liệu cá nhân cụ thể mà doanh nghiệp đã thu thập về người tiêu dùng.",
       p3: "Yêu cầu doanh nghiệp xóa bất kỳ dữ liệu cá nhân nào về người tiêu dùng mà doanh nghiệp đã thu thập.",
-      p4: "Nếu bạn đưa ra yêu cầu, chúng tôi có một tháng để trả lời bạn. Nếu bạn muốn thực hiện bất kỳ quyền nào trong số này, vui lòng liên hệ với chúng tôi.",
+      p4: "Nếu bạn đưa ra yêu cầu, chúng mình có một tháng để trả lời bạn. Nếu bạn muốn thực hiện bất kỳ quyền nào trong số này, vui lòng liên hệ với chúng mình.",
     },
     h2_gdpr: {
       title: "Quyền bảo vệ dữ liệu GDPR",
-      p1: "Chúng tôi muốn đảm bảo bạn biết đầy đủ tất cả các quyền bảo vệ dữ liệu của mình. Mọi người dùng đều được hưởng những điều sau đây:",
-      p2: "Quyền truy cập - Bạn có quyền yêu cầu các bản sao dữ liệu cá nhân của mình. Chúng tôi có thể tính một khoản phí nhỏ cho dịch vụ này.",
-      p3: "Quyền cải chính - Bạn có quyền yêu cầu chúng tôi sửa bất kỳ thông tin nào bạn cho là không chính xác. Bạn cũng có quyền yêu cầu chúng tôi hoàn thành thông tin mà bạn cho là không đầy đủ.",
-      p4: "Quyền xóa - Bạn có quyền yêu cầu chúng tôi xóa dữ liệu cá nhân của bạn, trong một số điều kiện nhất định.",
-      p5: "Quyền hạn chế xử lý - Bạn có quyền yêu cầu chúng tôi hạn chế xử lý dữ liệu cá nhân của bạn, trong một số điều kiện nhất định.",
-      p6: "Quyền phản đối xử lý - Bạn có quyền phản đối việc chúng tôi xử lý dữ liệu cá nhân của bạn, trong những điều kiện nhất định.",
-      p7: "Quyền chuyển đổi dữ liệu - Bạn có quyền yêu cầu chúng tôi chuyển dữ liệu mà chúng tôi đã thu thập sang một tổ chức khác hoặc trực tiếp cho bạn, trong một số điều kiện nhất định.",
-      p8: "Nếu bạn đưa ra yêu cầu, chúng tôi có một tháng để trả lời bạn. Nếu bạn muốn thực hiện bất kỳ quyền nào trong số này, vui lòng liên hệ với chúng tôi.",
+      p1: "Chúng mình muốn đảm bảo bạn biết đầy đủ tất cả các quyền bảo vệ dữ liệu của mình. Mọi người dùng đều được hưởng những điều sau đây:",
+      p2: "Quyền truy cập - Bạn có quyền yêu cầu các bản sao dữ liệu cá nhân của mình. Chúng mình có thể tính một khoản phí nhỏ cho dịch vụ này.",
+      p3: "Quyền cải chính - Bạn có quyền yêu cầu chúng mình sửa bất kỳ thông tin nào bạn cho là không chính xác. Bạn cũng có quyền yêu cầu chúng mình hoàn thành thông tin mà bạn cho là không đầy đủ.",
+      p4: "Quyền xóa - Bạn có quyền yêu cầu chúng mình xóa dữ liệu cá nhân của bạn, trong một số điều kiện nhất định.",
+      p5: "Quyền hạn chế xử lý - Bạn có quyền yêu cầu chúng mình hạn chế xử lý dữ liệu cá nhân của bạn, trong một số điều kiện nhất định.",
+      p6: "Quyền phản đối xử lý - Bạn có quyền phản đối việc chúng mình xử lý dữ liệu cá nhân của bạn, trong những điều kiện nhất định.",
+      p7: "Quyền chuyển đổi dữ liệu - Bạn có quyền yêu cầu chúng mình chuyển dữ liệu mà chúng mình đã thu thập sang một tổ chức khác hoặc trực tiếp cho bạn, trong một số điều kiện nhất định.",
+      p8: "Nếu bạn đưa ra yêu cầu, chúng mình có một tháng để trả lời bạn. Nếu bạn muốn thực hiện bất kỳ quyền nào trong số này, vui lòng liên hệ với chúng mình.",
     },
     h2_childrenInfo: {
       title: "Thông tin trẻ em",
-      p1: "Một phần ưu tiên khác của chúng tôi là bổ sung sự bảo vệ cho trẻ em khi sử dụng internet. Chúng tôi khuyến khích phụ huynh và người giám hộ quan sát, tham gia và/hoặc giám sát và hướng dẫn hoạt động trực tuyến của họ.",
-      p2: `${WEBSITE_NAME} không cố ý thu thập bất kỳ Thông tin nhận dạng cá nhân nào từ trẻ em dưới 13 tuổi. Nếu bạn nghĩ rằng con bạn đã cung cấp loại thông tin này trên trang web của chúng tôi, chúng tôi khuyến khích bạn liên hệ với chúng tôi ngay lập tức và chúng tôi sẽ nỗ lực hết sức để loại bỏ kịp thời thông tin đó từ hồ sơ của chúng tôi.`
+      p1: "Một phần ưu tiên khác của chúng mình là bổ sung sự bảo vệ cho trẻ em khi sử dụng internet. Chúng mình khuyến khích phụ huynh và người giám hộ quan sát, tham gia và/hoặc giám sát và hướng dẫn hoạt động trực tuyến của họ.",
+      p2: `${WEBSITE_NAME} không cố ý thu thập bất kỳ Thông tin nhận dạng cá nhân nào từ trẻ em dưới 13 tuổi. Nếu bạn nghĩ rằng con bạn đã cung cấp loại thông tin này trên trang web của chúng mình, chúng mình khuyến khích bạn liên hệ với chúng mình ngay lập tức và chúng mình sẽ nỗ lực hết sức để loại bỏ kịp thời thông tin đó từ hồ sơ của chúng mình.`
     }
   },
 
@@ -380,37 +379,37 @@ const VIE = {
       p1_strong: `Liên kết & Quảng cáo của Bên Thứ Ba.`,
       p1_main: ` Trang web có thể chứa các liên kết đến các trang web và dịch vụ của bên thứ ba và/hoặc hiển thị quảng cáo cho bên thứ ba. Các Liên kết & Quảng cáo của Bên Thứ Ba như vậy không thuộc quyền kiểm soát của Công ty và Công ty không chịu trách nhiệm cho bất kỳ Liên kết & Quảng cáo của Bên Thứ Ba nào. Công ty chỉ cung cấp quyền truy cập vào các Liên kết & Quảng cáo của Bên Thứ Ba này để thuận tiện cho bạn và không xem xét, phê duyệt, giám sát, chứng thực, bảo đảm hoặc đưa ra bất kỳ tuyên bố nào liên quan đến Liên kết & Quảng cáo của Bên Thứ Ba. Bạn tự chịu rủi ro khi sử dụng tất cả các Liên kết & Quảng cáo của Bên Thứ Ba và nên áp dụng mức độ thận trọng và nhận thức phù hợp khi thực hiện. Khi bạn nhấn vào bất kỳ Liên kết & Quảng cáo của bên thứ ba nào, các điều khoản và chính sách của bên thứ ba hiện hành sẽ được áp dụng, bao gồm cả việc thu thập dữ liệu và quyền riêng tư của bên thứ ba.`,
       p2_strong: `Người dùng khác.`,
-      p2_main: ` Mỗi người dùng Trang chịu trách nhiệm riêng cho bất kỳ và tất cả Nội dung Người dùng của riêng mình. Vì chúng tôi không kiểm soát Nội dung Người dùng, bạn công nhận và đồng ý rằng chúng tôi không chịu trách nhiệm cho bất kỳ Nội dung Người dùng nào, cho dù do bạn hoặc người khác cung cấp . Bạn đồng ý rằng Công ty sẽ không chịu trách nhiệm cho bất kỳ tổn thất hoặc thiệt hại nào phát sinh do kết quả của bất kỳ tương tác nào như vậy. Nếu có tranh chấp giữa bạn và bất kỳ người dùng Trang web nào, chúng tôi không có nghĩa vụ phải tham gia.`,
-      p3: `Qua đây, bạn giải phóng Công ty và các cán bộ, nhân viên, đại lý, người kế nhiệm và chuyển nhượng của chúng tôi khỏi, và từ đó từ bỏ, từng tranh chấp, yêu cầu, quyền, nghĩa vụ, hành động và nguyên nhân của hành động của mọi loại với mọi bản chất, mà đã phát sinh hoặc phát sinh trực tiếp hoặc gián tiếp hoặc liên quan trực tiếp hoặc gián tiếp đến Trang web. Nếu bạn là cư dân California, bạn sẽ từ bỏ bộ luật dân sự California năm 1542 liên quan đến quy định trên, trong đó nêu rõ: "một bản phát hành chung không mở rộng cho các khiếu nại mà chủ nợ không biết hoặc nghi ngờ tồn tại ở thời gian thực hiện việc phát hành, mà nếu anh ấy hoặc cô ấy biết phải ảnh hưởng nghiêm trọng đến việc giải quyết của anh ấy hoặc cô ấy với người nợ."`,
+      p2_main: ` Mỗi người dùng Trang chịu trách nhiệm riêng cho bất kỳ và tất cả Nội dung Người dùng của riêng mình. Vì chúng mình không kiểm soát Nội dung Người dùng, bạn công nhận và đồng ý rằng chúng mình không chịu trách nhiệm cho bất kỳ Nội dung Người dùng nào, cho dù do bạn hoặc người khác cung cấp . Bạn đồng ý rằng Công ty sẽ không chịu trách nhiệm cho bất kỳ tổn thất hoặc thiệt hại nào phát sinh do kết quả của bất kỳ tương tác nào như vậy. Nếu có tranh chấp giữa bạn và bất kỳ người dùng Trang web nào, chúng mình không có nghĩa vụ phải tham gia.`,
+      p3: `Qua đây, bạn giải phóng Công ty và các cán bộ, nhân viên, đại lý, người kế nhiệm và chuyển nhượng của chúng mình khỏi, và từ đó từ bỏ, từng tranh chấp, yêu cầu, quyền, nghĩa vụ, hành động và nguyên nhân của hành động của mọi loại với mọi bản chất, mà đã phát sinh hoặc phát sinh trực tiếp hoặc gián tiếp hoặc liên quan trực tiếp hoặc gián tiếp đến Trang web. Nếu bạn là cư dân California, bạn sẽ từ bỏ bộ luật dân sự California năm 1542 liên quan đến quy định trên, trong đó nêu rõ: "một bản phát hành chung không mở rộng cho các khiếu nại mà chủ nợ không biết hoặc nghi ngờ tồn tại ở thời gian thực hiện việc phát hành, mà nếu anh ấy hoặc cô ấy biết phải ảnh hưởng nghiêm trọng đến việc giải quyết của anh ấy hoặc cô ấy với người nợ."`,
     },
     h2_disclaimer: {
       title: "Khước từ",
-      p1: `Trang web được cung cấp trên cơ sở "như hiện tại" và "có sẵn", và công ty và nhà cung cấp của chúng tôi từ chối bất kỳ và tất cả các bảo đảm và điều kiện dưới bất kỳ hình thức nào, dù rõ ràng, ngụ ý hay theo luật định, bao gồm tất cả các bảo đảm hoặc điều kiện bán hàng, năng lực cho một mục đích cụ thể, tiêu đề, hưởng thụ yên tĩnh (Bên cung cấp không gây ra bất kì khó khăn nào cho Người dùng), tính chính xác hay sự không xâm phạm. Chúng tôi và các nhà cung cấp của chúng tôi không đảm bảo rằng trang web sẽ đáp ứng các yêu cầu của bạn, hay sẽ có sẵn trên cơ sở không bị gián đoạn, kịp thời, an toàn hoặc không có lỗi, hoặc sẽ chính xác, đáng tin cậy, không có vi-rút hoặc mã độc hại khác, hoàn chỉnh, hợp pháp hoặc an toàn. Nếu luật áp dụng yêu cầu bất kỳ sự bảo hành nào liên quan đến trang web, tất cả các sự bảo hành như vậy được giới hạn trong thời hạn đến chín mươi (90) ngày kể từ ngày sử dụng đầu tiên.`,
+      p1: `Trang web được cung cấp trên cơ sở "như hiện tại" và "có sẵn", và công ty và nhà cung cấp của chúng mình từ chối bất kỳ và tất cả các bảo đảm và điều kiện dưới bất kỳ hình thức nào, dù rõ ràng, ngụ ý hay theo luật định, bao gồm tất cả các bảo đảm hoặc điều kiện bán hàng, năng lực cho một mục đích cụ thể, tiêu đề, hưởng thụ yên tĩnh (Bên cung cấp không gây ra bất kì khó khăn nào cho Người dùng), tính chính xác hay sự không xâm phạm. Chúng mình và các nhà cung cấp của chúng mình không đảm bảo rằng trang web sẽ đáp ứng các yêu cầu của bạn, hay sẽ có sẵn trên cơ sở không bị gián đoạn, kịp thời, an toàn hoặc không có lỗi, hoặc sẽ chính xác, đáng tin cậy, không có vi-rút hoặc mã độc hại khác, hoàn chỉnh, hợp pháp hoặc an toàn. Nếu luật áp dụng yêu cầu bất kỳ sự bảo hành nào liên quan đến trang web, tất cả các sự bảo hành như vậy được giới hạn trong thời hạn đến chín mươi (90) ngày kể từ ngày sử dụng đầu tiên.`,
       p2: `Một số khu vực pháp lý không cho phép loại trừ các bảo hành có ngụ ý, vì vậy loại trừ trên có thể không áp dụng cho bạn. Một số khu vực pháp lý không cho phép các giới hạn về thời gian bảo hành ngụ ý kéo dài bao lâu, vì vậy giới hạn trên có thể không áp dụng cho bạn.`,
     },
     h2_limitation: {
       title: "Giới hạn trách nhiệm pháp lý",
-      p1: `Trong phạm vi tối đa được pháp luật cho phép, trong mọi trường hợp, công ty hoặc nhà cung cấp của chúng tôi sẽ không chịu trách nhiệm với bạn hoặc bất kỳ bên thứ ba nào về bất kỳ lợi nhuận bị mất, dữ liệu bị mất, chi phí mua sắm sản phẩm thay thế, hoặc bất kỳ thiệt hại gián tiếp, là hậu quả, để cảnh báo, ngẫu nhiên, đặc biệt hoặc các trừng phạt phát sinh từ hoặc liên quan đến các điều khoản này hoặc việc bạn sử dụng hoặc không có khả năng sử dụng trang web ngay cả khi công ty đã được thông báo về khả năng thiệt hại đó. Việc truy cập và sử dụng trang web theo quyết định và rủi ro của riêng bạn và bạn sẽ tự chịu trách nhiệm về mọi thiệt hại cho thiết bị hoặc hệ thống máy tính của mình hoặc mất dữ liệu từ đó.`,
-      p2: `Trong phạm vi tối đa được pháp luật cho phép, bất kể mọi thứ trái ngược trong tài liệu này, trách nhiệm của chúng tôi đối với bạn đối với mọi thiệt hại phát sinh từ hoặc liên quan đến thỏa thuận này, sẽ luôn bị giới hạn ở mức tối đa năm mươi đô la Mỹ (50 đô la Mỹ). Sự tồn tại của nhiều yêu cầu sẽ không mở rộng giới hạn này. Bạn đồng ý rằng các nhà cung cấp của chúng tôi sẽ không có bất kỳ trách nhiệm pháp lý nào phát sinh hoặc liên quan đến thỏa thuận này.`,
+      p1: `Trong phạm vi tối đa được pháp luật cho phép, trong mọi trường hợp, công ty hoặc nhà cung cấp của chúng mình sẽ không chịu trách nhiệm với bạn hoặc bất kỳ bên thứ ba nào về bất kỳ lợi nhuận bị mất, dữ liệu bị mất, chi phí mua sắm sản phẩm thay thế, hoặc bất kỳ thiệt hại gián tiếp, là hậu quả, để cảnh báo, ngẫu nhiên, đặc biệt hoặc các trừng phạt phát sinh từ hoặc liên quan đến các điều khoản này hoặc việc bạn sử dụng hoặc không có khả năng sử dụng trang web ngay cả khi công ty đã được thông báo về khả năng thiệt hại đó. Việc truy cập và sử dụng trang web theo quyết định và rủi ro của riêng bạn và bạn sẽ tự chịu trách nhiệm về mọi thiệt hại cho thiết bị hoặc hệ thống máy tính của mình hoặc mất dữ liệu từ đó.`,
+      p2: `Trong phạm vi tối đa được pháp luật cho phép, bất kể mọi thứ trái ngược trong tài liệu này, trách nhiệm của chúng mình đối với bạn đối với mọi thiệt hại phát sinh từ hoặc liên quan đến thỏa thuận này, sẽ luôn bị giới hạn ở mức tối đa năm mươi đô la Mỹ (50 đô la Mỹ). Sự tồn tại của nhiều yêu cầu sẽ không mở rộng giới hạn này. Bạn đồng ý rằng các nhà cung cấp của chúng mình sẽ không có bất kỳ trách nhiệm pháp lý nào phát sinh hoặc liên quan đến thỏa thuận này.`,
       p3: `Một số khu vực pháp lý không cho phép giới hạn hoặc loại trừ trách nhiệm đối với các thiệt hại ngẫu nhiên hoặc do hậu quả, do đó, giới hạn hoặc loại trừ trên có thể không áp dụng cho bạn.`,
       p4_strong: `Thời hạn và sự chấm dứt.`,
-      p4_main: ` Theo Mục này, các Điều khoản này sẽ vẫn có hiệu lực đầy đủ trong khi bạn sử dụng Trang web. Chúng tôi có thể đình chỉ hoặc chấm dứt quyền sử dụng Trang của bạn bất cứ lúc nào vì bất kỳ lý do nào theo quyết định riêng của chúng tôi, bao gồm mọi trường hợp sử dụng Trang vi phạm các Điều khoản này. Khi chấm dứt các quyền của bạn theo các Điều khoản này, Tài khoản và quyền truy cập và sử dụng Trang web của bạn sẽ chấm dứt ngay lập tức. Bạn hiểu rằng bất kì sự chấm dứt Tài khoản của bạn có thể liên quan đến việc xóa Nội dung Người dùng được liên kết với Tài khoản của bạn khỏi cơ sở dữ liệu trực tiếp của chúng tôi. Công ty sẽ không có bất kỳ trách nhiệm pháp lý nào đối với bạn khi bạn chấm dứt các quyền của bạn theo các Điều khoản này. Ngay cả sau khi các quyền của bạn theo các Điều khoản này bị chấm dứt, các quy định sau đây của các Điều khoản này sẽ vẫn có hiệu lực: Phần 2 đến 2.5, Mục 3 và Mục 4 đến 10.`
+      p4_main: ` Theo Mục này, các Điều khoản này sẽ vẫn có hiệu lực đầy đủ trong khi bạn sử dụng Trang web. Chúng mình có thể đình chỉ hoặc chấm dứt quyền sử dụng Trang của bạn bất cứ lúc nào vì bất kỳ lý do nào theo quyết định riêng của chúng mình, bao gồm mọi trường hợp sử dụng Trang vi phạm các Điều khoản này. Khi chấm dứt các quyền của bạn theo các Điều khoản này, Tài khoản và quyền truy cập và sử dụng Trang web của bạn sẽ chấm dứt ngay lập tức. Bạn hiểu rằng bất kì sự chấm dứt Tài khoản của bạn có thể liên quan đến việc xóa Nội dung Người dùng được liên kết với Tài khoản của bạn khỏi cơ sở dữ liệu trực tiếp của chúng mình. Công ty sẽ không có bất kỳ trách nhiệm pháp lý nào đối với bạn khi bạn chấm dứt các quyền của bạn theo các Điều khoản này. Ngay cả sau khi các quyền của bạn theo các Điều khoản này bị chấm dứt, các quy định sau đây của các Điều khoản này sẽ vẫn có hiệu lực: Phần 2 đến 2.5, Mục 3 và Mục 4 đến 10.`
     },
     h2_copyright: {
       title: "Chính sách bản quyền.",
-      p1: `Công ty tôn trọng tài sản trí tuệ của người khác và yêu cầu người dùng Trang web của chúng tôi cũng làm như vậy. Liên quan đến Trang web của chúng tôi, chúng tôi đã thông qua và thực thi chính sách tôn trọng luật bản quyền mà quy định loại bỏ bất kỳ tài liệu vi phạm nào và chấm dứt người dùng Trang web trực tuyến của chúng tôi mà vi phạm quyền sở hữu trí tuệ, kể cả bản quyền. Nếu bạn tin rằng một trong những người dùng của chúng tôi, thông qua việc sử dụng Trang web của chúng tôi, đã vi phạm bản quyền một cách bất hợp pháp trong tác phẩm và muốn xóa tài liệu bị cáo buộc vi phạm, thông tin sau đây dưới dạng thông báo bằng văn bản (theo điều khoản 17 U.S.C § 512 (c)) phải được cung cấp cho Đại lý Bản quyền được chỉ định của chúng tôi:`,
+      p1: `Công ty tôn trọng tài sản trí tuệ của người khác và yêu cầu người dùng Trang web của chúng mình cũng làm như vậy. Liên quan đến Trang web của chúng mình, chúng mình đã thông qua và thực thi chính sách tôn trọng luật bản quyền mà quy định loại bỏ bất kỳ tài liệu vi phạm nào và chấm dứt người dùng Trang web trực tuyến của chúng mình mà vi phạm quyền sở hữu trí tuệ, kể cả bản quyền. Nếu bạn tin rằng một trong những người dùng của chúng mình, thông qua việc sử dụng Trang web của chúng mình, đã vi phạm bản quyền một cách bất hợp pháp trong tác phẩm và muốn xóa tài liệu bị cáo buộc vi phạm, thông tin sau đây dưới dạng thông báo bằng văn bản (theo điều khoản 17 U.S.C § 512 (c)) phải được cung cấp cho Đại lý Bản quyền được chỉ định của chúng mình:`,
       li_1: `chữ ký vật lý hoặc điện tử của bạn;`,
       li_2: `nhận dạng tác phẩm có bản quyền mà bạn cho là đã bị vi phạm;`,
-      li_3: `nhận dạng tài liệu trên các dịch vụ của chúng tôi mà bạn cho là vi phạm và bạn yêu cầu chúng tôi xóa;`,
-      li_4: `thông tin đầy đủ để cho phép chúng tôi xác định vị trí vật liệu đó;`,
+      li_3: `nhận dạng tài liệu trên các dịch vụ của chúng mình mà bạn cho là vi phạm và bạn yêu cầu chúng mình xóa;`,
+      li_4: `thông tin đầy đủ để cho phép chúng mình xác định vị trí vật liệu đó;`,
       li_5: `địa chỉ, số điện thoại và địa chỉ email của bạn;`,
       li_6: `Tuyên bố rằng bạn có niềm tin thiện chí rằng việc sử dụng tài liệu bị phản đối không được chủ sở hữu bản quyền, đại lý của nó hoặc theo luật pháp cho phép; và`,
       li_7: `Tuyên bố rằng thông tin trong thông báo là chính xác và chịu hình phạt khai man, rằng bạn là chủ sở hữu bản quyền bị cáo buộc vi phạm hoặc bạn được ủy quyền hành động thay mặt chủ sở hữu bản quyền.`,
-      p2: `Xin lưu ý rằng, theo điều khoản 17 U.S.C § 512 (f), bất kỳ sự trình bày sai sự thật vật chất nào trong một thông báo bằng văn bản sẽ tự động khiến bên khiếu nại phải chịu trách nhiệm cho bất kỳ thiệt hại, chi phí và phí luật sư nào phát sinh từ chúng tôi liên quan đến thông báo bằng văn bản và cáo buộc vi phạm bản quyền.`
+      p2: `Xin lưu ý rằng, theo điều khoản 17 U.S.C § 512 (f), bất kỳ sự trình bày sai sự thật vật chất nào trong một thông báo bằng văn bản sẽ tự động khiến bên khiếu nại phải chịu trách nhiệm cho bất kỳ thiệt hại, chi phí và phí luật sư nào phát sinh từ chúng mình liên quan đến thông báo bằng văn bản và cáo buộc vi phạm bản quyền.`
     },
     h2_general: {
       title: "Tổng hợp",
-      p1: `Các Điều khoản này có thể được sửa đổi thường xuyên và nếu chúng tôi thực hiện bất kỳ thay đổi đáng kể nào, chúng tôi sẽ thông báo cho bạn bằng cách gửi email đến địa chỉ email cuối cùng mà bạn cung cấp cho chúng tôi và/hoặc bằng cách đăng thông báo về những thay đổi trên Trang web chúng tôi. Bạn có trách nhiệm cung cấp cho chúng tôi địa chỉ email mới nhất của bạn. Trong trường hợp địa chỉ email cuối cùng mà bạn cung cấp cho chúng tôi không hợp lệ, việc chúng tôi gửi email chứa thông báo đó vẫn được coi là thông báo hiệu quả về những thay đổi được mô tả trong thông báo. Mọi thay đổi đối với các Điều khoản này sẽ có hiệu lực sớm nhất trong ba mươi (30) ngày theo lịch sau khi chúng tôi gửi thông báo qua email cho bạn hoặc ba mươi (30) ngày theo lịch sau khi chúng tôi đăng thông báo về các thay đổi trên Trang web của chúng tôi. Những thay đổi này sẽ có hiệu lực ngay lập tức đối với người dùng mới của Trang web của chúng tôi. Việc tiếp tục sử dụng Trang web của chúng tôi sau thông báo về những thay đổi đó sẽ thể hiện cho sự thừa nhận của bạn về những thay đổi và thỏa thuận đó bị ràng buộc bởi các điều khoản và điều kiện của những thay đổi đó. Giải quyết tranh chấp. Xin vui lòng đọc Thỏa thuận trọng tài này một cách cẩn thận. Đây là một phần trong hợp đồng của bạn với Công ty và ảnh hưởng đến quyền lợi của bạn. Nó chứa các thủ tục để SỰ BẮT BUỘC TUÂN THEO TRỌNG TÀI VÀ SỰ TỪ CHỐI VỚI MỘT VỤ KIỆN NHÓM.`,
+      p1: `Các Điều khoản này có thể được sửa đổi thường xuyên và nếu chúng mình thực hiện bất kỳ thay đổi đáng kể nào, chúng mình sẽ thông báo cho bạn bằng cách gửi email đến địa chỉ email cuối cùng mà bạn cung cấp cho chúng mình và/hoặc bằng cách đăng thông báo về những thay đổi trên Trang web chúng mình. Bạn có trách nhiệm cung cấp cho chúng mình địa chỉ email mới nhất của bạn. Trong trường hợp địa chỉ email cuối cùng mà bạn cung cấp cho chúng mình không hợp lệ, việc chúng mình gửi email chứa thông báo đó vẫn được coi là thông báo hiệu quả về những thay đổi được mô tả trong thông báo. Mọi thay đổi đối với các Điều khoản này sẽ có hiệu lực sớm nhất trong ba mươi (30) ngày theo lịch sau khi chúng mình gửi thông báo qua email cho bạn hoặc ba mươi (30) ngày theo lịch sau khi chúng mình đăng thông báo về các thay đổi trên Trang web của chúng mình. Những thay đổi này sẽ có hiệu lực ngay lập tức đối với người dùng mới của Trang web của chúng mình. Việc tiếp tục sử dụng Trang web của chúng mình sau thông báo về những thay đổi đó sẽ thể hiện cho sự thừa nhận của bạn về những thay đổi và thỏa thuận đó bị ràng buộc bởi các điều khoản và điều kiện của những thay đổi đó. Giải quyết tranh chấp. Xin vui lòng đọc Thỏa thuận trọng tài này một cách cẩn thận. Đây là một phần trong hợp đồng của bạn với Công ty và ảnh hưởng đến quyền lợi của bạn. Nó chứa các thủ tục để SỰ BẮT BUỘC TUÂN THEO TRỌNG TÀI VÀ SỰ TỪ CHỐI VỚI MỘT VỤ KIỆN NHÓM.`,
       p2_strong: `Khả năng áp dụng của Thỏa thuận trọng tài.`,
       p2_main: ` Tất cả các khiếu nại và tranh chấp liên quan đến Điều khoản hoặc việc sử dụng bất kỳ sản phẩm hoặc dịch vụ nào do Công ty cung cấp không thể giải quyết một cách không chính thức hoặc tại tòa án xử các vụ kiện nhỏ sẽ được giải quyết bằng trọng tài ràng buộc trên cơ sở cá nhân theo các điều khoản của Thỏa thuận Trọng tài này. Trừ khi có thỏa thuận khác, tất cả các thủ tục tố tụng trọng tài sẽ được tổ chức bằng tiếng Anh. Thỏa thuận trọng tài này áp dụng cho bạn và Công ty, và cho bất kỳ công ty con, chi nhánh, đại lý, nhân viên, bên tiền nhiệm nào quan tâm, bên kế nhiệm và chuyển nhượng, cũng như tất cả người dùng hoặc người thụ hưởng dịch vụ hoặc hàng hóa được ủy quyền theo quy định.`,
       p3_strong: `Yêu cầu thông báo và giải quyết tranh chấp không chính thức.`,
@@ -445,11 +444,11 @@ const VIE = {
       p18: `Trang web có thể phải tuân theo luật kiểm soát xuất khẩu của Hoa Kỳ và có thể phải tuân theo các quy định xuất khẩu hoặc nhập khẩu ở các quốc gia khác. Bạn đồng ý không xuất, tái xuất hoặc chuyển nhượng, trực tiếp hoặc gián tiếp, bất kỳ dữ liệu kỹ thuật nào của Hoa Kỳ có được từ Công ty hoặc bất kỳ sản phẩm nào sử dụng dữ liệu đó, mà vi phạm luật hoặc quy định xuất khẩu của Hoa Kỳ.`,
       p19: `Công ty được đặt tại địa chỉ trong Mục 10.8. Nếu bạn là cư dân California, bạn có thể báo cáo các khiếu nại cho Đơn vị Hỗ trợ Khiếu nại của Bộ phận Sản phẩm Tiêu dùng của Phòng ban Các Vấn đề Người tiêu dùng California bằng cách liên hệ với họ bằng văn bản tại 400R Street, Sacramento, CA 95814 hoặc qua điện thoại theo số (800) 952-5210.`,
       p20_strong: `Truyền thông điện tử.`,
-      p20_main: ` Các liên lạc giữa bạn và Công ty sử dụng các phương tiện điện tử, cho dù bạn sử dụng Trang web hay gửi email cho chúng tôi hoặc cho dù Công ty có đăng thông báo trên Trang web hay liên lạc với bạn qua email. Đối với các mục đích hợp đồng, bạn (a) đồng ý nhận thông tin liên lạc từ Công ty dưới dạng điện tử; và (b) đồng ý rằng tất cả các điều khoản và điều kiện, thỏa thuận, thông báo, tiết lộ và thông tin liên lạc khác mà Công ty cung cấp cho bạn đáp ứng về mặt điện tử điện tử bất kỳ nghĩa vụ pháp lý nào mà các thông tin liên lạc đó sẽ đáp ứng nếu được viết bằng bản in.`,
+      p20_main: ` Các liên lạc giữa bạn và Công ty sử dụng các phương tiện điện tử, cho dù bạn sử dụng Trang web hay gửi email cho chúng mình hoặc cho dù Công ty có đăng thông báo trên Trang web hay liên lạc với bạn qua email. Đối với các mục đích hợp đồng, bạn (a) đồng ý nhận thông tin liên lạc từ Công ty dưới dạng điện tử; và (b) đồng ý rằng tất cả các điều khoản và điều kiện, thỏa thuận, thông báo, tiết lộ và thông tin liên lạc khác mà Công ty cung cấp cho bạn đáp ứng về mặt điện tử điện tử bất kỳ nghĩa vụ pháp lý nào mà các thông tin liên lạc đó sẽ đáp ứng nếu được viết bằng bản in.`,
       p21_strong: `Toàn bộ điều khoản.`,
-      p21_main: ` Các Điều khoản này cấu thành toàn bộ thỏa thuận giữa bạn và chúng tôi về việc sử dụng Trang web. Việc chúng tôi không thực hiện hoặc thực thi bất kỳ quyền hoặc quy định nào trong các Điều khoản này sẽ không hoạt động như sự từ bỏ quyền hoặc quy định đó. Các phần tiêu đề trong các Điều khoản này chỉ nhằm mục đích thuận tiện và không có hiệu lực pháp lý hoặc hợp đồng. Từ "bao gồm" có nghĩa là "bao gồm nhưng không giới hạn". Nếu bất kỳ điều khoản nào trong các Điều khoản này được coi là không hợp lệ hoặc không thể thực thi, các điều khoản khác của các Điều khoản này sẽ không thay đổi và điều khoản không hợp lệ hoặc không thể thực thi sẽ được xem xét sửa đổi để nó có hiệu lực và có thể thi hành trong phạm vi tối đa được pháp luật cho phép. Mối quan hệ của bạn với Công ty là của một thầu khoán độc lập và không bên nào là đại lý hoặc đối tác của bên kia. Các Điều khoản này, và các quyền và nghĩa vụ của bạn trong tài liệu này, có thể không được chỉ định, ký hợp đồng phụ, ủy thác hoặc chuyển giao bởi bạn mà không có sự đồng ý trước bằng văn bản của Công ty và mọi chuyển nhượng, hợp đồng phụ, ủy quyền hoặc chuyển nhượng vi phạm đã nói ở trên sẽ không có giá trị. Công ty có thể tự do chuyển nhượng các Điều khoản này. Các điều khoản và điều kiện được quy định trong các Điều khoản này sẽ ràng buộc đối với người được chuyển nhượng.`,
+      p21_main: ` Các Điều khoản này cấu thành toàn bộ thỏa thuận giữa bạn và chúng mình về việc sử dụng Trang web. Việc chúng mình không thực hiện hoặc thực thi bất kỳ quyền hoặc quy định nào trong các Điều khoản này sẽ không hoạt động như sự từ bỏ quyền hoặc quy định đó. Các phần tiêu đề trong các Điều khoản này chỉ nhằm mục đích thuận tiện và không có hiệu lực pháp lý hoặc hợp đồng. Từ "bao gồm" có nghĩa là "bao gồm nhưng không giới hạn". Nếu bất kỳ điều khoản nào trong các Điều khoản này được coi là không hợp lệ hoặc không thể thực thi, các điều khoản khác của các Điều khoản này sẽ không thay đổi và điều khoản không hợp lệ hoặc không thể thực thi sẽ được xem xét sửa đổi để nó có hiệu lực và có thể thi hành trong phạm vi tối đa được pháp luật cho phép. Mối quan hệ của bạn với Công ty là của một thầu khoán độc lập và không bên nào là đại lý hoặc đối tác của bên kia. Các Điều khoản này, và các quyền và nghĩa vụ của bạn trong tài liệu này, có thể không được chỉ định, ký hợp đồng phụ, ủy thác hoặc chuyển giao bởi bạn mà không có sự đồng ý trước bằng văn bản của Công ty và mọi chuyển nhượng, hợp đồng phụ, ủy quyền hoặc chuyển nhượng vi phạm đã nói ở trên sẽ không có giá trị. Công ty có thể tự do chuyển nhượng các Điều khoản này. Các điều khoản và điều kiện được quy định trong các Điều khoản này sẽ ràng buộc đối với người được chuyển nhượng.`,
       p22_strong: `Bản quyền / Thông tin nhãn hiệu.`,
-      p22_main: ` Bản quyền © 2020 ${WEBSITE_NAME}. Bảo lưu mọi quyền. Tất cả các nhãn hiệu, logo và nhãn hiệu dịch vụ được hiển thị trên Trang web là tài sản của chúng tôi hoặc tài sản của các bên thứ ba khác. Bạn không được phép sử dụng các Nhãn hiệu này mà không có sự đồng ý trước bằng văn bản của chúng tôi hoặc sự đồng ý của bên thứ ba đó có thể sở hữu Nhãn hiệu đó.`,
+      p22_main: ` Bản quyền © 2020 ${WEBSITE_NAME}. Bảo lưu mọi quyền. Tất cả các nhãn hiệu, logo và nhãn hiệu dịch vụ được hiển thị trên Trang web là tài sản của chúng mình hoặc tài sản của các bên thứ ba khác. Bạn không được phép sử dụng các Nhãn hiệu này mà không có sự đồng ý trước bằng văn bản của chúng mình hoặc sự đồng ý của bên thứ ba đó có thể sở hữu Nhãn hiệu đó.`,
     },
     h2_contact: {
       title: "Thông tin liên lạc",
@@ -466,19 +465,19 @@ const VIE = {
     title: "Tuyệt vời",
     p1: 'Phản hồi của bạn đã được lưu lại',
     p2: 'Bạn sẽ sớm nhận được những yêu cầu mới',
-    btn: 'Quay lại'
+    btn: 'Quay lại trang chủ'
   },
   success_offer: {
     title: "Tuyệt vời",
     p1: 'Phản hồi của bạn đã được lưu lại',
     p2: 'Bạn sẽ sớm được kết nối với bác sĩ',
-    btn: 'Quay lại'
+    btn: 'Quay lại trang chủ'
   },
   success_request: {
     title: "Tuyệt vời",
     p1: 'Yêu cầu của bạn đã được gửi',
     p2: 'Bạn sẽ sớm nhận được giúp đỡ từ các tình nguyện viên',
-    btn: 'Quay lại'
+    btn: 'Quay lại trang chủ'
   },
 };
 

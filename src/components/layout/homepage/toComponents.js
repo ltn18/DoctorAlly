@@ -32,7 +32,7 @@ const useStyles = makeStyles(() => ({
     },
     color: '#F77737'
   },
-  contact_us: {
+  about_us: {
     "&:hover": {
       cursor: 'pointer',
       textDecoration: 'underline',
@@ -165,15 +165,15 @@ const ToContactUs = () => {
       <strong
         className={classes.title}
         style={{ fontSize: '25px', color: '#EEDC31' }}
-        onClick={() => history.push("/contact_us")}
+        onClick={() => history.push("/about")}
       >
-        {getLongLineText(locale.lang, "homepage", "contact_us", "title")}
+        {getLongLineText(locale.lang, "homepage", "about_us", "title")}
       </strong>
       <p style={{ wordWrap: 'break-word', marginTop: '15px' }}>
-        <strong>{getLongLineText(locale.lang, "homepage", "contact_us", "description_strong")}</strong>
-        {getLongLineText(locale.lang, "homepage", "contact_us", "span_b4")}
-        {<span className={classes.contact_us} onClick={() => history.push("/contact_us")}>
-          {getLongLineText(locale.lang, "homepage", "contact_us", "span_link")}
+        <strong>{getLongLineText(locale.lang, "homepage", "about_us", "description_strong")}</strong>
+        {getLongLineText(locale.lang, "homepage", "about_us", "span_b4")}
+        {<span className={classes.about_us} onClick={() => history.push("/about")}>
+          {getLongLineText(locale.lang, "homepage", "about_us", "span_link")}
         </span>}
       </p>
     </div>

@@ -37,14 +37,14 @@ const ENG = {
       title: "Learn More",
       description_strong: "Instruction booklet. ",
       span_b4: "Whenever you have troubles using our site, visit ",
-      span_link: " Learn More ",
+      span_link: " here ",
       span_af: "to search for the necessary information! We have prepared a tutorial video and detailed article already!",
     },
-    contact_us: {
-      title: "Contact Us",
-      description_strong: "Feel free. ",
-      span_b4: "We are always here to answer your questions. Stay connected every time a question comes to you, and let us help you find the answer to that! You can find us at ",
-      span_link: "Contact Us.",
+    about_us: {
+      title: "About Us",
+      description_strong: "Feel free to connect. ",
+      span_b4: "Hello, nice to have you on our website. Stay connected every time a question comes to you, and let us help you find the answer to that! You can find us ",
+      span_link: "here.",
     },
   },
 
@@ -59,7 +59,7 @@ const ENG = {
     p: `We’re currently setting up networks of doctors and volunteers with an aim to fight against Covid-19.
     Your help will greatly contribute to this fight and our community as a whole.
     Sign up as a volunteer now and receive notifications when new requests are posted!`,
-    button: "Volunteer Now",
+    button: "Let's Help",
     h2_request: "REQUEST LISTS",
     search_bar: "Search Requests",
     next_button: "NEXT",
@@ -246,7 +246,7 @@ const ENG = {
   },
 
   footer: {
-    contact_us: "Contact Us",
+    contact_us: "About Us",
     feedbacks: "Feedbacks",
     privacy_policy: "Privacy Policy",
     terms_of_use: "Terms of Use"

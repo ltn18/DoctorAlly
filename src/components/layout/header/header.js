@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   font: {
     fontFamily: 'Lexend Giga',
-    fontSize: 11
+    fontSize: 18
   },
   fontLogo: {
     fontFamily: 'Yeseva One',
@@ -50,11 +50,6 @@ const Header = () => {
       </Button>
 
       <div className={classes.buttonGroup}>
-        <Button
-          onClick={() => { handleRouteSwitch("about") }}
-          className={classes.font}
-        >{getText("header", "about", locale.lang)}</Button>
-
         <Button
           onClick={() => { handleRouteSwitch("volunteer") }}
           color="primary"

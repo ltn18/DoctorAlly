@@ -8,20 +8,19 @@ import ToHeaders from './toComponents';
 const HomePage = () => {
 
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <h2 style={{ alignSelf: 'center' }}>LET'S WALKTHROUGH DOCTORALLY</h2>
       <Container maxWidth="lg">
         <ReactPlayer
           width={1170}
           height={550}
           url='https://youtu.be/VaKzNtwPQxE'
           playing
-          muted
           controls
           style={{ alignSelf: 'center', marginTop: '20px' }}
         />
       </Container>
       <ToHeaders />
-      {/* <About /> */}
     </div>
   )
 }

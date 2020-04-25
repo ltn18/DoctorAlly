@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     backgroundColor: '#f2f2f2',
-    height: '28vh',
+    height: '30vh',
     width: '100%',
     marginTop: '10px',
     padding: 10,
@@ -199,7 +199,7 @@ const Volunteer = () => {
                 </Button>
           }
         </div>
-        <strong style={{ marginLeft: '50px', alignSelf: 'center' }}>Page: {page + 1}/{Math.ceil(requestData.length / rows)}</strong>
+        <strong style={{ marginLeft: '50px', alignSelf: 'center' }}>Page: {page + 1}/{page === 0? 1 : Math.ceil(requestData.length / rows)}</strong>
       </div>
     )
   }

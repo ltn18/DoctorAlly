@@ -130,6 +130,7 @@ const Requests = (props) => {
         </ButtonGroup>
         <strong style={{ fontStyle: 'italic' }}>
           {getLongLineText(locale.lang, "request_help", "page", null)}
+          &nbsp;
           {<span style={{ color: '#00ff00' }}>2/2</span>}
         </strong>
       </div>
@@ -228,6 +229,7 @@ const PersonalInformation = (props) => {
         </ButtonGroup>
         <strong style={{ fontStyle: 'italic' }}>
           {getLongLineText(locale.lang, "request_help", "page", null)}
+          &nbsp;
           {<span style={{ color: '#ED4337' }}>1/2</span>}
         </strong>
       </div>

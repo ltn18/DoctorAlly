@@ -38,13 +38,6 @@ const Footer = () => {
     <Typography className={classes.root}>
       <Link
         className={classes.hover}
-        onClick={() => { handleRouteSwitch("contact_us") }}
-        style={{ marginRight: 20 }}
-      >
-        {getText("footer", "contact_us", locale.lang)}
-      </Link>
-      <Link
-        className={classes.hover}
         onClick={() => { handleRouteSwitch("feedbacks") }}
         style={{ marginRight: 20 }}
       >
