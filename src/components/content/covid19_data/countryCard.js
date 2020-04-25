@@ -2,8 +2,7 @@ import React, { useContext } from 'react';
 import localeContext, { getLongLineText } from '../../context/localeCtx';
 
 const CountryCard = (props) => {
-  const { name, cases, deaths, recovered, flag } = props;
-  const locale = useContext(localeContext);
+  const { name, cases, deaths, recovered, flag, locale} = props;
   // console.log(locale.lang);
 
   return (
@@ -14,13 +13,13 @@ const CountryCard = (props) => {
       </div>
       <div style={{ fontFamily: 'Lexend Giga' }}>
         {/* {locale.lang === "VIE" ? "Ca nhiễm" : "Cases:" } */}
-        {getLongLineText(locale.lang, "covid19_data", "cases", null)}: {props.cases}
+        {getLongLineText(props.locale.lang, "covid19_data", "cases", null)}: {props.cases}
       </div>
       <div style={{ fontFamily: 'Lexend Giga' }}>
-        {getLongLineText(locale.lang, "covid19_data", "deaths", null)}: {props.deaths}
+        {getLongLineText(props.locale.lang, "covid19_data", "deaths", null)}: {props.deaths}
       </div>
       <div style={{ fontFamily: 'Lexend Giga' }}>
-        {getLongLineText(locale.lang, "covid19_data", "recovered", null)}: {props.recovered}
+        {getLongLineText(props.locale.lang, "covid19_data", "recovered", null)}: {props.recovered}
       </div>
     </>
   )

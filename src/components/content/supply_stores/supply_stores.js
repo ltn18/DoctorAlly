@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
     marginBottom: 50,
     marginTop: 50,
+    
   },
   header: {
     fontSize: 30,
@@ -36,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
   font: {
     fontFamily: 'Lexend Giga',
   },
+  mr50: {
+    marginRight: 50,
+  }
 }));
 
 const Supply_stores = () => {
@@ -51,7 +55,7 @@ const Supply_stores = () => {
       </div>
       <h1 className={classes.h1}>{getText("supply_stores", "howtouse", locale.lang)}</h1>
       <Container className={classes.container}>
-        <div className={classes.w50}>
+        <div className={classes.w50, classes.mr50}>
           <p className={classes.header}>{getText("supply_stores", "firstTitle", locale.lang)}</p>
           <p><i>{getText("supply_stores", "firstDescription", locale.lang)}</i></p>
         </div>
@@ -71,7 +75,7 @@ const Supply_stores = () => {
       </Container>
       <Divider light />
       <Container className={classes.container}>
-        <div className={classes.w50}>
+        <div className={classes.w50, classes.mr50}>
           <p className={classes.header}>{getText("supply_stores", "thirdTitle", locale.lang)}</p>
           <p><i>{getText("supply_stores", "thirdDescription", locale.lang)}</i></p>
           <List>

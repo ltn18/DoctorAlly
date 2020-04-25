@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   font: {
-    fontFamily: 'Lexend Giga',
+    fontFamily: 'Poppins',
     fontSize: "15px",
   },
   fontLogo: {
@@ -55,18 +55,21 @@ const Header = () => {
       </Button>
       <div className={classes.buttonGroup}>
         <Button
+          variant = "contained"
           onClick={() => { handleRouteSwitch("volunteer") }}
           color="primary"
           className={classes.font}
         >{getText("header", "volunteer", locale.lang)}</Button>
 
         <Button
+          variant = "contained"
           onClick={() => { handleRouteSwitch("request_help/1") }}
           color="secondary"
           className={classes.font}
         >{getText("header", "request_help", locale.lang)}</Button>
 
         <Button
+          variant = "contained"
           onClick={() => { handleRouteSwitch("supply_stores") }}
           style={{ color: 'green' }}
           className={classes.font}

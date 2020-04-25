@@ -1,4 +1,4 @@
-import React, { Component, useContext } from 'react';
+import React, { Component, useContext, useEffect } from 'react';
 import localeContext, { getLongLineText } from '../../context/localeCtx';
 
 import ReactDOM from 'react-dom';
@@ -12,22 +12,15 @@ const [__lng, __lat, __zoom] = [5, 34, 2]; // World
 const TOKEN = "pk.eyJ1IjoiaG9hbmdtaW5obmciLCJhIjoiY2s5M25xYTMwMDRhZDNpcDNhOHN1cDRnciJ9.NvYOhaROmMb04qeJyIbG-A";
 mapboxgl.accessToken = TOKEN;
 
-class CovidMap extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      lng: __lng,
-      lat: __lat,
-      zoom: __zoom,
-    };
-    this.sizeList = [100, 200, 300, 400, 500]
-    this.caseRangeList = [0, 100, 1000, 10000, 100000, 100000000000]
-    this.data = props.data
-  }
+function CovidMap(props) {
+  const locale = useContext(localeContext);
+  const { data } = props
+  const sizeList = [100, 200, 300, 400, 500]
+  const caseRangeList = [0, 100, 1000, 10000, 100000, 10000000000]
 
-  convertData() {
+  const convertData = () => {
     const GeoJsonList = [];
-    if (this.data) {
+    if (props.data) {
       for (let i = 0; i < 5; i++) {
         var GeoJson = {
           'type': 'geojson',
@@ -36,8 +29,8 @@ class CovidMap extends Component {
             'features': []
           }
         }
-        this.data.map(item => {
-          if (this.caseRangeList[i] <= item.cases && this.caseRangeList[i + 1] > item.cases) {
+        props.data.map(item => {
+          if (caseRangeList[i] <= item.cases && caseRangeList[i + 1] > item.cases) {
             GeoJson.data.features.push({
               'type': 'Feature',
               'geometry': {
@@ -60,28 +53,27 @@ class CovidMap extends Component {
     return GeoJsonList
   }
 
-  componentDidMount() {
-    const geoJsonList = this.convertData();
+  useEffect(() => {
+    const geoJsonList = convertData();
     const dotNameArr = [];
     const sourceNameArr = [];
 
     const map = new mapboxgl.Map({
-      container: this.mapContainer,
-      // style: 'mapbox://styles/mapbox/streets-v11',
+      container: 'map',
       style: 'mapbox://styles/hoangminhng/ck95k7dew0z8k1ilan9x1ll74',
-      center: [this.state.lng, this.state.lat],
-      zoom: this.state.zoom
+      center: [__lng, __lat],
+      zoom: __zoom
     });
 
     const Dot = [pulsingDot(75, map), pulsingDot(100, map), pulsingDot(125, map), pulsingDot(150, map), pulsingDot(175, map)]
 
-    map.on('move', () => {
-      this.setState({
-        lng: map.getCenter().lng.toFixed(4),
-        lat: map.getCenter().lat.toFixed(4),
-        zoom: map.getZoom().toFixed(2)
-      });
-    });
+    // map.on('move', () => {
+    //   setState({
+    //     lng: map.getCenter().lng.toFixed(4),
+    //     lat: map.getCenter().lat.toFixed(4),
+    //     zoom: map.getZoom().toFixed(2)
+    //   });
+    // });
 
     map.on('load', function () {
       map.resize();
@@ -138,7 +130,7 @@ class CovidMap extends Component {
                   .addTo(map)
                 if (popup.isOpen()) {
                   ReactDOM.render(
-                    <CountryCard name={name} cases={cases} deaths={deaths} recovered={recovered} flag={flag} />,
+                    <CountryCard name={name} cases={cases} deaths={deaths} recovered={recovered} flag={flag} locale={locale}/>,
                     document.querySelector('.mapboxgl-popup-content')
                   );
                 }
@@ -153,15 +145,13 @@ class CovidMap extends Component {
         }
       }
     });
-  }
+  }, [locale])
 
-  render() {
-    return (
-      <div>
-        <div ref={el => this.mapContainer = el} className='mapContainer' style={{ height: '85vh', marginTop: '15px' }} />
-      </div>
-    )
-  }
+  return (
+    <div>
+      <div id='map' style={{ height: '85vh', marginTop: '15px' }} />
+    </div>
+  )
 }
 
 export default CovidMap;
