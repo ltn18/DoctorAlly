@@ -11,16 +11,19 @@ const useStyles = makeStyles({
     marginTop: 30,
     display: "flex",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    fontFamily: 'Faustina',
   },
   h3: {
     display: "flex",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    fontFamily: 'Faustina',
   },
   box: {
     justifyContent: "center",
-    display: "flex"
+    display: "flex",
+    fontFamily: 'Faustina',
   },
 });
 

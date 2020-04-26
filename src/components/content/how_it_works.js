@@ -25,7 +25,7 @@ const How_it_works = () => {
   const locale = useContext(localeContext);
 
   return (
-    <Container>
+    <Container style={{ fontFamily: 'Faustina' }}>
 
       <h2>{getLongLineText(locale.lang, "how_it_works", "h2_general", "title")}</h2>
       <p>{getLongLineText(locale.lang, "how_it_works", "h2_general", "p1")}</p>

@@ -18,9 +18,11 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     marginBottom: '30px',
     marginTop: '30px',
+    fontFamily: 'Faustina',
   },
   container: {
     maxHeight: 900,
+    fontFamily: 'Faustina',
   },
   input: {
     marginLeft: theme.spacing(1),
@@ -33,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
       cursor: 'pointer',
       textDecoration: 'underline'
     },
-    fontFamily: 'Lexend Giga'
+    fontFamily: 'Faustina'
   },
   alert: {
     width: '100%',
@@ -41,9 +43,10 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(2),
     },
     marginBottom: '30px',
+    fontFamily: 'Faustina',
   },
   font: {
-    fontFamily: 'Lexend Giga',
+    fontFamily: 'Faustina',
   },
 }));
 
@@ -64,7 +67,7 @@ const StyledTableRow = withStyles((theme) => ({
     },
   },
   font: {
-    fontFamily: 'Lexend Giga',
+    fontFamily: 'Faustina',
   },
 }))(TableRow);
 
@@ -131,7 +134,7 @@ const CovidList = (props) => {
     return (
       <div style={{ backgroundColor: "#F58529" }}>
         <InputBase
-          style={{ alignSelf: 'center', fontFamily: 'Lexend Giga' }}
+          style={{ alignSelf: 'center', fontFamily: 'Faustina' }}
           className={classes.input}
           placeholder={getLongLineText(locale.lang, "covid19_data", "search_placeholder", null)}
           inputProps={{ 'aria-label': 'search requests' }}
@@ -228,7 +231,7 @@ const CovidList = (props) => {
                   <div
                     style={{
                       fontWeight: 'bold',
-                      fontFamily: 'Lexend Giga'
+                      fontFamily: 'Faustina'
                     }}>{getLongLineText(locale.lang, "covid19_data", "heads", "country")}
                   </div>
                 </StyledTableCell>
@@ -236,7 +239,7 @@ const CovidList = (props) => {
                   <div
                     style={{
                       fontWeight: 'bold',
-                      fontFamily: 'Lexend Giga'
+                      fontFamily: 'Faustina'
                     }}>{getLongLineText(locale.lang, "covid19_data", "heads", "cases")}
                   </div>
                 </StyledTableCell>
@@ -244,7 +247,7 @@ const CovidList = (props) => {
                   <div
                     style={{
                       fontWeight: 'bold',
-                      fontFamily: 'Lexend Giga'
+                      fontFamily: 'Faustina'
                     }}>{getLongLineText(locale.lang, "covid19_data", "heads", "deaths")}
                   </div>
                 </StyledTableCell>
@@ -252,7 +255,7 @@ const CovidList = (props) => {
                   <div
                     style={{
                       fontWeight: 'bold',
-                      fontFamily: 'Lexend Giga'
+                      fontFamily: 'Faustina'
                     }}>{getLongLineText(locale.lang, "covid19_data", "heads", "recovered")}
                   </div>
                 </StyledTableCell>
@@ -260,7 +263,7 @@ const CovidList = (props) => {
                   <div
                     style={{
                       fontWeight: 'bold',
-                      fontFamily: 'Lexend Giga'
+                      fontFamily: 'Faustina'
                     }}>{getLongLineText(locale.lang, "covid19_data", "heads", "active")}
                   </div>
                 </StyledTableCell>
@@ -268,7 +271,7 @@ const CovidList = (props) => {
                   <div
                     style={{
                       fontWeight: 'bold',
-                      fontFamily: 'Lexend Giga'
+                      fontFamily: 'Faustina'
                     }}>{getLongLineText(locale.lang, "covid19_data", "heads", "critical")}
                   </div>
                 </StyledTableCell>
@@ -276,7 +279,7 @@ const CovidList = (props) => {
                   <div
                     style={{
                       fontWeight: 'bold',
-                      fontFamily: 'Lexend Giga'
+                      fontFamily: 'Faustina'
                     }}>{getLongLineText(locale.lang, "covid19_data", "heads", "tests")}
                   </div>
                 </StyledTableCell>
@@ -284,7 +287,7 @@ const CovidList = (props) => {
                   <div
                     style={{
                       fontWeight: 'bold',
-                      fontFamily: 'Lexend Giga'
+                      fontFamily: 'Faustina'
                     }}>{getLongLineText(locale.lang, "covid19_data", "heads", "continent")}
                   </div>
                 </StyledTableCell>
@@ -302,7 +305,7 @@ const CovidList = (props) => {
                   <StyledTableCell className={classes.font} align="center">{item.active}</StyledTableCell>
                   <StyledTableCell className={classes.font} align="center">{item.critical}</StyledTableCell>
                   <StyledTableCell className={classes.font} align="center">{item.tests}</StyledTableCell>
-                  <StyledTableCell className={classes.font} align="left">
+                  <StyledTableCell className={classes.font} align="center">
                     {convertContinent(locale.lang, item.continent)}
                   </StyledTableCell>
                 </StyledTableRow>

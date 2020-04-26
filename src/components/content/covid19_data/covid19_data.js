@@ -26,7 +26,7 @@ const Covid19_data = () => {
     <div>
       {
         loading
-          ? <div><img style={{ width: '100%', height: '85vh', marginTop: "15px", marginBottom: "20px" }} src="loading.gif" alt="Loading" /></div>
+          ? <div><img style={{ width: '100%', height: '85vh', marginTop: "15px", marginBottom: "20px", fontFamily: 'Faustina' }} src="loading.gif" alt="Loading" /></div>
           : <div>
             <CovidMap data={covidData} />
             <CovidList data={covidData} />

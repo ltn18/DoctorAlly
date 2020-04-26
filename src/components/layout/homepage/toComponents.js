@@ -16,6 +16,7 @@ const useStyles = makeStyles(() => ({
     paddingBottom: '5px',
     paddingTop: '5px',
     width: '600px',
+    fontFamily: 'Faustina',
     // height: '35vh',
   },
   title: {

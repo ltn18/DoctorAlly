@@ -29,9 +29,11 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     marginBottom: 20,
+    fontFamily: 'Faustina',
   },
   h2: {
-    marginTop: 50
+    marginTop: 50,
+    fontFamily: 'Faustina',
   },
   container: {
     '& > *': {
@@ -56,13 +58,13 @@ const useStyles = makeStyles((theme) => ({
     width: '25ch',
     height: '100px',
     fontSize: 20,
-    fontFamily: 'Lexend Giga',
+    fontFamily: 'Faustina',
   },
   input: {
     marginLeft: theme.spacing(1),
     flex: 1,
     width: '100ch',
-    fontFamily: 'Lexend Giga',
+    fontFamily: 'Faustina',
   },
   iconButton: {
     marginLeft: 80,
@@ -75,15 +77,16 @@ const useStyles = makeStyles((theme) => ({
     width: '100ch',
     "&:hover": {
       cursor: 'pointer'
-    }
+    },
+    fontFamily: 'Faustina',
   },
   grid: {
     display: 'flex',
     justifiedContent: 'center',
-    margin: 10
+    margin: 10,
   },
   font: {
-    fontFamily: 'Lexend Giga',
+    fontFamily: 'Faustina',
   },
 }));
 
@@ -156,7 +159,7 @@ const Volunteer = () => {
     const locale = useContext(localeContext);
     const { page, rows } = props;
     return (
-      <div style={{ marginTop: '15px', display: 'flex', flexDirection: 'row', justifyContent: 'center' }}>
+      <div style={{ marginTop: '15px', display: 'flex', flexDirection: 'row', justifyContent: 'center', fontFamily: 'Faustina' }}>
         <div>
           {
             page > 0 && page * rows + rows <= requestData.length
@@ -181,7 +184,7 @@ const Volunteer = () => {
                 ?
                 <>
                   <Button
-                    style={{ backgroundColor: '#53A653', color: 'white' }}
+                    style={{ backgroundColor: '#53A653', color: 'white', fontFamily: 'Faustina' }}
                     variant="contained"
                     color="primary"
                     onClick={handleNextButtonClick}
@@ -190,7 +193,7 @@ const Volunteer = () => {
                   </Button>
                 </>
                 : <Button
-                  style={{ backgroundColor: '#E1306C', color: 'white' }}
+                  style={{ backgroundColor: '#E1306C', color: 'white', fontFamily: 'Faustina' }}
                   variant="contained"
                   color="primary"
                   onClick={handleBackButtonClick}
@@ -217,7 +220,7 @@ const Volunteer = () => {
           <p className={classes.p}>
             {getText("volunteer", "p", locale.lang)}
           </p>
-          <Button onClick={moveToSignUp} style={{backgroundColor: "#ff8040", color: 'white'}} variant="contained" className={classes.button}> {getText("volunteer", "button", locale.lang)}</Button>
+          <Button onClick={moveToSignUp} style={{backgroundColor: "#3f51b5", color: 'white'}} variant="contained" className={classes.button}> {getText("volunteer", "button", locale.lang)}</Button>
         </Container>
       </div>
       <div className={classes.root}>

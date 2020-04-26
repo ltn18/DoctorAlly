@@ -17,7 +17,7 @@ import axios from "../../../config/axios"
 
 const useStyles = makeStyles((theme) => ({
   font: {
-    fontFamily: 'Lexend Giga',
+    fontFamily: 'Faustina'
   },
 }));
 
@@ -114,12 +114,12 @@ const Requests = (props) => {
           variant="contained"
           aria-label="contained secondary button group">
           <Button
-            style={{ fontFamily: 'Lexend Giga' }}
+            style={{ fontFamily: 'Faustina' }}
             onClick={() => { moveToPage1(); handleSave() }}>
             {getLongLineText(locale.lang, "request_help", "footer", "back_button")}
           </Button>
           <Button
-            style={{ fontFamily: 'Lexend Giga' }}
+            style={{ fontFamily: 'Faustina' }}
             onClick={() => { 
               handleSave(); 
               console.log(Data);
@@ -128,7 +128,7 @@ const Requests = (props) => {
             {getLongLineText(locale.lang, "request_help", "footer", "submit_button")}
           </Button>
         </ButtonGroup>
-        <strong style={{ fontStyle: 'italic' }}>
+        <strong style={{ fontStyle: 'italic',  }}>
           {getLongLineText(locale.lang, "request_help", "page", null)}
           &nbsp;
           {<span style={{ color: '#00ff00' }}>2/2</span>}
@@ -167,7 +167,7 @@ const PersonalInformation = (props) => {
   return (
     <>
       <FormControl className={personalInfo}>
-        <FormLabel style={{ fontFamily: 'Lexend Giga' }}>
+        <FormLabel style={{ fontFamily: 'Faustina' }}>
           {getLongLineText(locale.lang, "request_help", "personal_info", "title")}
         </FormLabel>
         <TextField
@@ -222,7 +222,7 @@ const PersonalInformation = (props) => {
           variant="contained"
           aria-label="contained secondary button group">
           <Button
-            style={{ fontFamily: 'Lexend Giga' }}
+            style={{ fontFamily: 'Faustina' }}
             onClick={() => { moveToPage2(); handleSave() }}>
             {getLongLineText(locale.lang, "request_help", "footer", "next_button")}
           </Button>

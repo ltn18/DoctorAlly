@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import localeContext, { getLongLineText } from '../../context/localeCtx';
 import { useHistory } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import { Container, Button } from '@material-ui/core';
 import FormLabel from '@material-ui/core/FormLabel';
@@ -24,18 +24,21 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'hsl(0,20%,98%)',
     padding: '30px',
     marginBottom: 20,
+    fontFamily: 'Faustina'
   },
   personalInfo: {
     '& > *': {
       margin: theme.spacing(1),
       width: '50ch',
     },
+    fontFamily: 'Faustina'
   },
   quote: {
     display: 'flex',
     flexDirection: 'column',
     marginTop: 20,
-    fontStyle: 'italic'
+    fontStyle: 'italic',
+    fontFamily: 'Faustina'
   },
   footer: {
     marginLeft: '20px',
@@ -45,9 +48,10 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       width: '30ch',
     },
+    fontFamily: 'Faustina'
   },
   font: {
-    fontFamily: 'Lexend Giga',
+    fontFamily: 'Faustina'
   },
 }));
 
@@ -58,28 +62,34 @@ const VolunteerSignUp = () => {
   const [state1, setState1] = useState(Data[1]);
   const history = useHistory()
 
-  const submitHandler = () =>{
+  const submitHandler = () => {
     history.push("/volunteer/signUp/success")
     Data[0] = state0
     Data[1] = state1
 
-    axios.post("http://localhost:5000/volunteer",Data)
-    .then((res)=> res.data)
-    .catch((err)=>{
-      console.log(err)
-    })
+    axios.post("http://localhost:5000/volunteer", Data)
+      .then((res) => res.data)
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
-  const { meals, drinks, masks, sanitizer, medicalSupplies, petCare, laundry, other} = state0
-  const { fullName, homeDistrict,homeWard, homeCity, email, phone, signature} = state1
+  const { meals, drinks, masks, sanitizer, medicalSupplies, petCare, laundry, other } = state0
+  const { fullName, homeDistrict, homeWard, homeCity, email, phone, signature } = state1
 
   const handleTickChange = (event) => {
     setState0({ ...state0, [event.target.name]: event.target.checked });
   };
-  
+
   const handleTextChange = (event) => {
     setState1({ ...state1, [event.target.name]: event.target.value });
   };
+
+  const StyledFormControlLabel = withStyles({
+    font: {
+      fontFamily: 'Faustina'
+    },
+  })(FormControlLabel)
 
   return (
     <Container maxWidth="md">
@@ -120,6 +130,7 @@ const VolunteerSignUp = () => {
             <FormControlLabel
               control={<Checkbox checked={laundry} onChange={handleTickChange} name="laundry" />}
               label={getLongLineText(locale.lang, 'volunteerSignUp', 'support_kinds', 'item7')}
+              classes={{ font: classes.font }}
             />
             <div>
               <FormControlLabel
@@ -140,7 +151,7 @@ const VolunteerSignUp = () => {
           <TextField name="email" value={email} onChange={handleTextChange} label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'email_placeholder')} variant="outlined" />
           <TextField name="phone" value={phone} onChange={handleTextChange} label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'phone_placeholder')} variant="outlined" />
         </FormControl>
-        
+
         <FormControl className={classes.footer}>
           <TextField name="signature" value={signature} onChange={handleTextChange} label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'signature_placeholder')} style={{ marginRight: '10px' }} />
           <Button onClick={submitHandler} className={classes.font} variant="contained" color="primary" size="large">{getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'submit_button')}</Button>
@@ -148,10 +159,10 @@ const VolunteerSignUp = () => {
 
         <div className={classes.quote}>
           <strong>
-          {getLongLineText(locale.lang, 'volunteerSignUp', 'footer', 'quote')}
+            {getLongLineText(locale.lang, 'volunteerSignUp', 'footer', 'quote')}
           </strong>
           <strong style={{ alignSelf: 'flex-end' }}>
-          {getLongLineText(locale.lang, 'volunteerSignUp', 'footer', 'author')}
+            {getLongLineText(locale.lang, 'volunteerSignUp', 'footer', 'author')}
           </strong>
         </div>
       </form>

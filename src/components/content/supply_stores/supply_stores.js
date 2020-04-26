@@ -11,17 +11,19 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 50,
     marginBottom: 30,
     textAlign: 'center',
+    fontFamily: 'Faustina',
   },
   container: {
     display: 'flex',
     justifyContent: 'space-between',
     marginBottom: 50,
     marginTop: 50,
-    
+    fontFamily: 'Faustina',
   },
   header: {
     fontSize: 30,
     marginTop: 5,
+    fontFamily: 'Faustina',
   },
   w50: {
     width: '50%',
@@ -35,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '50%',
   },
   font: {
-    fontFamily: 'Lexend Giga',
+    fontFamily: 'Faustina',
   },
   mr50: {
     marginRight: 50,

@@ -6,7 +6,7 @@ const WEBSITE_URL = "http://localhost:3000";
 const Privacy_policy = () => {
   const locale = useContext(localeContext);
   return (
-    <div>
+    <div style={{ fontFamily: 'Faustina' }}>
       <>
         <h1>{getLongLineText(locale.lang, "privacy_policy", "h1", "title")}</h1>
         <p style={{ fontStyle: 'italic' }}>{getLongLineText(locale.lang, "privacy_policy", "h1", "p1")}</p>

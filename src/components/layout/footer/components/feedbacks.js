@@ -20,12 +20,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'hsl(0,20%,98%)',
     padding: '30px',
     marginBottom: 20,
+    fontFamily: 'Faustina'
   },
   personalInfo: {
     '& > *': {
       margin: theme.spacing(1),
       width: '50ch',
     },
+    fontFamily: 'Faustina'
   },
   footer: {
     marginLeft: '20px',
@@ -35,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
     '& > *': {
       width: '30ch',
     },
+    fontFamily: 'Faustina'
   }
 }));
 
@@ -50,7 +53,7 @@ const Feedbacks = () => {
           <p style={{ fontStyle: 'italic' }}>{getLongLineText(locale.lang, "feedbacks", "description", null)}</p>
         </div>
         <FormControl className={classes.personalInfo}>
-          <FormLabel>{getLongLineText(locale.lang, "feedbacks", "personal_info", "title")}</FormLabel>
+          <FormLabel style={{ fontFamily: 'Faustina' }}>{getLongLineText(locale.lang, "feedbacks", "personal_info", "title")}</FormLabel>
           <TextField
             label={getLongLineText(locale.lang, "feedbacks", "personal_info", "name_placeholder")}
             variant="outlined"
@@ -59,7 +62,7 @@ const Feedbacks = () => {
             label={getLongLineText(locale.lang, "feedbacks", "personal_info", "email_placeholder")}
             variant="outlined"
           />
-          <FormLabel>{getLongLineText(locale.lang, "feedbacks", "feedback_section", "title")}</FormLabel>
+          <FormLabel style={{ fontFamily: 'Faustina' }}>{getLongLineText(locale.lang, "feedbacks", "feedback_section", "title")}</FormLabel>
           <TextField
             label={getLongLineText(locale.lang, "feedbacks", "feedback_section", "placeholder")}
             variant="outlined"
@@ -75,7 +78,7 @@ const Feedbacks = () => {
             style={{ marginRight: '10px' }}
           />
           <Button color="secondary" size="large" variant="contained" endIcon={<SendIcon />}>
-            <strong>{getLongLineText(locale.lang, "feedbacks", "footer", "button")}</strong>
+            <strong style={{ fontFamily: 'Faustina' }}>{getLongLineText(locale.lang, "feedbacks", "footer", "button")}</strong>
           </Button>
         </FormControl>
       </form>

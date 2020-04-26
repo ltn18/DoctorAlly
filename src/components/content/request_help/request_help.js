@@ -20,18 +20,21 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'hsl(0,20%,98%)',
     padding: '30px',
     marginBottom: 20,
+    fontFamily: 'Faustina',
   },
   personalInfo: {
     '& > *': {
       margin: theme.spacing(1),
       width: '50ch',
     },
+    fontFamily: 'Faustina',
   },
   quote: {
     display: 'flex',
     flexDirection: 'column',
     marginTop: 20,
-    fontStyle: 'italic'
+    fontStyle: 'italic',
+    fontFamily: 'Faustina',
   },
 }));
 
@@ -45,7 +48,7 @@ const RequestForm = (props) => {
       <form className={classes.root} noValidate autoComplete="off">
         <div className={classes.font} style={{ marginBottom: 20 }}>
           <strong>{getLongLineText(locale.lang, "request_help", "title", null)}</strong>
-          <p style={{ fontStyle: 'italic' }}>{getLongLineText(locale.lang, "request_help", "description", null)}</p>
+          <p style={{ fontStyle: 'italic', fontFamily: 'Faustina' }}>{getLongLineText(locale.lang, "request_help", "description", null)}</p>
         </div>
         {id === "1"
           ? <PersonalInformation

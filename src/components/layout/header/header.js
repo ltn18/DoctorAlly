@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   font: {
-    fontFamily: 'Merriweather, serif',
+    fontFamily: 'Merriweather',
     fontSize: "15px",
   },
   fontLogo: {
@@ -31,9 +31,40 @@ const useStyles = makeStyles((theme) => ({
   formControl: {
     marginTop: "15px",
   },
-  btn: {
-    borderRadius: '100px',
+  btn_volunteer: {
+    // borderRadius: '10px',
     padding: 10,
+    fontFamily: 'Faustina',
+    fontSize: "15px",
+    "&:hover": {
+      backgroundColor: '#3f51b5',
+      color: 'white',
+      cursor: 'pointer',
+    }
+  },
+  btn_request_help: {
+    // borderRadius: '10px',
+    padding: 10,
+    fontFamily: 'Faustina',
+    fontSize: "15px",
+    "&:hover": {
+      backgroundColor: '#c51162',
+      color: 'white',
+      cursor: 'pointer',
+    }
+  },
+  btn_nearby_stores: {
+    // borderRadius: '10px',
+    padding: 10,
+    fontFamily: 'Faustina',
+    fontSize: "15px",
+    backgroundColor: 'white',
+    color: '#008000',
+    "&:hover": {
+      backgroundColor: '#008000',
+      color: 'white',
+      cursor: 'pointer'
+    }
   }
 }));
 
@@ -54,30 +85,29 @@ const Header = () => {
         style={{ backgroundColor: 'white' }}
       >
         {/* <img src="logo.jpg" alt="LOGO" style={{ width: "50px", height: "50px" }} /> */}
-        <FavoriteIcon style={{color: 'red'}}/>
+        <FavoriteIcon style={{ color: 'red' }} />
         <span style={{ marginLeft: 5, fontSize: "30px" }} className={classes.fontLogo}>DoctorAlly</span>
       </Button>
       <div className={classes.buttonGroup}>
         <Button
-          variant = "contained"
+          variant="outlined"
           onClick={() => { handleRouteSwitch("volunteer") }}
           color="primary"
-          classes={{font: classes.font, btn: classes.btn}}
+          className={classes.btn_volunteer}
         >{getText("header", "volunteer", locale.lang)}</Button>
 
         <Button
-          variant = "contained"
+          variant="outlined"
           onClick={() => { handleRouteSwitch("request_help/1") }}
           color="secondary"
-          classes={{font: classes.font, btn: classes.btn}}
+          className={classes.btn_request_help}
         >{getText("header", "request_help", locale.lang)}</Button>
 
         <Button
-          variant = "contained"
+          variant="outlined"
           onClick={() => { handleRouteSwitch("supply_stores") }}
-          style={{ color: 'green' }}
-          classes={{font: classes.font, btn: classes.btn}}
-          style={{backgroundColor: 'green', color: 'white'}}
+          className={classes.btn_nearby_stores}
+          // style={{ backgroundColor: 'green', color: 'white' }}
         >{getText("header", "supply_stores", locale.lang)}</Button>
 
       </div>

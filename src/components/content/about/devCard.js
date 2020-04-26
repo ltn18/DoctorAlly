@@ -15,18 +15,20 @@ const useStyles = makeStyles({
     maxWidth: 345,
     margin: 20,
     width: 345,
+    fontFamily: 'Faustina',
   },
   container: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
+    fontFamily: 'Faustina',
   },
   media: {
     height: 350,
   },
   font: {
-    fontFamily: 'Lexend Giga',
+    fontFamily: 'Faustina',
   },
   facebookLink: {
     color: "#1778F2"
@@ -47,7 +49,7 @@ const DATA = [
     id: 1,
     name: "DoctorAlly",
     role: "Social Enterprise",
-    imgURL: "doctorally.png",
+    imgURL: "logo.jpg",
     facebookLink: "https://www.facebook.com/doctorally.project/",
     instagramLink: "https://www.instagram.com/doctorally.project/",
     linkedinLink: "https://www.linkedin.com/company/doctorally/",
