@@ -61,7 +61,7 @@ const OfferHelp = () => {
     Data[1] = state1
     history.push(`/offer_help/${id}/success`)
 
-    axios.post("http://localhost:5000/volunteer",Data)
+    axios.post("http://202.92.6.90:5000/volunteer",Data)
     .then((res)=> res.data)
     .catch((err)=>{
       console.log(err)

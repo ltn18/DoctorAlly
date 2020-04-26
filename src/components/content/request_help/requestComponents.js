@@ -30,7 +30,7 @@ const Requests = (props) => {
   const handleSave = () => {
     Data[0] = state;
     history.push("/request_help/2/success")
-    axios.post("http://localhost:5000/helpRequest",Data)
+    axios.post("http://202.92.6.90:5000/helpRequest",Data)
     .then((res)=> res.data)
     .catch((err)=>{
       console.log(err)
