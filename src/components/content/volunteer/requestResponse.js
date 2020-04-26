@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core';
 import { CardContent, Paper, CardHeader, Button } from '@material-ui/core';
-import axios from "axios"
+import axios from "axios";
 import mapboxgl from 'mapbox-gl';
 mapboxgl.accessToken = 'pk.eyJ1IjoiaG9hbmdtaW5obmciLCJhIjoiY2s5M25xYTMwMDRhZDNpcDNhOHN1cDRnciJ9.NvYOhaROmMb04qeJyIbG-A';
 
@@ -25,7 +25,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 const fetchNearbyStoreDataLocation = async (location) => {
-  // const response = await fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=21.025417,105.835258&radius=1500&type=restaurant&key=AIzaSyA8yp4aWovCABcBT6o6H21ZcBAwQqz3XdI`)
+  // const response = await fetch(https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=21.025417,105.835258&radius=1500&type=restaurant&key=AIzaSyA8yp4aWovCABcBT6o6H21ZcBAwQqz3XdI)
   const response = await fetch(`https://nominatim.openstreetmap.org/search?q=${location}&format=json&polygon_geojson=1&addressdetails=1`)
   const resJson = await response.json()
   return resJson

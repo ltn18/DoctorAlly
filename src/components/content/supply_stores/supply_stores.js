@@ -1,11 +1,8 @@
 import React, { useState, useContext } from 'react';
 import StoreMap from './map';
-
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Divider, List, ListItem, ListItemText } from '@material-ui/core';
-
 import localeContext, {getText} from '../../context/localeCtx';
-
 const useStyles = makeStyles((theme) => ({
   h1: {
     marginTop: 50,
@@ -43,11 +40,9 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 50,
   }
 }));
-
 const Supply_stores = () => {
   const classes = useStyles();
   const locale = useContext(localeContext);
-
   return (
     <>
       <div>
@@ -108,8 +103,6 @@ const Supply_stores = () => {
         </div>
       </Container>
     </>
-
   );
 }
-
 export default Supply_stores;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -8,8 +7,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { Container, Link } from '@material-ui/core';
-
-
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
@@ -43,7 +40,6 @@ const useStyles = makeStyles({
     color: "#B23121"
   }
 });
-
 const DATA = [
   {
     id: 1,
@@ -105,9 +101,7 @@ const DATA = [
     linkedinLink: "https://www.linkedin.com/in/nthoang84/",
     gmailLink: "mailto:tuanhoang.nguyen8402@gmail.com",
   },
-
 ]
-
 const DevCard = (props) => {
   const classes = useStyles();
   const { name, role, imgURL, facebookLink, instagramLink, linkedinLink, gmailLink } = props;
@@ -144,10 +138,8 @@ const DevCard = (props) => {
     </Card>
   )
 }
-
 const Devs = () => {
   const classes = useStyles();
-
   return (
     <Container max-width="sm" className={classes.container}>
       {DATA.map((item) => (
@@ -164,5 +156,4 @@ const Devs = () => {
     </Container>
   )
 }
-
 export default Devs;

@@ -1,8 +1,6 @@
 import React, { useState, useContext } from 'react';
 import localeContext, { getLongLineText } from '../../context/localeCtx';
-
 import { useHistory } from 'react-router-dom';
-
 import TextField from '@material-ui/core/TextField';
 import { Button, ButtonGroup, MenuItem, Select, InputLabel } from '@material-ui/core';
 import FormLabel from '@material-ui/core/FormLabel';
@@ -11,22 +9,18 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import { makeStyles } from '@material-ui/core/styles';
-
 import Data from './requestData';
 import axios from "../../../config/axios"
-
 const useStyles = makeStyles((theme) => ({
   font: {
     fontFamily: 'Faustina'
   },
 }));
-
 const Requests = (props) => {
   const { formControl } = props;
   const history = useHistory();
   const locale = useContext(localeContext);
   const classes = useStyles();
-
   const handleSave = () => {
     Data[0] = state;
     history.push("/request_help/2/success")
@@ -36,25 +30,18 @@ const Requests = (props) => {
       console.log(err)
     })
   }
-
   const [state, setState] = useState(Data[0]);
-
   const { medicalSupplies, masks, sanitizer, meals, drinks, laundry, petCare, other, describeRequest } = state;
-
   const handleTickChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
-
   const handleTextChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.value });
   };
-
   // console.log(state);
-
   const moveToPage1 = () => {
     history.push("/request_help/1");
   }
-
   return (
     <FormControl className={formControl}>
       <FormLabel className={classes.font}>{getLongLineText(locale.lang, "request_help", "support_kinds", "title")}</FormLabel>
@@ -137,33 +124,25 @@ const Requests = (props) => {
     </FormControl>
   )
 }
-
 const PersonalInformation = (props) => {
   const { personalInfo } = props;
   const history = useHistory();
   const classes = useStyles();
   const locale = useContext(localeContext);
-
   const moveToPage2 = () => {
     history.push("/request_help/2");
   }
-
   const handleSave = () => {
     Data[1] = state;
   }
-
   const [state, setState] = useState(Data[1]);
-
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.value });
   };
-
   const { fullName, location, medicalFacility, jobTitle, email, phone } = state;
-
   const moveToPage1 = () => {
     history.push("/request_help/1");
   }
-
   return (
     <>
       <FormControl className={personalInfo}>
@@ -214,7 +193,6 @@ const PersonalInformation = (props) => {
           onChange={handleChange}
         />
       </FormControl>
-
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <ButtonGroup
           style={{ marginTop: 20 }}
@@ -236,7 +214,4 @@ const PersonalInformation = (props) => {
     </>
   )
 }
-
-
-
 export { PersonalInformation, Requests, Data }

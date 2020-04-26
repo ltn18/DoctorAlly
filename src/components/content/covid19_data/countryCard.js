@@ -1,10 +1,8 @@
 import React, { useContext } from 'react';
 import localeContext, { getLongLineText } from '../../context/localeCtx';
-
 const CountryCard = (props) => {
   const { name, cases, deaths, recovered, flag, locale} = props;
   // console.log(locale.lang);
-
   return (
     <>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontFamily: 'Lexend Giga' }}>
@@ -24,5 +22,4 @@ const CountryCard = (props) => {
     </>
   )
 }
-
 export default CountryCard

@@ -8,9 +8,6 @@ import { makeStyles } from '@material-ui/core/styles';
 // import IconButton from '@material-ui/core/IconButton';
 
 
-
-// https://maps.googleapis.com/maps/api/geocode/json?address=33+HoangCau+Dongda,+Hanoi,+VN&key=AIzaSyA8yp4aWovCABcBT6o6H21ZcBAwQqz3XdI
-// https://nominatim.openstreetmap.org/search?q=33 Hoang Cau Dong Da Ha Noi&format=json&polygon_geojson=1&addressdetails=1
 const fetchDataReq = async () =>{
   const response = await fetch("http://localhost:5000/helpRequest")
   const resJson = await response.json()
@@ -132,9 +129,6 @@ const Volunteer = () => {
   const [requestData, setRequestData] = useState([])
   const [invalidate,setInvalidate] = useState(true)
 
-
-  const [nearByStore, setNearByStore] = useState([])
-
   useEffect(() => {
     if(invalidate){
       fetchDataReq()
@@ -221,6 +215,15 @@ const Volunteer = () => {
   return (
     <>
       <div className={classes.root}>
+        <h2 className={classes.h2}> {getText("volunteer", "h2_volunteer", locale.lang)} </h2>
+        <Container className={classes.container}>
+          <p className={classes.p}>
+            {getText("volunteer", "p", locale.lang)}
+          </p>
+          <Button onClick={moveToSignUp} style={{backgroundColor: "#3f51b5", color: 'white'}} variant="contained" className={classes.button}> {getText("volunteer", "button", locale.lang)}</Button>
+        </Container>
+      </div>
+      <div className={classes.root}>
         <h2 className={classes.h2}>{getText("volunteer", "h2_request", locale.lang)}</h2>
         <div className='requests-container'>
           {
@@ -252,15 +255,6 @@ const Volunteer = () => {
           }
           <RenderButton page={page} rows={rows} />
         </div>
-      </div>
-      <div className={classes.root}>
-        <h2 className={classes.h2}> {getText("volunteer", "h2_volunteer", locale.lang)} </h2>
-        <Container className={classes.container}>
-          <p className={classes.p}>
-            {getText("volunteer", "p", locale.lang)}
-          </p>
-          <Button onClick={moveToSignUp} color="primary" variant="contained" className={classes.button}> {getText("volunteer", "button", locale.lang)}</Button>
-        </Container>
       </div>
     </>
   )

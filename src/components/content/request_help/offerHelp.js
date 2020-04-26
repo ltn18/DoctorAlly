@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState } from 'react';
 import localeContext, { getLongLineText } from '../../context/localeCtx';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -8,10 +8,6 @@ import FormControl from '@material-ui/core/FormControl';
 import { useHistory, useParams } from 'react-router-dom';
 import Data from "../volunteer/volunteerData"
 import axios from "axios"
-
-
-const API_KEY = "AIzaSyDvpMOS7799mI_yXIXZDp6sl5JIaag7uXo"
-
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
@@ -50,58 +46,25 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Lexend Giga',
   },
 }));
-
 const OfferHelp = () => {
   const classes = useStyles();
-  const { id } = useParams()
+  const {id} = useParams()
   const locale = useContext(localeContext)
   const history = useHistory();
-  const searchParams = new URLSearchParams(history.location.search);
-  const lat = searchParams.get('lat');
-  const lon = searchParams.get('lon');
-  const [invalidate,setInvalidate] = useState(true)
-  console.log(lat, lon)
-
-  const fetchNearbyStoreData = async () =>{
-    console.log(window.google);
-    const response = await fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${lon}&radius=1500&type=restaurant&key=${API_KEY}`, {
-      mode: 'no-cors'
-    })
-    const resJson = await response.json()
-    return response
-  }
-
-  useEffect(() => {
-    if (invalidate) {
-      fetchNearbyStoreData()
-        .then((res) => {
-          console.log(res)
-        })
-        .catch((err) => {
-          console.log(err)
-        })
-    }
-  }, [invalidate]);
-
   const [state1, setState1] = useState(Data[1]);
-  const { fullName, homeDistrict, homeWard, homeCity, email, phone, signature } = state1
-
-  const submitHandler = () => {
+  const { fullName, homeDistrict,homeWard, homeCity, email, phone, signature} = state1
+  const submitHandler = () =>{
     Data[1] = state1
     history.push(`/offer_help/${id}/success`)
-
-    axios.post("http://localhost:5000/volunteer", Data)
-      .then((res) => res.data)
-      .catch((err) => {
-        console.log(err)
-      })
+    axios.post("http://localhost:5000/volunteer",Data)
+    .then((res)=> res.data)
+    .catch((err)=>{
+      console.log(err)
+    })
   }
-
   const handleTextChange = (event) => {
-    setState1({ ...state1, [event.target.name]: event.target.value, idDoctor: id });
+    setState1({ ...state1, [event.target.name]: event.target.value, idDoctor:id });
   };
-
-
   return (
     <Container maxWidth="md">
       <form className={classes.root} noValidate autoComplete="off">
@@ -118,12 +81,10 @@ const OfferHelp = () => {
           <TextField name="email" value={email} onChange={handleTextChange} label={getLongLineText(locale.lang, 'offer_help', 'personal_info', 'email_placeholder')} variant="outlined" />
           <TextField name="phone" value={phone} onChange={handleTextChange} label={getLongLineText(locale.lang, 'offer_help', 'personal_info', 'phone_placeholder')} variant="outlined" />
         </FormControl>
-
         <FormControl className={classes.footer}>
           <TextField name="signature" value={signature} onChange={handleTextChange} label={getLongLineText(locale.lang, 'offer_help', 'personal_info', 'signature_placeholder')} style={{ marginRight: '10px' }} />
           <Button className={classes.font} variant="contained" color="secondary" size="large" onClick={submitHandler}>{getLongLineText(locale.lang, 'offer_help', 'personal_info', 'submit_button')}</Button>
         </FormControl>
-
         <div className={classes.quote}>
           <strong>
             {getLongLineText(locale.lang, 'offer_help', 'footer', 'quote')}
@@ -136,5 +97,4 @@ const OfferHelp = () => {
     </Container>
   )
 }
-
 export default OfferHelp;

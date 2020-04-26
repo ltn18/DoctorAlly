@@ -1,13 +1,9 @@
 import React, { useContext } from 'react';
 import localeContext, { getLongLineText } from '../../context/localeCtx';
-
 import { useParams, Redirect } from 'react-router-dom';
-
 import { PersonalInformation, Requests } from './requestComponents';
-
 import { makeStyles } from '@material-ui/core/styles';
 import { Container } from '@material-ui/core';
-
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
@@ -37,12 +33,10 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Faustina',
   },
 }));
-
 const RequestForm = (props) => {
   const classes = useStyles();
   const { id } = useParams();
   const locale = useContext(localeContext);
-
   return (
     <Container maxWidth="md">
       <form className={classes.root} noValidate autoComplete="off">
@@ -58,12 +52,8 @@ const RequestForm = (props) => {
             ? <Requests FormControl={classes.formControl} />
             : <Redirect to="/request_help/1" />
         }
-
       </form>
     </Container>
   )
-
-
 }
-
 export default RequestForm;

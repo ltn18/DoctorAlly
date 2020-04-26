@@ -80,6 +80,7 @@ const VolunteerSignUp = () => {
   const handleTickChange = (event) => {
     setState0({ ...state0, [event.target.name]: event.target.checked });
   };
+
   const handleTextChange = (event) => {
     setState1({ ...state1, [event.target.name]: event.target.value });
   };
@@ -150,6 +151,7 @@ const VolunteerSignUp = () => {
           <TextField name="email" value={email} onChange={handleTextChange} label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'email_placeholder')} variant="outlined" />
           <TextField name="phone" value={phone} onChange={handleTextChange} label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'phone_placeholder')} variant="outlined" />
         </FormControl>
+
         <FormControl className={classes.footer}>
           <TextField name="signature" value={signature} onChange={handleTextChange} label={getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'signature_placeholder')} style={{ marginRight: '10px' }} />
           <Button onClick={submitHandler} className={classes.font} variant="contained" color="primary" size="large">{getLongLineText(locale.lang, 'volunteerSignUp', 'personal_info', 'submit_button')}</Button>

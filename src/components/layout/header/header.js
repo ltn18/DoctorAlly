@@ -109,6 +109,7 @@ const Header = () => {
           className={classes.btn_nearby_stores}
           // style={{ backgroundColor: 'green', color: 'white' }}
         >{getText("header", "supply_stores", locale.lang)}</Button>
+
       </div>
       <FormControl className={classes.formControl}>
         <Select

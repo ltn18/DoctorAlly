@@ -1,5 +1,4 @@
 // CALL TỪ API RA ĐỂ RERENDER
-
 const Data = [
   {
     medicalSupplies: false,
@@ -21,5 +20,4 @@ const Data = [
     phone: "",
   }
 ]
-
 export default Data;

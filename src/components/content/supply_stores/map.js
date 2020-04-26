@@ -1,14 +1,10 @@
 import React, { Component, useContext, useEffect, useState } from 'react';
 import localeContext, { getText } from '../../context/localeCtx';
-
 import mapboxgl from 'mapbox-gl';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
-
 import axios from 'axios';
-
 mapboxgl.accessToken = 'pk.eyJ1IjoiaG9hbmdtaW5obmciLCJhIjoiY2s5M25xYTMwMDRhZDNpcDNhOHN1cDRnciJ9.NvYOhaROmMb04qeJyIbG-A';
 const [lng, lat, zoom] = [105.8380, 21.0269, 14.52]; // Hanoi
-
 function Map() {
   const locale = useContext(localeContext)
   const geocoder = new MapboxGeocoder({
@@ -30,10 +26,8 @@ function Map() {
       center: [lng, lat],
       zoom: zoom,
     });
-
     var marker = new mapboxgl.Marker({ 'color': '#008000' })
     map.addControl(geocoder, 'top-left')
-
     map.on('load', function () {
       map.addSource('selected-point', {
         type: 'geojson',
@@ -42,7 +36,6 @@ function Map() {
           features: []
         }
       });
-
       geocoder.on('result', async function (e) {
         map.getSource('selected-point').setData(e.result.geometry);
         var point = e.result.center;
@@ -52,7 +45,6 @@ function Map() {
         var layers = 'poi_label'
         var query = 'https://api.mapbox.com/v4/' + tileset + '/tilequery/' + point[0] + ',' + point[1] + '.json?radius=' + radius + '&limit=' + limit + '&layers=' + layers + '&access_token=' + mapboxgl.accessToken;
         marker.setLngLat(point).addTo(map);
-
         // fetch data and make geojson data
         const result = await axios.get(query)
         result.data.features = result.data.features.filter((item) => {
@@ -61,9 +53,7 @@ function Map() {
           }
         })
         map.getSource('tilequery').setData(result.data);
-
       });
-
       map.addSource('tilequery', {
         type: "geojson",
         data: {
@@ -71,7 +61,6 @@ function Map() {
           "features": []
         }
       });
-
       map.addLayer({
         id: "tilequery-points",
         type: "circle",
@@ -112,9 +101,7 @@ function Map() {
           ]
         }
       });
-
       var popup = new mapboxgl.Popup;
-
       map.on('mouseenter', 'tilequery-points', function (e) {
         map.getCanvas().style.cursor = 'pointer';
         if (e.features[0].properties.name) {
@@ -123,45 +110,32 @@ function Map() {
           var title = '<h3>No Name</h3>';
         }
         var storeType = '<h4>' + e.features[0].properties.type + '</h4>';
-
         var obj = JSON.parse(e.features[0].properties.tilequery);
         var distance = '<p>' + (obj.distance).toFixed(0) + 'm from location' + '</p>';
-
         var coordinates = new mapboxgl.LngLat(e.features[0].geometry.coordinates[0], e.features[0].geometry.coordinates[1]);
         var content = title + storeType + distance;
-
         popup.setLngLat(coordinates)
           .setHTML(content)
           .addTo(map);
       })
-
       map.on('mouseleave', 'tilequery-points', function () {
         map.getCanvas().style.cursor = '';
         popup.remove();
       });
     })
   }, [locale])
-
   return (
     <>
       <div style={{ display: 'flex' }}>
         <div id="geocoder1" class="geocoder"></div>
         <div id="geocoder2" class="geocoder"></div>
       </div>
-
       <div id='map' style={{ height: '75vh', width: '100%', marginBottom: '20px' }} />
     </>
   )
 }
-
-
 // const StoreMap = () => {
 //   const locale = useContext(localeContext);
 //   return <Map locale={locale} />
 // };
-
 export default Map;
-
-
-
-

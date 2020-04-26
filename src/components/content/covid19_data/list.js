@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react';
-
 import { Button, ButtonGroup, InputBase } from '@material-ui/core';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
@@ -10,9 +9,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
-
 import localeContext, { getLongLineText } from '../../context/localeCtx';
-
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
@@ -49,7 +46,6 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Faustina',
   },
 }));
-
 const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: theme.palette.common.black,
@@ -59,7 +55,6 @@ const StyledTableCell = withStyles((theme) => ({
     fontSize: 14,
   },
 }))(TableCell);
-
 const StyledTableRow = withStyles((theme) => ({
   root: {
     '&:nth-of-type(odd)': {
@@ -70,19 +65,16 @@ const StyledTableRow = withStyles((theme) => ({
     fontFamily: 'Faustina',
   },
 }))(TableRow);
-
 const CovidList = (props) => {
   const { data } = props;
   const [DATA, setDATA] = useState([]);
   const [page, setPage] = React.useState(0);
   const rows = 10;
-
   useEffect(() => {
     if (data) {
       setDATA([...data]);
     }
   }, [data])
-
   const SwitchPage = (props) => {
     const { page, handleBackButtonClick, handleNextButtonClick } = props;
     const locale = useContext(localeContext);
@@ -127,7 +119,6 @@ const CovidList = (props) => {
       </>
     )
   }
-
   const Search = () => {
     const [value, setValue] = useState("");
     const locale = useContext(localeContext);
@@ -155,7 +146,6 @@ const CovidList = (props) => {
       </div>
     )
   }
-
   const handleNextButtonClick = () => {
     if (page < 212) {
       setPage(page + 1);
@@ -166,9 +156,7 @@ const CovidList = (props) => {
       setPage(page - 1);
     }
   };
-
   const classes = useStyles();
-
   const AlertCountry = (props) => {
     const { searchRes } = props;
     const locale = useContext(localeContext);
@@ -197,14 +185,11 @@ const CovidList = (props) => {
           </Alert>
           : <></>
         }
-
       </div>
     )
   }
   const [searchRes, setSearchRes] = useState({});
-
   const locale = useContext(localeContext);
-
   const convertContinent = (lang, continent) => {
     if (lang === "VIE") {
       if (continent === "Asia") return "Châu Á";
@@ -217,7 +202,6 @@ const CovidList = (props) => {
       return continent;
     }
   }
-
   return (
     <div>
       <Paper className={classes.root}>
@@ -322,5 +306,4 @@ const CovidList = (props) => {
     </div>
   )
 }
-
 export default CovidList;

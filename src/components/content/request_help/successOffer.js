@@ -4,7 +4,6 @@ import localeContext, { getText } from '../../context/localeCtx';
 import { makeStyles } from '@material-ui/core';
 import { CardContent, Paper, Button } from '@material-ui/core';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
-
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
@@ -39,7 +38,6 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Faustina',
   }
 }))
-
 const SuccessOffer = () => {
   const classes = useStyles()
   const history = useHistory()
@@ -47,7 +45,6 @@ const SuccessOffer = () => {
     history.push("/")
   }
   const locale = useContext(localeContext)
-
   return (
     <div className={classes.root}>
       <Paper elevation={3} variant="outlined" rounded className={classes.paper} >
@@ -60,5 +57,4 @@ const SuccessOffer = () => {
     </div>
   )
 }
-
 export default SuccessOffer
