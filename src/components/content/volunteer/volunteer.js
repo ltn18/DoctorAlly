@@ -143,7 +143,7 @@ const Volunteer = () => {
   }, [invalidate]);
   
   const handleNextButtonClick = () => {
-    if (page * rows < requestData.length) {
+    if (page * rows + rows < requestData.length) {
       setPage(page + 1);
     }
     console.log(page);
@@ -155,6 +155,8 @@ const Volunteer = () => {
     console.log(page);
   };
 
+  console.log(requestData);
+
   const RenderButton = (props) => {
     const locale = useContext(localeContext);
     const { page, rows } = props;
@@ -162,7 +164,7 @@ const Volunteer = () => {
       <div style={{ marginTop: '15px', display: 'flex', flexDirection: 'row', justifyContent: 'center', fontFamily: 'Faustina' }}>
         <div>
           {
-            page > 0 && page * rows + rows <= requestData.length
+            page > 0 && page * rows + rows < requestData.length
               ?
               <>
                 <ButtonGroup variant="contained" aria-label="text primary button group">
@@ -202,7 +204,7 @@ const Volunteer = () => {
                 </Button>
           }
         </div>
-        <strong style={{ marginLeft: '50px', alignSelf: 'center' }}>Page: {page + 1}/{page === 0? 1 : Math.ceil(requestData.length / rows)}</strong>
+        <strong style={{ marginLeft: '50px', alignSelf: 'center' }}>Page: {page + 1}/{Math.ceil(requestData.length / rows)}</strong>
       </div>
     )
   }
