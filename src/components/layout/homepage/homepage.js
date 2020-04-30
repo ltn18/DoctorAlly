@@ -18,6 +18,7 @@ const HomePage = () => {
           playing
           autoplay
           controls
+          muted
           style={{ alignSelf: 'center', marginTop: '20px' }}
         />
       </Container>
