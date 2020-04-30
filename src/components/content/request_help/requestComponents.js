@@ -37,6 +37,15 @@ const Requests = (props) => {
     })
   }
 
+  const handleBackSave = () => {
+    Data[0] = state;
+    axios.post("http://202.92.6.90:5000/helpRequest",Data)
+    .then((res)=> res.data)
+    .catch((err)=>{
+      console.log(err)
+    })
+  }
+
   const [state, setState] = useState(Data[0]);
 
   const { medicalSupplies, masks, sanitizer, meals, drinks, laundry, petCare, other, describeRequest } = state;
@@ -115,7 +124,7 @@ const Requests = (props) => {
           aria-label="contained secondary button group">
           <Button
             style={{ fontFamily: 'Faustina' }}
-            onClick={() => { moveToPage1(); handleSave() }}>
+            onClick={() => { moveToPage1(); handleBackSave() }}>
             {getLongLineText(locale.lang, "request_help", "footer", "back_button")}
           </Button>
           <Button
