@@ -6,6 +6,7 @@
 ### Step 2: install packages/hooks in terminal: 
 * ```npm install```
 * ```npm install react-router-dom```
+* ```npm install react-router-scroll-top```
 * ```npm install axios```
 * ```npm install mapbox-gl --save```
 * ```npm install @material-ui/core``` 

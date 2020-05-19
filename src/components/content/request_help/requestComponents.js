@@ -30,7 +30,16 @@ const Requests = (props) => {
   const handleSave = () => {
     Data[0] = state;
     history.push("/request_help/2/success")
-    axios.post("http://localhost:5000/helpRequest",Data)
+    axios.post("http://202.92.6.90:5000/helpRequest",Data)
+    .then((res)=> res.data)
+    .catch((err)=>{
+      console.log(err)
+    })
+  }
+
+  const handleBackSave = () => {
+    Data[0] = state;
+    axios.post("http://202.92.6.90:5000/helpRequest",Data)
     .then((res)=> res.data)
     .catch((err)=>{
       console.log(err)
@@ -115,7 +124,7 @@ const Requests = (props) => {
           aria-label="contained secondary button group">
           <Button
             style={{ fontFamily: 'Faustina' }}
-            onClick={() => { moveToPage1(); handleSave() }}>
+            onClick={() => { moveToPage1(); handleBackSave() }}>
             {getLongLineText(locale.lang, "request_help", "footer", "back_button")}
           </Button>
           <Button

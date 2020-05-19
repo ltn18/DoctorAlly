@@ -1,21 +1,21 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import localeContext, { getText } from '../../context/localeCtx';
-import { Button,ButtonGroup, Container, Box, Grid } from '@material-ui/core';
+import { Button, ButtonGroup, Container, Box, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 // import InputBase from '@material-ui/core/InputBase';
 // import SearchIcon from '@material-ui/icons/Search';
 // import IconButton from '@material-ui/core/IconButton';
 
 
-const fetchDataReq = async () =>{
-  const response = await fetch("http://localhost:5000/helpRequest")
+const fetchDataReq = async () => {
+  const response = await fetch("http://202.92.6.90:5000/helpRequest")
   const resJson = await response.json()
   return resJson
 }
 
-const fetchDataVolunteer = async () =>{
-  const response = await fetch("http://localhost:5000/volunteer")
+const fetchDataVolunteer = async () => {
+  const response = await fetch("http://202.92.6.90:5000/volunteer")
   const resJson = await response.json()
   return resJson
 }
@@ -106,10 +106,10 @@ const RequestBox = (props) => {
         <Grid item xs={6}>
           <strong>{props.name} | {props.role}, {props.facility}</strong>
           <div>{
-          work.map((wor)=> {
-            return wor + ", "
-          })  
-            }</div>
+            work.map((wor) => {
+              return wor + ", "
+            })
+          }</div>
         </Grid>
         {/* <Grid item xs={6}>{props.offers} offers</Grid> */}
       </Grid>
@@ -127,23 +127,23 @@ const Volunteer = () => {
     history.push("/volunteer/signup");
   }
   const [requestData, setRequestData] = useState([])
-  const [invalidate,setInvalidate] = useState(true)
+  const [invalidate, setInvalidate] = useState(true)
 
   useEffect(() => {
-    if(invalidate){
+    if (invalidate) {
       fetchDataReq()
-        .then((res)=>{
+        .then((res) => {
           setRequestData(res)
-          setInvalidate(false) 
+          setInvalidate(false)
         })
-        .catch((err)=>{
+        .catch((err) => {
           console.log(err)
         })
     }
   }, [invalidate]);
-  
+
   const handleNextButtonClick = () => {
-    if (page * rows < requestData.length) {
+    if (page * rows + rows < requestData.length) {
       setPage(page + 1);
     }
     console.log(page);
@@ -155,6 +155,8 @@ const Volunteer = () => {
     console.log(page);
   };
 
+  console.log(requestData);
+
   const RenderButton = (props) => {
     const locale = useContext(localeContext);
     const { page, rows } = props;
@@ -162,7 +164,7 @@ const Volunteer = () => {
       <div style={{ marginTop: '15px', display: 'flex', flexDirection: 'row', justifyContent: 'center', fontFamily: 'Faustina' }}>
         <div>
           {
-            page > 0 && page * rows + rows <= requestData.length
+            page > 0 && page * rows + rows < requestData.length
               ?
               <>
                 <ButtonGroup variant="contained" aria-label="text primary button group">
@@ -202,7 +204,7 @@ const Volunteer = () => {
                 </Button>
           }
         </div>
-        <strong style={{ marginLeft: '50px', alignSelf: 'center' }}>Page: {page + 1}/{page === 0? 1 : Math.ceil(requestData.length / rows)}</strong>
+        <strong style={{ marginLeft: '50px', alignSelf: 'center' }}>Page: {page + 1}/{Math.ceil(requestData.length / rows)}</strong>
       </div>
     )
   }
@@ -220,40 +222,46 @@ const Volunteer = () => {
           <p className={classes.p}>
             {getText("volunteer", "p", locale.lang)}
           </p>
-          <Button onClick={moveToSignUp} style={{backgroundColor: "#3f51b5", color: 'white'}} variant="contained" className={classes.button}> {getText("volunteer", "button", locale.lang)}</Button>
+          <Button onClick={moveToSignUp} style={{ backgroundColor: "#3f51b5", color: 'white' }} variant="contained" className={classes.button}> {getText("volunteer", "button", locale.lang)}</Button>
         </Container>
       </div>
       <div className={classes.root}>
         <h2 className={classes.h2}>{getText("volunteer", "h2_request", locale.lang)}</h2>
         <div className='requests-container'>
-          {
-            requestData.map((req, index) => {
-              if (index % 2 === 0) {
-                return (
-                  <RequestBox
-                    color='#f2f2f2'
-                    id={req._id}
-                    name={req.fullName}
-                    role={req.jobTitle}
-                    facility={req.medicalFacility}
-                    work={req.work}
-                  />
-                )
-              } else {
-                return (
-                  <RequestBox
-                    color='#ffffff'
-                    id={req._id}
-                    name={req.fullName}
-                    role={req.jobTitle}
-                    facility={req.medicalFacility}
-                    work={req.work}
-                  />
-                )
+          {invalidate
+            ? <>Incomming Request ...</>
+            : <>
+              {
+                requestData.map((req, index) => {
+                  if (index % 2 === 0) {
+                    return (
+                      <RequestBox
+                        color='#f2f2f2'
+                        id={req._id}
+                        name={req.fullName}
+                        role={req.jobTitle}
+                        facility={req.medicalFacility}
+                        work={req.work}
+                      />
+                    )
+                  } else {
+                    return (
+                      <RequestBox
+                        color='#ffffff'
+                        id={req._id}
+                        name={req.fullName}
+                        role={req.jobTitle}
+                        facility={req.medicalFacility}
+                        work={req.work}
+                      />
+                    )
+                  }
+                })
               }
-            })
+              <RenderButton page={page} rows={rows} />
+            </>
           }
-          <RenderButton page={page} rows={rows} />
+
         </div>
       </div>
     </>

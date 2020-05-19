@@ -67,7 +67,7 @@ const VolunteerSignUp = () => {
     Data[0] = state0
     Data[1] = state1
 
-    axios.post("http://localhost:5000/volunteer", Data)
+    axios.post("http://202.92.6.90:5000/volunteer", Data)
       .then((res) => res.data)
       .catch((err) => {
         console.log(err)

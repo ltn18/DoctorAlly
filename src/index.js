@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ScrollToTop from 'react-router-scroll-top';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -10,7 +11,9 @@ import { Container } from '@material-ui/core';
 ReactDOM.render(
   <BrowserRouter>
     <Container fixed>
-      <App />
+      <ScrollToTop>
+        <App />
+      </ScrollToTop>
     </Container>
   </BrowserRouter>
   , document.getElementById('root'));

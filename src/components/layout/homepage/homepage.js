@@ -16,7 +16,9 @@ const HomePage = () => {
           height={550}
           url='https://www.youtube.com/watch?v=vqMITH0Q8oA'
           playing
+          autoplay
           controls
+          muted
           style={{ alignSelf: 'center', marginTop: '20px' }}
         />
       </Container>
