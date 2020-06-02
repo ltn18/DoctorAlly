@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    backgroundColor: 'hsl(0,20%,98%)',
+    // backgroundColor: 'hsl(0,20%,98%)',
     padding: '30px',
     marginBottom: 20,
     fontFamily: 'Faustina',

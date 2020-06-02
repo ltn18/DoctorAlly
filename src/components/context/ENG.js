@@ -50,7 +50,7 @@ const ENG = {
 
   about: {
     h2: "Our Team",
-    h3: "Healthcare workers need your help to fight COVID-19",
+    h3: "DoctorAlly is being built by a team of 6 aspiring highschool students from mathematics class, achieving top 3 Hospital & Health Care track at AngelHack Vietnam HackCoVy 2020.",
     box: "Volunteer your time or request support for meals, pet care, errands, and more during the COVID-19 pandemic."
   },
   // VOLUNTEER

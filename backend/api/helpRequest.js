@@ -1,21 +1,20 @@
-const router = require("express").Router()
-const HelpRequest = require("../models/helpRequest")
+const router = require("express").Router();
+const HelpRequest = require("../models/helpRequest");
 
-router.get("/",(req,res)=>{
-  HelpRequest.find((err, help)=>{
-    if(err){
-      console.log(err)
+router.get("/", (req, res) => {
+  HelpRequest.find((err, help) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(help);
     }
-    else{
-      res.json(help)
-    }
-  })
-})
+  });
+});
 
-router.post("/",(req,res)=>{
-  const data = req.body 
+router.post("/", (req, res) => {
+  const data = req.body;
 
-  const newData = Object.keys(data[0]).filter((key)=> data[0][key] == true)
+  const newData = Object.keys(data[0]).filter((key) => data[0][key] == true);
 
   const helpRequest = new HelpRequest({
     medicalSupplies: data[0].medicalSupplies,
@@ -33,9 +32,9 @@ router.post("/",(req,res)=>{
     medicalFacility: data[1].medicalFacility,
     jobTitle: data[1].jobTitle,
     email: data[1].email,
-    phone: data[1].phone
-  })
-  helpRequest.save()
-})
+    phone: data[1].phone,
+  });
+  helpRequest.save();
+});
 
-module.exports = router
+module.exports = router;

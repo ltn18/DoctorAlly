@@ -1,21 +1,20 @@
-const router = require("express").Router()
-const VolunteerRequest = require("../models/volunteer")
+const router = require("express").Router();
+const VolunteerRequest = require("../models/volunteer");
 
-router.get("/",(req,res)=>{
-  VolunteerRequest.find((err, help)=>{
-    if(err){
-      console.log(err)
+router.get("/", (req, res) => {
+  console.log(req.body);
+  VolunteerRequest.find((err, help) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json(help);
     }
-    else{
-      res.json(help)
-    }
-  })
-})
+  });
+});
 
-
-router.post("/",(req,res)=>{
-  const data = req.body 
-  console.log(data)
+router.post("/", (req, res) => {
+  const data = req.body;
+  console.log(data);
   // const newData = Object.keys(data[0]).filter((key)=> data[0][key] == true)
   const volunteerRequest = new VolunteerRequest({
     meals: data[0].meals,
@@ -26,7 +25,7 @@ router.post("/",(req,res)=>{
     petCare: data[0].petCare,
     laundry: data[0].laundry,
     other: data[0].other,
-    
+
     fullName: data[1].fullName,
     homeDistrict: data[1].homeDistrict,
     homeWard: data[1].homeWard,
@@ -35,8 +34,8 @@ router.post("/",(req,res)=>{
     phone: data[1].phone,
     signature: data[1].signature,
     idDoctor: data[1].idDoctor,
-  })
-  volunteerRequest.save()
-})
+  });
+  volunteerRequest.save();
+});
 
-module.exports = router
+module.exports = router;

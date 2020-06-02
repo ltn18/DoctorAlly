@@ -1,6 +1,6 @@
-const router = require("express").Router()
+const router = require("express").Router();
 
-router.use("/helpRequest", require("./helpRequest"))
-router.use("/volunteer", require("./volunteer"))
+router.use("/helpRequest", require("./helpRequest"));
+router.use("/volunteer", require("./volunteer"));
 
-module.exports = router
+module.exports = router;

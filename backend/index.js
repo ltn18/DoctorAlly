@@ -1,9 +1,9 @@
 require("dotenv").config();
-const express = require("express")
-const mongoose = require("mongoose")
-const cors = require("cors")
-const bodyParser = require("body-parser")
-const router = require("./api")
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const router = require("./api");
 
 const app = express();
 
@@ -11,9 +11,9 @@ mongoose.connect(
   `mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.MONGO_DBNAME}`,
   {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   },
-  err => {
+  (err) => {
     if (!err) {
       console.log("DB connected!");
     } else {

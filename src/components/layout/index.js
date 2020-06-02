@@ -1,6 +1,8 @@
 export {default as Header} from './header/header';
 
 export {default as HomePage} from './homepage/homepage';
+export {default as StartingPage} from './homepage/startingpage';
+
 
 // footer
 export {default as Footer} from './footer/footer';
