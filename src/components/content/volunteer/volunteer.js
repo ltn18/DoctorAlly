@@ -1,12 +1,11 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
-import localeContext, { getText } from '../../context/localeCtx';
-import { Button, ButtonGroup, Container, Box, Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useState, useEffect, useContext } from "react";
+import { useHistory } from "react-router-dom";
+import localeContext, { getText } from "../../context/localeCtx";
+import { Button, ButtonGroup, Container, Box, Grid } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 // import InputBase from '@material-ui/core/InputBase';
 // import SearchIcon from '@material-ui/icons/Search';
 // import IconButton from '@material-ui/core/IconButton';
-
 
 const fetchDataReq = async () => {
   const response = await fetch("http://localhost:5000/helpRequest")
@@ -20,76 +19,80 @@ const fetchDataVolunteer = async () => {
   return resJson
 }
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
-    '& > *': {
+    "& > *": {
       margin: theme.spacing(1),
     },
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
     marginBottom: 20,
-    fontFamily: 'Faustina',
+    fontFamily: "Faustina",
   },
   h2: {
     marginTop: 50,
-    fontFamily: 'Faustina',
+    fontFamily: "Faustina",
+  },
+  h2_vol_list: {
+    fontFamily: "Faustina",
+    marginTop: 0,
   },
   container: {
-    '& > *': {
+    "& > *": {
       margin: theme.spacing(1),
     },
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    backgroundColor: '#f2f2f2',
-    height: '30vh',
-    width: '100%',
-    marginTop: '10px',
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    // backgroundColor: '#f2f2f2',
+    height: "30vh",
+    width: "100%",
+    marginTop: "10px",
     padding: 10,
   },
   p: {
     fontSize: 20,
-    marginBottom: 30,
-    alignSelf: 'center',
-    fontStyle: 'italic',
+    // marginBottom: 30,
+    alignSelf: "center",
+    fontStyle: "italic",
   },
   button: {
-    width: '25ch',
-    height: '100px',
+    width: "25ch",
+    height: "50px",
     fontSize: 20,
-    fontFamily: 'Faustina',
+    fontFamily: "Faustina",
   },
   input: {
     marginLeft: theme.spacing(1),
     flex: 1,
-    width: '100ch',
-    fontFamily: 'Faustina',
+    width: "100ch",
+    fontFamily: "Faustina",
   },
   iconButton: {
     marginLeft: 80,
     padding: 10,
   },
   box: {
-    display: 'flex',
-    flexDirection: 'row',
-    backgroundColor: '#f2f2f2',
-    width: '100ch',
+    display: "flex",
+    flexDirection: "row",
+    backgroundColor: "#f2f2f2",
+    width: "100ch",
     "&:hover": {
-      cursor: 'pointer'
+      cursor: "pointer",
     },
-    fontFamily: 'Faustina',
+    fontFamily: "Faustina",
   },
   grid: {
-    display: 'flex',
-    justifiedContent: 'center',
+    display: "flex",
+    justifiedContent: "center",
     margin: 10,
   },
   font: {
-    fontFamily: 'Faustina',
+    fontFamily: "Faustina",
   },
 }));
-
 
 const RequestBox = (props) => {
   const { color, id, work, offers } = props;
@@ -98,24 +101,30 @@ const RequestBox = (props) => {
 
   const handleBoxClick = () => {
     history.push(`requests/${id}`);
-  }
+  };
 
   return (
-    <Box onClick={handleBoxClick} className={classes.box} style={{ backgroundColor: props.color }}>
+    <Box
+      onClick={handleBoxClick}
+      className={classes.box}
+      style={{ backgroundColor: props.color }}
+    >
       <Grid container spacing={2} className={classes.grid}>
         <Grid item xs={6}>
-          <strong>{props.name} | {props.role}, {props.facility}</strong>
-          <div>{
-            work.map((wor) => {
-              return wor + ", "
-            })
-          }</div>
+          <strong>
+            {props.name} | {props.role}, {props.facility}
+          </strong>
+          <div>
+            {work.map((wor) => {
+              return wor + ", ";
+            })}
+          </div>
         </Grid>
         {/* <Grid item xs={6}>{props.offers} offers</Grid> */}
       </Grid>
     </Box>
-  )
-}
+  );
+};
 
 const Volunteer = () => {
   const history = useHistory();
@@ -125,20 +134,20 @@ const Volunteer = () => {
   const rows = 5;
   const moveToSignUp = () => {
     history.push("/volunteer/signup");
-  }
-  const [requestData, setRequestData] = useState([])
-  const [invalidate, setInvalidate] = useState(true)
+  };
+  const [requestData, setRequestData] = useState([]);
+  const [invalidate, setInvalidate] = useState(true);
 
   useEffect(() => {
     if (invalidate) {
       fetchDataReq()
         .then((res) => {
-          setRequestData(res)
-          setInvalidate(false)
+          setRequestData(res);
+          setInvalidate(false);
         })
         .catch((err) => {
-          console.log(err)
-        })
+          console.log(err);
+        });
     }
   }, [invalidate]);
 
@@ -161,53 +170,72 @@ const Volunteer = () => {
     const locale = useContext(localeContext);
     const { page, rows } = props;
     return (
-      <div style={{ marginTop: '15px', display: 'flex', flexDirection: 'row', justifyContent: 'center', fontFamily: 'Faustina' }}>
+      <div
+        style={{
+          marginTop: "15px",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          fontFamily: "Faustina",
+        }}
+      >
         <div>
-          {
-            page > 0 && page * rows + rows < requestData.length
-              ?
-              <>
-                <ButtonGroup variant="contained" aria-label="text primary button group">
-                  <Button
-                    style={{ backgroundColor: '#E1306C', color: 'white' }}
-                    onClick={handleBackButtonClick}
-                  >
-                    {getText("volunteer", "back_button", locale.lang)}
-                  </Button>
-                  <Button
-                    style={{ backgroundColor: '#53A653', color: 'white' }}
-                    onClick={handleNextButtonClick}
-                  >
-                    {getText("volunteer", "next_button", locale.lang)}
-                  </Button>
-                </ButtonGroup>
-              </>
-              : page === 0
-                ?
-                <>
-                  <Button
-                    style={{ backgroundColor: '#53A653', color: 'white', fontFamily: 'Faustina' }}
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNextButtonClick}
-                  >
-                    {getText("volunteer", "next_button", locale.lang)}
-                  </Button>
-                </>
-                : <Button
-                  style={{ backgroundColor: '#E1306C', color: 'white', fontFamily: 'Faustina' }}
-                  variant="contained"
-                  color="primary"
+          {page > 0 && page * rows + rows < requestData.length ? (
+            <>
+              <ButtonGroup
+                variant="contained"
+                aria-label="text primary button group"
+              >
+                <Button
+                  style={{ backgroundColor: "#E1306C", color: "white" }}
                   onClick={handleBackButtonClick}
                 >
                   {getText("volunteer", "back_button", locale.lang)}
                 </Button>
-          }
+                <Button
+                  style={{ backgroundColor: "#53A653", color: "white" }}
+                  onClick={handleNextButtonClick}
+                >
+                  {getText("volunteer", "next_button", locale.lang)}
+                </Button>
+              </ButtonGroup>
+            </>
+          ) : page === 0 ? (
+            <>
+              <Button
+                style={{
+                  backgroundColor: "#53A653",
+                  color: "white",
+                  fontFamily: "Faustina",
+                }}
+                variant="contained"
+                color="primary"
+                onClick={handleNextButtonClick}
+              >
+                {getText("volunteer", "next_button", locale.lang)}
+              </Button>
+            </>
+          ) : (
+            <Button
+              style={{
+                backgroundColor: "#E1306C",
+                color: "white",
+                fontFamily: "Faustina",
+              }}
+              variant="contained"
+              color="primary"
+              onClick={handleBackButtonClick}
+            >
+              {getText("volunteer", "back_button", locale.lang)}
+            </Button>
+          )}
         </div>
-        <strong style={{ marginLeft: '50px', alignSelf: 'center' }}>Page: {page + 1}/{Math.ceil(requestData.length / rows)}</strong>
+        <strong style={{ marginLeft: "50px", alignSelf: "center" }}>
+          Page: {page + 1}/{Math.ceil(requestData.length / rows)}
+        </strong>
       </div>
-    )
-  }
+    );
+  };
 
   // const [searchValue, setSearchValue] = useState("");
   // const handleSearchChange = (e) => {
@@ -217,55 +245,64 @@ const Volunteer = () => {
   return (
     <>
       <div className={classes.root}>
-        <h2 className={classes.h2}> {getText("volunteer", "h2_volunteer", locale.lang)} </h2>
+        <h2 className={classes.h2}>
+          {" "}
+          {getText("volunteer", "h2_volunteer", locale.lang)}{" "}
+        </h2>
         <Container className={classes.container}>
-          <p className={classes.p}>
-            {getText("volunteer", "p", locale.lang)}
-          </p>
-          <Button onClick={moveToSignUp} style={{ backgroundColor: "#3f51b5", color: 'white' }} variant="contained" className={classes.button}> {getText("volunteer", "button", locale.lang)}</Button>
+          <p className={classes.p}>{getText("volunteer", "p", locale.lang)}</p>
+          <Button
+            onClick={moveToSignUp}
+            style={{ backgroundColor: "#3f51b5", color: "white" }}
+            variant="contained"
+            className={classes.button}
+          >
+            {" "}
+            {getText("volunteer", "button", locale.lang)}
+          </Button>
         </Container>
       </div>
       <div className={classes.root}>
-        <h2 className={classes.h2}>{getText("volunteer", "h2_request", locale.lang)}</h2>
-        <div className='requests-container'>
-          {invalidate
-            ? <>Incomming Request ...</>
-            : <>
-              {
-                requestData.map((req, index) => {
-                  if (index % 2 === 0) {
-                    return (
-                      <RequestBox
-                        color='#f2f2f2'
-                        id={req._id}
-                        name={req.fullName}
-                        role={req.jobTitle}
-                        facility={req.medicalFacility}
-                        work={req.work}
-                      />
-                    )
-                  } else {
-                    return (
-                      <RequestBox
-                        color='#ffffff'
-                        id={req._id}
-                        name={req.fullName}
-                        role={req.jobTitle}
-                        facility={req.medicalFacility}
-                        work={req.work}
-                      />
-                    )
-                  }
-                })
-              }
+        <h2 className={classes.h2_vol_list}>
+          {getText("volunteer", "h2_request", locale.lang)}
+        </h2>
+        <div className="requests-container">
+          {invalidate ? (
+            <>Incomming Request ...</>
+          ) : (
+            <>
+              {requestData.map((req, index) => {
+                if (index % 2 === 0) {
+                  return (
+                    <RequestBox
+                      color="#f2f2f2"
+                      id={req._id}
+                      name={req.fullName}
+                      role={req.jobTitle}
+                      facility={req.medicalFacility}
+                      work={req.work}
+                    />
+                  );
+                } else {
+                  return (
+                    <RequestBox
+                      color="#ffffff"
+                      id={req._id}
+                      name={req.fullName}
+                      role={req.jobTitle}
+                      facility={req.medicalFacility}
+                      work={req.work}
+                    />
+                  );
+                }
+              })}
               <RenderButton page={page} rows={rows} />
             </>
-          }
-
+          )}
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Volunteer
+export default Volunteer;

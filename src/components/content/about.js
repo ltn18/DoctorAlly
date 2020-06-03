@@ -12,7 +12,8 @@ const useStyles = makeStyles({
     marginTop: 30,
     display: "flex",
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    fontSize: 30,
   },
   h3: {
     display: "flex",

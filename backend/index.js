@@ -4,15 +4,16 @@ const mongoose = require("mongoose")
 const cors = require("cors")
 const bodyParser = require("body-parser")
 const router = require("./api")
+
 const app = express();
 
 mongoose.connect(
   `mongodb://${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.MONGO_DBNAME}`,
   {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   },
-  err => {
+  (err) => {
     if (!err) {
       console.log("DB connected!");
     } else {
@@ -30,3 +31,4 @@ const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 
 http.listen(process.env.PORT);
+
