@@ -44,11 +44,10 @@ const fetchNearbyStoreData = async (locationCordinate) => {
 }
 
 const fetchData = async () => {
-  const response = await fetch("http://202.92.6.90:5000/helpRequest")
+  const response = await fetch("http://localhost:5000/helpRequest")
   const resJson = await response.json()
   return resJson
 }
-
 
 const RequestResponse = () => {
   const classes = useStyles();
@@ -96,7 +95,6 @@ const RequestResponse = () => {
           setRequestData(res)
           const currentRequest = res.find((req) => req._id === id)
           setThisRequest(currentRequest)
-          // console.log(currentRequest)
           setInvalidate(false)
         })
         .catch((err) => {

@@ -14,6 +14,8 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import Data from './requestData';
 import axios from "../../../config/axios"
+import authContext from "../../context/auth"
+import withAuth from "../../../hoc/authHoc"
 
 const useStyles = makeStyles((theme) => ({
   font: {
@@ -26,11 +28,13 @@ const Requests = (props) => {
   const history = useHistory();
   const locale = useContext(localeContext);
   const classes = useStyles();
-
+  const {authUser} = useContext(authContext) 
   const handleSave = () => {
     Data[0] = state;
+    Data[0].doctorId = authUser.user._id
+
     history.push("/request_help/2/success")
-    axios.post("http://202.92.6.90:5000/helpRequest",Data)
+    axios.post("http://localhost:5000/helpRequest",Data)
     .then((res)=> res.data)
     .catch((err)=>{
       console.log(err)
@@ -39,7 +43,7 @@ const Requests = (props) => {
 
   const handleBackSave = () => {
     Data[0] = state;
-    axios.post("http://202.92.6.90:5000/helpRequest",Data)
+    axios.post("http://localhost:5000/helpRequest",Data)
     .then((res)=> res.data)
     .catch((err)=>{
       console.log(err)
@@ -58,7 +62,6 @@ const Requests = (props) => {
     setState({ ...state, [event.target.name]: event.target.value });
   };
 
-  // console.log(state);
 
   const moveToPage1 = () => {
     history.push("/request_help/1");
@@ -249,3 +252,4 @@ const PersonalInformation = (props) => {
 
 
 export { PersonalInformation, Requests, Data }
+export default withAuth(Requests)

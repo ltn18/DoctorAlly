@@ -27,6 +27,8 @@ router.post("/",(req,res)=>{
     petCare: data[0].petCare,
     other: data[0].other,
     work: newData,
+    doctorId: data[0].doctorId,
+    HelpRequestedVolunteer:newData,
 
     fullName: data[1].fullName,
     location: data[1].location,

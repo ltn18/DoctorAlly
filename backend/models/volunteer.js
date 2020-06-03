@@ -11,6 +11,8 @@ const VolunteerSchema = new Schema({
   laundry: Boolean,
   other: String,
   idDoctor:String,
+  volunteerId: String,
+  helpedDoctors: [String],
   fullName: {
     type:String,
     required:true

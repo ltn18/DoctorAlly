@@ -6,6 +6,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 
 import { Button, MenuItem, FormControl, Select } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import authContext from '../../context/auth';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -76,9 +77,10 @@ const Header = () => {
   const handleRouteSwitch = (path) => {
     history.push("/" + path)
   }
-
+  const { authUser } = useContext(authContext);
   return (
     <div className={classes.root}>
+      
       <Button
         onClick={() => { handleRouteSwitch("") }}
         className={classes.avatar}
@@ -89,13 +91,25 @@ const Header = () => {
         <span style={{ marginLeft: 5, fontSize: "30px" }} className={classes.fontLogo}>DoctorAlly</span>
       </Button>
       <div className={classes.buttonGroup}>
-        <Button
+        {authUser && authUser.user.role === "volunteer" ? (
+        <>
+          <Button
           variant="outlined"
           onClick={() => { handleRouteSwitch("volunteer") }}
           color="primary"
           className={classes.btn_volunteer}
         >{getText("header", "volunteer", locale.lang)}</Button>
 
+        <Button
+          variant="outlined"
+          onClick={() => { handleRouteSwitch("supply_stores") }}
+          className={classes.btn_nearby_stores}
+          // style={{ backgroundColor: 'green', color: 'white' }}
+        >{getText("header", "supply_stores", locale.lang)}</Button>
+        </>
+        )
+        :(
+        <>
         <Button
           variant="outlined"
           onClick={() => { handleRouteSwitch("request_help/1") }}
@@ -109,6 +123,24 @@ const Header = () => {
           className={classes.btn_nearby_stores}
           // style={{ backgroundColor: 'green', color: 'white' }}
         >{getText("header", "supply_stores", locale.lang)}</Button>
+        </>
+        )}
+      
+        {!authUser ? 
+        (<Button
+          variant="outlined"
+          onClick={() => { handleRouteSwitch("auth") }}
+          className={classes.btn_nearby_stores}
+          // style={{ backgroundColor: 'green', color: 'white' }}
+        >Login/Register</Button>):(
+          <Button
+          variant="outlined"
+          onClick={() => { handleRouteSwitch("profile") }}
+          className={classes.btn_nearby_stores}
+          // style={{ backgroundColor: 'green', color: 'white' }}
+        >{authUser.user.username}'s Profile</Button>
+        )}
+        
 
       </div>
       <FormControl className={classes.formControl}>
