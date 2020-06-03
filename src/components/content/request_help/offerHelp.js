@@ -8,7 +8,8 @@ import FormControl from '@material-ui/core/FormControl';
 import { useHistory, useParams } from 'react-router-dom';
 import Data from "../volunteer/volunteerData"
 import axios from "axios"
-
+import authContext from "../../context/auth"
+import withAuth from "../../../hoc/authHoc"
 const useStyles = makeStyles((theme) => ({
   root: {
     '& > *': {
@@ -53,25 +54,32 @@ const OfferHelp = () => {
   const {id} = useParams()
   const locale = useContext(localeContext)
   const history = useHistory();
+  const {authUser} = useContext(authContext) 
 
   const [state1, setState1] = useState(Data[1]);
   const { fullName, homeDistrict,homeWard, homeCity, email, phone, signature} = state1
-
   const submitHandler = () =>{
     Data[1] = state1
+    Data[1].volunteerId = authUser.user._id
+    Data[1].helpedDoctors.push(id)
     history.push(`/offer_help/${id}/success`)
 
-    axios.post("http://202.92.6.90:5000/volunteer",Data)
+    axios.post("http://localhost:5000/volunteer",Data)
     .then((res)=> res.data)
     .catch((err)=>{
       console.log(err)
     })
+
+    axios.post("http://localhost:5000/me",Data)
+    .then((res)=> res.data)
+    .catch((err)=>{
+      console.log(err)
+    })  
   }
 
   const handleTextChange = (event) => {
     setState1({ ...state1, [event.target.name]: event.target.value, idDoctor:id });
   };
-
   
   return (
     <Container maxWidth="md">
@@ -108,4 +116,4 @@ const OfferHelp = () => {
   )
 }
 
-export default OfferHelp;
+export default withAuth(OfferHelp);

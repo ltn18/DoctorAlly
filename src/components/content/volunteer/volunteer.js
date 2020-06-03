@@ -8,16 +8,17 @@ import { makeStyles } from "@material-ui/core/styles";
 // import IconButton from '@material-ui/core/IconButton';
 
 const fetchDataReq = async () => {
-  const response = await fetch("http://202.92.6.90:5000/helpRequest");
-  const resJson = await response.json();
-  return resJson;
-};
+  const response = await fetch("http://localhost:5000/helpRequest")
+  const resJson = await response.json()
+  return resJson
+}
 
 const fetchDataVolunteer = async () => {
-  const response = await fetch("http://202.92.6.90:5000/volunteer");
-  const resJson = await response.json();
-  return resJson;
-};
+  const response = await fetch("http://localhost:5000/volunteer")
+  const resJson = await response.json()
+  return resJson
+}
+
 
 const useStyles = makeStyles((theme) => ({
   root: {

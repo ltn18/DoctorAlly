@@ -13,6 +13,8 @@ const HelpRequestSchema = new Schema({
   describeRequest: String,
   work: [String],
   offerNumb: Number,
+  doctorId:String,
+  HelpRequestedVolunteer:[String],
 
   fullName: {
     type: String,

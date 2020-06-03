@@ -16,19 +16,24 @@
     "bootstrap": "^4.4.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "formik": "^2.1.4",
     "google-map-react": "^1.1.7",
     "google-maps-react": "^2.0.2",
+    "jsonwebtoken": "^8.5.1",
     "mapbox-gl": "^1.9.1",
     "mongoose": "^5.9.10",
     "react": "^16.12.0",
-    "react-bootstrap": "^1.0.0",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "^16.12.0",
-    "react-facebook": "^8.1.4",
+    "react-hook-async": "^2.1.2",
+
     "react-player": "^1.15.3",
+    "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-router-scroll-top": "^0.2.1",
-    "react-scripts": "3.3.0",
-    "video-react": "^0.14.1"
+    "react-scripts": "^3.4.0",
+    "video-react": "^0.14.1",
+    "yup": "^0.29.1"
   },
   "scripts": {
     "start": "react-scripts start",

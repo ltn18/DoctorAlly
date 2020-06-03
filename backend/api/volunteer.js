@@ -16,6 +16,8 @@ router.post("/", (req, res) => {
   const data = req.body;
   console.log(data);
   // const newData = Object.keys(data[0]).filter((key)=> data[0][key] == true)
+  const newData = Object.keys(data[0]).filter((key)=> data[0][key] == true)
+
   const volunteerRequest = new VolunteerRequest({
     meals: data[0].meals,
     drinks: data[0].drinks,
@@ -25,7 +27,9 @@ router.post("/", (req, res) => {
     petCare: data[0].petCare,
     laundry: data[0].laundry,
     other: data[0].other,
-
+    volunteerId: data[0].volunteerId,
+    helpedDoctors: newData,
+    
     fullName: data[1].fullName,
     homeDistrict: data[1].homeDistrict,
     homeWard: data[1].homeWard,

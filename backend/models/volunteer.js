@@ -10,7 +10,10 @@ const VolunteerSchema = new Schema({
   petCare: Boolean,
   laundry: Boolean,
   other: String,
-  idDoctor: String,
+  idDoctor:String,
+  volunteerId: String,
+  helpedDoctors: [String],
+
   fullName: {
     type: String,
     required: true,
